@@ -1,0 +1,2984 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     93808,       2975]
+NotebookOptionsPosition[     72202,       2261]
+NotebookOutlinePosition[     83138,       2602]
+CellTagsIndexPosition[     82907,       2591]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Applications", "Title"],
+
+Cell[CellGroupData[{
+
+Cell["Edge Detection in Images", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Naive Edge Detection", "Subsection",
+ CellTags->"b:0.0.0"],
+
+Cell[CellGroupData[{
+
+Cell["Text Reference: ", "Subsubsection",
+ CellTags->"b:0.0.0"],
+
+Cell["Section 6.4", "Text",
+ CellTags->"b:0.0.0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Process", "Subsubsection",
+ CellTags->"b:0.0.0"],
+
+Cell["We first import and plot a digital image.", "Text",
+ CellTags->"b:0.0.0"],
+
+Cell[BoxData[{
+ RowBox[{"<<", 
+  "DiscreteWavelets`DiscreteWavelets`"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"gray", "=", 
+   RowBox[{"ImageNames", "[", 
+    RowBox[{"ImageType", "\[Rule]", "GrayScale"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A", "=", 
+   RowBox[{"ImageRead", "[", 
+    RowBox[{"gray", "[", 
+     RowBox[{"[", "6", "]"}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ImagePlot", "[", 
+  RowBox[{"A", ",", 
+   RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+   RowBox[{"FrameTicks", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"None", ",", "None"}], "}"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.402325058421875*^9, {3.402328085640625*^9, 3.40232808628125*^9}, {
+   3.402398795453125*^9, 3.4023987960625*^9}},
+ CellTags->"b:0.0.0"],
+
+Cell[TextData[{
+ "Next, we compute two iterations of the biorthogonal wavelet transform.  We \
+will use the (5,3) biorthogonal spline filter pair.  We also set the \
+directive ",
+ StyleBox["Boundary",
+  FontWeight->"Bold"],
+ " to ",
+ StyleBox["Reflective",
+  FontWeight->"Bold"],
+ " in the routine ",
+ StyleBox["BWT2D",
+  FontWeight->"Bold"],
+ " in order to better handle edge effects on the boundary of the image."
+}], "Text",
+ CellTags->"b:0.0.0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"h", "=", 
+   RowBox[{"SplineFilters", "[", 
+    RowBox[{"2", ",", "2"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"i", "=", "2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"wt", "=", 
+   RowBox[{"BWT2D", "[", 
+    RowBox[{"A", ",", 
+     RowBox[{"N", "[", "h", "]"}], ",", 
+     RowBox[{"NumIterations", "\[Rule]", "i"}], ",", 
+     RowBox[{"Boundary", "\[Rule]", "Reflective"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"WaveletDensityPlot", "[", 
+   RowBox[{"wt", ",", 
+    RowBox[{"NumIterations", "\[Rule]", "i"}], ",", 
+    RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+    RowBox[{"FrameTicks", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"None", ",", "None"}], "}"}]}]}], "]"}], ";"}]}], "Input",
+ CellTags->"b:0.0.0"],
+
+Cell["\<\
+We now replace the blur portion of the transform with a zero matrix of the \
+appropriate dimension.\
+\>", "Text",
+ CellTags->"b:0.0.0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"rows", ",", "cols"}], "}"}], "=", 
+   RowBox[{"Dimensions", "[", "A", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"z", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{"0", ",", 
+     RowBox[{"{", 
+      RowBox[{"rows", "/", 
+       RowBox[{"2", "^", "i"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"cols", "/", 
+       RowBox[{"2", "^", "i"}]}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"newwt", "=", 
+   RowBox[{"PutCorner", "[", 
+    RowBox[{"wt", ",", "z"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"WaveletDensityPlot", "[", 
+   RowBox[{"newwt", ",", 
+    RowBox[{"NumIterations", "\[Rule]", "i"}], ",", 
+    RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+    RowBox[{"FrameTicks", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"None", ",", "None"}], "}"}]}]}], "]"}], ";"}]}], "Input",
+ CellTags->"b:0.0.0"],
+
+Cell["\<\
+The last step in the process is to compute the inverse biorthogonal wavelet \
+transform on the altered transform data.  We have plotted the negative of the \
+inverse transform in order to better view the edges in the image.\
+\>", "Text",
+ CellTags->"b:0.0.0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"edges", "=", 
+   RowBox[{"IBWT2D", "[", 
+    RowBox[{"newwt", ",", 
+     RowBox[{"N", "[", "h", "]"}], ",", 
+     RowBox[{"NumIterations", "\[Rule]", "i"}], ",", 
+     RowBox[{"Boundary", "\[Rule]", "Reflective"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ImagePlot", "[", 
+   RowBox[{
+    RowBox[{"255", "-", "edges"}], ",", 
+    RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+    RowBox[{"FrameTicks", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"None", ",", "None"}], "}"}]}]}], "]"}], ";"}]}], "Input",
+ CellTags->"b:0.0.0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Things To Try:", "Subsubsection",
+ CellTags->"b:0.0.0"],
+
+Cell["\<\
+It is interesting to try different images with different wavelet \
+filters/transforms.  Also try changing the number of iterations used when \
+computing the transform.\
+\>", "Text",
+ CellTags->"b:0.0.0"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Thresholding in  Edge Detection", "Subsection",
+ CellTags->"b:0.0.1"],
+
+Cell[CellGroupData[{
+
+Cell["Text Reference: ", "Subsubsection",
+ CellTags->"b:0.0.1"],
+
+Cell["Section 6.4", "Text",
+ CellTags->"b:0.0.1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Process", "Subsubsection",
+ CellTags->"b:0.0.1"],
+
+Cell["We first import and plot a digital image.", "Text",
+ CellTags->"b:0.0.1"],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"<<", "DiscreteWavelets`DiscreteWavelets`"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"gray", "=", 
+     RowBox[{"ImageNames", "[", 
+      RowBox[{"ImageType", "\[Rule]", "GrayScale"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"A", "=", 
+     RowBox[{"ImageRead", "[", 
+      RowBox[{"gray", "[", 
+       RowBox[{"[", "6", "]"}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   
+   RowBox[{
+    RowBox[{"ImagePlot", "[", 
+     RowBox[{"A", ",", 
+      RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+      RowBox[{"FrameTicks", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"None", ",", "None"}], "}"}]}]}], "]"}], ";"}]}]}]], "Input",
+ CellTags->"b:0.0.1"],
+
+Cell["\<\
+Next, we compute two iterations of the Haar wavelet transform.  \
+\>", "Text",
+ CellTags->"b:0.0.1"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"i", "=", "2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"wt", "=", 
+   RowBox[{"HWT2D", "[", 
+    RowBox[{
+     RowBox[{"N", "[", "A", "]"}], ",", 
+     RowBox[{"NumIterations", "\[Rule]", "i"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"WaveletDensityPlot", "[", 
+  RowBox[{"wt", ",", 
+   RowBox[{"NumIterations", "\[Rule]", "i"}], ",", 
+   RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+   RowBox[{"FrameTicks", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"None", ",", "None"}], "}"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.40232507428125*^9, 3.402325096*^9}, {
+  3.40239880284375*^9, 3.40239880346875*^9}},
+ CellTags->"b:0.0.1"],
+
+Cell["\<\
+We now apply the thresholding to the vertical, horizontal, and diagonal \
+differences portion of the transform.  We will use the method outlined in \
+Section 6.4.  We start by using WaveletMatrixToList to separate the different \
+portions of the transforms.  We also set the blur to 0 at this step.\
+\>", "Text",
+ CellTags->"b:0.0.1"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"wtlist", "=", 
+   RowBox[{"WaveletMatrixToList", "[", 
+    RowBox[{"wt", ",", 
+     RowBox[{"NumIterations", "\[Rule]", "i"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.402398806140625*^9, 3.40239880634375*^9}},
+ CellTags->"b:0.0.1"],
+
+Cell["\<\
+We will use a tolerance of alpha =1 to perform the thresholding.  The next \
+cell computes the tolerance we will use to threshold the difference portions \
+of the transform.\
+\>", "Text",
+ CellTags->"b:0.0.1"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"alpha", "=", "1."}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"hp", "=", 
+   RowBox[{"Drop", "[", 
+    RowBox[{"wtlist", ",", "1"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"S", "=", 
+    RowBox[{"Abs", "[", 
+     RowBox[{"Flatten", "[", "hp", "]"}], "]"}]}], ";"}], 
+  "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"t1", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"Max", "[", "S", "]"}], "+", 
+      RowBox[{"Min", "[", "S", "]"}]}], ")"}], "/", "2"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"diff", "=", "t1"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{
+   "\"\<t1 = \>\"", ",", "t1", ",", "\"\<, diff = \>\"", ",", "diff"}], "]"}],
+   ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"While", "[", 
+    RowBox[{
+     RowBox[{"diff", "\[GreaterEqual]", "alpha"}], ",", "\[IndentingNewLine]",
+      "\t", 
+     RowBox[{
+      RowBox[{"S1", "=", 
+       RowBox[{"Select", "[", 
+        RowBox[{"S", ",", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"#", "<", "t1"}], ")"}], "&"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\t", 
+      RowBox[{"avg1", "=", 
+       RowBox[{"Mean", "[", "S1", "]"}]}], ";", "\[IndentingNewLine]", "\t", 
+      RowBox[{"S2", "=", 
+       RowBox[{"Select", "[", 
+        RowBox[{"S", ",", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"#", "\[GreaterEqual]", "t1"}], ")"}], "&"}]}], "]"}]}], 
+      ";", "\[IndentingNewLine]", "\t", 
+      RowBox[{"avg2", "=", 
+       RowBox[{"Mean", "[", "S2", "]"}]}], ";", "\[IndentingNewLine]", "\t", 
+      RowBox[{"t2", "=", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"avg1", "+", "avg2"}], ")"}], "/", "2"}]}], ";", 
+      "\[IndentingNewLine]", "\t", 
+      RowBox[{"diff", "=", 
+       RowBox[{"Abs", "[", 
+        RowBox[{"t2", "-", "t1"}], "]"}]}], ";", "\[IndentingNewLine]", "\t", 
+      
+      RowBox[{"t1", "=", "t2"}], ";", "\[IndentingNewLine]", "\t", 
+      RowBox[{"Print", "[", 
+       RowBox[{
+       "\"\<avg1 = \>\"", ",", "avg1", ",", "\"\<, avg2 = \>\"", ",", "avg2", 
+        ",", "\"\<, t1 = \>\"", ",", "t1", ",", "\"\<, diff = \>\"", ",", 
+        "diff"}], "]"}]}]}], "\[IndentingNewLine]", "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{
+   "\"\<We will use the tolerance t1 = \>\"", ",", "t1", ",", "\"\<.\>\""}], 
+   "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.402398807921875*^9, 3.4023988080625*^9}},
+ CellTags->"b:0.0.1"],
+
+Cell["\<\
+In the next step, we use t1 to perform the thresholding on the differences \
+portions of the transform.\
+\>", "Text",
+ CellTags->"b:0.0.1"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tmp", "=", 
+   RowBox[{
+    RowBox[{"Abs", "[", "hp", "]"}], "//", 
+    RowBox[{
+     RowBox[{"Chop", "[", 
+      RowBox[{"#", ",", "t1"}], "]"}], "&"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"hp", "=", 
+   RowBox[{
+    RowBox[{"Sign", "[", "hp", "]"}], "*", "tmp"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.402398812140625*^9, 3.402398812265625*^9}},
+ CellTags->"b:0.0.1"],
+
+Cell["\<\
+Now we convert the blur to a zero matrix of the appropriate dimension.\
+\>", "Text",
+ CellTags->"b:0.0.1"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"rows", ",", "cols"}], "}"}], "=", 
+   RowBox[{"Dimensions", "[", "A", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"z", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{"0", ",", 
+     RowBox[{"{", 
+      RowBox[{"rows", "/", 
+       RowBox[{"2", "^", "i"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"cols", "/", 
+       RowBox[{"2", "^", "i"}]}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"wtlist", "=", 
+   RowBox[{"Prepend", "[", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"hp", "[", 
+        RowBox[{"[", "k", "]"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"k", ",", "1", ",", "i"}], "}"}]}], "]"}], ",", "z"}], 
+    "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.40239881409375*^9, 3.402398814265625*^9}},
+ CellTags->"b:0.0.1"],
+
+Cell["\<\
+We convert the list of portions of the transform back to a matrix and plot \
+it.\
+\>", "Text",
+ CellTags->"b:0.0.1"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"newwt", "=", 
+   RowBox[{"WaveletListToMatrix", "[", 
+    RowBox[{"wtlist", ",", 
+     RowBox[{"NumIterations", "\[Rule]", "i"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{"WaveletDensityPlot", "[", 
+  RowBox[{"newwt", ",", 
+   RowBox[{"NumIterations", "\[Rule]", "i"}], ",", 
+   RowBox[{"DivideLines", "\[Rule]", "True"}], ",", 
+   RowBox[{"DivideLinesColor", "\[Rule]", "White"}], ",", 
+   RowBox[{"Frame", "\[Rule]", "True"}], ",", " ", 
+   RowBox[{"FrameTicks", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"None", ",", "None"}], "}"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.402325141890625*^9, {3.40239881615625*^9, 3.4023988163125*^9}},
+ CellTags->"b:0.0.1"],
+
+Cell[BoxData[""], "Input",
+ CellTags->"b:0.0.1"],
+
+Cell["\<\
+Finally, we compute the inverse Haar wavelet transform to obtain the edges in \
+the image.  We use image negation to better display the edges of the image.  \
+Compare this result to that obtained using naive edge detectio.\
+\>", "Text",
+ CellTags->"b:0.0.1"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"edges", "=", 
+   RowBox[{"IHWT2D", "[", 
+    RowBox[{
+     RowBox[{"N", "[", "newwt", "]"}], ",", 
+     RowBox[{"NumIterations", "\[Rule]", "i"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ImagePlot", "[", 
+  RowBox[{"255", "-", "edges"}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.40232515171875*^9, {3.4023988181875*^9, 3.402398818375*^9}},
+ CellTags->"b:0.0.1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Things To Try:", "Subsubsection",
+ CellTags->"b:0.0.1"],
+
+Cell["\<\
+It is interesting to try different images with different wavelet \
+filters/transforms.  Also try changing the number of iterations used when \
+computing the transform.  You may also experiment with different values of \
+alpha.\
+\>", "Text",
+ CellTags->"b:0.0.1"]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Image Compression", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Grayscale Image Compression", "Subsection",
+ CellTags->"b:0.1.0"],
+
+Cell[CellGroupData[{
+
+Cell["Text Reference: ", "Subsubsection",
+ CellTags->"b:0.1.0"],
+
+Cell["Section 6.4", "Text",
+ CellTags->"b:0.1.0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Process", "Subsubsection",
+ CellTags->"b:0.1.0"],
+
+Cell["\<\
+We first import and plot a digital image.  Note that we are using a smaller \
+thumbnail to reduce computation time.\
+\>", "Text",
+ CellTags->"b:0.1.0"],
+
+Cell[BoxData[{
+ RowBox[{"<<", "DiscreteWavelets`DiscreteWavelets`"}], "\n", 
+ RowBox[{
+  RowBox[{"gray", "=", 
+   RowBox[{"ImageNames", "[", 
+    RowBox[{
+     RowBox[{"ImageType", "\[Rule]", "GrayScale"}], ",", 
+     RowBox[{"ListThumbnails", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.402326696515625*^9, 3.402326703921875*^9}, {
+  3.402398822203125*^9, 3.402398822625*^9}},
+ CellTags->"b:0.1.0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"A", "=", 
+   RowBox[{"ImageRead", "[", 
+    RowBox[{
+     RowBox[{"gray", "[", 
+      RowBox[{"[", "17", "]"}], "]"}], ",", 
+     RowBox[{"PrintInfo", "\[Rule]", "True"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"rows", ",", "cols"}], "}"}], "=", 
+   RowBox[{"Dimensions", "[", "A", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ImagePlot", "[", 
+  RowBox[{"A", ",", 
+   RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+   RowBox[{"FrameTicks", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"None", ",", "None"}], "}"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.40232516646875*^9, {3.402326673265625*^9, 3.402326693015625*^9}, {
+   3.40239882440625*^9, 3.402398824546875*^9}},
+ CellTags->"b:0.1.0"],
+
+Cell[TextData[{
+ "We next compute three iterations of the Haar wavelet transform on the \
+image.  Note that we use the command WT2D with the Haar filter multiplied by \
+",
+ Cell[BoxData[
+  SqrtBox["2"]]],
+ ".  As discussed in Section 6.4, multiplying by ",
+ Cell[BoxData[
+  SqrtBox["2"]]],
+ " ensures that the output will either be integers.  This will result in \
+better compression results."
+}], "Text",
+ CellTags->"b:0.1.0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"i", "=", "3"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"wt", "=", 
+   RowBox[{"WT2D", "[", 
+    RowBox[{
+     RowBox[{"N", "[", "A", "]"}], ",", 
+     RowBox[{
+      RowBox[{"Haar", "[", "]"}], "*", 
+      RowBox[{"Sqrt", "[", "2.", "]"}]}], ",", 
+     RowBox[{"NumIterations", "\[Rule]", "i"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"WaveletDensityPlot", "[", 
+  RowBox[{"wt", ",", 
+   RowBox[{"NumIterations", "\[Rule]", "i"}]}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.40232517678125*^9, {3.4023988261875*^9, 3.4023988263125*^9}},
+ CellTags->"b:0.1.0"],
+
+Cell["\<\
+We will use the cumulative energy function to help us with compression.  We \
+compute the cumulative energy of the wavelet transform and then determine the \
+number of elements of the transform needed to comprise 99.8% of the  energy \
+of the transform.\
+\>", "Text",
+ CellTags->"b:0.1.0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"r", "=", ".998"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"cewt", "=", 
+   RowBox[{"CE", "[", "wt", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"k", "=", 
+   RowBox[{"nCE", "[", 
+    RowBox[{"cewt", ",", "r"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{
+   "\"\<The largest \>\"", ",", "k", ",", 
+    "\"\< elements (in absolute value) of the transform constitute \>\"", ",",
+     
+    RowBox[{"100", "*", "r"}], ",", 
+    "\"\<% of the energy of the transform.\>\""}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.402398828078125*^9, 3.402398828296875*^9}},
+ CellTags->"b:0.1.0"],
+
+Cell["We now convert all but these largest elements to 0.", "Text",
+ CellTags->"b:0.1.0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"rows", ",", "cols"}], "}"}], "=", 
+   RowBox[{"Dimensions", "[", "A", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"newwt", "=", 
+   RowBox[{"Comp", "[", 
+    RowBox[{"wt", ",", "k"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<We are setting \>\"", ",", 
+    RowBox[{
+     RowBox[{"rows", "*", "cols"}], "-", "k"}], ",", 
+    "\"\< elements of the transform equal to 0.  This constitutes \>\"", ",", 
+    
+    RowBox[{"100.", "*", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"rows", "*", "cols"}], "-", "k"}], ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{"rows", "*", "cols"}], ")"}]}]}], ",", 
+    "\"\<% of the elements in the transform.\>\""}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"WaveletDensityPlot", "[", 
+  RowBox[{"newwt", ",", 
+   RowBox[{"NumIterations", "\[Rule]", "i"}]}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.402325200078125*^9, {3.402398830125*^9, 3.40239883065625*^9}},
+ CellTags->"b:0.1.0"],
+
+Cell["\<\
+We now compute Huffman codes for the transformed data.  Note that we have \
+shifted the elements of wt so that the minimum is 0.  We have also rounded \
+the elements of wt-Min[wt].  We did the computations with numerical values \
+above (by virtue of the filter Haar[ ]*Sqrt[2.]) to reduce computation time.  \
+Since the values are integer-valued, the rounding does not change values.  \
+Execution of the cell below takes a LONG time to complete.\
+\>", "Text",
+ CellTags->"b:0.1.0"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"codes", ",", "bitstream", ",", "newbitstream"}], "}"}], "=", 
+   RowBox[{"MakeHuffmanCodes", "[", 
+    RowBox[{"Round", "[", 
+     RowBox[{"newwt", "-", 
+      RowBox[{"Min", "[", "newwt", "]"}]}], "]"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.40239883259375*^9, 3.4023988328125*^9}},
+ CellTags->"b:0.1.0"],
+
+Cell["\<\
+Here is some information about how well the compression method worked.\
+\>", "Text",
+ CellTags->"b:0.1.0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<The original bitstream has length rows*cols*8 = \>\"", ",", 
+    RowBox[{"rows", "*", "cols", "*", "8"}], ",", 
+    "\"\<.  The new bitstream has length \>\"", ",", "newbitstream", ",", 
+    "\"\< or \>\"", ",", " ", 
+    RowBox[{"N", "[", 
+     RowBox[{"newbitstream", "/", 
+      RowBox[{"(", 
+       RowBox[{"rows", "*", "cols"}], ")"}]}], "]"}], ",", "\"\< bpp.\>\""}], 
+   "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<The entropy of newwt is \>\"", ",", 
+    RowBox[{"N", "[", 
+     RowBox[{"Entropy", "[", "newwt", "]"}], "]"}], ",", "\"\<.\>\""}], "]"}],
+   ";"}]}], "Input",
+ CellChangeTimes->{{3.40239883446875*^9, 3.402398834671875*^9}},
+ CellTags->"b:0.1.0"],
+
+Cell[TextData[{
+ "We now compute the inverse Haar transform (this time divided by ",
+ Cell[BoxData[
+  SqrtBox["2"]]],
+ ") to see the compressed image.  The original image is plotted again for \
+comparative purposes."
+}], "Text",
+ CellTags->"b:0.1.0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"compressedA", " ", "=", " ", 
+   RowBox[{"IWT2D", "[", 
+    RowBox[{"newwt", ",", 
+     RowBox[{
+      RowBox[{"Haar", "[", "]"}], "/", 
+      RowBox[{"Sqrt", "[", "2.", "]"}]}], ",", 
+     RowBox[{"NumIterations", "\[Rule]", "i"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ImagePlot", "[", 
+  RowBox[{"A", ",", 
+   RowBox[{"PlotLabel", "->", "\"\<Original Image\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ImagePlot", "[", 
+  RowBox[{"compressedA", ",", 
+   RowBox[{"PlotLabel", "->", "\"\<Compressed Image\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<The PSNR is \>\"", ",", 
+    RowBox[{"PSNR", "[", 
+     RowBox[{"A", ",", "compressedA"}], "]"}], ",", "\"\<.\>\""}], "]"}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.402326825109375*^9, 3.402326828734375*^9}, {
+  3.402398837078125*^9, 3.402398837296875*^9}},
+ CellTags->"b:0.1.0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Things To Try:", "Subsubsection",
+ CellTags->"b:0.1.0"],
+
+Cell["\<\
+It is interesting to try different images with different wavelet \
+filters/transforms.  Also try changing the number of iterations used when \
+computing the transform and different filters.  Make sure to round your \
+wavelet transformed data to integers so that MakeHuffmanCodes works \
+efficiently.  You should also try varying the percent of energy retained or \
+even a different function for thresholding the wavelet transform.\
+\>", "Text",
+ CellTags->"b:0.1.0"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Color Image Compression", "Subsection",
+ CellTags->"b:0.1.1"],
+
+Cell[CellGroupData[{
+
+Cell["Text Reference: ", "Subsubsection",
+ CellTags->"b:0.1.1"],
+
+Cell["Section 6.4", "Text",
+ CellTags->"b:0.1.1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Process", "Subsubsection",
+ CellTags->"b:0.1.1"],
+
+Cell["\<\
+We first import and plot a digital image.  Note that we are using a smaller \
+thumbnail to reduce computation time.\
+\>", "Text",
+ CellTags->"b:0.1.1"],
+
+Cell[BoxData[{
+ RowBox[{"<<", 
+  "DiscreteWavelets`DiscreteWavelets`"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"color", "=", 
+   RowBox[{"ImageNames", "[", 
+    RowBox[{
+     RowBox[{"ImageType", "\[Rule]", "Color"}], ",", 
+     RowBox[{"ListThumbnails", "\[Rule]", "True"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"red", ",", "green", ",", "blue"}], "}"}], "=", 
+   RowBox[{"ImageRead", "[", 
+    RowBox[{
+     RowBox[{"color", "[", 
+      RowBox[{"[", "9", "]"}], "]"}], ",", 
+     RowBox[{"PrintInfo", "\[Rule]", "True"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"rows", ",", "cols"}], "}"}], "=", 
+   RowBox[{"Dimensions", "[", "A", "]"}]}], ";"}], "\n", 
+ RowBox[{"ImagePlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"red", ",", "green", ",", "blue"}], "}"}], ",", 
+   RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+   RowBox[{"FrameTicks", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"None", ",", "None"}], "}"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.402325598421875*^9, {3.40239883996875*^9, 3.40239884021875*^9}},
+ CellTags->"b:0.1.1"],
+
+Cell["\<\
+Before computing the wavelet transform, we convert the image to YCbCr space.  \
+We plot the Y, Cb, and Cr channels.\
+\>", "Text",
+ CellTags->"b:0.1.1"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"Y", ",", "Cb", ",", "Cr"}], "}"}], "=", 
+   RowBox[{"RGBToYCbCr", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"red", ",", "green", ",", "blue"}], "}"}], ",", 
+     RowBox[{"DisplayMode", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"GraphicsGrid", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"Map", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"ImagePlot", "[", 
+        RowBox[{"#", ",", 
+         RowBox[{"LinearScaling", "->", "True"}]}], "]"}], "&"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"Y", ",", "Cb", ",", "Cr"}], "}"}]}], "]"}], "}"}], ",", 
+   RowBox[{"PlotLabel", "->", "\"\<The plots of Y, Cb, and Cr\>\""}], ",", 
+   RowBox[{"Frame", "->", "All"}]}], "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.402325601703125*^9, 3.402325603046875*^9}, {
+  3.402326859421875*^9, 3.402327117328125*^9}, {3.402398842078125*^9, 
+  3.4023988425625*^9}},
+ CellTags->"b:0.1.1"],
+
+Cell[TextData[{
+ "We next compute three iterations of the Haar wavelet transform on each \
+channel.  Note that we use the command WT2D with the Haar filter multiplied \
+by ",
+ Cell[BoxData[
+  SqrtBox["2"]]],
+ ".  As discussed in Section 6.4, multiplying by ",
+ Cell[BoxData[
+  SqrtBox["2"]]],
+ " ensures that the output will either be integers.  This will result in \
+better compression results."
+}], "Text",
+ CellTags->"b:0.1.1"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"i", "=", "3"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"Ywt", ",", "Cbwt", ",", "Crwt"}], "}"}], "=", 
+    RowBox[{"Map", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"WT2D", "[", 
+        RowBox[{
+         RowBox[{"N", "[", "#", "]"}], ",", 
+         RowBox[{
+          RowBox[{"Haar", "[", "]"}], "*", 
+          RowBox[{"Sqrt", "[", "2.", "]"}]}], ",", 
+         RowBox[{"NumIterations", "->", "i"}]}], "]"}], "&"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"Y", ",", "Cb", ",", "Cr"}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"GraphicsGrid", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"Map", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"WaveletDensityPlot", "[", 
+        RowBox[{"#", ",", 
+         RowBox[{"NumIterations", "->", "i"}]}], "]"}], "&"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"Ywt", ",", "Cbwt", ",", "Crwt"}], "}"}]}], "]"}], "}"}], ",", 
+   
+   RowBox[{"Frame", "->", "All"}], ",", 
+   RowBox[{
+   "PlotLabel", "->", 
+    "\"\<The wavelet transformations of Y, Cb, and Cr\>\""}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.402325605296875*^9, 3.402325606625*^9}, {
+  3.40232713328125*^9, 3.402327208859375*^9}, {3.402327580109375*^9, 
+  3.402327626640625*^9}, {3.4023988454375*^9, 3.402398845640625*^9}},
+ CellTags->"b:0.1.1"],
+
+Cell["\<\
+We will use the cumulative energy function to help us with compression.  We \
+compute the cumulative energy of the wavelet transform and then determine the \
+number of elements of the transform needed to comprise 99.8% of the  energy \
+of the transform.  We perform these steps on each channel.\
+\>", "Text",
+ CellTags->"b:0.1.1"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"r", "=", ".998"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ceYwt", "=", 
+   RowBox[{"CE", "[", "Ywt", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ceCbwt", "=", 
+   RowBox[{"CE", "[", "Cbwt", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ceCrwt", "=", 
+   RowBox[{"CE", "[", "Crwt", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"kY", "=", 
+   RowBox[{"nCE", "[", 
+    RowBox[{"ceYwt", ",", "r"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"kCb", "=", 
+   RowBox[{"nCE", "[", 
+    RowBox[{"ceCbwt", ",", "r"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"kCr", "=", 
+   RowBox[{"nCE", "[", 
+    RowBox[{"ceCrwt", ",", "r"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{
+   "\"\<The largest \>\"", ",", "kY", ",", 
+    "\"\< elements (in absolute value) of the transform constitute \>\"", ",",
+     
+    RowBox[{"100", "*", "r"}], ",", 
+    "\"\<% of the energy of the transform.\>\""}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{
+   "\"\<The largest \>\"", ",", "kCb", ",", 
+    "\"\< elements (in absolute value) of the transform constitute \>\"", ",",
+     
+    RowBox[{"100", "*", "r"}], ",", 
+    "\"\<% of the energy of the transform.\>\""}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{
+   "\"\<The largest \>\"", ",", "kCr", ",", 
+    "\"\< elements (in absolute value) of the transform constitute \>\"", ",",
+     
+    RowBox[{"100", "*", "r"}], ",", 
+    "\"\<% of the energy of the transform.\>\""}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.40239884746875*^9, 3.402398847625*^9}},
+ CellTags->"b:0.1.1"],
+
+Cell["We now convert all but these largest elements to 0.", "Text",
+ CellTags->"b:0.1.1"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"rows", ",", "cols"}], "}"}], "=", 
+   RowBox[{"Dimensions", "[", "A", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"newYwt", "=", 
+   RowBox[{"Comp", "[", 
+    RowBox[{"Ywt", ",", "k"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"newCbwt", "=", 
+   RowBox[{"Comp", "[", 
+    RowBox[{"Cbwt", ",", "k"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"newCrwt", "=", 
+   RowBox[{"Comp", "[", 
+    RowBox[{"Crwt", ",", "k"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<We are setting \>\"", ",", 
+    RowBox[{
+     RowBox[{"rows", "*", "cols"}], "-", "kY"}], ",", 
+    "\"\< elements of the transform equal to 0.  This constitutes \>\"", ",", 
+    
+    RowBox[{"100.", "*", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"rows", "*", "cols"}], "-", "kY"}], ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{"rows", "*", "cols"}], ")"}]}]}], ",", 
+    "\"\<% of the elements in the transform.\>\""}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<We are setting \>\"", ",", 
+    RowBox[{
+     RowBox[{"rows", "*", "cols"}], "-", "kCb"}], ",", 
+    "\"\< elements of the transform equal to 0.  This constitutes \>\"", ",", 
+    
+    RowBox[{"100.", "*", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"rows", "*", "cols"}], "-", "kCb"}], ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{"rows", "*", "cols"}], ")"}]}]}], ",", 
+    "\"\<% of the elements in the transform.\>\""}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Print", "[", 
+    RowBox[{"\"\<We are setting \>\"", ",", 
+     RowBox[{
+      RowBox[{"rows", "*", "cols"}], "-", "kCr"}], ",", 
+     "\"\< elements of the transform equal to 0.  This constitutes \>\"", ",",
+      
+     RowBox[{"100.", "*", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"rows", "*", "cols"}], "-", "kCr"}], ")"}], "/", 
+       RowBox[{"(", 
+        RowBox[{"rows", "*", "cols"}], ")"}]}]}], ",", 
+     "\"\<% of the elements in the transform.\>\""}], "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"GraphicsGrid", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"Map", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"WaveletDensityPlot", "[", 
+        RowBox[{"#", ",", 
+         RowBox[{"NumIterations", "->", "i"}]}], "]"}], "&"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"newYwt", ",", "newCbwt", ",", "newCrwt"}], "}"}]}], "]"}], 
+    "}"}], ",", 
+   RowBox[{"Frame", "->", "All"}], ",", 
+   RowBox[{
+   "PlotLabel", "->", 
+    "\"\<The wavelet transformations of Y, Cb, and Cr\>\""}]}], 
+  "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.40232561209375*^9, 3.402325613328125*^9}, {
+  3.402327231765625*^9, 3.40232727121875*^9}, {3.402398850234375*^9, 
+  3.402398850421875*^9}},
+ CellTags->"b:0.1.1"],
+
+Cell["\<\
+We now compute Huffman codes for the transformed data.  Note that we have \
+shifted the elements of wt so that the minimum is 0.  We have also rounded \
+the elements of wt-Min[wt].  We did the computations with numerical values \
+above (by virtue of the filter Haar[ ]*Sqrt[2.]) to reduce computation time.  \
+Since the values are integer-valued, the rounding does not change values.  \
+Execution of the cell below takes a LONG time to complete.\
+\>", "Text",
+ CellTags->"b:0.1.1"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"codesY", ",", "bitstreamY", ",", "newbitstreamY"}], "}"}], "=", 
+   RowBox[{"MakeHuffmanCodes", "[", 
+    RowBox[{"Round", "[", 
+     RowBox[{"newYwt", "-", 
+      RowBox[{"Min", "[", "newYwt", "]"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"codesCb", ",", "bitstreamCb", ",", "newbitstreamCb"}], "}"}], 
+   "=", 
+   RowBox[{"MakeHuffmanCodes", "[", 
+    RowBox[{"Round", "[", 
+     RowBox[{"newCbwt", "-", 
+      RowBox[{"Min", "[", "newCbwt", "]"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"codesCr", ",", "bitstreamCr", ",", "newbitstreamCr"}], "}"}], 
+   "=", 
+   RowBox[{"MakeHuffmanCodes", "[", 
+    RowBox[{"Round", "[", 
+     RowBox[{"newCrwt", "-", 
+      RowBox[{"Min", "[", "newCrwt", "]"}]}], "]"}], "]"}]}], ";"}]}], "Input",\
+
+ CellChangeTimes->{{3.40239885453125*^9, 3.40239885484375*^9}},
+ CellTags->"b:0.1.1"],
+
+Cell["\<\
+Here is some information about how well the compression method worked.\
+\>", "Text",
+ CellTags->"b:0.1.1"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"newbitream", "=", 
+   RowBox[{
+   "newbitstreamY", " ", "+", " ", "newbitstreamCb", " ", "+", " ", 
+    "newbitstreamCr"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{
+   "\"\<The original bitstream has length rows*cols*8*3 = \>\"", ",", 
+    RowBox[{"rows", "*", "cols", "*", "8", "*", "3"}], ",", 
+    "\"\<.  The new bitstream has length \>\"", ",", "newbitstream", ",", 
+    "\"\< or \>\"", ",", " ", 
+    RowBox[{"N", "[", 
+     RowBox[{"newbitstream", "/", 
+      RowBox[{"(", 
+       RowBox[{"rows", "*", "cols"}], ")"}]}], "]"}], ",", "\"\< bpp.\>\""}], 
+   "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.40239885934375*^9, 3.402398859515625*^9}},
+ CellTags->"b:0.1.1"],
+
+Cell[TextData[{
+ "We now compute the inverse Haar transform (this time divided by ",
+ Cell[BoxData[
+  SqrtBox["2"]]],
+ ") to see the compressed image.  "
+}], "Text",
+ CellTags->"b:0.1.1"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"newY", ",", "newCb", ",", "newCr"}], "}"}], "=", 
+   RowBox[{"Map", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"IWT2D", "[", 
+       RowBox[{"#", ",", 
+        RowBox[{
+         RowBox[{"Haar", "[", "]"}], "/", 
+         RowBox[{"Sqrt", "[", "2.", "]"}]}], ",", 
+        RowBox[{"NumIterations", "->", "i"}]}], "]"}], "&"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"newYwt", ",", "newCbwt", ",", "newCrwt"}], "}"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.40232746059375*^9, 3.4023274980625*^9}, {3.40232757*^9, 
+  3.402327571671875*^9}, {3.402398861328125*^9, 3.40239886153125*^9}},
+ CellTags->"b:0.1.1"],
+
+Cell["\<\
+Finally, we convert back to RGB space and display the compressed image.\
+\>", "Text",
+ CellTags->"b:0.1.1"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"newred", ",", "newgreen", ",", "newblue"}], "}"}], "=", 
+   RowBox[{"Round", "[", 
+    RowBox[{"YCbCrToRGB", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"newY", ",", "newCb", ",", "newCr"}], "}"}], ",", 
+      RowBox[{"DisplayMode", "\[Rule]", "True"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p1", "=", 
+   RowBox[{"ImagePlot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"red", ",", "green", ",", "blue"}], "}"}], ",", 
+     RowBox[{"PlotLabel", "->", "\"\<Original Image\>\""}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p2", "=", 
+   RowBox[{"ImagePlot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"newred", ",", "newgreen", ",", "newblue"}], "}"}], ",", 
+     RowBox[{"PlotLabel", "->", "\"\<Compressed Image\>\""}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"GraphicsGrid", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"p1", ",", "p2"}], "}"}], "}"}], ",", 
+   RowBox[{"Frame", "->", "All"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.402325620671875*^9, 3.4023256251875*^9}, {
+  3.40232751996875*^9, 3.402327555640625*^9}, {3.4023988639375*^9, 
+  3.4023988641875*^9}},
+ CellTags->"b:0.1.1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Things To Try:", "Subsubsection",
+ CellTags->"b:0.1.1"],
+
+Cell["\<\
+It is interesting to try different images with different wavelet \
+filters/transforms.  Also try changing the number of iterations used when \
+computing the transform and different filters.  Make sure to round your \
+wavelet transformed data to integers so that MakeHuffmanCodes works \
+efficiently.  You should also try varying the percent of energy retained or \
+even a different function for thresholding the wavelet transform.\
+\>", "Text",
+ CellTags->"b:0.1.1"]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Signal/Audio Denoising", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Signal Denoising", "Subsection",
+ CellTags->"b:0.2.0"],
+
+Cell["\<\
+The process that appears below is available in Example 9.3 of the text.  The \
+data is courtesy of Christopher Greeen, Jeffrey Jalkio, Michael Hennessey, \
+and Colin Sullivan of the University of St. Thomas College of Engineering.  \
+They recorded the speed (in knots) of a sailboat per second for a duration of \
+4310 seconds (71 minutes and 50 seconds).\
+\>", "Text",
+ CellTags->"b:0.2.0"],
+
+Cell[CellGroupData[{
+
+Cell["Text Reference: ", "Subsubsection",
+ CellTags->"b:0.2.0"],
+
+Cell["Sections 9.1, 9.2", "Text",
+ CellTags->"b:0.2.0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Process", "Subsubsection",
+ CellTags->"b:0.2.0"],
+
+Cell["\<\
+We first import a data set.  We also truncate the data set so that the length \
+is divisible by 16.  In this way, we can perform 4 iterations of a wavelet \
+transform on the data.  \
+\>", "Text",
+ CellTags->"b:0.2.0"],
+
+Cell[BoxData[{
+ RowBox[{"<<", "DiscreteWavelets`DiscreteWavelets`"}], "\n", 
+ RowBox[{
+  RowBox[{"d", "=", 
+   RowBox[{"DataNames", "[", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"file", "=", 
+   RowBox[{"First", "[", "d", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"v", "=", 
+   RowBox[{"ReadList", "[", "file", "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<The length of the file is \>\"", ",", 
+    RowBox[{"Length", "[", "v", "]"}], ",", "\"\<.\>\""}], "]"}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"v", "=", 
+   RowBox[{"ChopVector", "[", 
+    RowBox[{"v", ",", 
+     RowBox[{"PowersOfTwo", "\[Rule]", "4"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<The length of the chopped vector is \>\"", ",", 
+    RowBox[{"Length", "[", "v", "]"}], ",", "\"\<.\>\""}], "]"}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+  "Print", "[", 
+   "\"\<The data represents sailboat speeds in knots recorded every second \
+for 71 minutes and 46 seconds.\>\"", "]"}], ";"}], "\n", 
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"v", ",", 
+   RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+   RowBox[{"Ticks", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"1000", ",", "2000", ",", "3000", ",", "4000"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", "4", ",", "6"}], "}"}]}], "}"}]}], ",", 
+   RowBox[{"PlotLabel", "->", "\"\<SailBoat Speed in Knots\>\""}]}], 
+  "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.402327674328125*^9, 3.402327678859375*^9}, {
+  3.40239886959375*^9, 3.402398869734375*^9}, {3.402933232787109*^9, 
+  3.402933232943524*^9}},
+ CellTags->"b:0.2.0"],
+
+Cell["\<\
+We first compute four iterations of the wavelet transform using the Coiflet \
+C6 filter.   \
+\>", "Text",
+ CellTags->"b:0.2.0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"its", "=", "4"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"wt", "=", 
+   RowBox[{"WT1D", "[", 
+    RowBox[{"v", ",", 
+     RowBox[{"Coif", "[", "1", "]"}], ",", 
+     RowBox[{"NumIterations", "\[Rule]", "its"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"wtlist", "=", 
+   RowBox[{"WaveletVectorToList", "[", 
+    RowBox[{"wt", ",", 
+     RowBox[{"NumIterations", "\[Rule]", "its"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"hp1", "=", 
+   RowBox[{"Last", "[", "wtlist", "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.402398871421875*^9, 3.4023988715625*^9}, {
+  3.4029325242458305`*^9, 3.4029325271363077`*^9}, {3.4029332311603928`*^9, 
+  3.402933231285525*^9}},
+ CellTags->"b:0.2.0"],
+
+Cell["\<\
+We will use the first iteration of the transform to approximate the noise \
+level.As stated in the book,we cannot be sure the noise incurred by the \
+recording device is Gaussian white noise.  We first compute the Median \
+Absolute Deviation and then formula (9.10) from the text to approximate the \
+noise:\
+\>", "Text",
+ CellTags->"b:0.2.0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"sigma", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"MAD", "[", "hp1", "]"}], "/", ".6745"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{
+   "\"\<We approximate the noise level to be \>\"", ",", "sigma", ",", 
+    "\"\<.\>\""}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.40239887378125*^9, 3.402398874015625*^9}, {
+  3.402933229611884*^9, 3.4029332297370167`*^9}},
+ CellTags->"b:0.2.0"],
+
+Cell["\<\
+We now compute the universal threshold given in Section 9.2.  We need the \
+length of the wavelet transform minus the length of the lowpass portion.\
+\>", "Text",
+ CellTags->"b:0.2.0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{
+    RowBox[{"Length", "[", "wt", "]"}], "-", 
+    RowBox[{"Length", "[", 
+     RowBox[{"First", "[", "wtlist", "]"}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"lambda", " ", "=", 
+   RowBox[{"sigma", "*", 
+    RowBox[{"Sqrt", "[", 
+     RowBox[{"2", "*", 
+      RowBox[{"Log", "[", " ", "n", "]"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{
+   "\"\<The universal threshold value is lambda = \>\"", ",", "lambda", ",", 
+    "\"\<.\>\""}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.4023988755*^9, 3.402398875765625*^9}, {
+  3.4029332282041492`*^9, 3.4029332284544134`*^9}},
+ CellTags->"b:0.2.0"],
+
+Cell["\<\
+We next apply the shrinkage function (using the universal threshold) to the \
+highpass portions of the wavelet transform.  \
+\>", "Text",
+ CellTags->"b:0.2.0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"lp", "=", 
+   RowBox[{"First", "[", "wtlist", "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"hp", "=", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{"Drop", "[", 
+     RowBox[{"wtlist", ",", "1"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"newhp", "=", 
+   RowBox[{"Map", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"ShrinkageFunction", "[", 
+       RowBox[{"#", ",", "lambda"}], "]"}], "&"}], ",", "hp"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"newwt", " ", "=", " ", 
+   RowBox[{"Join", "[", 
+    RowBox[{"lp", ",", "newhp"}], "]"}]}], ";"}], "\n", 
+ RowBox[{"WaveletVectorPlot", "[", 
+  RowBox[{"wt", ",", 
+   RowBox[{"NumIterations", "\[Rule]", "its"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+   RowBox[{"PlotLabel", "->", "\"\<Original Wavelet Transform\>\""}], ",", 
+   RowBox[{"UseColors", "->", "True"}]}], "]"}], "\n", 
+ RowBox[{"WaveletVectorPlot", "[", 
+  RowBox[{"newwt", ",", 
+   RowBox[{"NumIterations", "\[Rule]", "its"}], ",", 
+   RowBox[{"PlotLabel", "->", "\"\<Thresholding\>\""}], ",", 
+   RowBox[{"UseColors", "->", "True"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.40232769796875*^9, 3.402327737484375*^9}, {
+  3.40239887825*^9, 3.402398878640625*^9}, {3.4029325419792976`*^9, 
+  3.402932542947998*^9}, {3.402933226499226*^9, 3.4029332266399994`*^9}},
+ CellTags->"b:0.2.0"],
+
+Cell["\<\
+As a last step, we compute four iterations of the wavelet transform to obtain \
+the denoised signal.\
+\>", "Text",
+ CellTags->"b:0.2.0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"denoised", "=", 
+   RowBox[{"IWT1D", "[", 
+    RowBox[{"newwt", ",", 
+     RowBox[{"Coif", "[", "1", "]"}], ",", 
+     RowBox[{"NumIterations", "\[Rule]", "its"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"v", ",", 
+   RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+   RowBox[{"PlotLabel", "->", "\"\<Original Speeds\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"denoised", ",", 
+   RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+   RowBox[{"PlotLabel", "->", "\"\<Denoised Speeds\>\""}]}], "]"}]}], "Input",\
+
+ CellChangeTimes->{{3.40232775184375*^9, 3.40232776103125*^9}, {
+  3.402398880890625*^9, 3.40239888125*^9}, {3.4029325633219547`*^9, 
+  3.4029325637125597`*^9}, {3.4029332248412266`*^9, 3.402933224966359*^9}},
+ CellTags->"b:0.2.0"],
+
+Cell["\<\
+We can perform the denoising using built - in routines from the \
+DiscreteWavelets package :\
+\>", "Text",
+ CellChangeTimes->{{3.4029264106535635`*^9, 3.402926418481238*^9}, {
+  3.402927020371393*^9, 3.4029270252930164`*^9}},
+ CellTags->"b:0.2.0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"univ", "=", 
+   RowBox[{"UniversalThreshold", "[", 
+    RowBox[{"v", ",", 
+     RowBox[{"N", "[", 
+      RowBox[{"Coif", "[", "1", "]"}], "]"}], ",", 
+     RowBox[{"NumIterations", "\[Rule]", "its"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"denoised", "=", 
+    RowBox[{"WaveletShrinkage", "[", 
+     RowBox[{"v", ",", 
+      RowBox[{"N", "[", 
+       RowBox[{"Coif", "[", "1", "]"}], "]"}], ",", "univ", ",", 
+      RowBox[{"NumIterations", "\[Rule]", "its"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"denoised", ",", 
+   RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+   RowBox[{"PlotLabel", "->", "\"\<Denoised Speeds\>\""}]}], "]"}]}], "Input",\
+
+ CellChangeTimes->{{3.4029324928724365`*^9, 3.40293251643373*^9}, {
+  3.4029326042573586`*^9, 3.40293264064612*^9}, {3.402933222917322*^9, 
+  3.4029332231363034`*^9}},
+ CellTags->"b:0.2.0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Things To Try:", "Subsubsection",
+ CellTags->"b:0.2.0"],
+
+Cell["\<\
+You might wish to try other filters and different numbers of iterations.  It \
+is also intereseting to try values for lambda other than the universal \
+threshold.  A couple are suggested in the Problem Set for Section 9.3.\
+\>", "Text",
+ CellTags->"b:0.2.0"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Audio Denoising", "Subsection",
+ CellTags->"b:0.2.1"],
+
+Cell[CellGroupData[{
+
+Cell["Text Reference: ", "Subsubsection",
+ CellTags->"b:0.2.1"],
+
+Cell["Sections 9.1, 93", "Text",
+ CellTags->"b:0.2.1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Process", "Subsubsection",
+ CellTags->"b:0.2.1"],
+
+Cell["\<\
+We first import an audio file.  To generate white noise, we need some \
+statistics packages.  To hear the audio, we need the Miscellaneous`Audio` \
+package.\
+\>", "Text",
+ CellTags->"b:0.2.1"],
+
+Cell[BoxData[{
+ RowBox[{"<<", 
+  "DiscreteWavelets`DiscreteWavelets`"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "Audio`"}]}], "Input",
+ CellChangeTimes->{{3.40232777325*^9, 3.402327781234375*^9}, {
+  3.40232786396875*^9, 3.402327864359375*^9}, {3.4023988848125*^9, 
+  3.402398885046875*^9}, {3.4029332201957016`*^9, 3.4029332203521166`*^9}},
+ CellTags->"b:0.2.1"],
+
+Cell["Let's list the audio names and information.", "Text",
+ CellTags->"b:0.2.1"],
+
+Cell[BoxData[{
+ RowBox[{"AudioList", "[", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"d", "=", 
+   RowBox[{"AudioNames", "[", "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.4023988865*^9, 3.402398886703125*^9}, {
+  3.40293321892874*^9, 3.4029332190695133`*^9}},
+ CellTags->"b:0.2.1"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"file", "=", 
+   RowBox[{"d", "[", 
+    RowBox[{"[", "2", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", " ", "=", " ", 
+   RowBox[{"ReadSoundFile", "[", 
+    RowBox[{"file", ",", 
+     RowBox[{"PrintHeader", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"ChopVector", "[", 
+    RowBox[{"data", ",", 
+     RowBox[{"PowersOfTwo", "\[Rule]", "4"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<The length of the audio clip is \>\"", ",", 
+    RowBox[{"Length", "[", "data", "]"}], ",", "\"\<.\>\""}], "]"}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.40239888846875*^9, 3.402398888609375*^9}, {
+  3.4029332175835705`*^9, 3.402933218037174*^9}},
+ CellTags->"b:0.2.1"],
+
+Cell["The cell below plays the clip.", "Text",
+ CellTags->"b:0.2.1"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"srate", "=", "22050"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlay", "[", 
+  RowBox[{"data", ",", 
+   RowBox[{"SampleRate", "\[Rule]", "srate"}]}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.402327795953125*^9, {3.40239889065625*^9, 3.402398890921875*^9}, {
+   3.40293319922045*^9, 3.402933200768958*^9}},
+ CellTags->"b:0.2.1"],
+
+Cell["\<\
+We now generate some Gaussian white noise and add it to the sound clip.\
+\>", "Text",
+ CellTags->"b:0.2.1"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{"Length", "[", "data", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"nd", "=", 
+   RowBox[{"NormalDistribution", "[", 
+    RowBox[{"0.", ",", "1."}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SeedRandom", "[", "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"noise", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Random", "[", "nd", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"k", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sigma", "=", "1000."}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"v", "=", 
+   RowBox[{"data", "+", 
+    RowBox[{"sigma", "*", "noise"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlay", "[", 
+  RowBox[{"v", ",", 
+   RowBox[{"SampleRate", "\[Rule]", "srate"}]}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.40232780490625*^9, {3.402398892640625*^9, 3.402398892765625*^9}, {
+   3.4029331981411867`*^9, 3.4029331982193937`*^9}},
+ CellTags->"b:0.2.1"],
+
+Cell["\<\
+We next compute four iterations of the wavelet transform.  We'll use the \
+Coiflet C6 filter.\
+\>", "Text",
+ CellTags->"b:0.2.1"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"its", "=", "4"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"wt", "=", 
+   RowBox[{"WT1D", "[", 
+    RowBox[{
+     RowBox[{"N", "[", "v", "]"}], ",", 
+     RowBox[{"Coif", "[", "1", "]"}], ",", 
+     RowBox[{"NumIterations", "\[Rule]", "its"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"WaveletVectorPlot", "[", 
+  RowBox[{"wt", ",", 
+   RowBox[{"NumIterations", "\[Rule]", "its"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+   RowBox[{"PlotLabel", "->", "\"\<Wavelet Transform\>\""}], ",", 
+   RowBox[{"UseColors", "->", "True"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.40232781109375*^9, 3.4023278406875*^9}, {
+  3.402398894375*^9, 3.402398894515625*^9}, {3.4029326863000326`*^9, 
+  3.40293268919051*^9}, {3.4029331965770364`*^9, 3.4029331966239605`*^9}},
+ CellTags->"b:0.2.1"],
+
+Cell["\<\
+Our first task is to estimate the noise level.  Of course, we know the noise \
+level but it is good to see how the estimator works.\
+\>", "Text",
+ CellTags->"b:0.2.1"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"wtlist", "=", 
+   RowBox[{"WaveletVectorToList", "[", 
+    RowBox[{"wt", ",", 
+     RowBox[{"NumIterations", "\[Rule]", "its"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.402398896609375*^9, 3.4023988968125*^9}, {
+  3.4029326954089413`*^9, 3.4029326955026865`*^9}, {3.402933194371585*^9, 
+  3.4029331944341507`*^9}},
+ CellTags->"b:0.2.1"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"hp1", "=", 
+   RowBox[{"Last", "[", "wtlist", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sigmahat", "=", 
+   RowBox[{
+    RowBox[{"MAD", "[", "hp1", "]"}], "/", ".6745"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{
+   "\"\<The estimate of the noise level is \>\"", ",", "sigmahat", ",", 
+    "\"\<.\>\""}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.402398897828125*^9, 3.40239889796875*^9}, {
+  3.4029331931046233`*^9, 3.402933193214114*^9}},
+ CellTags->"b:0.2.1"],
+
+Cell["\<\
+In order to determine whether to use the SureShrink threshold or the \
+VisuShrink universal threshold on the highpass portions, we compute s and u \
+for each highpass portion.  See Section 9.3 for more details.  Recall that in \
+order to use Stein's result, we must have variance 1.  That is why the values \
+in s are divided by the noise estimator.\
+\>", "Text",
+ CellTags->"b:0.2.1"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"hp", " ", "=", " ", 
+   RowBox[{"Drop", "[", 
+    RowBox[{"wtlist", ",", "1"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"s", "=", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Total", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"hp", "[", 
+         RowBox[{"[", "j", "]"}], "]"}], "^", "2"}], "-", "1"}], "]"}], "/", 
+     RowBox[{"(", 
+      RowBox[{"sigmahat", "*", 
+       RowBox[{"Length", "[", 
+        RowBox[{"hp", "[", 
+         RowBox[{"[", "j", "]"}], "]"}], "]"}]}], ")"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"j", ",", "1", ",", "its"}], "}"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"u", "=", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"3.", "*", 
+     RowBox[{
+      RowBox[{"Log", "[", 
+       RowBox[{"2", ",", 
+        RowBox[{"Length", "[", 
+         RowBox[{"hp", "[", 
+          RowBox[{"[", "j", "]"}], "]"}], "]"}]}], "]"}], "/", 
+      RowBox[{"(", 
+       RowBox[{"2", "*", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{"Length", "[", 
+          RowBox[{"hp", "[", 
+           RowBox[{"[", "j", "]"}], "]"}], "]"}], "]"}]}], ")"}]}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"j", ",", "1", ",", "its"}], "}"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.402398899703125*^9, 3.40239889984375*^9}, {
+  3.4029327257198896`*^9, 3.402932726860456*^9}, {3.4029331916812468`*^9, 
+  3.402933191806379*^9}},
+ CellTags->"b:0.2.1"],
+
+Cell["\<\
+Note in each case, s is less than u, so we will use the SureShrink threshold \
+for each highpass portion.  We compute them below.  Notice we now multiply by \
+the noise level.\
+\>", "Text",
+ CellTags->"b:0.2.1"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"lambda", "=", 
+   RowBox[{"sigmahat", "*", 
+    RowBox[{"Reverse", "[", 
+     RowBox[{"Map", "[", 
+      RowBox[{"DonohoSure", ",", "hp"}], "]"}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{
+     "\"\<The value of the threshold for iteration \>\"", ",", "k", ",", 
+      "\"\< is \>\"", ",", 
+      RowBox[{"lambda", "[", 
+       RowBox[{"[", "k", "]"}], "]"}], ",", "\"\<.\>\""}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "1", ",", "its"}], "}"}]}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.402327934375*^9, 3.402327934734375*^9}, {
+  3.402398902296875*^9, 3.4023989025*^9}, {3.4029327327664037`*^9, 
+  3.4029327328913975`*^9}, {3.4029331900388894`*^9, 3.402933190117097*^9}},
+ CellTags->"b:0.2.1"],
+
+Cell["\<\
+We now apply the shrinkage function (with the appropriate tolerance) to each \
+highpass portion of the transform.\
+\>", "Text",
+ CellTags->"b:0.2.1"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"newhp", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Map", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"ShrinkageFunction", "[", 
+         RowBox[{"#", ",", 
+          RowBox[{"lambda", "[", 
+           RowBox[{"[", "k", "]"}], "]"}]}], "]"}], "&"}], ",", 
+       RowBox[{"hp", "[", 
+        RowBox[{"[", "k", "]"}], "]"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"k", ",", "1", ",", "its"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"lp", "=", 
+   RowBox[{"First", "[", "wtlist", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"newwt", "=", 
+   RowBox[{"Join", "[", 
+    RowBox[{"lp", ",", 
+     RowBox[{"Flatten", "[", "newhp", "]"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"WaveletVectorPlot", "[", 
+  RowBox[{"wt", ",", 
+   RowBox[{"NumIterations", "\[Rule]", "its"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+   RowBox[{"PlotLabel", "->", "\"\<Wavelet Transform\>\""}], ",", 
+   RowBox[{"UseColors", "->", "True"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"WaveletVectorPlot", "[", 
+  RowBox[{"newwt", ",", 
+   RowBox[{"NumIterations", "\[Rule]", "its"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+   RowBox[{"PlotLabel", "->", "\"\<Thresholding\>\""}], ",", 
+   RowBox[{"UseColors", "->", "True"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.40232789015625*^9, 3.402327898765625*^9}, {
+  3.40232793159375*^9, 3.402327938890625*^9}, {3.402398943328125*^9, 
+  3.402398943609375*^9}, {3.40293273595374*^9, 3.4029327654834785`*^9}, {
+  3.4029331887250032`*^9, 3.4029331888501353`*^9}},
+ CellTags->"b:0.2.1"],
+
+Cell["\<\
+Finally, we apply the inverse wavelet transform and play the denoised audio \
+clip.\
+\>", "Text",
+ CellTags->"b:0.2.1"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"denoised", "=", 
+   RowBox[{"IWT1D", "[", 
+    RowBox[{"newwt", ",", 
+     RowBox[{"Coif", "[", "1", "]"}], ",", 
+     RowBox[{"NumIterations", "\[Rule]", "its"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.40232792953125*^9, 3.402327930015625*^9}, {
+  3.402398945375*^9, 3.40239894553125*^9}, {3.402932775545463*^9, 
+  3.4029327776703544`*^9}, {3.402933186769816*^9, 3.4029331868793063`*^9}},
+ CellTags->"b:0.2.1"],
+
+Cell["Here is the original noisy clip:", "Text",
+ CellTags->"b:0.2.1"],
+
+Cell[BoxData[
+ RowBox[{"ListPlay", "[", 
+  RowBox[{"v", ",", 
+   RowBox[{"SampleRate", "\[Rule]", "srate"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.40232790690625*^9, 3.40232792846875*^9}, {
+  3.4023989475625*^9, 3.402398948046875*^9}, {3.402933185643628*^9, 
+  3.402933185737477*^9}},
+ CellTags->"b:0.2.1"],
+
+Cell["Here is the denoised clip.", "Text",
+ CellTags->"b:0.2.1"],
+
+Cell[BoxData[
+ RowBox[{"ListPlay", "[", 
+  RowBox[{"denoised", ",", 
+   RowBox[{"SampleRate", "\[Rule]", "srate"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.40232791184375*^9, 3.402327925859375*^9}, {
+  3.402398950234375*^9, 3.4023989505*^9}, {3.4029331845487227`*^9, 
+  3.4029331846894965`*^9}},
+ CellTags->"b:0.2.1"],
+
+Cell[TextData[{
+ "We could perform the audio denoising using built -in functions from the ",
+ StyleBox["DiscreteWavelets",
+  FontWeight->"Bold"],
+ " package:"
+}], "Text",
+ CellChangeTimes->{{3.402932829980176*^9, 3.402932857728755*^9}},
+ CellTags->"b:0.2.1"],
+
+Cell[BoxData[{
+ RowBox[{"<<", "DiscreteWavelets`DiscreteWavelets`"}], "\[IndentingNewLine]", 
+
+ RowBox[{
+  RowBox[{"<<", "Audio`"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Get", " ", "the", " ", "available", " ", "audio", " ", "file", " ", 
+    "names"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"AudioList", "[", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"d", "=", 
+    RowBox[{"AudioNames", "[", "]"}]}], ";"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Read", " ", "the", " ", "audio", " ", "file", " ", "and", " ", "trim", 
+    " ", "the", " ", "length"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"file", "=", 
+   RowBox[{"d", "[", 
+    RowBox[{"[", "2", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", " ", "=", " ", 
+   RowBox[{"ReadSoundFile", "[", 
+    RowBox[{"file", ",", 
+     RowBox[{"PrintHeader", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"ChopVector", "[", 
+    RowBox[{"data", ",", 
+     RowBox[{"PowersOfTwo", "\[Rule]", "4"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"srate", "=", "22050"}], ";"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Add", " ", "noise", " ", "to", " ", "the", " ", "clip"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{"Length", "[", "data", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"nd", "=", 
+   RowBox[{"NormalDistribution", "[", 
+    RowBox[{"0.", ",", "1."}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SeedRandom", "[", "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"noise", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Random", "[", "nd", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"k", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sigma", "=", "1000."}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"v", "=", 
+    RowBox[{"data", "+", 
+     RowBox[{"sigma", "*", "noise"}]}]}], ";"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Perform", " ", "VisuShrink"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"its", "=", "4"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"univ", "=", 
+   RowBox[{"UniversalThreshold", "[", 
+    RowBox[{"v", ",", 
+     RowBox[{"N", "[", 
+      RowBox[{"Coif", "[", "1", "]"}], "]"}], ",", 
+     RowBox[{"NumIterations", "\[Rule]", "its"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Visu", "=", 
+    RowBox[{"WaveletShrinkage", "[", 
+     RowBox[{"v", ",", 
+      RowBox[{"N", "[", 
+       RowBox[{"Coif", "[", "1", "]"}], "]"}], ",", "univ", ",", 
+      RowBox[{"NumIterations", "\[Rule]", "its"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Perform", " ", "SureShrink"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Sure", " ", "=", " ", 
+    RowBox[{"SureShrink", "[", 
+     RowBox[{"v", ",", 
+      RowBox[{"N", "[", 
+       RowBox[{"Coif", "[", "1", "]"}], "]"}], ",", 
+      RowBox[{"NumIterations", "\[Rule]", "its"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", "\"\<Original Clip:\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ListPlay", "[", 
+   RowBox[{"data", ",", 
+    RowBox[{"SampleRate", "\[Rule]", "srate"}]}], "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", "\"\<Noisy Clip:\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ListPlay", "[", 
+   RowBox[{"v", ",", 
+    RowBox[{"SampleRate", "\[Rule]", "srate"}]}], "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", "\"\<VisuShrink Denoised:\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ListPlay", "[", 
+   RowBox[{"Visu", ",", 
+    RowBox[{"SampleRate", "\[Rule]", "srate"}]}], "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", "\"\<SureShrink Denoised:\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlay", "[", 
+  RowBox[{"Sure", ",", 
+   RowBox[{"SampleRate", "\[Rule]", "srate"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.402932870587472*^9, 3.402933110220315*^9}, {
+  3.4029331812170835`*^9, 3.402933213454215*^9}, {3.4034668739466934`*^9, 
+  3.403466890476462*^9}},
+ CellTags->"b:0.2.1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Things To Try:", "Subsubsection",
+ CellTags->"b:0.2.1"],
+
+Cell[TextData[{
+ "You might wish to try other filters and different numbers of iterations.  \
+It is also fun to try values for lambda other than to the universal \
+threshold.  A couple are suggested in the Problem Set for Section 9.3.    You \
+can also try giving a tolerance for each highpass portion instead of just the \
+single tolerance value.  See the documentation on ",
+ StyleBox["WaveletShrinkage",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.4029331296626997`*^9, 3.402933162181378*^9}, 
+   3.4029340015287876`*^9},
+ CellTags->"b:0.2.1"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Image Denoising", "Section",
+ CellChangeTimes->{{3.402933278714058*^9, 3.4029332791986217`*^9}},
+ CellTags->"b:0.3"],
+
+Cell["We can denoise an image using VisuShrink and SureShrink.", "Text",
+ CellChangeTimes->{{3.402933305552656*^9, 3.402933315056365*^9}},
+ CellTags->"b:0.3"],
+
+Cell[CellGroupData[{
+
+Cell["Text Reference: ", "Subsubsection",
+ CellTags->"b:0.3"],
+
+Cell["Sections 9.1, 9.2, 9.3", "Text",
+ CellChangeTimes->{{3.40293329267263*^9, 3.402933295017295*^9}},
+ CellTags->"b:0.3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Process", "Subsubsection",
+ CellTags->"b:0.3"],
+
+Cell["We first import an image.", "Text",
+ CellChangeTimes->{{3.402933319479966*^9, 3.402933321152494*^9}},
+ CellTags->"b:0.3"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"<<", "DiscreteWavelets`DiscreteWavelets`"}], 
+  "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"gray", "=", 
+   RowBox[{"ImageNames", "[", 
+    RowBox[{
+     RowBox[{"ImageType", "\[Rule]", "GrayScale"}], ",", 
+     RowBox[{"ListThumbnails", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A", "=", 
+   RowBox[{"ImageRead", "[", 
+    RowBox[{"gray", "[", 
+     RowBox[{"[", "4", "]"}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p1", "=", 
+   RowBox[{"ImagePlot", "[", 
+    RowBox[{"A", ",", 
+     RowBox[{"PlotLabel", "\[Rule]", "\"\<Original Image\>\""}]}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.402327674328125*^9, 3.402327678859375*^9}, {
+  3.40239886959375*^9, 3.402398869734375*^9}, {3.402933232787109*^9, 
+  3.402933232943524*^9}, {3.4029333271548367`*^9, 3.4029334053572297`*^9}, {
+  3.402933653035817*^9, 3.4029336584741526`*^9}, {3.4029339485875607`*^9, 
+  3.4029339487125697`*^9}},
+ CellTags->"b:0.3"],
+
+Cell["Next we add some noise to the image.", "Text",
+ CellChangeTimes->{{3.4029334077800503`*^9, 3.402933412641322*^9}},
+ CellTags->"b:0.3"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"rows", ",", "cols"}], "}"}], "=", 
+   RowBox[{"Dimensions", "[", "A", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"nd", "=", 
+   RowBox[{"NormalDistribution", "[", 
+    RowBox[{"0.", ",", "1."}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SeedRandom", "[", "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"noise", "=", 
+   RowBox[{"Partition", "[", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"Random", "[", "nd", "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"k", ",", "1", ",", 
+         RowBox[{"rows", "*", "cols"}]}], "}"}]}], "]"}], ",", "cols"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sigma", "=", "25."}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"B", "=", 
+   RowBox[{"A", "+", 
+    RowBox[{"sigma", "*", "noise"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p2", "=", 
+   RowBox[{"ImagePlot", "[", 
+    RowBox[{"B", ",", 
+     RowBox[{"PlotLabel", "\[Rule]", "\"\<Noisy Image\>\""}]}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.402327674328125*^9, 3.402327678859375*^9}, {
+   3.40239886959375*^9, 3.402398869734375*^9}, {3.402933232787109*^9, 
+   3.402933232943524*^9}, {3.4029333271548367`*^9, 3.4029334556581097`*^9}, {
+   3.402933500910144*^9, 3.402933517354061*^9}, {3.4029336173115807`*^9, 
+   3.402933671569914*^9}, 3.4029338765356135`*^9, {3.4029339469155684`*^9, 
+   3.402933947040577*^9}},
+ CellTags->"b:0.3"],
+
+Cell["We denoise the image using the VisuShrink method :", "Text",
+ CellChangeTimes->{{3.402933678680381*^9, 3.402933699980527*^9}, 
+   3.4029337803678727`*^9},
+ CellTags->"b:0.3"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"its", "=", "4"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"univ", "=", 
+   RowBox[{"UniversalThreshold", "[", 
+    RowBox[{"B", ",", 
+     RowBox[{"N", "[", 
+      RowBox[{"Coif", "[", "2", "]"}], "]"}], ",", 
+     RowBox[{"NumIterations", "\[Rule]", "its"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Visu", "=", 
+   RowBox[{"WaveletShrinkage", "[", 
+    RowBox[{"B", ",", 
+     RowBox[{"N", "[", 
+      RowBox[{"Coif", "[", "2", "]"}], "]"}], ",", "univ", ",", 
+     RowBox[{"NumIterations", "\[Rule]", "its"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p3", "=", 
+   RowBox[{"ImagePlot", "[", 
+    RowBox[{"Visu", ",", 
+     RowBox[{"PlotLabel", "\[Rule]", "\"\<VisuShrink Denoised\>\""}]}], 
+    "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.40293370495004*^9, 3.402933770960178*^9}, 
+   3.402933860471983*^9, {3.4029339453685837`*^9, 3.402933945509219*^9}},
+ CellTags->"b:0.3"],
+
+Cell["Next we denoise the image using the SureShrink method :", "Text",
+ CellChangeTimes->{{3.402933678680381*^9, 3.402933699980527*^9}, {
+  3.4029337824306893`*^9, 3.402933786040619*^9}},
+ CellTags->"b:0.3"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Sure", "=", 
+   RowBox[{"SureShrink", "[", 
+    RowBox[{"B", ",", 
+     RowBox[{"N", "[", 
+      RowBox[{"Coif", "[", "2", "]"}], "]"}], ",", 
+     RowBox[{"NumIterations", "\[Rule]", "its"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p4", "=", 
+   RowBox[{"ImagePlot", "[", 
+    RowBox[{"Sure", ",", 
+     RowBox[{"PlotLabel", "\[Rule]", "\"\<SureShrink Denoised\>\""}]}], 
+    "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.40293370495004*^9, 3.402933812857237*^9}, {
+  3.4029338995684853`*^9, 3.40293389999039*^9}, {3.4029339437278433`*^9, 
+  3.4029339439934874`*^9}},
+ CellTags->"b:0.3"],
+
+Cell["\<\
+Plot all relevant images.  The SureShrink methods work much better than the \
+VisuShrink method.\
+\>", "Text",
+ CellChangeTimes->{{3.4029338230619297`*^9, 3.402933828640911*^9}, {
+  3.402933915944638*^9, 3.402933928914301*^9}},
+ CellTags->"b:0.3"],
+
+Cell[BoxData[
+ RowBox[{"GraphicsGrid", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"p1", ",", "p2", ",", "p3", ",", "p4"}], "}"}], "}"}], ",", 
+   RowBox[{"Frame", "\[Rule]", "All"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.4029338350012627`*^9, 3.402933846736641*^9}, {
+  3.40293394189959*^9, 3.4029339429309125`*^9}},
+ CellTags->"b:0.3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Things To Try:", "Subsubsection",
+ CellTags->"b:0.3"],
+
+Cell[TextData[{
+ "Try different images - some are easier to denoise than others.  Try \
+different noise levels as well.  You might wish to try other filters and \
+different numbers of iterations.  It is also fun to try values for lambda \
+other than to the universal threshold.  A couple are suggested in the Problem \
+Set for Section 9.3.    You can also try giving a tolerance for each highpass \
+portion instead of just the single tolerance value.  See the documentation on \
+",
+ StyleBox["WaveletShrinkage",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.4029331296626997`*^9, 3.402933162181378*^9}, {
+  3.402933973495564*^9, 3.402933989762334*^9}, {3.4029340199988375`*^9, 
+  3.4029340399221153`*^9}},
+ CellTags->"b:0.3"]
+}, Open  ]]
+}, Closed]]
+}, Open  ]]
+},
+WindowSize->{1016, 665},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+ShowSelection->True,
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (April 20, 2007)",
+StyleDefinitions->FrontEnd`FileName[{"Creative"}, "NaturalColor.nb", 
+  CharacterEncoding -> "WindowsANSI"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "b:0.0.0"->{
+  Cell[712, 31, 64, 1, 37, "Subsection",
+   CellTags->"b:0.0.0"],
+  Cell[801, 36, 63, 1, 27, "Subsubsection",
+   CellTags->"b:0.0.0"],
+  Cell[867, 39, 49, 1, 29, "Text",
+   CellTags->"b:0.0.0"],
+  Cell[953, 45, 54, 1, 27, "Subsubsection",
+   CellTags->"b:0.0.0"],
+  Cell[1010, 48, 79, 1, 29, "Text",
+   CellTags->"b:0.0.0"],
+  Cell[1092, 51, 795, 22, 102, "Input",
+   CellTags->"b:0.0.0"],
+  Cell[1890, 75, 449, 14, 47, "Text",
+   CellTags->"b:0.0.0"],
+  Cell[2342, 91, 813, 23, 102, "Input",
+   CellTags->"b:0.0.0"],
+  Cell[3158, 116, 145, 4, 29, "Text",
+   CellTags->"b:0.0.0"],
+  Cell[3306, 122, 944, 29, 102, "Input",
+   CellTags->"b:0.0.0"],
+  Cell[4253, 153, 269, 5, 47, "Text",
+   CellTags->"b:0.0.0"],
+  Cell[4525, 160, 587, 17, 62, "Input",
+   CellTags->"b:0.0.0"],
+  Cell[5149, 182, 61, 1, 27, "Subsubsection",
+   CellTags->"b:0.0.0"],
+  Cell[5213, 185, 213, 5, 29, "Text",
+   CellTags->"b:0.0.0"]},
+ "b:0.0.1"->{
+  Cell[5475, 196, 75, 1, 37, "Subsection",
+   CellTags->"b:0.0.1"],
+  Cell[5575, 201, 63, 1, 27, "Subsubsection",
+   CellTags->"b:0.0.1"],
+  Cell[5641, 204, 49, 1, 29, "Text",
+   CellTags->"b:0.0.1"],
+  Cell[5727, 210, 54, 1, 27, "Subsubsection",
+   CellTags->"b:0.0.1"],
+  Cell[5784, 213, 79, 1, 29, "Text",
+   CellTags->"b:0.0.1"],
+  Cell[5866, 216, 766, 23, 122, "Input",
+   CellTags->"b:0.0.1"],
+  Cell[6635, 241, 110, 3, 29, "Text",
+   CellTags->"b:0.0.1"],
+  Cell[6748, 246, 693, 19, 82, "Input",
+   CellTags->"b:0.0.1"],
+  Cell[7444, 267, 344, 6, 47, "Text",
+   CellTags->"b:0.0.1"],
+  Cell[7791, 275, 276, 7, 41, "Input",
+   CellTags->"b:0.0.1"],
+  Cell[8070, 284, 219, 5, 47, "Text",
+   CellTags->"b:0.0.1"],
+  Cell[8292, 291, 2506, 74, 402, "Input",
+   CellTags->"b:0.0.1"],
+  Cell[10801, 367, 149, 4, 29, "Text",
+   CellTags->"b:0.0.1"],
+  Cell[10953, 373, 411, 13, 62, "Input",
+   CellTags->"b:0.0.1"],
+  Cell[11367, 388, 116, 3, 29, "Text",
+   CellTags->"b:0.0.1"],
+  Cell[11486, 393, 886, 29, 82, "Input",
+   CellTags->"b:0.0.1"],
+  Cell[12375, 424, 126, 4, 29, "Text",
+   CellTags->"b:0.0.1"],
+  Cell[12504, 430, 698, 17, 82, "Input",
+   CellTags->"b:0.0.1"],
+  Cell[13205, 449, 48, 1, 41, "Input",
+   CellTags->"b:0.0.1"],
+  Cell[13256, 452, 268, 5, 47, "Text",
+   CellTags->"b:0.0.1"],
+  Cell[13527, 459, 413, 12, 62, "Input",
+   CellTags->"b:0.0.1"],
+  Cell[13977, 476, 61, 1, 27, "Subsubsection",
+   CellTags->"b:0.0.1"],
+  Cell[14041, 479, 272, 6, 47, "Text",
+   CellTags->"b:0.0.1"]},
+ "b:0.1.0"->{
+  Cell[14435, 496, 71, 1, 37, "Subsection",
+   CellTags->"b:0.1.0"],
+  Cell[14531, 501, 63, 1, 27, "Subsubsection",
+   CellTags->"b:0.1.0"],
+  Cell[14597, 504, 49, 1, 29, "Text",
+   CellTags->"b:0.1.0"],
+  Cell[14683, 510, 54, 1, 27, "Subsubsection",
+   CellTags->"b:0.1.0"],
+  Cell[14740, 513, 161, 4, 29, "Text",
+   CellTags->"b:0.1.0"],
+  Cell[14904, 519, 430, 11, 62, "Input",
+   CellTags->"b:0.1.0"],
+  Cell[15337, 532, 770, 22, 82, "Input",
+   CellTags->"b:0.1.0"],
+  Cell[16110, 556, 427, 12, 51, "Text",
+   CellTags->"b:0.1.0"],
+  Cell[16540, 570, 621, 18, 82, "Input",
+   CellTags->"b:0.1.0"],
+  Cell[17164, 590, 299, 6, 47, "Text",
+   CellTags->"b:0.1.0"],
+  Cell[17466, 598, 690, 19, 122, "Input",
+   CellTags->"b:0.1.0"],
+  Cell[18159, 619, 89, 1, 29, "Text",
+   CellTags->"b:0.1.0"],
+  Cell[18251, 622, 1081, 31, 122, "Input",
+   CellTags->"b:0.1.0"],
+  Cell[19335, 655, 491, 8, 65, "Text",
+   CellTags->"b:0.1.0"],
+  Cell[19829, 665, 380, 10, 41, "Input",
+   CellTags->"b:0.1.0"],
+  Cell[20212, 677, 116, 3, 29, "Text",
+   CellTags->"b:0.1.0"],
+  Cell[20331, 682, 779, 19, 82, "Input",
+   CellTags->"b:0.1.0"],
+  Cell[21113, 703, 250, 7, 49, "Text",
+   CellTags->"b:0.1.0"],
+  Cell[21366, 712, 945, 26, 102, "Input",
+   CellTags->"b:0.1.0"],
+  Cell[22348, 743, 61, 1, 27, "Subsubsection",
+   CellTags->"b:0.1.0"],
+  Cell[22412, 746, 476, 8, 65, "Text",
+   CellTags->"b:0.1.0"]},
+ "b:0.1.1"->{
+  Cell[22937, 760, 67, 1, 37, "Subsection",
+   CellTags->"b:0.1.1"],
+  Cell[23029, 765, 63, 1, 27, "Subsubsection",
+   CellTags->"b:0.1.1"],
+  Cell[23095, 768, 49, 1, 29, "Text",
+   CellTags->"b:0.1.1"],
+  Cell[23181, 774, 54, 1, 27, "Subsubsection",
+   CellTags->"b:0.1.1"],
+  Cell[23238, 777, 161, 4, 29, "Text",
+   CellTags->"b:0.1.1"],
+  Cell[23402, 783, 1131, 33, 122, "Input",
+   CellTags->"b:0.1.1"],
+  Cell[24536, 818, 161, 4, 29, "Text",
+   CellTags->"b:0.1.1"],
+  Cell[24700, 824, 1003, 27, 102, "Input",
+   CellTags->"b:0.1.1"],
+  Cell[25706, 853, 430, 12, 51, "Text",
+   CellTags->"b:0.1.1"],
+  Cell[26139, 867, 1445, 43, 142, "Input",
+   CellTags->"b:0.1.1"],
+  Cell[27587, 912, 340, 6, 47, "Text",
+   CellTags->"b:0.1.1"],
+  Cell[27930, 920, 1777, 51, 282, "Input",
+   CellTags->"b:0.1.1"],
+  Cell[29710, 973, 89, 1, 29, "Text",
+   CellTags->"b:0.1.1"],
+  Cell[29802, 976, 2985, 87, 302, "Input",
+   CellTags->"b:0.1.1"],
+  Cell[32790, 1065, 491, 8, 65, "Text",
+   CellTags->"b:0.1.1"],
+  Cell[33284, 1075, 1016, 31, 82, "Input",
+   CellTags->"b:0.1.1"],
+  Cell[34303, 1108, 116, 3, 29, "Text",
+   CellTags->"b:0.1.1"],
+  Cell[34422, 1113, 749, 19, 82, "Input",
+   CellTags->"b:0.1.1"],
+  Cell[35174, 1134, 187, 6, 31, "Text",
+   CellTags->"b:0.1.1"],
+  Cell[35364, 1142, 686, 19, 41, "Input",
+   CellTags->"b:0.1.1"],
+  Cell[36053, 1163, 117, 3, 29, "Text",
+   CellTags->"b:0.1.1"],
+  Cell[36173, 1168, 1280, 37, 102, "Input",
+   CellTags->"b:0.1.1"],
+  Cell[37490, 1210, 61, 1, 27, "Subsubsection",
+   CellTags->"b:0.1.1"],
+  Cell[37554, 1213, 476, 8, 65, "Text",
+   CellTags->"b:0.1.1"]},
+ "b:0.2.0"->{
+  Cell[38157, 1232, 60, 1, 37, "Subsection",
+   CellTags->"b:0.2.0"],
+  Cell[38220, 1235, 401, 7, 65, "Text",
+   CellTags->"b:0.2.0"],
+  Cell[38646, 1246, 63, 1, 27, "Subsubsection",
+   CellTags->"b:0.2.0"],
+  Cell[38712, 1249, 55, 1, 29, "Text",
+   CellTags->"b:0.2.0"],
+  Cell[38804, 1255, 54, 1, 27, "Subsubsection",
+   CellTags->"b:0.2.0"],
+  Cell[38861, 1258, 227, 5, 47, "Text",
+   CellTags->"b:0.2.0"],
+  Cell[39091, 1265, 1696, 46, 222, "Input",
+   CellTags->"b:0.2.0"],
+  Cell[40790, 1313, 137, 4, 29, "Text",
+   CellTags->"b:0.2.0"],
+  Cell[40930, 1319, 782, 22, 102, "Input",
+   CellTags->"b:0.2.0"],
+  Cell[41715, 1343, 353, 7, 47, "Text",
+   CellTags->"b:0.2.0"],
+  Cell[42071, 1352, 462, 13, 62, "Input",
+   CellTags->"b:0.2.0"],
+  Cell[42536, 1367, 194, 4, 29, "Text",
+   CellTags->"b:0.2.0"],
+  Cell[42733, 1373, 732, 22, 82, "Input",
+   CellTags->"b:0.2.0"],
+  Cell[43468, 1397, 169, 4, 29, "Text",
+   CellTags->"b:0.2.0"],
+  Cell[43640, 1403, 1361, 35, 142, "Input",
+   CellTags->"b:0.2.0"],
+  Cell[45004, 1440, 146, 4, 29, "Text",
+   CellTags->"b:0.2.0"],
+  Cell[45153, 1446, 851, 21, 82, "Input",
+   CellTags->"b:0.2.0"],
+  Cell[46007, 1469, 257, 6, 29, "Text",
+   CellTags->"b:0.2.0"],
+  Cell[46267, 1477, 979, 26, 102, "Input",
+   CellTags->"b:0.2.0"],
+  Cell[47283, 1508, 61, 1, 27, "Subsubsection",
+   CellTags->"b:0.2.0"],
+  Cell[47347, 1511, 268, 5, 47, "Text",
+   CellTags->"b:0.2.0"]},
+ "b:0.2.1"->{
+  Cell[47664, 1522, 59, 1, 37, "Subsection",
+   CellTags->"b:0.2.1"],
+  Cell[47748, 1527, 63, 1, 27, "Subsubsection",
+   CellTags->"b:0.2.1"],
+  Cell[47814, 1530, 54, 1, 29, "Text",
+   CellTags->"b:0.2.1"],
+  Cell[47905, 1536, 54, 1, 27, "Subsubsection",
+   CellTags->"b:0.2.1"],
+  Cell[47962, 1539, 202, 5, 29, "Text",
+   CellTags->"b:0.2.1"],
+  Cell[48167, 1546, 363, 7, 62, "Input",
+   CellTags->"b:0.2.1"],
+  Cell[48533, 1555, 81, 1, 29, "Text",
+   CellTags->"b:0.2.1"],
+  Cell[48617, 1558, 293, 7, 62, "Input",
+   CellTags->"b:0.2.1"],
+  Cell[48913, 1567, 843, 24, 102, "Input",
+   CellTags->"b:0.2.1"],
+  Cell[49759, 1593, 68, 1, 29, "Text",
+   CellTags->"b:0.2.1"],
+  Cell[49830, 1596, 369, 9, 62, "Input",
+   CellTags->"b:0.2.1"],
+  Cell[50202, 1607, 117, 3, 29, "Text",
+   CellTags->"b:0.2.1"],
+  Cell[50322, 1612, 1039, 30, 162, "Input",
+   CellTags->"b:0.2.1"],
+  Cell[51364, 1644, 139, 4, 29, "Text",
+   CellTags->"b:0.2.1"],
+  Cell[51506, 1650, 854, 20, 82, "Input",
+   CellTags->"b:0.2.1"],
+  Cell[52363, 1672, 177, 4, 29, "Text",
+   CellTags->"b:0.2.1"],
+  Cell[52543, 1678, 381, 9, 41, "Input",
+   CellTags->"b:0.2.1"],
+  Cell[52927, 1689, 563, 16, 82, "Input",
+   CellTags->"b:0.2.1"],
+  Cell[53493, 1707, 395, 7, 65, "Text",
+   CellTags->"b:0.2.1"],
+  Cell[53891, 1716, 1437, 43, 82, "Input",
+   CellTags->"b:0.2.1"],
+  Cell[55331, 1761, 221, 5, 47, "Text",
+   CellTags->"b:0.2.1"],
+  Cell[55555, 1768, 843, 22, 62, "Input",
+   CellTags->"b:0.2.1"],
+  Cell[56401, 1792, 159, 4, 29, "Text",
+   CellTags->"b:0.2.1"],
+  Cell[56563, 1798, 1665, 42, 122, "Input",
+   CellTags->"b:0.2.1"],
+  Cell[58231, 1842, 129, 4, 29, "Text",
+   CellTags->"b:0.2.1"],
+  Cell[58363, 1848, 457, 10, 41, "Input",
+   CellTags->"b:0.2.1"],
+  Cell[58823, 1860, 70, 1, 29, "Text",
+   CellTags->"b:0.2.1"],
+  Cell[58896, 1863, 309, 7, 41, "Input",
+   CellTags->"b:0.2.1"],
+  Cell[59208, 1872, 64, 1, 29, "Text",
+   CellTags->"b:0.2.1"],
+  Cell[59275, 1875, 318, 7, 41, "Input",
+   CellTags->"b:0.2.1"],
+  Cell[59596, 1884, 258, 7, 29, "Text",
+   CellTags->"b:0.2.1"],
+  Cell[59857, 1893, 4674, 134, 822, "Input",
+   CellTags->"b:0.2.1"],
+  Cell[64568, 2032, 61, 1, 27, "Subsubsection",
+   CellTags->"b:0.2.1"],
+  Cell[64632, 2035, 564, 12, 65, "Text",
+   CellTags->"b:0.2.1"]},
+ "b:0.3"->{
+  Cell[65257, 2054, 122, 2, 75, "Section",
+   CellTags->"b:0.3"],
+  Cell[65382, 2058, 158, 2, 29, "Text",
+   CellTags->"b:0.3"],
+  Cell[65565, 2064, 61, 1, 27, "Subsubsection",
+   CellTags->"b:0.3"],
+  Cell[65629, 2067, 123, 2, 29, "Text",
+   CellTags->"b:0.3"],
+  Cell[65789, 2074, 52, 1, 27, "Subsubsection",
+   CellTags->"b:0.3"],
+  Cell[65844, 2077, 127, 2, 29, "Text",
+   CellTags->"b:0.3"],
+  Cell[65974, 2081, 1031, 27, 122, "Input",
+   CellTags->"b:0.3"],
+  Cell[67008, 2110, 140, 2, 29, "Text",
+   CellTags->"b:0.3"],
+  Cell[67151, 2114, 1514, 41, 162, "Input",
+   CellTags->"b:0.3"],
+  Cell[68668, 2157, 180, 3, 29, "Text",
+   CellTags->"b:0.3"],
+  Cell[68851, 2162, 980, 27, 102, "Input",
+   CellTags->"b:0.3"],
+  Cell[69834, 2191, 208, 3, 29, "Text",
+   CellTags->"b:0.3"],
+  Cell[70045, 2196, 653, 18, 62, "Input",
+   CellTags->"b:0.3"],
+  Cell[70701, 2216, 257, 6, 29, "Text",
+   CellTags->"b:0.3"],
+  Cell[70961, 2224, 361, 9, 41, "Input",
+   CellTags->"b:0.3"],
+  Cell[71359, 2238, 59, 1, 27, "Subsubsection",
+   CellTags->"b:0.3"],
+  Cell[71421, 2241, 741, 15, 65, "Text",
+   CellTags->"b:0.3"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"b:0.0.0", 72590, 2273},
+ {"b:0.0.1", 73514, 2302},
+ {"b:0.1.0", 75034, 2349},
+ {"b:0.1.1", 76441, 2392},
+ {"b:0.2.0", 78061, 2441},
+ {"b:0.2.1", 79489, 2484},
+ {"b:0.3", 81770, 2553}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 29, 0, 73, "Title"],
+Cell[CellGroupData[{
+Cell[644, 27, 43, 0, 75, "Section"],
+Cell[CellGroupData[{
+Cell[712, 31, 64, 1, 37, "Subsection",
+ CellTags->"b:0.0.0"],
+Cell[CellGroupData[{
+Cell[801, 36, 63, 1, 27, "Subsubsection",
+ CellTags->"b:0.0.0"],
+Cell[867, 39, 49, 1, 29, "Text",
+ CellTags->"b:0.0.0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[953, 45, 54, 1, 27, "Subsubsection",
+ CellTags->"b:0.0.0"],
+Cell[1010, 48, 79, 1, 29, "Text",
+ CellTags->"b:0.0.0"],
+Cell[1092, 51, 795, 22, 102, "Input",
+ CellTags->"b:0.0.0"],
+Cell[1890, 75, 449, 14, 47, "Text",
+ CellTags->"b:0.0.0"],
+Cell[2342, 91, 813, 23, 102, "Input",
+ CellTags->"b:0.0.0"],
+Cell[3158, 116, 145, 4, 29, "Text",
+ CellTags->"b:0.0.0"],
+Cell[3306, 122, 944, 29, 102, "Input",
+ CellTags->"b:0.0.0"],
+Cell[4253, 153, 269, 5, 47, "Text",
+ CellTags->"b:0.0.0"],
+Cell[4525, 160, 587, 17, 62, "Input",
+ CellTags->"b:0.0.0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5149, 182, 61, 1, 27, "Subsubsection",
+ CellTags->"b:0.0.0"],
+Cell[5213, 185, 213, 5, 29, "Text",
+ CellTags->"b:0.0.0"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5475, 196, 75, 1, 37, "Subsection",
+ CellTags->"b:0.0.1"],
+Cell[CellGroupData[{
+Cell[5575, 201, 63, 1, 27, "Subsubsection",
+ CellTags->"b:0.0.1"],
+Cell[5641, 204, 49, 1, 29, "Text",
+ CellTags->"b:0.0.1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5727, 210, 54, 1, 27, "Subsubsection",
+ CellTags->"b:0.0.1"],
+Cell[5784, 213, 79, 1, 29, "Text",
+ CellTags->"b:0.0.1"],
+Cell[5866, 216, 766, 23, 122, "Input",
+ CellTags->"b:0.0.1"],
+Cell[6635, 241, 110, 3, 29, "Text",
+ CellTags->"b:0.0.1"],
+Cell[6748, 246, 693, 19, 82, "Input",
+ CellTags->"b:0.0.1"],
+Cell[7444, 267, 344, 6, 47, "Text",
+ CellTags->"b:0.0.1"],
+Cell[7791, 275, 276, 7, 41, "Input",
+ CellTags->"b:0.0.1"],
+Cell[8070, 284, 219, 5, 47, "Text",
+ CellTags->"b:0.0.1"],
+Cell[8292, 291, 2506, 74, 402, "Input",
+ CellTags->"b:0.0.1"],
+Cell[10801, 367, 149, 4, 29, "Text",
+ CellTags->"b:0.0.1"],
+Cell[10953, 373, 411, 13, 62, "Input",
+ CellTags->"b:0.0.1"],
+Cell[11367, 388, 116, 3, 29, "Text",
+ CellTags->"b:0.0.1"],
+Cell[11486, 393, 886, 29, 82, "Input",
+ CellTags->"b:0.0.1"],
+Cell[12375, 424, 126, 4, 29, "Text",
+ CellTags->"b:0.0.1"],
+Cell[12504, 430, 698, 17, 82, "Input",
+ CellTags->"b:0.0.1"],
+Cell[13205, 449, 48, 1, 41, "Input",
+ CellTags->"b:0.0.1"],
+Cell[13256, 452, 268, 5, 47, "Text",
+ CellTags->"b:0.0.1"],
+Cell[13527, 459, 413, 12, 62, "Input",
+ CellTags->"b:0.0.1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13977, 476, 61, 1, 27, "Subsubsection",
+ CellTags->"b:0.0.1"],
+Cell[14041, 479, 272, 6, 47, "Text",
+ CellTags->"b:0.0.1"]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[14374, 492, 36, 0, 45, "Section"],
+Cell[CellGroupData[{
+Cell[14435, 496, 71, 1, 37, "Subsection",
+ CellTags->"b:0.1.0"],
+Cell[CellGroupData[{
+Cell[14531, 501, 63, 1, 27, "Subsubsection",
+ CellTags->"b:0.1.0"],
+Cell[14597, 504, 49, 1, 29, "Text",
+ CellTags->"b:0.1.0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14683, 510, 54, 1, 27, "Subsubsection",
+ CellTags->"b:0.1.0"],
+Cell[14740, 513, 161, 4, 29, "Text",
+ CellTags->"b:0.1.0"],
+Cell[14904, 519, 430, 11, 62, "Input",
+ CellTags->"b:0.1.0"],
+Cell[15337, 532, 770, 22, 82, "Input",
+ CellTags->"b:0.1.0"],
+Cell[16110, 556, 427, 12, 51, "Text",
+ CellTags->"b:0.1.0"],
+Cell[16540, 570, 621, 18, 82, "Input",
+ CellTags->"b:0.1.0"],
+Cell[17164, 590, 299, 6, 47, "Text",
+ CellTags->"b:0.1.0"],
+Cell[17466, 598, 690, 19, 122, "Input",
+ CellTags->"b:0.1.0"],
+Cell[18159, 619, 89, 1, 29, "Text",
+ CellTags->"b:0.1.0"],
+Cell[18251, 622, 1081, 31, 122, "Input",
+ CellTags->"b:0.1.0"],
+Cell[19335, 655, 491, 8, 65, "Text",
+ CellTags->"b:0.1.0"],
+Cell[19829, 665, 380, 10, 41, "Input",
+ CellTags->"b:0.1.0"],
+Cell[20212, 677, 116, 3, 29, "Text",
+ CellTags->"b:0.1.0"],
+Cell[20331, 682, 779, 19, 82, "Input",
+ CellTags->"b:0.1.0"],
+Cell[21113, 703, 250, 7, 49, "Text",
+ CellTags->"b:0.1.0"],
+Cell[21366, 712, 945, 26, 102, "Input",
+ CellTags->"b:0.1.0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22348, 743, 61, 1, 27, "Subsubsection",
+ CellTags->"b:0.1.0"],
+Cell[22412, 746, 476, 8, 65, "Text",
+ CellTags->"b:0.1.0"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22937, 760, 67, 1, 37, "Subsection",
+ CellTags->"b:0.1.1"],
+Cell[CellGroupData[{
+Cell[23029, 765, 63, 1, 27, "Subsubsection",
+ CellTags->"b:0.1.1"],
+Cell[23095, 768, 49, 1, 29, "Text",
+ CellTags->"b:0.1.1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23181, 774, 54, 1, 27, "Subsubsection",
+ CellTags->"b:0.1.1"],
+Cell[23238, 777, 161, 4, 29, "Text",
+ CellTags->"b:0.1.1"],
+Cell[23402, 783, 1131, 33, 122, "Input",
+ CellTags->"b:0.1.1"],
+Cell[24536, 818, 161, 4, 29, "Text",
+ CellTags->"b:0.1.1"],
+Cell[24700, 824, 1003, 27, 102, "Input",
+ CellTags->"b:0.1.1"],
+Cell[25706, 853, 430, 12, 51, "Text",
+ CellTags->"b:0.1.1"],
+Cell[26139, 867, 1445, 43, 142, "Input",
+ CellTags->"b:0.1.1"],
+Cell[27587, 912, 340, 6, 47, "Text",
+ CellTags->"b:0.1.1"],
+Cell[27930, 920, 1777, 51, 282, "Input",
+ CellTags->"b:0.1.1"],
+Cell[29710, 973, 89, 1, 29, "Text",
+ CellTags->"b:0.1.1"],
+Cell[29802, 976, 2985, 87, 302, "Input",
+ CellTags->"b:0.1.1"],
+Cell[32790, 1065, 491, 8, 65, "Text",
+ CellTags->"b:0.1.1"],
+Cell[33284, 1075, 1016, 31, 82, "Input",
+ CellTags->"b:0.1.1"],
+Cell[34303, 1108, 116, 3, 29, "Text",
+ CellTags->"b:0.1.1"],
+Cell[34422, 1113, 749, 19, 82, "Input",
+ CellTags->"b:0.1.1"],
+Cell[35174, 1134, 187, 6, 31, "Text",
+ CellTags->"b:0.1.1"],
+Cell[35364, 1142, 686, 19, 41, "Input",
+ CellTags->"b:0.1.1"],
+Cell[36053, 1163, 117, 3, 29, "Text",
+ CellTags->"b:0.1.1"],
+Cell[36173, 1168, 1280, 37, 102, "Input",
+ CellTags->"b:0.1.1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37490, 1210, 61, 1, 27, "Subsubsection",
+ CellTags->"b:0.1.1"],
+Cell[37554, 1213, 476, 8, 65, "Text",
+ CellTags->"b:0.1.1"]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[38091, 1228, 41, 0, 45, "Section"],
+Cell[CellGroupData[{
+Cell[38157, 1232, 60, 1, 37, "Subsection",
+ CellTags->"b:0.2.0"],
+Cell[38220, 1235, 401, 7, 65, "Text",
+ CellTags->"b:0.2.0"],
+Cell[CellGroupData[{
+Cell[38646, 1246, 63, 1, 27, "Subsubsection",
+ CellTags->"b:0.2.0"],
+Cell[38712, 1249, 55, 1, 29, "Text",
+ CellTags->"b:0.2.0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38804, 1255, 54, 1, 27, "Subsubsection",
+ CellTags->"b:0.2.0"],
+Cell[38861, 1258, 227, 5, 47, "Text",
+ CellTags->"b:0.2.0"],
+Cell[39091, 1265, 1696, 46, 222, "Input",
+ CellTags->"b:0.2.0"],
+Cell[40790, 1313, 137, 4, 29, "Text",
+ CellTags->"b:0.2.0"],
+Cell[40930, 1319, 782, 22, 102, "Input",
+ CellTags->"b:0.2.0"],
+Cell[41715, 1343, 353, 7, 47, "Text",
+ CellTags->"b:0.2.0"],
+Cell[42071, 1352, 462, 13, 62, "Input",
+ CellTags->"b:0.2.0"],
+Cell[42536, 1367, 194, 4, 29, "Text",
+ CellTags->"b:0.2.0"],
+Cell[42733, 1373, 732, 22, 82, "Input",
+ CellTags->"b:0.2.0"],
+Cell[43468, 1397, 169, 4, 29, "Text",
+ CellTags->"b:0.2.0"],
+Cell[43640, 1403, 1361, 35, 142, "Input",
+ CellTags->"b:0.2.0"],
+Cell[45004, 1440, 146, 4, 29, "Text",
+ CellTags->"b:0.2.0"],
+Cell[45153, 1446, 851, 21, 82, "Input",
+ CellTags->"b:0.2.0"],
+Cell[46007, 1469, 257, 6, 29, "Text",
+ CellTags->"b:0.2.0"],
+Cell[46267, 1477, 979, 26, 102, "Input",
+ CellTags->"b:0.2.0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47283, 1508, 61, 1, 27, "Subsubsection",
+ CellTags->"b:0.2.0"],
+Cell[47347, 1511, 268, 5, 47, "Text",
+ CellTags->"b:0.2.0"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47664, 1522, 59, 1, 37, "Subsection",
+ CellTags->"b:0.2.1"],
+Cell[CellGroupData[{
+Cell[47748, 1527, 63, 1, 27, "Subsubsection",
+ CellTags->"b:0.2.1"],
+Cell[47814, 1530, 54, 1, 29, "Text",
+ CellTags->"b:0.2.1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47905, 1536, 54, 1, 27, "Subsubsection",
+ CellTags->"b:0.2.1"],
+Cell[47962, 1539, 202, 5, 29, "Text",
+ CellTags->"b:0.2.1"],
+Cell[48167, 1546, 363, 7, 62, "Input",
+ CellTags->"b:0.2.1"],
+Cell[48533, 1555, 81, 1, 29, "Text",
+ CellTags->"b:0.2.1"],
+Cell[48617, 1558, 293, 7, 62, "Input",
+ CellTags->"b:0.2.1"],
+Cell[48913, 1567, 843, 24, 102, "Input",
+ CellTags->"b:0.2.1"],
+Cell[49759, 1593, 68, 1, 29, "Text",
+ CellTags->"b:0.2.1"],
+Cell[49830, 1596, 369, 9, 62, "Input",
+ CellTags->"b:0.2.1"],
+Cell[50202, 1607, 117, 3, 29, "Text",
+ CellTags->"b:0.2.1"],
+Cell[50322, 1612, 1039, 30, 162, "Input",
+ CellTags->"b:0.2.1"],
+Cell[51364, 1644, 139, 4, 29, "Text",
+ CellTags->"b:0.2.1"],
+Cell[51506, 1650, 854, 20, 82, "Input",
+ CellTags->"b:0.2.1"],
+Cell[52363, 1672, 177, 4, 29, "Text",
+ CellTags->"b:0.2.1"],
+Cell[52543, 1678, 381, 9, 41, "Input",
+ CellTags->"b:0.2.1"],
+Cell[52927, 1689, 563, 16, 82, "Input",
+ CellTags->"b:0.2.1"],
+Cell[53493, 1707, 395, 7, 65, "Text",
+ CellTags->"b:0.2.1"],
+Cell[53891, 1716, 1437, 43, 82, "Input",
+ CellTags->"b:0.2.1"],
+Cell[55331, 1761, 221, 5, 47, "Text",
+ CellTags->"b:0.2.1"],
+Cell[55555, 1768, 843, 22, 62, "Input",
+ CellTags->"b:0.2.1"],
+Cell[56401, 1792, 159, 4, 29, "Text",
+ CellTags->"b:0.2.1"],
+Cell[56563, 1798, 1665, 42, 122, "Input",
+ CellTags->"b:0.2.1"],
+Cell[58231, 1842, 129, 4, 29, "Text",
+ CellTags->"b:0.2.1"],
+Cell[58363, 1848, 457, 10, 41, "Input",
+ CellTags->"b:0.2.1"],
+Cell[58823, 1860, 70, 1, 29, "Text",
+ CellTags->"b:0.2.1"],
+Cell[58896, 1863, 309, 7, 41, "Input",
+ CellTags->"b:0.2.1"],
+Cell[59208, 1872, 64, 1, 29, "Text",
+ CellTags->"b:0.2.1"],
+Cell[59275, 1875, 318, 7, 41, "Input",
+ CellTags->"b:0.2.1"],
+Cell[59596, 1884, 258, 7, 29, "Text",
+ CellTags->"b:0.2.1"],
+Cell[59857, 1893, 4674, 134, 822, "Input",
+ CellTags->"b:0.2.1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[64568, 2032, 61, 1, 27, "Subsubsection",
+ CellTags->"b:0.2.1"],
+Cell[64632, 2035, 564, 12, 65, "Text",
+ CellTags->"b:0.2.1"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[65257, 2054, 122, 2, 75, "Section",
+ CellTags->"b:0.3"],
+Cell[65382, 2058, 158, 2, 29, "Text",
+ CellTags->"b:0.3"],
+Cell[CellGroupData[{
+Cell[65565, 2064, 61, 1, 27, "Subsubsection",
+ CellTags->"b:0.3"],
+Cell[65629, 2067, 123, 2, 29, "Text",
+ CellTags->"b:0.3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[65789, 2074, 52, 1, 27, "Subsubsection",
+ CellTags->"b:0.3"],
+Cell[65844, 2077, 127, 2, 29, "Text",
+ CellTags->"b:0.3"],
+Cell[65974, 2081, 1031, 27, 122, "Input",
+ CellTags->"b:0.3"],
+Cell[67008, 2110, 140, 2, 29, "Text",
+ CellTags->"b:0.3"],
+Cell[67151, 2114, 1514, 41, 162, "Input",
+ CellTags->"b:0.3"],
+Cell[68668, 2157, 180, 3, 29, "Text",
+ CellTags->"b:0.3"],
+Cell[68851, 2162, 980, 27, 102, "Input",
+ CellTags->"b:0.3"],
+Cell[69834, 2191, 208, 3, 29, "Text",
+ CellTags->"b:0.3"],
+Cell[70045, 2196, 653, 18, 62, "Input",
+ CellTags->"b:0.3"],
+Cell[70701, 2216, 257, 6, 29, "Text",
+ CellTags->"b:0.3"],
+Cell[70961, 2224, 361, 9, 41, "Input",
+ CellTags->"b:0.3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[71359, 2238, 59, 1, 27, "Subsubsection",
+ CellTags->"b:0.3"],
+Cell[71421, 2241, 741, 15, 65, "Text",
+ CellTags->"b:0.3"]
+}, Open  ]]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

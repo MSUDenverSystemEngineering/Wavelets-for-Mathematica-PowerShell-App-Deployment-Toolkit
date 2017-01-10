@@ -1,0 +1,641 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     19375,        631]
+NotebookOptionsPosition[     15157,        505]
+NotebookOutlinePosition[     17363,        562]
+CellTagsIndexPosition[     17278,        557]
+WindowTitle->WaveletVectorToList
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["WAVELET WARE PACKAGE SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"WaveletListToVector\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/WaveletListToVector"], \
+"\<\"WaveletMatrixToList\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/WaveletMatrixToList"], \
+"\<\"WaveletListToMatrix\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/WaveletListToMatrix"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"List of Functions - Alphabetical\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/guide/List of Functions - Alphabetical"], \
+"\<\"List of Functions - Categorical\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/guide/List of Functions - Categorical"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"WaveletWare/ref/WaveletVectorToList\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["WaveletWare/ref/WaveletVectorToList"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/WaveletWare/ref/\
+WaveletVectorToList.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$122990], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "WaveletWare/ref/WaveletVectorToList", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[TextData[{
+ Cell["WaveletVectorToList", "ObjectName"],
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{8, 0}],
+    CacheGraphics->False],
+   Spacer[8]]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"WaveletVectorToList", "[", 
+       RowBox[{
+        StyleBox["v", "TI"], ",", 
+        StyleBox["opts", "TI"]}], "]"}]], "InlineFormula"],
+     "\[LineSeparator]takes a vector and, based on the number of iterations, \
+creates sublists of the various portions of the wavelet transform."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    InterpretationBox[
+     StyleBox[
+      GraphicsBox[{},
+       BaselinePosition->Baseline,
+       ImageSize->{6, 0}],
+      CacheGraphics->False],
+     Spacer[6]]]],
+   "Details"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->91334431],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell["The following options can be given: ", "Notes"],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], 
+    ButtonBox["NumIterations",
+     BaseStyle->"Link",
+     ButtonData->"paclet:WaveletWare/ref/NumIterations"], "1", Cell[TextData[{
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["NumIterations"]],"paclet:WaveletWare/ref/NumIterations"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     " is an option used by several functions in the ",
+     ButtonBox["WaveletWare",
+      BaseStyle->"Link",
+      ButtonData->"paclet:WaveletWare/tutorial/WaveletWare Package"],
+     " package.  It indicates the number of iterations of the wavelet \
+transform performed on the data."
+    }], "TableText"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}},
+ GridBoxDividers->{"Rows" -> {{True, True}}}}],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->6671289],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->396939220],
+
+Cell["This loads the package:", "MathCaption",
+ CellID->16454449],
+
+Cell[BoxData[
+ RowBox[{"<<", "WaveletWare`"}]], "Input",
+ InitializationCell->True,
+ CellLabel->"In[1]:=",
+ CellID->861618089],
+
+Cell["\<\
+Split a wavelet transform vector into its lowpass and highpass parts.\
+\>", "ExampleText",
+ CellID->123220835],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"HWT", "[", 
+  RowBox[{"Range", "[", "16", "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"WaveletVectorToList", "[", 
+  RowBox[{"HWT", "[", 
+   RowBox[{"Range", "[", "16", "]"}], "]"}], "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->52821653],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1.5`", ",", "3.5`", ",", "5.5`", ",", "7.5`", ",", "9.5`", ",", "11.5`", 
+   ",", "13.5`", ",", "15.5`", ",", "0.5`", ",", "0.5`", ",", "0.5`", ",", 
+   "0.5`", ",", "0.5`", ",", "0.5`", ",", "0.5`", ",", "0.5`"}], 
+  "}"}]], "Output",
+ ImageSize->{540, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->455687412],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "1.5`", ",", "3.5`", ",", "5.5`", ",", "7.5`", ",", "9.5`", ",", "11.5`", 
+     ",", "13.5`", ",", "15.5`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.5`", ",", "0.5`", ",", "0.5`", ",", "0.5`", ",", "0.5`", ",", "0.5`", 
+     ",", "0.5`", ",", "0.5`"}], "}"}]}], "}"}]], "Output",
+ ImageSize->{568, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->37319033]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Options",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "NumIterations",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True],
+
+Cell[TextData[{
+ "Assuming the length of the input data is divisible by ",
+ Cell[BoxData[
+  SuperscriptBox["2", "p"]], "InlineFormula"],
+ ", the ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["NumIterations"]],"paclet:WaveletWare/ref/NumIterations"},
+   "RefLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula"],
+ " option can be set to any integer 0,1,...,",
+ Cell[BoxData[
+  StyleBox["p", "TI"]], "InlineFormula"],
+ ".  If ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["NumIterations"]],"paclet:WaveletWare/ref/NumIterations"},
+   "RefLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula"],
+ " is set to ",
+ Cell[BoxData[
+  StyleBox["n", "TI"]], "InlineFormula"],
+ ", then the output is a list of ",
+ Cell[BoxData[
+  StyleBox["n", "TI"]], "InlineFormula"],
+ "+1 lists of the form\[LineSeparator]\[LineSeparator]\t\t{",
+ Cell[BoxData[
+  SubscriptBox["lowpass", "n"]], "InlineFormula"],
+ ", ",
+ Cell[BoxData[
+  SubscriptBox["highpass", "n"]], "InlineFormula"],
+ ", ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{
+    SubscriptBox["highpass", 
+     RowBox[{"n", "-", "1"}]], ",", "...", ",", 
+    SubscriptBox["highpass", "1"]}], "}"}]], "InlineFormula"]
+}], "ExampleText",
+ CellID->943445],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"wt", "=", 
+  RowBox[{"HWT", "[", 
+   RowBox[{
+    RowBox[{"Range", "[", "16", "]"}], ",", 
+    RowBox[{"NumIterations", "\[Rule]", "3"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"WaveletVectorToList", "[", 
+   RowBox[{"wt", ",", 
+    RowBox[{"NumIterations", "\[Rule]", "3"}]}], "]"}], " ", "//", 
+  "TableForm"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->676243695],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "4.5`", ",", "12.5`", ",", "2.`", ",", "2.`", ",", "1.`", ",", "1.`", ",", 
+   "1.`", ",", "1.`", ",", "0.5`", ",", "0.5`", ",", "0.5`", ",", "0.5`", ",",
+    "0.5`", ",", "0.5`", ",", "0.5`", ",", "0.5`"}], "}"}]], "Output",
+ ImageSize->{484, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->81295952],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {"4.5`", 
+     "12.5`", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\
+\"\"\>"},
+    {"2.`", 
+     "2.`", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>"},
+    {"1.`", "1.`", "1.`", 
+     "1.`", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"0.5`", "0.5`", "0.5`", "0.5`", "0.5`", "0.5`", "0.5`", "0.5`"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  TableForm[{{4.5, 12.5}, {2., 2.}, {1., 1., 1., 1.}, {0.5, 0.5, 0.5, 0.5, 
+    0.5, 0.5, 0.5, 0.5}}]]], "Output",
+ ImageSize->{354, 57},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]//TableForm=",
+ CellID->11201672]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WaveletListToVector"]],
+    "paclet:WaveletWare/ref/WaveletListToVector"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WaveletMatrixToList"]],
+    "paclet:WaveletWare/ref/WaveletMatrixToList"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WaveletListToMatrix"]],
+    "paclet:WaveletWare/ref/WaveletListToMatrix"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["List of Functions - Alphabetical"]],
+   "paclet:WaveletWare/guide/List of Functions - Alphabetical"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->22271933],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["List of Functions - Categorical"]],
+   "paclet:WaveletWare/guide/List of Functions - Categorical"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->237313412]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"WaveletVectorToList",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:WaveletWare/guide/WaveletWare", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2016, 8, 25, 9, 54, 17.1034268}", 
+    "history" -> {"XX", "", "", ""}, "context" -> 
+    "WaveletWare`MiscFunctions`", "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Wavelet Ware Package Symbol", "language" -> "en", "paclet" -> 
+    "WaveletWare Package", "status" -> "None", "summary" -> 
+    "WaveletVectorToList[v, opts] takes a vector and, based on the number of \
+iterations, creates sublists of the various portions of the wavelet \
+transform.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "WaveletVectorToList", "titlemodifier" -> "", "windowtitle" -> 
+    "WaveletVectorToList", "type" -> "Symbol", "uri" -> 
+    "WaveletWare/ref/WaveletVectorToList"}, "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "11.0 for Microsoft Windows (64-bit) (July 28, 2016)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[7337, 213, 385, 15, 30, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->6671289]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 17137, 550}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[591, 21, 4051, 97, 48, "AnchorBarGrid",
+ CellID->1],
+Cell[4645, 120, 296, 11, 44, "ObjectNameGrid"],
+Cell[CellGroupData[{
+Cell[4966, 135, 528, 14, 94, "Usage"],
+Cell[CellGroupData[{
+Cell[5519, 153, 737, 24, 31, "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->91334431],
+Cell[6259, 179, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[6293, 181, 53, 0, 70, "Notes"],
+Cell[6349, 183, 905, 22, 70, "3ColumnTableMod"],
+Cell[7257, 207, 31, 0, 70, "SectionFooterSpacer"]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7337, 213, 385, 15, 30, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->6671289],
+Cell[CellGroupData[{
+Cell[7747, 232, 195, 6, 25, "ExampleSection",
+ CellID->396939220],
+Cell[7945, 240, 65, 1, 31, "MathCaption",
+ CellID->16454449],
+Cell[8013, 243, 126, 4, 42, "Input",
+ InitializationCell->True,
+ CellID->861618089],
+Cell[8142, 249, 120, 3, 33, "ExampleText",
+ CellID->123220835],
+Cell[CellGroupData[{
+Cell[8287, 256, 270, 7, 43, "Input",
+ CellID->52821653],
+Cell[8560, 265, 409, 11, 35, "Output",
+ CellID->455687412],
+Cell[8972, 278, 494, 15, 35, "Output",
+ CellID->37319033]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9515, 299, 168, 5, 25, "ExampleSection"],
+Cell[CellGroupData[{
+Cell[9708, 308, 180, 5, 70, "ExampleSubsection"],
+Cell[9891, 315, 1200, 39, 70, "ExampleText",
+ CellID->943445],
+Cell[CellGroupData[{
+Cell[11116, 358, 412, 13, 70, "Input",
+ CellID->676243695],
+Cell[11531, 373, 397, 10, 35, "Output",
+ CellID->81295952],
+Cell[11931, 385, 1067, 28, 92, "Output",
+ CellID->11201672]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+Cell[13037, 418, 31, 0, 29, "SectionFooterSpacer"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13105, 423, 270, 12, 30, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[13378, 437, 941, 28, 58, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14356, 470, 276, 12, 30, "MoreAboutSection",
+ CellID->38303248],
+Cell[14635, 484, 31, 0, 14, "SectionHeaderSpacer"],
+Cell[14669, 486, 222, 6, 20, "MoreAbout",
+ CellID->22271933],
+Cell[14894, 494, 221, 6, 20, "MoreAbout",
+ CellID->237313412]
+}, Open  ]],
+Cell[15130, 503, 23, 0, 41, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

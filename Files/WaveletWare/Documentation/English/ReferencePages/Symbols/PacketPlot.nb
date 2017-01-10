@@ -1,0 +1,592 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     20246,        582]
+NotebookOptionsPosition[     16445,        470]
+NotebookOutlinePosition[     18783,        532]
+CellTagsIndexPosition[     18663,        526]
+WindowTitle->PacketPlot
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["WAVELET WARE PACKAGE SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"FullWaveletPlot\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/FullWaveletPlot"], \
+"\<\"FullWaveletVectorPlot\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/FullWaveletVectorPlot"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"List of Options and Values\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/guide/List of Options and Values"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"WaveletWare/ref/PacketPlot\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["WaveletWare/ref/PacketPlot"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/WaveletWare/ref/\
+PacketPlot.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$86268], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "WaveletWare/ref/PacketPlot", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[TextData[{
+ Cell["PacketPlot", "ObjectName"],
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{8, 0}],
+    CacheGraphics->False],
+   Spacer[8]]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData["PacketPlot"], "InlineFormula"],
+     "\[LineSeparator]is an option for ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["FullWaveletVectorPlot"]],
+        "paclet:WaveletWare/ref/FullWaveletVectorPlot"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     " or ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["FullWaveletPlot"]],
+        "paclet:WaveletWare/ref/FullWaveletPlot"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     " that indicates whether or not the input data was generated by a \
+wavelet packet transform."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    InterpretationBox[
+     StyleBox[
+      GraphicsBox[{},
+       BaselinePosition->Baseline,
+       ImageSize->{6, 0}],
+      CacheGraphics->False],
+     Spacer[6]]]],
+   "Details"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->729508163],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ "The default value of ",
+ StyleBox["PacketPlot",
+  FontFamily->"Courier New",
+  FontSize->12],
+ " is ",
+ ButtonBox["False",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/False"],
+ ".  Setting it to ",
+ ButtonBox["True",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/True"],
+ " informs the parent routine that wavelet packet data was passed to it."
+}], "Notes",
+ CellID->1067943069],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->12667345],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->495742626],
+
+Cell["This loads the package:", "MathCaption",
+ CellID->16454449],
+
+Cell[BoxData[
+ RowBox[{"<<", "WaveletWare`"}]], "Input",
+ InitializationCell->True,
+ CellLabel->"In[1]:=",
+ CellID->861618089],
+
+Cell[TextData[{
+ "Plot all the iterations of a wavelet packet transform up through ",
+ Cell[BoxData[
+  StyleBox["iterations", "TI"]], "InlineFormula"],
+ "=3."
+}], "ExampleText",
+ CellID->285971032],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"g", "[", "t_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"4", 
+     RowBox[{"Sin", "[", 
+      RowBox[{"4", "Pi", "*", "t"}], "]"}]}], "-", 
+    RowBox[{"Sign", "[", 
+     RowBox[{"t", "-", ".3"}], "]"}], "-", 
+    RowBox[{"Sign", "[", 
+     RowBox[{".72", "-", "t"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", "1000"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"v", "=", 
+   RowBox[{"g", "[", 
+    RowBox[{"Range", "[", 
+     RowBox[{"0", ",", 
+      RowBox[{"1", "-", 
+       RowBox[{"1", "/", "n"}]}], ",", 
+      RowBox[{"1", "/", "n"}]}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"iterations", "=", "3"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"w", "=", 
+   RowBox[{"WPTFull", "[", 
+    RowBox[{"v", ",", 
+     RowBox[{"Daub", "[", "4", "]"}], ",", 
+     RowBox[{"NumIterations", "\[Rule]", "iterations"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"FullWaveletVectorPlot", "[", 
+  RowBox[{"w", ",", 
+   RowBox[{"PacketPlot", "\[Rule]", "True"}]}], "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->170541033],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1: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
+hGEYhmEYhmEYhmEYhmEYhmEYhmGYfP4PloEfUQ==
+    "], {{0, 70}, {527, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  DefaultBaseStyle->"ImageGraphics",
+  ImageSize->Automatic,
+  ImageSizeRaw->{527, 70},
+  PlotRange->{{0, 527}, {0, 70}}]], "Output",
+ ImageSize->{531, 70},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellTags->"RasterizedOutput",
+ CellLabel->"Out[2]=",
+ CellID->76468510]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["FullWaveletPlot"]],"paclet:WaveletWare/ref/FullWaveletPlot"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["FullWaveletVectorPlot"]],
+    "paclet:WaveletWare/ref/FullWaveletVectorPlot"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["List of Options and Values"]],
+   "paclet:WaveletWare/guide/List of Options and Values"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->946102254]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"PacketPlot",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:WaveletWare/guide/WaveletWare", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2016, 8, 25, 9, 51, 15.3262988}", 
+    "history" -> {"XX", "", "", ""}, "context" -> 
+    "WaveletWare`PlottingFunctions`", "keywords" -> {}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "Wavelet Ware Package Symbol", "language" -> "en", "paclet" -> 
+    "WaveletWare Package", "status" -> "None", "summary" -> 
+    "PacketPlot is an option for FullWaveletVectorPlot or FullWaveletPlot \
+that indicates whether or not the input data was generated by a wavelet \
+packet transform.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "PacketPlot", "titlemodifier" -> "", "windowtitle" -> "PacketPlot", 
+    "type" -> "Symbol", "uri" -> "WaveletWare/ref/PacketPlot"}, 
+  "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "11.0 for Microsoft Windows (64-bit) (July 28, 2016)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[6766, 210, 386, 15, 30, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->12667345]},
+ "RasterizedOutput"->{
+  Cell[8946, 293, 5933, 105, 91, "Output",
+   CellTags->"RasterizedOutput",
+   CellID->76468510]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 18399, 515},
+ {"RasterizedOutput", 18541, 519}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[582, 21, 3746, 93, 48, "AnchorBarGrid",
+ CellID->1],
+Cell[4331, 116, 287, 11, 44, "ObjectNameGrid"],
+Cell[CellGroupData[{
+Cell[4643, 131, 840, 24, 97, "Usage"],
+Cell[CellGroupData[{
+Cell[5508, 159, 738, 24, 31, "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->729508163],
+Cell[6249, 185, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[6283, 187, 400, 15, 70, "Notes",
+ CellID->1067943069],
+Cell[6686, 204, 31, 0, 70, "SectionFooterSpacer"]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6766, 210, 386, 15, 30, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->12667345],
+Cell[CellGroupData[{
+Cell[7177, 229, 195, 6, 25, "ExampleSection",
+ CellID->495742626],
+Cell[7375, 237, 65, 1, 31, "MathCaption",
+ CellID->16454449],
+Cell[7443, 240, 126, 4, 42, "Input",
+ InitializationCell->True,
+ CellID->861618089],
+Cell[7572, 246, 197, 6, 35, "ExampleText",
+ CellID->285971032],
+Cell[CellGroupData[{
+Cell[7794, 256, 1149, 35, 107, "Input",
+ CellID->170541033],
+Cell[8946, 293, 5933, 105, 91, "Output",
+ CellTags->"RasterizedOutput",
+ CellID->76468510]
+}, Open  ]]
+}, Open  ]],
+Cell[14906, 402, 31, 0, 29, "SectionFooterSpacer"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14974, 407, 270, 12, 30, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[15247, 421, 595, 17, 58, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15879, 443, 276, 12, 30, "MoreAboutSection",
+ CellID->38303248],
+Cell[16158, 457, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[16192, 459, 211, 6, 70, "MoreAbout",
+ CellID->946102254]
+}, Open  ]],
+Cell[16418, 468, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

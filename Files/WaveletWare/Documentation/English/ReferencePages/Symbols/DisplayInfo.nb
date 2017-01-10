@@ -1,0 +1,697 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     22731,        688]
+NotebookOptionsPosition[     18774,        567]
+NotebookOutlinePosition[     20897,        623]
+CellTagsIndexPosition[     20812,        618]
+WindowTitle->DisplayInfo
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["WAVELET WARE PACKAGE SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"ImageInfo\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/ImageInfo"], "\<\"ImageRead\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/ImageRead"], "\<\"AudioInfo\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/AudioInfo"], "\<\"AudioRead\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/AudioRead"], "\<\"DataInfo\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/DataInfo"], "\<\"SplineFilters\"\>":>
+       Documentation`HelpLookup["paclet:WaveletWare/ref/SplineFilters"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"List of Options and Values\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/guide/List of Options and Values"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"WaveletWare/ref/DisplayInfo\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["WaveletWare/ref/DisplayInfo"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/WaveletWare/ref/\
+DisplayInfo.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$39340], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "WaveletWare/ref/DisplayInfo", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[TextData[{
+ Cell["DisplayInfo", "ObjectName"],
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{8, 0}],
+    CacheGraphics->False],
+   Spacer[8]]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData["DisplayInfo"], "InlineFormula"],
+     "\[LineSeparator]is an option that toggles the display of information in \
+",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["ImageInfo"]],"paclet:WaveletWare/ref/ImageInfo"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     ", ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["ImageRead"]],"paclet:WaveletWare/ref/ImageRead"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     ", ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["AudioInfo"]],"paclet:WaveletWare/ref/AudioInfo"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     ", ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["AudioRead"]],"paclet:WaveletWare/ref/AudioRead"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     ", ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["DataInfo"]],"paclet:WaveletWare/ref/DataInfo"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     " and ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["SplineFilters"]],"paclet:WaveletWare/ref/SplineFilters"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     "."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    InterpretationBox[
+     StyleBox[
+      GraphicsBox[{},
+       BaselinePosition->Baseline,
+       ImageSize->{6, 0}],
+      CacheGraphics->False],
+     Spacer[6]]]],
+   "Details"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ "The default value for ",
+ StyleBox["DisplayInfo",
+  FontFamily->"Courier New",
+  FontSize->12],
+ " in all functions is ",
+ ButtonBox["False",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/False"],
+ "."
+}], "Notes",
+ CellID->1067943069],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1],
+
+Cell["This loads the package:", "MathCaption",
+ CellID->16454449],
+
+Cell[BoxData[
+ RowBox[{"<<", "WaveletWare`"}]], "Input",
+ InitializationCell->True,
+ CellLabel->"In[1]:=",
+ CellID->861618089],
+
+Cell[TextData[{
+ "Display information about available images with the ",
+ ButtonBox["WaveletWare",
+  BaseStyle->"Link",
+  ButtonData->"paclet:WaveletWare/tutorial/WaveletWare Package"],
+ " package."
+}], "ExampleText",
+ CellID->45023464],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ImageInfo", "[", 
+   RowBox[{"DisplayInfo", "\[Rule]", "True"}], "]"}], ";"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->112284467],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Information for Images in the WaveletWare Package\\n\"\>", 
+   "\[InvisibleSpace]", 
+   TagBox[
+    TagBox[GridBox[{
+       {
+        TagBox["\<\"Image Number\"\>",
+         HoldForm], 
+        TagBox["\<\"Filename\"\>",
+         HoldForm], 
+        TagBox["\<\"Dimensions\"\>",
+         HoldForm], 
+        TagBox["\<\"Type\"\>",
+         HoldForm], 
+        TagBox["\<\"Max Iterations\"\>",
+         HoldForm]},
+       {"1", "\<\"benches.png\"\>", "\<\"512x768\"\>", "\<\"GrayLevel\"\>", 
+        "8"},
+       {"2", "\<\"boys.jpg\"\>", "\<\"512x512\"\>", "\<\"Grayscale\"\>", 
+        "9"},
+       {"3", "\<\"bridge.png\"\>", "\<\"512x768\"\>", "\<\"RGBColor\"\>", "8"},
+       {"4", "\<\"building.png\"\>", "\<\"768x512\"\>", "\<\"RGBColor\"\>", 
+        "8"},
+       {"5", "\<\"canoes.png\"\>", "\<\"200x300\"\>", "\<\"GrayLevel\"\>", 
+        "2"},
+       {"6", "\<\"car.png\"\>", "\<\"512x768\"\>", "\<\"GrayLevel\"\>", "8"},
+       {"7", "\<\"chairs.png\"\>", "\<\"512x768\"\>", "\<\"GrayLevel\"\>", 
+        "8"},
+       {"8", "\<\"chess.png\"\>", "\<\"768x512\"\>", "\<\"GrayLevel\"\>", "8"},
+       {"9", "\<\"church.png\"\>", "\<\"768x512\"\>", "\<\"GrayLevel\"\>", 
+        "8"},
+       {"10", "\<\"cups.png\"\>", "\<\"512x768\"\>", "\<\"RGBColor\"\>", 
+        "8"},
+       {"11", "\<\"dog.png\"\>", "\<\"512x768\"\>", "\<\"GrayLevel\"\>", 
+        "8"},
+       {"12", "\<\"dome.png\"\>", "\<\"768x512\"\>", "\<\"GrayLevel\"\>", "8"},
+       {"13", "\<\"facade.png\"\>", "\<\"512x768\"\>", "\<\"RGBColor\"\>", 
+        "8"},
+       {"14", "\<\"fingerprint.png\"\>", "\<\"768x768\"\>", \
+"\<\"GrayLevel\"\>", "8"},
+       {"15", "\<\"fish.png\"\>", "\<\"512x768\"\>", "\<\"RGBColor\"\>", 
+        "8"},
+       {"16", "\<\"goats.png\"\>", "\<\"512x768\"\>", "\<\"RGBColor\"\>", "8"},
+       {"17", "\<\"heads.png\"\>", "\<\"768x512\"\>", "\<\"GrayLevel\"\>", 
+        "8"},
+       {"18", "\<\"landscape.png\"\>", "\<\"512x768\"\>", "\<\"GrayLevel\"\>",
+         "8"},
+       {"19", "\<\"legos.png\"\>", "\<\"768x512\"\>", "\<\"RGBColor\"\>", "8"},
+       {"20", "\<\"pigeon.png\"\>", "\<\"512x768\"\>", "\<\"GrayLevel\"\>", 
+        "8"},
+       {"21", "\<\"road.png\"\>", "\<\"512x768\"\>", "\<\"GrayLevel\"\>", "8"},
+       {"22", "\<\"tower.png\"\>", "\<\"768x512\"\>", "\<\"GrayLevel\"\>", 
+        "8"},
+       {"23", "\<\"train.png\"\>", "\<\"512x768\"\>", "\<\"GrayLevel\"\>", 
+        "8"},
+       {"24", "\<\"tram.png\"\>", "\<\"512x768\"\>", "\<\"GrayLevel\"\>", "8"},
+       {"25", "\<\"waves.png\"\>", "\<\"768x512\"\>", "\<\"RGBColor\"\>", "8"},
+       {"26", "\<\"yucca.png\"\>", "\<\"768x512\"\>", "\<\"GrayLevel\"\>", "8"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
+        "RowsIndexed" -> {}},
+      GridBoxDividers->{
+       "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[3.5]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[2.]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     {None, OutputFormsDump`HeadedColumns}],
+    Function[BoxForm`e$, 
+     TableForm[
+     BoxForm`e$, 
+      TableHeadings -> {
+       None, {"Image Number", "Filename", "Dimensions", "Type", 
+         "Max Iterations"}}, TableAlignments -> {Center, Center}, 
+      TableSpacing -> {5, 5}]]]}],
+  SequenceForm["Information for Images in the WaveletWare Package\n", 
+   TableForm[{{1, "benches.png", "512x768", "GrayLevel", 8}, {
+     2, "boys.jpg", "512x512", "Grayscale", 9}, {
+     3, "bridge.png", "512x768", "RGBColor", 8}, {
+     4, "building.png", "768x512", "RGBColor", 8}, {
+     5, "canoes.png", "200x300", "GrayLevel", 2}, {
+     6, "car.png", "512x768", "GrayLevel", 8}, {
+     7, "chairs.png", "512x768", "GrayLevel", 8}, {
+     8, "chess.png", "768x512", "GrayLevel", 8}, {
+     9, "church.png", "768x512", "GrayLevel", 8}, {
+     10, "cups.png", "512x768", "RGBColor", 8}, {
+     11, "dog.png", "512x768", "GrayLevel", 8}, {
+     12, "dome.png", "768x512", "GrayLevel", 8}, {
+     13, "facade.png", "512x768", "RGBColor", 8}, {
+     14, "fingerprint.png", "768x768", "GrayLevel", 8}, {
+     15, "fish.png", "512x768", "RGBColor", 8}, {
+     16, "goats.png", "512x768", "RGBColor", 8}, {
+     17, "heads.png", "768x512", "GrayLevel", 8}, {
+     18, "landscape.png", "512x768", "GrayLevel", 8}, {
+     19, "legos.png", "768x512", "RGBColor", 8}, {
+     20, "pigeon.png", "512x768", "GrayLevel", 8}, {
+     21, "road.png", "512x768", "GrayLevel", 8}, {
+     22, "tower.png", "768x512", "GrayLevel", 8}, {
+     23, "train.png", "512x768", "GrayLevel", 8}, {
+     24, "tram.png", "512x768", "GrayLevel", 8}, {
+     25, "waves.png", "768x512", "RGBColor", 8}, {
+     26, "yucca.png", "768x512", "GrayLevel", 8}}, 
+    TableHeadings -> {
+     None, {"Image Number", "Filename", "Dimensions", "Type", 
+       "Max Iterations"}}, TableAlignments -> {Center, Center}, 
+    TableSpacing -> {5, 5}]],
+  Editable->False]], "Print",
+ CellLabel->"During evaluation of In[123]:=",
+ CellID->576462013]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->81809127],
+
+Cell["Display information about a spline filter pair.", "ExampleText",
+ CellID->61359209],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SplineFilters", "[", 
+   RowBox[{"3", ",", "3", ",", 
+    RowBox[{"DisplayInfo", "\[Rule]", "True"}]}], "]"}], ";"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->20255282],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"Biorthogonal Spline Filter Information: \\n\"\>"], "Print",
+ CellLabel->"During evaluation of In[125]:=",
+ CellID->544199345],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The length of the first filter is \"\>", "\[InvisibleSpace]", 
+   "8", "\[InvisibleSpace]", "\<\" with starting and stopping indices \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"-", "3"}], "\[InvisibleSpace]", "\<\" and \"\>", 
+   "\[InvisibleSpace]", "4", "\[InvisibleSpace]", "\<\", respectively.\"\>"}],
+  
+  SequenceForm[
+  "The length of the first filter is ", 8, 
+   " with starting and stopping indices ", -3, " and ", 4, ", respectively."],
+  
+  Editable->False]], "Print",
+ CellLabel->"During evaluation of In[125]:=",
+ CellID->616281169],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The length of the second filter is \"\>", "\[InvisibleSpace]", 
+   "4", "\[InvisibleSpace]", "\<\" with starting and stopping indices \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"-", "1"}], "\[InvisibleSpace]", "\<\" and \"\>", 
+   "\[InvisibleSpace]", "2", "\[InvisibleSpace]", "\<\", respectively.\"\>"}],
+  
+  SequenceForm[
+  "The length of the second filter is ", 4, 
+   " with starting and stopping indices ", -1, " and ", 2, ", respectively."],
+  
+  Editable->False]], "Print",
+ CellLabel->"During evaluation of In[125]:=",
+ CellID->195026567]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SectionFooterSpacer"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ImageInfo"]],"paclet:WaveletWare/ref/ImageInfo"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ImageRead"]],"paclet:WaveletWare/ref/ImageRead"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["AudioInfo"]],"paclet:WaveletWare/ref/AudioInfo"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["AudioRead"]],"paclet:WaveletWare/ref/AudioRead"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["DataInfo"]],"paclet:WaveletWare/ref/DataInfo"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["SplineFilters"]],"paclet:WaveletWare/ref/SplineFilters"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["List of Options and Values"]],
+   "paclet:WaveletWare/guide/List of Options and Values"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->1]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"DisplayInfo",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:WaveletWare/guide/WaveletWare", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2016, 8, 25, 9, 47, 27.7916868}", 
+    "history" -> {"XX", "", "", ""}, "context" -> "WaveletWare`CommonUsage`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Wavelet Ware Package Symbol", "language" -> "en", "paclet" -> 
+    "WaveletWare Package", "status" -> "None", "summary" -> 
+    "DisplayInfo is an option that toggles the display of information in \
+ImageInfo, ImageRead, AudioInfo, AudioRead, DataInfo and SplineFilters.", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "DisplayInfo", 
+    "titlemodifier" -> "", "windowtitle" -> "DisplayInfo", "type" -> "Symbol",
+     "uri" -> "WaveletWare/ref/DisplayInfo"}},
+CellContext->"Global`",
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "11.0 for Microsoft Windows (64-bit) (July 28, 2016)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[7632, 231, 379, 15, 70, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 20677, 611}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[583, 21, 4106, 99, 70, "AnchorBarGrid",
+ CellID->1],
+Cell[4692, 122, 288, 11, 70, "ObjectNameGrid"],
+Cell[4983, 135, 1532, 46, 70, "Usage"],
+Cell[CellGroupData[{
+Cell[6540, 185, 730, 24, 70, "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1],
+Cell[7273, 211, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[7307, 213, 254, 11, 70, "Notes",
+ CellID->1067943069],
+Cell[7564, 226, 31, 0, 70, "SectionFooterSpacer"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[7632, 231, 379, 15, 70, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[8036, 250, 187, 6, 70, "ExampleSection",
+ CellID->1],
+Cell[8226, 258, 65, 1, 70, "MathCaption",
+ CellID->16454449],
+Cell[8294, 261, 126, 4, 70, "Input",
+ InitializationCell->True,
+ CellID->861618089],
+Cell[8423, 267, 236, 7, 70, "ExampleText",
+ CellID->45023464],
+Cell[CellGroupData[{
+Cell[8684, 278, 166, 5, 70, "Input",
+ CellID->112284467],
+Cell[8853, 285, 5276, 114, 70, "Print",
+ CellID->576462013]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14166, 404, 124, 3, 70, "ExampleDelimiter",
+ CellID->81809127],
+Cell[14293, 409, 89, 1, 70, "ExampleText",
+ CellID->61359209],
+Cell[CellGroupData[{
+Cell[14407, 414, 204, 6, 70, "Input",
+ CellID->20255282],
+Cell[CellGroupData[{
+Cell[14636, 424, 143, 2, 70, "Print",
+ CellID->544199345],
+Cell[14782, 428, 596, 14, 70, "Print",
+ CellID->616281169],
+Cell[15381, 444, 598, 14, 70, "Print",
+ CellID->195026567]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16064, 467, 31, 0, 70, "SectionFooterSpacer"],
+Cell[16098, 469, 270, 12, 70, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[16371, 483, 1808, 52, 70, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18216, 540, 276, 12, 70, "MoreAboutSection",
+ CellID->38303248],
+Cell[18495, 554, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[18529, 556, 203, 6, 70, "MoreAbout",
+ CellID->1]
+}, Open  ]],
+Cell[18747, 565, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)

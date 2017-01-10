@@ -1,0 +1,452 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     14241,        442]
+NotebookOptionsPosition[     10639,        336]
+NotebookOutlinePosition[     13029,        400]
+CellTagsIndexPosition[     12909,        394]
+WindowTitle->ColorOff
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["WAVELET WARE PACKAGE SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"ShowBestBasis\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/ShowBestBasis"], "\<\"ColorOn\"\>":>
+       Documentation`HelpLookup["paclet:WaveletWare/ref/ColorOn"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"List of Options and Values\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/guide/List of Options and Values"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"WaveletWare/ref/ColorOff\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["WaveletWare/ref/ColorOff"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/WaveletWare/ref/\
+ColorOff.html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, 
+            Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$30247], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "WaveletWare/ref/ColorOff", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[TextData[{
+ Cell["ColorOff", "ObjectName"],
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{8, 0}],
+    CacheGraphics->False],
+   Spacer[8]]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData["ColorOff"], "InlineFormula"],
+     "\[LineSeparator]is an option for ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["ShowBestBasis"]],"paclet:WaveletWare/ref/ShowBestBasis"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     " that sets the color used to indicate an element is not part of the \
+best basis."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->65503937],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->139905920],
+
+Cell["This loads the package:", "MathCaption",
+ CellID->16454449],
+
+Cell[BoxData[
+ RowBox[{"<<", "WaveletWare`"}]], "Input",
+ InitializationCell->True,
+ CellLabel->"In[1]:=",
+ CellID->861618089],
+
+Cell[TextData[{
+ "Set the color of nonbasis elements to ",
+ ButtonBox["Brown",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Brown"],
+ "."
+}], "ExampleText",
+ CellID->214874310],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ShowBestBasis", "[", 
+  RowBox[{"WaveletTree", "[", "4", "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ShowBestBasis", "[", 
+  RowBox[{
+   RowBox[{"WaveletTree", "[", "4", "]"}], ",", 
+   RowBox[{"ColorOff", "\[Rule]", "Brown"}]}], "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->175706687],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJzt3EFqU1EUx+GHThy6BXfh1KHTShfQYixOIqSCuGt3cE3JrIOYPnM97/z9
+PkhpIRwO9/546aR9d//t5surZVke3xy/3Nz9+HA43P389Pb4w+3+8evDfvf5
+4/777mF3eH//+ukdx9ev4+vp+wEAAKyyQEN6Jsn5nuc8++H69EwSPZNEzyTR
+M0n0TBI9k0TPJNEzSfRMEj2TRM8kuaRn6EXPJFn39Ga108Hecm16LqHnSfRc
+Qs+T6LmEnifRcwk9T6LnEnqeRM8l9DyJnkvoeRI9l9DzJHouoedJ9FxCz5Po
+uYSeJ9FzCT1PcknP0IueSXK+57/9cP1XTttWf+JdpNHBNlp1ZP29lZ5naLTq
+0HORRgfbaNWh5yKNDrbRqkPPRRodbKNVh56LNDrYRqsOPRdpdLCNVh16LtLo
+YButOvRcpNHBNlp16LlIo4NttOrQc5FGB9to1aHnIo0OttGqw/9jJJGeSbLu
+6b3aaWyLD/GpJ9BibKNV/zhWz0m3uZ2ZVWP1nHSb25lZNVbPSbe5nZlVY/Wc
+dJvbmVk1Vs9Jt7mdmVVj9Zx0m9uZWTVWz0m3uZ2ZVWP1nHSb25lZNVbPSbe5
+nZlVY/WcdJvbmVk1Vs9Jt7mdmVVjF2hIzyQ53/OLPu6v+4vB5e980Zst8H8u
+oGcLJC2gZwskLaBnCyQtoGcLJC2gZwskLaBnCyQtoGcLJC2gZwskLaBnCyQt
+oGcLJC2gZwskLaBnCyQtsEBDeibJhQ9zAADgmd85uSWY
+    "], {{0, 82}, {240, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  DefaultBaseStyle->"ImageGraphics",
+  ImageSize->Automatic,
+  ImageSizeRaw->{240, 82},
+  PlotRange->{{0, 240}, {0, 82}}]], "Output",
+ ImageSize->{244, 82},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellTags->"RasterizedOutput",
+ CellLabel->"Out[2]=",
+ CellID->494197981],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJzt2zFKZEEUheHGSQzdgmuYxHTCSRUXoNiKSQ+0wjBLqV26A20x9vF6sKy6
+h+/ntNjwuBxu/fAq6fPbP5f3J5vN5un08Ofy5u+v/f7m39XZ4cv17unxYbe9
++7173j5s9xe3P96fOHxeDp/3/18BAAAA/BcboCB8RhLLPrf7nyIlwmdJCp8l
+KXyWpPBZksJnSQqfJSl8lqTwWZLCZ0kKnyUpfJakrPEZqAWfkYT7xpDX4jW+
+Gj7zOQk+8zkJPvM5CT7zOQk+8zkJPvM5CT7zOQk+8zkJPvM5CT7zOQk+8zkJ
+PvM5iTU+A7XgM5LIuG98tB39xltFocUWqtqyfm/F535bHV7jqLZ8/mYKLbZQ
+1cbnQRRabKGqjc+DKLTYQlUbnwdRaLGFqjY+D6LQYgtVbXweRKHFFqra+DyI
+QostVLXxeRCFFluoauPzIAottlDVxudBFFpsoaptnc9ALfiMJL75vvExtsRL
+vOsGSowtVLUNuj/zudDYQlUbnxNPc/6ZvcfyOek055/Zeyyfk05z/pm9x/I5
+6TTnn9l7LJ+TTnP+mb3H8jnpNOef2Xssn5NOc/6ZvcfyOek055/Zeyyfk05z
+/pm9x/I56TTnn9l77LLPQC34jCSWfT7qdf+1F4P1Tx71sALZBfisQFIBPiuQ
+VIDPCiQV4LMCSQX4rEBSAT4rkFSAzwokFeCzAkkF+KxAUgE+K5BUgM8KJBXg
+swJJBZZ9BmrBZyTxmc8AAAAAlnkDk1Qs2Q==
+    "], {{0, 82}, {240, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  DefaultBaseStyle->"ImageGraphics",
+  ImageSize->Automatic,
+  ImageSizeRaw->{240, 82},
+  PlotRange->{{0, 240}, {0, 82}}]], "Output",
+ ImageSize->{244, 82},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellTags->"RasterizedOutput",
+ CellLabel->"Out[2]=",
+ CellID->208859466]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ShowBestBasis"]],"paclet:WaveletWare/ref/ShowBestBasis"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ColorOn"]],"paclet:WaveletWare/ref/ColorOn"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["List of Options and Values"]],
+   "paclet:WaveletWare/guide/List of Options and Values"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->321054683]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"ColorOff",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:WaveletWare/guide/WaveletWare", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2016, 8, 25, 9, 46, 52.8436881}", 
+    "history" -> {"XX", "", "", ""}, "context" -> 
+    "WaveletWare`PlottingFunctions`", "keywords" -> {}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "Wavelet Ware Package Symbol", "language" -> "en", "paclet" -> 
+    "WaveletWare Package", "status" -> "None", "summary" -> 
+    "ColorOff is an option for ShowBestBasis that sets the color used to \
+indicate an element is not part of the best basis.", "synonyms" -> {}, 
+    "tabletags" -> {}, "title" -> "ColorOff", "titlemodifier" -> "", 
+    "windowtitle" -> "ColorOff", "type" -> "Symbol", "uri" -> 
+    "WaveletWare/ref/ColorOff"}, "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "11.0 for Microsoft Windows (64-bit) (July 28, 2016)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[5180, 148, 386, 15, 30, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->65503937]},
+ "RasterizedOutput"->{
+  Cell[6511, 205, 1302, 29, 103, "Output",
+   CellTags->"RasterizedOutput",
+   CellID->494197981],
+  Cell[7816, 236, 1294, 29, 103, "Output",
+   CellTags->"RasterizedOutput",
+   CellID->208859466]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 12545, 380},
+ {"RasterizedOutput", 12687, 384}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[580, 21, 3702, 92, 48, "AnchorBarGrid",
+ CellID->1],
+Cell[4285, 115, 285, 11, 44, "ObjectNameGrid"],
+Cell[4573, 128, 582, 16, 83, "Usage"],
+Cell[CellGroupData[{
+Cell[5180, 148, 386, 15, 30, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->65503937],
+Cell[CellGroupData[{
+Cell[5591, 167, 195, 6, 25, "ExampleSection",
+ CellID->139905920],
+Cell[5789, 175, 65, 1, 31, "MathCaption",
+ CellID->16454449],
+Cell[5857, 178, 126, 4, 42, "Input",
+ InitializationCell->True,
+ CellID->861618089],
+Cell[5986, 184, 178, 7, 33, "ExampleText",
+ CellID->214874310],
+Cell[CellGroupData[{
+Cell[6189, 195, 319, 8, 43, "Input",
+ CellID->175706687],
+Cell[6511, 205, 1302, 29, 103, "Output",
+ CellTags->"RasterizedOutput",
+ CellID->494197981],
+Cell[7816, 236, 1294, 29, 103, "Output",
+ CellTags->"RasterizedOutput",
+ CellID->208859466]
+}, Open  ]]
+}, Open  ]],
+Cell[9137, 269, 31, 0, 29, "SectionFooterSpacer"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9205, 274, 270, 12, 30, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[9478, 288, 558, 16, 58, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10073, 309, 276, 12, 30, "MoreAboutSection",
+ CellID->38303248],
+Cell[10352, 323, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[10386, 325, 211, 6, 70, "MoreAbout",
+ CellID->321054683]
+}, Open  ]],
+Cell[10612, 334, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

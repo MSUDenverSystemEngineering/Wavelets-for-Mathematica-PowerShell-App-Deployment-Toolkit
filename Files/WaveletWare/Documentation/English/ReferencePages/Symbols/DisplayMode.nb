@@ -1,0 +1,652 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     18983,        642]
+NotebookOptionsPosition[     15111,        528]
+NotebookOutlinePosition[     17305,        585]
+CellTagsIndexPosition[     17220,        580]
+WindowTitle->DisplayMode
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["WAVELET WARE PACKAGE SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"RGBToYCbCr\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/RGBToYCbCr"], "\<\"YCbCrToRGB\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/YCbCrToRGB"], "\<\"RGBToHSI\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/RGBToHSI"], "\<\"HSIToRGB\"\>":>
+       Documentation`HelpLookup["paclet:WaveletWare/ref/HSIToRGB"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"List of Options and Values\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/guide/List of Options and Values"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"WaveletWare/ref/DisplayMode\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["WaveletWare/ref/DisplayMode"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/WaveletWare/ref/\
+DisplayMode.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$39925], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "WaveletWare/ref/DisplayMode", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[TextData[{
+ Cell["DisplayMode", "ObjectName"],
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{8, 0}],
+    CacheGraphics->False],
+   Spacer[8]]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData["DisplayMode"], "InlineFormula"],
+     "\[LineSeparator]is an option for ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["HistogramMatch"]],"paclet:WaveletWare/ref/HistogramMatch"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     ", ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["RGBToYCbCr"]],"paclet:WaveletWare/ref/RGBToYCbCr"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     ", ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["YCbCrToRGB"]],"paclet:WaveletWare/ref/YCbCrToRGB"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     ", ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["RGBToHSI"]],"paclet:WaveletWare/ref/RGBToHSI"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     " and ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["HSIToRGB"]],"paclet:WaveletWare/ref/HSIToRGB"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     " that indicates whether or not the returned values are in the range \
+0,...,255."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    InterpretationBox[
+     StyleBox[
+      GraphicsBox[{},
+       BaselinePosition->Baseline,
+       ImageSize->{6, 0}],
+      CacheGraphics->False],
+     Spacer[6]]]],
+   "Details"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->84990746],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ StyleBox["DisplayMode",
+  FontFamily->"Courier New",
+  FontSize->12],
+ " set to ",
+ ButtonBox["True",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/True"],
+ " maps the output of ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["RGBToYCbCr"]],"paclet:WaveletWare/ref/RGBToYCbCr"},
+   "RefLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula"],
+ " and ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["RGBToHSI"]],"paclet:WaveletWare/ref/RGBToHSI"},
+   "RefLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula"],
+ " to a range that can be viewed by ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ImagePlot"]],"paclet:WaveletWare/ref/ImagePlot"},
+   "RefLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula"],
+ "."
+}], "Notes",
+ CellID->187636093],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["RGBToYCbCr"]],"paclet:WaveletWare/ref/RGBToYCbCr"},
+   "RefLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula"],
+ " takes as input integers in the range 0,1,...,255 and returns values ",
+ Cell[BoxData[
+  StyleBox["y", "TI"]], "InlineFormula"],
+ " \[Element] [0,1] and ",
+ Cell[BoxData[
+  StyleBox["cb", "TI"]], "InlineFormula"],
+ ", ",
+ Cell[BoxData[
+  StyleBox["cr", "TI"]], "InlineFormula"],
+ " \[Element] [",
+ Cell[BoxData[
+  RowBox[{"-", 
+   FractionBox["1", "2"]}]], "InlineFormula"],
+ ",",
+ Cell[BoxData[
+  FractionBox["1", "2"]], "InlineFormula"],
+ "].  If ",
+ StyleBox["DisplayMode",
+  FontFamily->"Courier New",
+  FontSize->12],
+ " is set to ",
+ ButtonBox["True",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/True"],
+ " (default is ",
+ ButtonBox["False",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/False"],
+ "), then ",
+ Cell[BoxData[
+  StyleBox["y", "TI"]], "InlineFormula"],
+ " \[Element] [16, 235] and ",
+ Cell[BoxData[
+  StyleBox["cb", "TI"]], "InlineFormula"],
+ ",",
+ Cell[BoxData[
+  StyleBox["cr", "TI"]], "InlineFormula"],
+ " \[Element] [16,240].  If ",
+ StyleBox["DisplayMode",
+  FontFamily->"Courier New",
+  FontSize->12],
+ " is set to ",
+ ButtonBox["True",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/True"],
+ " as an option for ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["YCbCrToRGB"]],"paclet:WaveletWare/ref/YCbCrToRGB"},
+   "RefLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula"],
+ ", then the routine expects values for ",
+ Cell[BoxData[
+  StyleBox["y", "TI"]], "InlineFormula"],
+ " \[Element] [16, 235] and ",
+ Cell[BoxData[
+  StyleBox["cb", "TI"]], "InlineFormula"],
+ ", ",
+ Cell[BoxData[
+  StyleBox["cr", "TI"]], "InlineFormula"],
+ " \[Element] [16, 240]."
+}], "Notes",
+ CellID->1067943069],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->511050464],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->358272668],
+
+Cell["This loads the package:", "MathCaption",
+ CellID->16454449],
+
+Cell[BoxData[
+ RowBox[{"<<", "WaveletWare`"}]], "Input",
+ InitializationCell->True,
+ CellLabel->"In[1]:=",
+ CellID->861618089],
+
+Cell[TextData[{
+ "Convert an RGB triple to YCbCr space and back first with ",
+ StyleBox["DisplayMode",
+  FontFamily->"Courier New",
+  FontSize->12],
+ " set to ",
+ ButtonBox["False",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/False"],
+ " and then to ",
+ ButtonBox["True.",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/True"]
+}], "ExampleText",
+ CellID->1024171621],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"r", ",", "g", ",", "b"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"100", ",", "150", ",", "50"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"y", ",", "cb", ",", "cr"}], "}"}], "=", 
+  RowBox[{"RGBToYCbCr", "[", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "g", ",", "b"}], "}"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"YCbCrToRGB", "[", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", "cb", ",", "cr"}], "}"}], "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"y", ",", "cb", ",", "cr"}], "}"}], "=", 
+  RowBox[{"RGBToYCbCr", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"r", ",", "g", ",", "b"}], "}"}], ",", 
+    RowBox[{"DisplayMode", "\[Rule]", "True"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"YCbCrToRGB", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"y", ",", "cb", ",", "cr"}], "}"}], ",", 
+   RowBox[{"DisplayMode", "\[Rule]", "True"}]}], "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->797736522],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.4849019607843137`", ",", 
+   RowBox[{"-", "0.1629929624219891`"}], ",", 
+   RowBox[{"-", "0.06615199574837066`"}]}], "}"}]], "Output",
+ ImageSize->{224, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->21123278],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"100", ",", "150", ",", "50"}], "}"}]], "Output",
+ ImageSize->{96, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->69462034],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "122.1935294117647`", ",", "91.48957641747444`", ",", 
+   "113.18195295236497`"}], "}"}]], "Output",
+ ImageSize->{187, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->406583858],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"100", ",", "150", ",", "50"}], "}"}]], "Output",
+ ImageSize->{96, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->360676695]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["RGBToYCbCr"]],"paclet:WaveletWare/ref/RGBToYCbCr"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["YCbCrToRGB"]],"paclet:WaveletWare/ref/YCbCrToRGB"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["RGBToHSI"]],"paclet:WaveletWare/ref/RGBToHSI"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["HSIToRGB"]],"paclet:WaveletWare/ref/HSIToRGB"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["List of Options and Values"]],
+   "paclet:WaveletWare/guide/List of Options and Values"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->903880928]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"DisplayMode",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:WaveletWare/guide/WaveletWare", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2016, 8, 25, 9, 47, 29.3672896}", 
+    "history" -> {"XX", "", "", ""}, "context" -> 
+    "WaveletWare`ImageProcessing`", "keywords" -> {}, "specialkeywords" -> {},
+     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Wavelet Ware Package Symbol", "language" -> "en", "paclet" -> 
+    "WaveletWare Package", "status" -> "None", "summary" -> 
+    "DisplayMode is an option for HistogramMatch, RGBToYCbCr, YCbCrToRGB, \
+RGBToHSI and HSIToRGB that indicates whether or not the returned values are \
+in the range 0,...,255.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "DisplayMode", "titlemodifier" -> "", "windowtitle" -> "DisplayMode", 
+    "type" -> "Symbol", "uri" -> "WaveletWare/ref/DisplayMode"}, 
+  "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "11.0 for Microsoft Windows (64-bit) (July 28, 2016)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[9658, 311, 387, 15, 30, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->511050464]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 17077, 573}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[583, 21, 3902, 95, 48, "AnchorBarGrid",
+ CellID->1],
+Cell[4488, 118, 288, 11, 44, "ObjectNameGrid"],
+Cell[CellGroupData[{
+Cell[4801, 133, 1377, 40, 97, "Usage"],
+Cell[CellGroupData[{
+Cell[6203, 177, 737, 24, 31, "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->84990746],
+Cell[6943, 203, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[6977, 205, 783, 28, 70, "Notes",
+ CellID->187636093],
+Cell[7763, 235, 1812, 68, 70, "Notes",
+ CellID->1067943069],
+Cell[9578, 305, 31, 0, 70, "SectionFooterSpacer"]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9658, 311, 387, 15, 30, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->511050464],
+Cell[CellGroupData[{
+Cell[10070, 330, 195, 6, 25, "ExampleSection",
+ CellID->358272668],
+Cell[10268, 338, 65, 1, 31, "MathCaption",
+ CellID->16454449],
+Cell[10336, 341, 126, 4, 42, "Input",
+ InitializationCell->True,
+ CellID->861618089],
+Cell[10465, 347, 369, 14, 49, "ExampleText",
+ CellID->1024171621],
+Cell[CellGroupData[{
+Cell[10859, 365, 1077, 34, 107, "Input",
+ CellID->797736522],
+Cell[11939, 401, 306, 9, 35, "Output",
+ CellID->21123278],
+Cell[12248, 412, 217, 7, 35, "Output",
+ CellID->69462034],
+Cell[12468, 421, 273, 9, 35, "Output",
+ CellID->406583858],
+Cell[12744, 432, 218, 7, 35, "Output",
+ CellID->360676695]
+}, Open  ]]
+}, Open  ]],
+Cell[12989, 443, 31, 0, 29, "SectionFooterSpacer"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13057, 448, 270, 12, 30, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[13330, 462, 1178, 34, 58, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14545, 501, 276, 12, 70, "MoreAboutSection",
+ CellID->38303248],
+Cell[14824, 515, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[14858, 517, 211, 6, 70, "MoreAbout",
+ CellID->903880928]
+}, Open  ]],
+Cell[15084, 526, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

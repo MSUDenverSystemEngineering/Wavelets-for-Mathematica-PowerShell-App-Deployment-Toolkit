@@ -1,0 +1,520 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     16664,        510]
+NotebookOptionsPosition[     12813,        396]
+NotebookOutlinePosition[     15150,        458]
+CellTagsIndexPosition[     15030,        452]
+WindowTitle->InputDimension
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["WAVELET WARE PACKAGE SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"WaveletTree\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/WaveletTree"], "\<\"ShowBestBasis\"\>":>
+       Documentation`HelpLookup["paclet:WaveletWare/ref/ShowBestBasis"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"List of Options and Values\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/guide/List of Options and Values"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"WaveletWare/ref/InputDimension\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["WaveletWare/ref/InputDimension"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/WaveletWare/ref/\
+InputDimension.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$58592], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "WaveletWare/ref/InputDimension", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[TextData[{
+ Cell["InputDimension", "ObjectName"],
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{8, 0}],
+    CacheGraphics->False],
+   Spacer[8]]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData["InputDimension"], "InlineFormula"],
+     "\[LineSeparator]is an option for ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["WaveletTree"]],"paclet:WaveletWare/ref/WaveletTree"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     " that instructs the routine to make a tree for one-dimensional \
+(default) or two-dimensional data."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    InterpretationBox[
+     StyleBox[
+      GraphicsBox[{},
+       BaselinePosition->Baseline,
+       ImageSize->{6, 0}],
+      CacheGraphics->False],
+     Spacer[6]]]],
+   "Details"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->88197340],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ "The values for ",
+ StyleBox["InputDimension",
+  FontFamily->"Courier New",
+  FontSize->12],
+ " are either 1 (default) or 2."
+}], "Notes",
+ CellID->1067943069],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->9220500],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->13871052],
+
+Cell["This loads the package:", "MathCaption",
+ CellID->16454449],
+
+Cell[BoxData[
+ RowBox[{"<<", "WaveletWare`"}]], "Input",
+ InitializationCell->True,
+ CellLabel->"In[1]:=",
+ CellID->861618089],
+
+Cell["Generate 1- and 2-dimensional wavelet trees.", "ExampleText",
+ CellID->352780493],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ShowBestBasis", "[", 
+  RowBox[{"WaveletTree", "[", "3", "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ShowBestBasis", "[", 
+  RowBox[{
+   RowBox[{"WaveletTree", "[", 
+    RowBox[{"3", ",", 
+     RowBox[{"InputDimension", "\[Rule]", "2"}]}], "]"}], ",", 
+   RowBox[{"Show3D", "\[Rule]", "False"}]}], "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->5645369],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[
+    0.33333333333333337`, 0.33333333333333337`, 0.33333333333333337`], 
+    EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], RectangleBox[{0, 0}]}, 
+   {RGBColor[
+    0.33333333333333337`, 0.33333333333333337`, 0.33333333333333337`], 
+    EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], RectangleBox[{1, 0}]}, 
+   {RGBColor[1., 1., 1.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], 
+    RectangleBox[{2, 0}]}, 
+   {RGBColor[1., 1., 1.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], 
+    RectangleBox[{3, 0}]}, 
+   {RGBColor[1., 1., 1.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], 
+    RectangleBox[{4, 0}]}, 
+   {RGBColor[1., 1., 1.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], 
+    RectangleBox[{5, 0}]}, 
+   {RGBColor[1., 1., 1.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], 
+    RectangleBox[{6, 0}]}, 
+   {RGBColor[1., 1., 1.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], 
+    RectangleBox[{7, 0}]}, 
+   {RGBColor[1., 1., 1.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], 
+    RectangleBox[{0, 1}, {2, 2}]}, 
+   {RGBColor[
+    0.33333333333333337`, 0.33333333333333337`, 0.33333333333333337`], 
+    EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], 
+    RectangleBox[{2, 1}, {4, 2}]}, 
+   {RGBColor[1., 1., 1.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], 
+    RectangleBox[{4, 1}, {6, 2}]}, 
+   {RGBColor[1., 1., 1.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], 
+    RectangleBox[{6, 1}, {8, 2}]}, 
+   {RGBColor[1., 1., 1.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], 
+    RectangleBox[{0, 2}, {4, 3}]}, 
+   {RGBColor[
+    0.33333333333333337`, 0.33333333333333337`, 0.33333333333333337`], 
+    EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], 
+    RectangleBox[{4, 2}, {8, 3}]}, 
+   {RGBColor[1., 1., 1.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], 
+    RectangleBox[{0, 3}, {8, 4}]}},
+  ImageSize->Automatic]], "Output",
+ ImageSize->{244, 125},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->15471376],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJztlkGKVDEURYNOHLoFd+FIcOi0JQvoxrJxUkK1IO7aHXxLgiBUvVTy6v68
+n885UE13uMm7CYfufvf0/eHrq5TSy5vzl4fHnx9Pp8dfn9+ef8jHl2/Px8OX
+T8cfh+fD6f3T6/Pih/Pn9/nz9/sFAAAAYH3SDFB7JDN2Tv9qR7doYh9iTFo7
+uk4r/7e99Vs8DKuetnY5Leu4s3Zjn67T2t+hpUxlsfHAm4u+vfi84HM1ic9C
+8NkxxTfUSuKzEHx2TPENtZL4LASfHVN8Q60kPgvBZ8cU31ArmSah97IhWPW0
+tctp+Hw1uZ6BWnovG4JVT1u7nIbPV5NXy1QWGw+8uejbi88LPleT+CwEnx1T
+fEOtJD4LwWfHFN9QK4nPQnbp88aZsXPC54vT8LkwY+eEzxenDfO5cbt7ivut
+ribvWRy/F58XfK4m8VkIPjumuN8Kn9cGnx1T3G+Fz2uDz44p7rfC57XBZ8cU
+91tVbNk+vZcNwaqnrV1OU4h8w7TGQV2xxtu1v8PVxe3Te9kQrHra2uU0hcg3
+TGsc1BVrvF37OwgXx+/F5wWfq0l8FoLPjinut8LntcFnxxT3W+Hz2uCzY4r7
+rfB5bepibJx91I6u00pdmI1g1Yt7tg72UTu6Tit1YTaCVa+sK/416Pj73ntg
++3W2ELOS9yyO34vPGZ+rSXwWgs/DYlYSn4Xg87CYlcRnIfg8LGYl0yT0XjYE
+q15Z1+qnOi3jcwS9lw3BqlfWtfqpTst79Nm3OH4vPmd8ribxWQg+D4tZSXwW
+gs/DYlYSn4Xg87CYlcRnIbv0eePM2Dnh84V+qtMyPkdQF2YjWPXKulY/1WmZ
+/zfi9uJzxudqEp+F4POwmJXEZyH4PCxmJfFZCD4Pi1nJNAm9lw3BqlfWtfqp
+Tsv4HEHvZUOw6pV1rX6q0/IeffYtjt+Lzxmfq0l8FoLPw2JWEp+F4POwmJXE
+ZyH4PCxmJWf0eeMsF0Q3amIftaPrtDJR232IMWnt6DqtXL42AAAAAABU+AOv
+550j
+    "], {{0, 62}, {240, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  DefaultBaseStyle->"ImageGraphics",
+  ImageSize->Automatic,
+  ImageSizeRaw->{240, 62},
+  PlotRange->{{0, 240}, {0, 62}}]], "Output",
+ ImageSize->{244, 62},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellTags->"RasterizedOutput",
+ CellLabel->"Out[2]=",
+ CellID->190459236]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WaveletTree"]],"paclet:WaveletWare/ref/WaveletTree"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ShowBestBasis"]],"paclet:WaveletWare/ref/ShowBestBasis"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["List of Options and Values"]],
+   "paclet:WaveletWare/guide/List of Options and Values"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->98891902]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"InputDimension",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:WaveletWare/guide/WaveletWare", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2016, 8, 25, 9, 49, 12.5717778}", 
+    "history" -> {"XX", "", "", ""}, "context" -> 
+    "WaveletWare`PacketTransforms`", "keywords" -> {}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "Wavelet Ware Package Symbol", "language" -> "en", "paclet" -> 
+    "WaveletWare Package", "status" -> "None", "summary" -> 
+    "InputDimension is an option for WaveletTree that instructs the routine \
+to make a tree for one-dimensional (default) or two-dimensional data.", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "InputDimension", 
+    "titlemodifier" -> "", "windowtitle" -> "InputDimension", "type" -> 
+    "Symbol", "uri" -> "WaveletWare/ref/InputDimension"}, 
+  "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "11.0 for Microsoft Windows (64-bit) (July 28, 2016)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[6301, 193, 385, 15, 30, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->9220500]},
+ "RasterizedOutput"->{
+  Cell[9710, 291, 1567, 34, 83, "Output",
+   CellTags->"RasterizedOutput",
+   CellID->190459236]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 14767, 441},
+ {"RasterizedOutput", 14908, 445}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[586, 21, 3736, 92, 48, "AnchorBarGrid",
+ CellID->1],
+Cell[4325, 115, 291, 11, 44, "ObjectNameGrid"],
+Cell[CellGroupData[{
+Cell[4641, 130, 602, 16, 97, "Usage"],
+Cell[CellGroupData[{
+Cell[5268, 150, 737, 24, 31, "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->88197340],
+Cell[6008, 176, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[6042, 178, 176, 7, 70, "Notes",
+ CellID->1067943069],
+Cell[6221, 187, 31, 0, 70, "SectionFooterSpacer"]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6301, 193, 385, 15, 30, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->9220500],
+Cell[CellGroupData[{
+Cell[6711, 212, 194, 6, 25, "ExampleSection",
+ CellID->13871052],
+Cell[6908, 220, 65, 1, 31, "MathCaption",
+ CellID->16454449],
+Cell[6976, 223, 126, 4, 42, "Input",
+ InitializationCell->True,
+ CellID->861618089],
+Cell[7105, 229, 87, 1, 33, "ExampleText",
+ CellID->352780493],
+Cell[CellGroupData[{
+Cell[7217, 234, 385, 10, 43, "Input",
+ CellID->5645369],
+Cell[7605, 246, 2102, 43, 146, "Output",
+ CellID->15471376],
+Cell[9710, 291, 1567, 34, 83, "Output",
+ CellTags->"RasterizedOutput",
+ CellID->190459236]
+}, Open  ]]
+}, Open  ]],
+Cell[11304, 329, 31, 0, 29, "SectionFooterSpacer"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11372, 334, 270, 12, 30, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[11645, 348, 566, 16, 58, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12248, 369, 276, 12, 70, "MoreAboutSection",
+ CellID->38303248],
+Cell[12527, 383, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[12561, 385, 210, 6, 70, "MoreAbout",
+ CellID->98891902]
+}, Open  ]],
+Cell[12786, 394, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

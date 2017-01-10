@@ -1,0 +1,739 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     30575,        729]
+NotebookOptionsPosition[     26983,        623]
+NotebookOutlinePosition[     29356,        687]
+CellTagsIndexPosition[     29236,        681]
+WindowTitle->NodeEdgeColor
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["WAVELET WARE PACKAGE SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"HuffmanTree\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/HuffmanTree"], "\<\"NodeColor\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/NodeColor"], "\<\"NodeEdgeThickness\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/NodeEdgeThickness"], "\<\"NodeFontColor\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/NodeFontColor"], "\<\"NodeFontSize\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/NodeFontSize"], "\<\"NodeSize\"\>":>
+       Documentation`HelpLookup["paclet:WaveletWare/ref/NodeSize"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"List of Options and Values\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/guide/List of Options and Values"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"WaveletWare/ref/NodeEdgeColor\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["WaveletWare/ref/NodeEdgeColor"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/WaveletWare/ref/\
+NodeEdgeColor.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$77609], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "WaveletWare/ref/NodeEdgeColor", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[TextData[{
+ Cell["NodeEdgeColor", "ObjectName"],
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{8, 0}],
+    CacheGraphics->False],
+   Spacer[8]]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData["NodeEdgeColor"], "InlineFormula"],
+     "\[LineSeparator]is an option for ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["HuffmanTree"]],"paclet:WaveletWare/ref/HuffmanTree"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     " that gives the edge color for the nodes."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->231209130],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->884604008],
+
+Cell["This loads the package:", "MathCaption",
+ CellID->16454449],
+
+Cell[BoxData[
+ RowBox[{"<<", "WaveletWare`"}]], "Input",
+ InitializationCell->True,
+ CellLabel->"In[1]:=",
+ CellID->861618089],
+
+Cell[TextData[{
+ "The option ",
+ StyleBox["NodeEdgeColor",
+  FontFamily->"Courier New",
+  FontSize->12],
+ " controls the color of the edges of the nodes of the tree."
+}], "ExampleText",
+ CellID->341931774],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"codes", ",", "old", ",", "new"}], "}"}], "=", 
+   RowBox[{"MakeHuffmanCodes", "[", "\"\<mississippi\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"HuffmanTree", "[", 
+  RowBox[{"codes", ",", 
+   RowBox[{"ImageSize", "\[Rule]", "200"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"HuffmanTree", "[", 
+  RowBox[{"codes", ",", 
+   RowBox[{"NodeEdgeColor", "\[Rule]", "Green"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "200"}]}], "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->725341320],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1: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
+
+    "], {{0, 318}, {200, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  DefaultBaseStyle->"ImageGraphics",
+  ImageSize->Automatic,
+  ImageSizeRaw->{200, 318},
+  PlotRange->{{0, 200}, {0, 318}}]], "Output",
+ ImageSize->{204, 318},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellTags->"RasterizedOutput",
+ CellLabel->"Out[2]=",
+ CellID->31688090],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJztnX9oW1eWx7W7w2RhWLdk6p1x4uLEIcG2MuSH0I7WJpsMzrQ2npDEtbNp
+rC7JJE67QlsndbzJmDSalBhDEpAXpvVgCPpnjMFLR90widhCEISm2pp0TQup
+WlyiDGXaLRgMbhpZT3buHkmW9etJfpL17rvv6fvh0VrvSYq+55177rm/3t38
+677O039tMpn6/5b+03ni/C/eeOPEb156ll50v97/r6++3nuq/fVzva/2vmH7
+9d/QyX/6K5Ppf+j/sb8ZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAIA8hFvIwj4u56GiRWhLH+afn6eUoGw2yoNY/EOgJH/PZo/baaG3N
+Qs3+r/Z3P+imw+V3JY5jnx6jl+2P2uue1FUvVndFuybYhNY/GYhLmIUpCm2R
+tlhnrY4px9u33p5cjbGbY32Bvr1f7yUnHFoammNzWosAYhFggaZIE0Uht8+9
+qjvlQk7Y+UVnfaQesQskoDDljDrN8+bSPCorfFHsapVaEbgqHHKqtnDbiU9O
+rNGj0hm8O2gL275h32gtDmgDRRVyqosfXCyjUyW4+v7VHU92UHNSa4lAA1qk
+FjWcKgFlXI0LjagQK43ri9cPPjyoklMlcN539kg9WgsF/Aiy4Lbvt42/O66q
+XxHWWauP+bSWCzhhj9odUw61nWoynmiZJbPWcgEPqKW2IbKBQ7BKYJ43B1hA
+a9FAdUbZaPujdj5ORVBgpPCotWigOtwqwQRDd4YskkVr0UB1WqQWl9/Fza/G
+bo5VL1ZrLRqoTm20VsmYchkxMZPWooHqUK1EdRM3p/J4PVVLVVqLBqrTFe3q
+C/Rx8yt0NVQIl55eOvLZEW5+NXBvoEPq0Fo0UJ0gC9Y9qVvdIW5cPtXdLzd1
+xt3fHefU5RsK/Kr522Yv82otGvBg9Sbhsu/k+lXK2/L6XRrUGNwobQyzsNaK
+AQ8ogFAYKehTpy67Zf2GLiZPKnCsrpmuK4tXtJYL+NEZ6Tz70dlCPiHrNnQy
+Vf2RjxWqCylj37WwC8Gqophjc/WReqqnivOrDFcq5Ffj745v/277NJvWWijg
+Dd10y7wlbx/pGuIVOdWe2T23lm5pLRFoA7mW9bFVfsWEfPq0en7l8XrgVCDE
+Qk2RplcevKLMr2JnE0FK9rrzvnPzwmY4FWDxVTnnoufM8+bBu4PyfpXhQ/L9
+V0N3hqyz1h6pBytxQDoBFmiVWmsWano/7lU+64/e6ZhybP6/zRbJginHIB99
+7j7rfeu6p+u2Pt564MsDA/cGXH4XpUzpjkRnKLId/vwwhTh6pz1q3+3Y7ff7
+tf7tQFCCweDOnTvD4ViPE6X0bubukDpapJaqpSoTMyUOciQ6Q5FtmA2vTDAO
+hUINDQ2JDwKQhc1mCwRKnIs+PDx84cKF8v4eYABGR0dfe+21kj9OwYrccnoa
+HaEgxTfffEMV2dzcmpYnk1NRNVqunwQMwKFDh7zeMsxmOXPmjNvtXvv3AANA
+HkV+VZavotqQ4h6l8WX5NqBfqO4jT6B6sFxf6PP52trayvVtQKdQrk4Ze3m/
+8/jx4x6Pp7zfCXREIBCgRlzZv5aiHyXwZYyBQEdQLkR3PxhU5XHZFK8oaqnx
+zUBwXHHU+37KsijXUu/7gYCkD9moBAZ3KoDbp01xmkdm4q/XMmSjnNTgzsxI
+s+n0bbX/PcCV1E1N/LXGIZuioKg4/buX4j4NvzIYFKyS93RmxGqyP7/mIRvl
+xH3qRyO3Ea8MBwWpZPVHPrbJtP7kO1wXIFNVOHzuV/Aro0HhKulXXu+b5Fcr
+TsaH2OBO/U8sppfhV4YiGa/iQzbP201Wzn5F+P/gfMa0AX5lLJbzq9iQzVvd
+2tRHMyN/b9p2FoM7hiLWCvzZmf+02WyaNffj7YV6DO4Yi3D4vR9n9l/xJu7Q
+5ycmjh49qsm/D9RA7SEb5WBwxzBwGLJRDgZ3DAOfIRvluN3uM2fOaP0rwJrg
+OWSjnNjgDlbu6JayrLJRA3IqiqKoDXVKuVbZqEFscGd4WOtfAYqmjKts1AAr
+d/RI2VfZqIHf79+3b5/WvwIUgRqrbNQAK3d0hEqrbNRAF3EVMJVX2ajBBAZ3
+9IA4QzbKweCOJoRYyMM8LnIZ5mqRWhLH+afn6eUoGw2yVGgSashGOVQPbtq0
+Kf1nK5cMisXHfPaovTZaW7NQs/+r/d0Puulw+V2J49inx+hl+6P2uid11YvV
+XdGuCTYh2pCNchKDOyVI1vqH64YwC1OR3CJtsc5aHVOO1HP7k88hzt0Oaezm
+WF+gr/nPzc/OPTu0NDTHhOtgL0xC8jNfP7P7290ZkvOTkLz3673khHqUzJkA
+CzRFmqhI5jyrP/VA/gL7HdEd6fyisz5Sr6OCnF+yIvQomSdUZp1Rp3nenMe8
+q2xylA6VZSrIrVKr4KV4NclFoBfJnCELt4XbTnxyopDtYnGqiB0lB+8O2sI2
+YZ/Sr0hykQgumTNUxMjCFz+4qNR8ikPX1fev7niyg9pWWkvMpmjJihFWMn+o
+Bb26hdN9qYgqMZZ+NC40ilY7KJJcKmJK5sz1xesHHx5UYq5Uc3DV7W8zcd53
+9kg9WgtNoVxyyYgmmTNBFtz2/Tblm9GUjHXWKsjmNRUomT/2qN0x5VDbwpPx
+rMMsmbWWG6MCJXOGmi0bIhs4lNwE1Jxf2c4Gkg3MKBttf9TOx8IERQmKFZBs
+eLjVCAmG7gxZJAskGx5qa7v8Lm5GHrs5Vr1YDcmGpzZaq2SAtYyYmAmSDQ+F
+aArU3Czs8Xqqlqog2fB0Rbv6An3cjCxCu7sCJfPn0tNLRz47ws3IA/cGOqQO
+SDY8QRase1KXY4zkcI3sCKD81L6ViQ6FRg2bv232Mo3XPpciuZC6AjPRRJGs
+CTnto5ShZEyWdir9amrCX/7xaGoZbZQ2hpn2896Lk1xQXcLh8vmVOJL5Q6WJ
+ypSsFVcpi6mraR/JT9dM15XFK1rLjVGk5Pzq6M2n+vvz20gcyZrQGek8+9HZ
+NFutFMlCs2EyCvmpy5cLViSUvu5a2CVOyS1Ccl51iY/lLXuiSebPHJurj9RT
+0M6xax6/Wk43kpfiL1O1Y84nxt8d3/7d9mkm0MOmipCcR13yT3m/ElCyJpAF
+LPOWWIeh4niVulrwI2ThPbN7bi3d0lpiNkoly15NnZTxK2ElawLZ2frY6vZd
+VJpfpTIPd3+e++LxekS2sDLJMupS0/yTrLxFcMmaEGKhpsjul53LVpLPYeVc
+KGMBWPINzvvOzQubBbfw6pLzqEuS8QldSNYEyjPPRR0vZhXCrO4FmSU5K71a
+sbcN3Rmyzlp7pB5dLEtZVXKWukyW36cvyVoRYIFWqbVmoab3417lU+DonY4p
+h3nebJEsupt/W4GStYLqiN7F3nVP1219vPXAlwcG7g24/C7KH9KtSmcG7w4e
+/vww2ZbeaY/adT098o//+8eNNzcql/zDpR/+1PdTXUvWEMpv3czdIXW0SC1V
+S1UmZkocZH86Q8V8mA0bw7YrD99WLvnMmTNut1vrHw7EpbTnzONxf6AA5Bg7
+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
+    "], {{0, 318}, {200, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  DefaultBaseStyle->"ImageGraphics",
+  ImageSize->Automatic,
+  ImageSizeRaw->{200, 318},
+  PlotRange->{{0, 200}, {0, 318}}]], "Output",
+ ImageSize->{204, 318},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellTags->"RasterizedOutput",
+ CellLabel->"Out[2]=",
+ CellID->93800745]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["HuffmanTree"]],"paclet:WaveletWare/ref/HuffmanTree"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["NodeColor"]],"paclet:WaveletWare/ref/NodeColor"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["NodeEdgeThickness"]],
+    "paclet:WaveletWare/ref/NodeEdgeThickness"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["NodeFontColor"]],"paclet:WaveletWare/ref/NodeFontColor"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["NodeFontSize"]],"paclet:WaveletWare/ref/NodeFontSize"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["NodeSize"]],"paclet:WaveletWare/ref/NodeSize"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["List of Options and Values"]],
+   "paclet:WaveletWare/guide/List of Options and Values"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->23520020]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"NodeEdgeColor",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:WaveletWare/guide/WaveletWare", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2016, 8, 25, 9, 50, 44.2864169}", 
+    "history" -> {"XX", "", "", ""}, "context" -> 
+    "WaveletWare`ImageProcessing`", "keywords" -> {}, "specialkeywords" -> {},
+     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Wavelet Ware Package Symbol", "language" -> "en", "paclet" -> 
+    "WaveletWare Package", "status" -> "None", "summary" -> 
+    "NodeEdgeColor is an option for HuffmanTree that gives the edge color for \
+the nodes.", "synonyms" -> {}, "tabletags" -> {}, "title" -> "NodeEdgeColor", 
+    "titlemodifier" -> "", "windowtitle" -> "NodeEdgeColor", "type" -> 
+    "Symbol", "uri" -> "WaveletWare/ref/NodeEdgeColor"}, 
+  "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "11.0 for Microsoft Windows (64-bit) (July 28, 2016)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[5597, 155, 387, 15, 30, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->231209130]},
+ "RasterizedOutput"->{
+  Cell[7201, 219, 8337, 145, 339, "Output",
+   CellTags->"RasterizedOutput",
+   CellID->31688090],
+  Cell[15541, 366, 8633, 149, 339, "Output",
+   CellTags->"RasterizedOutput",
+   CellID->93800745]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 28870, 667},
+ {"RasterizedOutput", 29013, 671}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[585, 21, 4148, 100, 48, "AnchorBarGrid",
+ CellID->1],
+Cell[4736, 123, 290, 11, 44, "ObjectNameGrid"],
+Cell[5029, 136, 543, 15, 83, "Usage"],
+Cell[CellGroupData[{
+Cell[5597, 155, 387, 15, 30, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->231209130],
+Cell[CellGroupData[{
+Cell[6009, 174, 195, 6, 25, "ExampleSection",
+ CellID->884604008],
+Cell[6207, 182, 65, 1, 31, "MathCaption",
+ CellID->16454449],
+Cell[6275, 185, 126, 4, 42, "Input",
+ InitializationCell->True,
+ CellID->861618089],
+Cell[6404, 191, 205, 7, 35, "ExampleText",
+ CellID->341931774],
+Cell[CellGroupData[{
+Cell[6634, 202, 564, 15, 59, "Input",
+ CellID->725341320],
+Cell[7201, 219, 8337, 145, 339, "Output",
+ CellTags->"RasterizedOutput",
+ CellID->31688090],
+Cell[15541, 366, 8633, 149, 339, "Output",
+ CellTags->"RasterizedOutput",
+ CellID->93800745]
+}, Open  ]]
+}, Open  ]],
+Cell[24201, 519, 31, 0, 70, "SectionFooterSpacer"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24269, 524, 270, 12, 70, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[24542, 538, 1839, 53, 70, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26418, 596, 276, 12, 70, "MoreAboutSection",
+ CellID->38303248],
+Cell[26697, 610, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[26731, 612, 210, 6, 70, "MoreAbout",
+ CellID->23520020]
+}, Open  ]],
+Cell[26956, 621, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

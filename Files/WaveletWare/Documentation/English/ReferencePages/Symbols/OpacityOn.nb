@@ -1,0 +1,1567 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     84518,       1557]
+NotebookOptionsPosition[     80957,       1453]
+NotebookOutlinePosition[     83257,       1514]
+CellTagsIndexPosition[     83135,       1508]
+WindowTitle->OpacityOn
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["WAVELET WARE PACKAGE SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"ShowBestBasis\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/ShowBestBasis"], "\<\"OpacityOff\"\>":>
+       Documentation`HelpLookup["paclet:WaveletWare/ref/OpacityOff"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"List of Options and Values\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/guide/List of Options and Values"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"WaveletWare/ref/OpacityOn\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["WaveletWare/ref/OpacityOn"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/WaveletWare/ref/\
+OpacityOn.html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]},
+             Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$83857], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "WaveletWare/ref/OpacityOn", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[TextData[{
+ Cell["OpacityOn", "ObjectName"],
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{8, 0}],
+    CacheGraphics->False],
+   Spacer[8]]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData["OpacityOn"], "InlineFormula"],
+     "\[LineSeparator]is an option for ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["ShowBestBasis"]],"paclet:WaveletWare/ref/ShowBestBasis"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     " that sets the opacity level for the elements that are part of the best \
+basis."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->139016020],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->54645914],
+
+Cell["This loads the package:", "MathCaption",
+ CellID->16454449],
+
+Cell[BoxData[
+ RowBox[{"<<", "WaveletWare`"}]], "Input",
+ InitializationCell->True,
+ CellLabel->"In[1]:=",
+ CellID->861618089],
+
+Cell[TextData[{
+ "Use different levels of opacity for the regions in the best basis tree.  ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Show3D"]],"paclet:WaveletWare/ref/Show3D"},
+   "RefLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula"],
+ " must be set to ",
+ ButtonBox["True",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/True"],
+ ".  ",
+ StyleBox["OpacityOn",
+  FontFamily->"Courier New",
+  FontSize->12],
+ " is a  value in the interval [0,1] with the default value 0.75.  Set ",
+ StyleBox["OpacityOn",
+  FontFamily->"Courier New",
+  FontSize->12],
+ " is set to 0 to get perfect transparency."
+}], "ExampleText",
+ CellID->130915451],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ShowBestBasis", "[", 
+  RowBox[{
+   RowBox[{"WaveletTree", "[", 
+    RowBox[{"3", ",", 
+     RowBox[{"InputDimension", "\[Rule]", "2"}]}], "]"}], ",", 
+   RowBox[{"ColorOn", "\[Rule]", "Red"}], ",", 
+   RowBox[{"ColorOff", "\[Rule]", "Yellow"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "200"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ShowBestBasis", "[", 
+  RowBox[{
+   RowBox[{"WaveletTree", "[", 
+    RowBox[{"3", ",", 
+     RowBox[{"InputDimension", "\[Rule]", "2"}]}], "]"}], ",", 
+   RowBox[{"ColorOn", "\[Rule]", "Red"}], ",", 
+   RowBox[{"ColorOff", "\[Rule]", "Yellow"}], ",", 
+   RowBox[{"OpacityOff", "\[Rule]", ".7"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "200"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ShowBestBasis", "[", 
+  RowBox[{
+   RowBox[{"WaveletTree", "[", 
+    RowBox[{"3", ",", 
+     RowBox[{"InputDimension", "\[Rule]", "2"}]}], "]"}], ",", 
+   RowBox[{"ColorOn", "\[Rule]", "Red"}], ",", 
+   RowBox[{"ColorOff", "\[Rule]", "Yellow"}], ",", 
+   RowBox[{"OpacityOff", "\[Rule]", "0"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "200"}]}], "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->617086144],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {InsetBox[
+     GraphicsBox[{{}, {InsetBox[
+         GraphicsBox[
+          {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+           Large]}], RectangleBox[{0, 0}, {8, 8}]}], {189., -194.4}, 
+         ImageScaled[{0.5, 0.5}], {360., 360.00000000000006}], InsetBox[
+         GraphicsBox[{
+           {RGBColor[1., 0., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{0, 0}, {4, 4}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{0, 4}, {4, 8}]}, 
+           {RGBColor[1., 0., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{4, 0}, {8, 4}]}, 
+           {RGBColor[1., 0., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{4, 4}, {8, 8}]}}], {189., -583.2}, 
+         ImageScaled[{0.5, 0.5}], {360., 360.00000000000006}], InsetBox[
+         GraphicsBox[{
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{0, 0}, {2, 2}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{0, 2}, {2, 4}]}, 
+           {RGBColor[1., 0., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{0, 4}, {2, 6}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{0, 6}, {2, 8}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{2, 0}, {4, 2}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{2, 2}, {4, 4}]}, 
+           {RGBColor[1., 0., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{2, 4}, {4, 6}]}, 
+           {RGBColor[1., 0., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{2, 6}, {4, 8}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{4, 0}, {6, 2}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{4, 2}, {6, 4}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{4, 4}, {6, 6}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{4, 6}, {6, 8}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{6, 0}, {8, 2}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{6, 2}, {8, 4}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{6, 4}, {8, 6}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{6, 6}, {8, 8}]}}], {189., -972.}, 
+         ImageScaled[{0.5, 0.5}], {360., 360.}], InsetBox[
+         GraphicsBox[{
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{0, 0}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{0, 1}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{0, 2}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{0, 3}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{0, 4}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{0, 5}]}, 
+           {RGBColor[1., 0., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{0, 6}]}, 
+           {RGBColor[1., 0., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{0, 7}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{1, 0}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{1, 1}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{1, 2}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{1, 3}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{1, 4}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{1, 5}]}, 
+           {RGBColor[1., 0., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{1, 6}]}, 
+           {RGBColor[1., 0., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{1, 7}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{2, 0}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{2, 1}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{2, 2}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{2, 3}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{2, 4}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{2, 5}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{2, 6}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{2, 7}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{3, 0}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{3, 1}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{3, 2}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{3, 3}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{3, 4}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{3, 5}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{3, 6}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{3, 7}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{4, 0}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{4, 1}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{4, 2}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{4, 3}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{4, 4}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{4, 5}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{4, 6}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{4, 7}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{5, 0}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{5, 1}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{5, 2}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{5, 3}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{5, 4}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{5, 5}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{5, 6}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{5, 7}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{6, 0}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{6, 1}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{6, 2}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{6, 3}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{6, 4}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{6, 5}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{6, 6}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{6, 7}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{7, 0}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{7, 1}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{7, 2}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{7, 3}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{7, 4}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{7, 5}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{7, 6}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{7, 7}]}}], {189., -1360.8000000000002}, 
+         ImageScaled[{0.5, 0.5}], {360., 359.9999999999998}]}, {}},
+      ContentSelectable->True,
+      ImageSize->200,
+      PlotRangePadding->{6, 5}], {106.66666666666667, -105.}, 
+     ImageScaled[{0.5, 0.5}], {200, 200.}], InsetBox[
+     Graphics3DBox[{
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 0, 0}, {1, 1, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 1, 0}, {1, 2, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 2, 0}, {1, 3, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 3, 0}, {1, 4, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 4, 0}, {1, 5, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 5, 0}, {1, 6, 1}]}, 
+       {RGBColor[1., 0., 0.], Opacity[0.75], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 6, 0}, {1, 7, 1}]}, 
+       {RGBColor[1., 0., 0.], Opacity[0.75], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 7, 0}, {1, 8, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{1, 0, 0}, {2, 1, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{1, 1, 0}, {2, 2, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{1, 2, 0}, {2, 3, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{1, 3, 0}, {2, 4, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{1, 4, 0}, {2, 5, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{1, 5, 0}, {2, 6, 1}]}, 
+       {RGBColor[1., 0., 0.], Opacity[0.75], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{1, 6, 0}, {2, 7, 1}]}, 
+       {RGBColor[1., 0., 0.], Opacity[0.75], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{1, 7, 0}, {2, 8, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{2, 0, 0}, {3, 1, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{2, 1, 0}, {3, 2, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{2, 2, 0}, {3, 3, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{2, 3, 0}, {3, 4, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{2, 4, 0}, {3, 5, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{2, 5, 0}, {3, 6, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{2, 6, 0}, {3, 7, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{2, 7, 0}, {3, 8, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{3, 0, 0}, {4, 1, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{3, 1, 0}, {4, 2, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{3, 2, 0}, {4, 3, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{3, 3, 0}, {4, 4, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{3, 4, 0}, {4, 5, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{3, 5, 0}, {4, 6, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{3, 6, 0}, {4, 7, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{3, 7, 0}, {4, 8, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{4, 0, 0}, {5, 1, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{4, 1, 0}, {5, 2, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{4, 2, 0}, {5, 3, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{4, 3, 0}, {5, 4, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{4, 4, 0}, {5, 5, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{4, 5, 0}, {5, 6, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{4, 6, 0}, {5, 7, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{4, 7, 0}, {5, 8, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{5, 0, 0}, {6, 1, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{5, 1, 0}, {6, 2, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{5, 2, 0}, {6, 3, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{5, 3, 0}, {6, 4, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{5, 4, 0}, {6, 5, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{5, 5, 0}, {6, 6, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{5, 6, 0}, {6, 7, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{5, 7, 0}, {6, 8, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{6, 0, 0}, {7, 1, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{6, 1, 0}, {7, 2, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{6, 2, 0}, {7, 3, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{6, 3, 0}, {7, 4, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{6, 4, 0}, {7, 5, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{6, 5, 0}, {7, 6, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{6, 6, 0}, {7, 7, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{6, 7, 0}, {7, 8, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{7, 0, 0}, {8, 1, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{7, 1, 0}, {8, 2, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{7, 2, 0}, {8, 3, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{7, 3, 0}, {8, 4, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{7, 4, 0}, {8, 5, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{7, 5, 0}, {8, 6, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{7, 6, 0}, {8, 7, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{7, 7, 0}, {8, 8, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 0, 1}, {2, 2, 2}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 2, 1}, {2, 4, 2}]}, 
+       {RGBColor[1., 0., 0.], Opacity[0.75], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 4, 1}, {2, 6, 2}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 6, 1}, {2, 8, 2}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{2, 0, 1}, {4, 2, 2}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{2, 2, 1}, {4, 4, 2}]}, 
+       {RGBColor[1., 0., 0.], Opacity[0.75], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{2, 4, 1}, {4, 6, 2}]}, 
+       {RGBColor[1., 0., 0.], Opacity[0.75], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{2, 6, 1}, {4, 8, 2}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{4, 0, 1}, {6, 2, 2}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{4, 2, 1}, {6, 4, 2}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{4, 4, 1}, {6, 6, 2}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{4, 6, 1}, {6, 8, 2}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{6, 0, 1}, {8, 2, 2}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{6, 2, 1}, {8, 4, 2}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{6, 4, 1}, {8, 6, 2}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{6, 6, 1}, {8, 8, 2}]}, 
+       {RGBColor[1., 0., 0.], Opacity[0.75], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 0, 2}, {4, 4, 3}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 4, 2}, {4, 8, 3}]}, 
+       {RGBColor[1., 0., 0.], Opacity[0.75], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{4, 0, 2}, {8, 4, 3}]}, 
+       {RGBColor[1., 0., 0.], Opacity[0.75], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{4, 4, 2}, {8, 8, 3}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.3], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 0, 3}, {8, 8, 4}]}},
+      Boxed->False,
+      ImageSize->200], {320., -105.}, ImageScaled[{0.5, 0.5}], {200., 200.},
+     ContentSelectable->True]}, 
+   StyleBox[{{}, {LineBox[{{0, 0}, {0, -210.}}], 
+      LineBox[{{213.33333333333334`, 0}, {213.33333333333334`, -210.}}], 
+      LineBox[{{426.6666666666667, 0}, {426.6666666666667, -210.}}], 
+      LineBox[{{0, 0}, {213.33333333333334`, 0}}], 
+      LineBox[{{213.33333333333334`, 0}, {426.6666666666667, 0}}], 
+      LineBox[{{0, -210.}, {213.33333333333334`, -210.}}], 
+      LineBox[{{213.33333333333334`, -210.}, {426.6666666666667, -210.}}]}},
+    Antialiasing->False]},
+  ContentSelectable->True,
+  ImageSize->{438.6666666666667, 222.},
+  PlotRangePadding->{6, 5}]], "Output",
+ ImageSize->{443, 222},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->65385608],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {InsetBox[
+     GraphicsBox[{{}, {InsetBox[
+         GraphicsBox[
+          {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+           Large]}], RectangleBox[{0, 0}, {8, 8}]}], {189., -194.4}, 
+         ImageScaled[{0.5, 0.5}], {360., 360.00000000000006}], InsetBox[
+         GraphicsBox[{
+           {RGBColor[1., 0., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{0, 0}, {4, 4}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{0, 4}, {4, 8}]}, 
+           {RGBColor[1., 0., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{4, 0}, {8, 4}]}, 
+           {RGBColor[1., 0., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{4, 4}, {8, 8}]}}], {189., -583.2}, 
+         ImageScaled[{0.5, 0.5}], {360., 360.00000000000006}], InsetBox[
+         GraphicsBox[{
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{0, 0}, {2, 2}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{0, 2}, {2, 4}]}, 
+           {RGBColor[1., 0., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{0, 4}, {2, 6}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{0, 6}, {2, 8}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{2, 0}, {4, 2}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{2, 2}, {4, 4}]}, 
+           {RGBColor[1., 0., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{2, 4}, {4, 6}]}, 
+           {RGBColor[1., 0., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{2, 6}, {4, 8}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{4, 0}, {6, 2}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{4, 2}, {6, 4}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{4, 4}, {6, 6}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{4, 6}, {6, 8}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{6, 0}, {8, 2}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{6, 2}, {8, 4}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{6, 4}, {8, 6}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{6, 6}, {8, 8}]}}], {189., -972.}, 
+         ImageScaled[{0.5, 0.5}], {360., 360.}], InsetBox[
+         GraphicsBox[{
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{0, 0}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{0, 1}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{0, 2}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{0, 3}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{0, 4}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{0, 5}]}, 
+           {RGBColor[1., 0., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{0, 6}]}, 
+           {RGBColor[1., 0., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{0, 7}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{1, 0}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{1, 1}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{1, 2}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{1, 3}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{1, 4}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{1, 5}]}, 
+           {RGBColor[1., 0., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{1, 6}]}, 
+           {RGBColor[1., 0., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{1, 7}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{2, 0}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{2, 1}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{2, 2}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{2, 3}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{2, 4}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{2, 5}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{2, 6}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{2, 7}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{3, 0}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{3, 1}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{3, 2}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{3, 3}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{3, 4}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{3, 5}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{3, 6}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{3, 7}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{4, 0}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{4, 1}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{4, 2}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{4, 3}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{4, 4}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{4, 5}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{4, 6}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{4, 7}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{5, 0}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{5, 1}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{5, 2}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{5, 3}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{5, 4}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{5, 5}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{5, 6}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{5, 7}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{6, 0}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{6, 1}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{6, 2}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{6, 3}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{6, 4}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{6, 5}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{6, 6}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{6, 7}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{7, 0}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{7, 1}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{7, 2}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{7, 3}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{7, 4}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{7, 5}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{7, 6}]}, 
+           {RGBColor[1., 1., 0.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[
+            Large]}], RectangleBox[{7, 7}]}}], {189., -1360.8000000000002}, 
+         ImageScaled[{0.5, 0.5}], {360., 359.9999999999998}]}, {}},
+      ContentSelectable->True,
+      ImageSize->200,
+      PlotRangePadding->{6, 5}], {106.66666666666667, -105.}, 
+     ImageScaled[{0.5, 0.5}], {200, 200.}], InsetBox[
+     Graphics3DBox[{
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 0, 0}, {1, 1, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 1, 0}, {1, 2, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 2, 0}, {1, 3, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 3, 0}, {1, 4, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 4, 0}, {1, 5, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 5, 0}, {1, 6, 1}]}, 
+       {RGBColor[1., 0., 0.], Opacity[0.75], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 6, 0}, {1, 7, 1}]}, 
+       {RGBColor[1., 0., 0.], Opacity[0.75], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 7, 0}, {1, 8, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{1, 0, 0}, {2, 1, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{1, 1, 0}, {2, 2, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{1, 2, 0}, {2, 3, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{1, 3, 0}, {2, 4, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{1, 4, 0}, {2, 5, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{1, 5, 0}, {2, 6, 1}]}, 
+       {RGBColor[1., 0., 0.], Opacity[0.75], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{1, 6, 0}, {2, 7, 1}]}, 
+       {RGBColor[1., 0., 0.], Opacity[0.75], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{1, 7, 0}, {2, 8, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{2, 0, 0}, {3, 1, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{2, 1, 0}, {3, 2, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{2, 2, 0}, {3, 3, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{2, 3, 0}, {3, 4, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{2, 4, 0}, {3, 5, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{2, 5, 0}, {3, 6, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{2, 6, 0}, {3, 7, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{2, 7, 0}, {3, 8, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{3, 0, 0}, {4, 1, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{3, 1, 0}, {4, 2, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{3, 2, 0}, {4, 3, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{3, 3, 0}, {4, 4, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{3, 4, 0}, {4, 5, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{3, 5, 0}, {4, 6, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{3, 6, 0}, {4, 7, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{3, 7, 0}, {4, 8, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{4, 0, 0}, {5, 1, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{4, 1, 0}, {5, 2, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{4, 2, 0}, {5, 3, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{4, 3, 0}, {5, 4, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{4, 4, 0}, {5, 5, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{4, 5, 0}, {5, 6, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{4, 6, 0}, {5, 7, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{4, 7, 0}, {5, 8, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{5, 0, 0}, {6, 1, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{5, 1, 0}, {6, 2, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{5, 2, 0}, {6, 3, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{5, 3, 0}, {6, 4, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{5, 4, 0}, {6, 5, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{5, 5, 0}, {6, 6, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{5, 6, 0}, {6, 7, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{5, 7, 0}, {6, 8, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{6, 0, 0}, {7, 1, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{6, 1, 0}, {7, 2, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{6, 2, 0}, {7, 3, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{6, 3, 0}, {7, 4, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{6, 4, 0}, {7, 5, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{6, 5, 0}, {7, 6, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{6, 6, 0}, {7, 7, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{6, 7, 0}, {7, 8, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{7, 0, 0}, {8, 1, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{7, 1, 0}, {8, 2, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{7, 2, 0}, {8, 3, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{7, 3, 0}, {8, 4, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{7, 4, 0}, {8, 5, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{7, 5, 0}, {8, 6, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{7, 6, 0}, {8, 7, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{7, 7, 0}, {8, 8, 1}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 0, 1}, {2, 2, 2}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 2, 1}, {2, 4, 2}]}, 
+       {RGBColor[1., 0., 0.], Opacity[0.75], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 4, 1}, {2, 6, 2}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 6, 1}, {2, 8, 2}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{2, 0, 1}, {4, 2, 2}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{2, 2, 1}, {4, 4, 2}]}, 
+       {RGBColor[1., 0., 0.], Opacity[0.75], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{2, 4, 1}, {4, 6, 2}]}, 
+       {RGBColor[1., 0., 0.], Opacity[0.75], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{2, 6, 1}, {4, 8, 2}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{4, 0, 1}, {6, 2, 2}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{4, 2, 1}, {6, 4, 2}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{4, 4, 1}, {6, 6, 2}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{4, 6, 1}, {6, 8, 2}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{6, 0, 1}, {8, 2, 2}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{6, 2, 1}, {8, 4, 2}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{6, 4, 1}, {8, 6, 2}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{6, 6, 1}, {8, 8, 2}]}, 
+       {RGBColor[1., 0., 0.], Opacity[0.75], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 0, 2}, {4, 4, 3}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 4, 2}, {4, 8, 3}]}, 
+       {RGBColor[1., 0., 0.], Opacity[0.75], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{4, 0, 2}, {8, 4, 3}]}, 
+       {RGBColor[1., 0., 0.], Opacity[0.75], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{4, 4, 2}, {8, 8, 3}]}, 
+       {RGBColor[1., 1., 0.], Opacity[0.7], EdgeForm[{RGBColor[0., 0., 0.], 
+        Thickness[Large]}], CuboidBox[{0, 0, 3}, {8, 8, 4}]}},
+      Boxed->False,
+      ImageSize->200], {320., -105.}, ImageScaled[{0.5, 0.5}], {200., 200.},
+     ContentSelectable->True]}, 
+   StyleBox[{{}, {LineBox[{{0, 0}, {0, -210.}}], 
+      LineBox[{{213.33333333333334`, 0}, {213.33333333333334`, -210.}}], 
+      LineBox[{{426.6666666666667, 0}, {426.6666666666667, -210.}}], 
+      LineBox[{{0, 0}, {213.33333333333334`, 0}}], 
+      LineBox[{{213.33333333333334`, 0}, {426.6666666666667, 0}}], 
+      LineBox[{{0, -210.}, {213.33333333333334`, -210.}}], 
+      LineBox[{{213.33333333333334`, -210.}, {426.6666666666667, -210.}}]}},
+    Antialiasing->False]},
+  ContentSelectable->True,
+  ImageSize->{438.6666666666667, 222.},
+  PlotRangePadding->{6, 5}]], "Output",
+ ImageSize->{443, 222},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->559881112],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJztnQuUJWV177+qOud0nzqn+4zLLKOuRCeJAW8wV+IlDwzGudcYjcZIIj5u
+Eg0aCYiiwysskMcICiiPFgQGBgEVH8Qksla8Gk1CRnnIyBiGhzxlpufBDAyi
+A8NjBiU5d8/eU5t9vq/qO3Ue3VXdtf+rpteZ7vP6quv8er+/X3nfR/78b0Nj
+zLGT8OXP33vC/z7mmPee+LYl8J+3f/jYDxz+4cPe/8cfPu6www875vfeF8E3
+N8C/fwmM2XO7q1KpVCqVSqVSqVQqlUqlUqlUKpVKpSqrjEqlUlVSOQk51xBW
+qbKkl5+qQCkkVeWXXn6qAqWQVJVfevmpCpRCUlV+6eWnKlAKSVX5pZefqkAp
+JP2a/zxaloo+E0Wq4stXFaucl19lr9KCyShU9JkoUhVfvqpY5bz8KnuVJoAq
+8lBIVnz5qmKlkPRLIVkGVXz5qmKlkPRLIVkGVXz5qmKlkPRLIVkGVXz5qmKl
+kPRLIVkGVXz5qmKlkPRLIVkGVXz5qmKlkPRLIVkGVXz5qmKlkPRLIVkGVXz5
+qmKlkPRLIVkGVXz5qmKlkPRLIVkGVXz5qmKlkPRLIVkGVXz5qmKlkPRLIVkG
+VXz5qmKlkPRLIVkGVXz5qmKlkPRLIVkGVXz5oHXr1h166KFXXXXV6tWrd+zY
+UfTbqZYUkn4pJMugii//2muvXbJkiUm0//77AzCBlkDOot9aJaSQ9EshWQZV
+dvlgNAIPmZBwAwjJtIT/Llu2TIE511JI+qWQLIOquXwg5MEHH0wwXL58OdwA
+JMI3AYngd8NtBeb8SCHpl0KyDKrg8sHFJgYC/eA2oI8gKe8jgSn9cQlMDWCO
+LoWkXwrJMqhqy+cgJFiSZBamQlIK7gb3ATBawATSwnc04zOKFJJ+KSTLoOos
+XwYhgZCMtb6QlFJgjlcKSb8UkmVQRZYvg5CAMsmxgSAppcAcXQpJvxSSZVAV
+lm8FIa2fDg1JKQamzPgYrSnqJ4WkXwrJMmjRL98NQloaCyRZmiIfSApJvxSS
+ZdAiXn5WENLSeCFpvQEFpl8KSb8UkmXQYl2+Jwhpae4gab0fBaYrhaRfCsky
+aFEu3x+EtDQ/kJQiYLoZHwJmpTI+Ckm/FJJl0OJbft8gpCWCJEC1EC5VPEWu
+kPRLIVkGLabl5wxCWg+ZmZkpCZcqCEyFpF8KyTJo0Sw/fxDSfQg9qlTjgDw1
+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
+wkOWL19uFqyjTcp5+VX2Ki2IiCkq+kwUqYovf7zKaVjKlLTJF8lMheQCzWhL
+5bz8KnuVJoBSd7tIVXz5cyE37ZJa8Ugp6ZxDcbN29164jjZJIemXQrIMqvjy
+51Ru2sWqeMzvKXt2957LFcy5FJJ+KSTLoIovf36U1VaTf/eZgXanXUBSSPpl
+SqOiz0SRqvjy51ODbhcuNURCfEEo5+VX2au0MCY6KvpMFKmKL78QDTFDY4iE
++IJQzsuvsldpAih1t4tUxZdfoIaYoTFQQnxBSCHpl0KyDKr48ssgt3DIP0Nj
+cTjaJIWkXwrJMqjiyy+P/BXpcobG4nC0SQpJvxSSZVDFl19CjWWGxkKRQtIv
+UxoVfSaKVMWXX1ql9mgvJkeblPPyq+xVWhQSXRV9JopUxZdffvGujqDF5GiT
+cl5+lb1KE0Cpu12kKr58VbFSSPqlkCyDKr58VbFSSPqlkCyDKr58VbFSSPpl
+SqOiz0SRqvjyVcUq5+VX2au0YDIKFX0milTFl68qVjkvv8pepQmg1N0uUhVf
+vqpYKST9UkiWQRVfvqpYKST9UkiWQRVfvqpYKST9UkiWQRVfvqpYKST9MqVR
+0WeiSFV8+apilfPyq+xVWjAZhYo+E0Wq4stXFaucl19lr9IEUOpuF6mKL19V
+rBSSfikky6CKL19VrBSSfikky6CKL19VrBSSfpnSqOgzUaQqvnxVscp5+VX2
+Ki2YjEJFn4kiVfHlq4pVzstPr1JVgdLLT1WgFJKq8ksvP1WBUkiqyi+9/FQF
+SiGpKr/08lMVKIWkqvzSy09VoBSSqvJLLz9VgVJIqsovvfxUBSr/5TePJYEq
+lUpVIs0phFUqlUqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlmjv9f+ZC/Rk=
+    "], {{0, 222}, {439, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  DefaultBaseStyle->"ImageGraphics",
+  ImageSize->Automatic,
+  ImageSizeRaw->{439, 222},
+  PlotRange->{{0, 439}, {0, 222}}]], "Output",
+ ImageSize->{443, 222},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellTags->"RasterizedOutput",
+ CellLabel->"Out[2]=",
+ CellID->101253987]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ShowBestBasis"]],"paclet:WaveletWare/ref/ShowBestBasis"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["OpacityOff"]],"paclet:WaveletWare/ref/OpacityOff"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["List of Options and Values"]],
+   "paclet:WaveletWare/guide/List of Options and Values"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->144253]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"OpacityOn",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:WaveletWare/guide/WaveletWare", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2016, 8, 25, 9, 51, 6.8046836}", 
+    "history" -> {"XX", "", "", ""}, "context" -> 
+    "WaveletWare`PlottingFunctions`", "keywords" -> {}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "Wavelet Ware Package Symbol", "language" -> "en", "paclet" -> 
+    "WaveletWare Package", "status" -> "None", "summary" -> 
+    "OpacityOn is an option for ShowBestBasis that sets the opacity level for \
+the elements that are part of the best basis.", "synonyms" -> {}, 
+    "tabletags" -> {}, "title" -> "OpacityOn", "titlemodifier" -> "", 
+    "windowtitle" -> "OpacityOn", "type" -> "Symbol", "uri" -> 
+    "WaveletWare/ref/OpacityOn"}, "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "11.0 for Microsoft Windows (64-bit) (July 28, 2016)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[5192, 148, 387, 15, 30, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->139016020]},
+ "RasterizedOutput"->{
+  Cell[56025, 991, 23400, 391, 243, "Output",
+   CellTags->"RasterizedOutput",
+   CellID->101253987]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 82866, 1497},
+ {"RasterizedOutput", 83009, 1501}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[581, 21, 3712, 92, 48, "AnchorBarGrid",
+ CellID->1],
+Cell[4296, 115, 286, 11, 44, "ObjectNameGrid"],
+Cell[4585, 128, 582, 16, 83, "Usage"],
+Cell[CellGroupData[{
+Cell[5192, 148, 387, 15, 30, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->139016020],
+Cell[CellGroupData[{
+Cell[5604, 167, 194, 6, 25, "ExampleSection",
+ CellID->54645914],
+Cell[5801, 175, 65, 1, 31, "MathCaption",
+ CellID->16454449],
+Cell[5869, 178, 126, 4, 42, "Input",
+ InitializationCell->True,
+ CellID->861618089],
+Cell[5998, 184, 652, 21, 66, "ExampleText",
+ CellID->130915451],
+Cell[CellGroupData[{
+Cell[6675, 209, 1160, 28, 107, "Input",
+ CellID->617086144],
+Cell[7838, 239, 24090, 374, 243, "Output",
+ CellID->65385608],
+Cell[31931, 615, 24091, 374, 243, "Output",
+ CellID->559881112],
+Cell[56025, 991, 23400, 391, 243, "Output",
+ CellTags->"RasterizedOutput",
+ CellID->101253987]
+}, Open  ]]
+}, Open  ]],
+Cell[79452, 1386, 31, 0, 70, "SectionFooterSpacer"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[79520, 1391, 270, 12, 70, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[79793, 1405, 564, 16, 70, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[80394, 1426, 276, 12, 70, "MoreAboutSection",
+ CellID->38303248],
+Cell[80673, 1440, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[80707, 1442, 208, 6, 70, "MoreAbout",
+ CellID->144253]
+}, Open  ]],
+Cell[80930, 1451, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

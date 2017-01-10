@@ -1,0 +1,579 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17175,        569]
+NotebookOptionsPosition[     13480,        461]
+NotebookOutlinePosition[     15684,        518]
+CellTagsIndexPosition[     15599,        513]
+WindowTitle->InverseBWTAux
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["WAVELET WARE PACKAGE SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"InverseBWT\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/InverseBWT"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"List of Functions - Categorical\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/guide/List of Functions - Categorical"], "\<\"List \
+of Functions - Alphabetical\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/guide/List of Functions - Alphabetical"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"WaveletWare/ref/InverseBWTAux\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["WaveletWare/ref/InverseBWTAux"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/WaveletWare/ref/\
+InverseBWTAux.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$60255], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "WaveletWare/ref/InverseBWTAux", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[TextData[{
+ Cell["InverseBWTAux", "ObjectName"],
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{8, 0}],
+    CacheGraphics->False],
+   Spacer[8]]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"InverseBWTAux", "[", 
+       RowBox[{
+        StyleBox["v", "TI"], ",", 
+        StyleBox["h", "TI"], ",", 
+        StyleBox["type", "TI"]}], "]"}]], "InlineFormula"],
+     "\[LineSeparator]is an auxiliary function used by ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["InverseBWT"]],"paclet:WaveletWare/ref/InverseBWT"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     ", ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["LeftInverseBWT"]],"paclet:WaveletWare/ref/LeftInverseBWT"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     " and ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["RightInverseBWT"]],
+        "paclet:WaveletWare/ref/RightInverseBWT"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     " for computing the inverse biorthogonal wavelet transform."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    InterpretationBox[
+     StyleBox[
+      GraphicsBox[{},
+       BaselinePosition->Baseline,
+       ImageSize->{6, 0}],
+      CacheGraphics->False],
+     Spacer[6]]]],
+   "Details"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->38204919],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ "The inverse biorthogonal wavelet transform of vector ",
+ Cell[BoxData[
+  StyleBox["v", "TI"]], "InlineFormula"],
+ " is ",
+ Cell[BoxData[
+  SuperscriptBox["W", "T"]], "InlineFormula"],
+ Cell[BoxData[
+  StyleBox["v", "TI"]], "InlineFormula"],
+ ",  where ",
+ Cell[BoxData["W"], "InlineFormula"],
+ " is the block matrix ",
+ Cell[BoxData["W"], "InlineFormula"],
+ " = ",
+ Cell[BoxData[
+  RowBox[{"(", GridBox[{
+     {"H"},
+     {"G"}
+    }], ")"}]], "InlineFormula"],
+ ".  Partitioning ",
+ Cell[BoxData[
+  StyleBox["v", "TI"]], "InlineFormula"],
+ " into two parts means the inverse transform is computed as ",
+ Cell[BoxData[
+  RowBox[{"(", GridBox[{
+     {
+      SuperscriptBox["H", "T"], 
+      SuperscriptBox["G", "T"]}
+    }], ")"}]], "InlineFormula"],
+ Cell[BoxData[
+  RowBox[{"(", GridBox[{
+     {
+      SubscriptBox["v", "t"]},
+     {
+      SubscriptBox["v", "b"]}
+    }], ")"}]], "InlineFormula"],
+ " = ",
+ Cell[BoxData[
+  RowBox[{
+   SuperscriptBox["H", "T"], 
+   SubscriptBox["v", "t"]}]], "InlineFormula"],
+ " + ",
+ Cell[BoxData[
+  RowBox[{
+   SuperscriptBox["G", "T"], 
+   SubscriptBox["v", "b"]}]], "InlineFormula"],
+ ".  ",
+ StyleBox["InverseBWTAux",
+  FontFamily->"Courier New",
+  FontSize->12],
+ " computes each of the terms in the previous sum.  H or G is generated from \
+filter input ",
+ Cell[BoxData[
+  StyleBox["h", "TI"]], "InlineFormula"],
+ " and ",
+ Cell[BoxData[
+  StyleBox["v", "TI"]], "InlineFormula"],
+ " is either ",
+ Cell[BoxData[
+  SubscriptBox["v", "t"]], "InlineFormula"],
+ " or ",
+ Cell[BoxData[
+  SubscriptBox["v", "b"]], "InlineFormula"],
+ ".  The third variable, ",
+ Cell[BoxData[
+  StyleBox["type", "TI"]], "InlineFormula"],
+ ", indicates if the input filter ",
+ Cell[BoxData[
+  StyleBox["h", "TI"]], "InlineFormula"],
+ " is lowpass (0) or highpass (1)."
+}], "Notes",
+ CellID->1067943069],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->522069981],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->7955311],
+
+Cell["This loads the package:", "MathCaption",
+ CellID->16454449],
+
+Cell[BoxData[
+ RowBox[{"<<", "WaveletWare`"}]], "Input",
+ InitializationCell->True,
+ CellLabel->"In[1]:=",
+ CellID->861618089],
+
+Cell[TextData[{
+ "Use ",
+ StyleBox["InverseBWTAux",
+  FontFamily->"Courier New",
+  FontSize->12],
+ " to compute the inverse biorthogonal wavelet transform of a vector."
+}], "ExampleText",
+ CellID->158662723],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"v", "=", 
+   RowBox[{"Range", "[", "20", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"h", ",", "ht"}], "}"}], "=", 
+   RowBox[{"SplineFilters", "[", 
+    RowBox[{"2", ",", "2"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"wt", "=", 
+    RowBox[{"BWT", "[", 
+     RowBox[{"v", ",", 
+      RowBox[{"{", 
+       RowBox[{"h", ",", "ht"}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Create", " ", "the", " ", "highpass", " ", "filter"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"hp", "=", 
+    RowBox[{"ht", "*", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"-", "1"}], ")"}], "^", "k"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"k", ",", "0", ",", "2"}], "}"}]}], "]"}]}]}], ";"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Partition", " ", "the", " ", "data"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"vt", ",", "vb"}], "}"}], "=", 
+    RowBox[{"Partition", "[", 
+     RowBox[{"wt", ",", "10"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Do", " ", "the", " ", "inverse", " ", "transform"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"iwt", "=", 
+  RowBox[{
+   RowBox[{"InverseBWTAux", "[", 
+    RowBox[{"vt", ",", "h", ",", "0"}], "]"}], "+", 
+   RowBox[{"InverseBWTAux", "[", 
+    RowBox[{"vb", ",", "hp", ",", "1"}], "]"}]}]}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->147182881],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0.9999999999999991`", ",", "1.9999999999999996`", ",", 
+   "2.999999999999999`", ",", "3.999999999999999`", ",", "4.999999999999998`",
+    ",", "5.999999999999999`", ",", "6.9999999999999964`", ",", 
+   "7.999999999999998`", ",", "8.999999999999998`", ",", "9.999999999999998`",
+    ",", "10.999999999999996`", ",", "11.999999999999998`", ",", 
+   "12.999999999999996`", ",", "13.999999999999996`", ",", 
+   "14.999999999999996`", ",", "15.999999999999998`", ",", "17.`", ",", 
+   "18.`", ",", "18.999999999999993`", ",", "20.`"}], "}"}]], "Output",
+ ImageSize->{584, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->13128217]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["InverseBWT"]],"paclet:WaveletWare/ref/InverseBWT"},
+  "RefLink",
+  BaseStyle->{
+   "InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["List of Functions - Categorical"]],
+   "paclet:WaveletWare/guide/List of Functions - Categorical"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->5147326],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["List of Functions - Alphabetical"]],
+   "paclet:WaveletWare/guide/List of Functions - Alphabetical"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->199234991]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"InverseBWTAux",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:WaveletWare/guide/WaveletWare", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2016, 8, 25, 9, 49, 18.5379930}", 
+    "history" -> {"XX", "", "", ""}, "context" -> 
+    "WaveletWare`BiorthogonalTransforms`", "keywords" -> {}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "Wavelet Ware Package Symbol", "language" -> "en", "paclet" -> 
+    "WaveletWare Package", "status" -> "None", "summary" -> 
+    "InverseBWTAux[v, h, type] is an auxiliary function used by InverseBWT, \
+LeftInverseBWT and RightInverseBWT for computing the inverse biorthogonal \
+wavelet transform.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "InverseBWTAux", "titlemodifier" -> "", "windowtitle" -> "InverseBWTAux", 
+    "type" -> "Symbol", "uri" -> "WaveletWare/ref/InverseBWTAux"}, 
+  "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "11.0 for Microsoft Windows (64-bit) (July 28, 2016)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[8546, 274, 387, 15, 30, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->522069981]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 15456, 506}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[585, 21, 3774, 92, 48, "AnchorBarGrid",
+ CellID->1],
+Cell[4362, 115, 290, 11, 44, "ObjectNameGrid"],
+Cell[CellGroupData[{
+Cell[4677, 130, 1150, 33, 97, "Usage"],
+Cell[CellGroupData[{
+Cell[5852, 167, 737, 24, 31, "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->38204919],
+Cell[6592, 193, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[6626, 195, 1837, 71, 70, "Notes",
+ CellID->1067943069],
+Cell[8466, 268, 31, 0, 70, "SectionFooterSpacer"]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8546, 274, 387, 15, 30, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->522069981],
+Cell[CellGroupData[{
+Cell[8958, 293, 193, 6, 25, "ExampleSection",
+ CellID->7955311],
+Cell[9154, 301, 65, 1, 31, "MathCaption",
+ CellID->16454449],
+Cell[9222, 304, 126, 4, 42, "Input",
+ InitializationCell->True,
+ CellID->861618089],
+Cell[9351, 310, 207, 7, 35, "ExampleText",
+ CellID->158662723],
+Cell[CellGroupData[{
+Cell[9583, 321, 1728, 54, 203, "Input",
+ CellID->147182881],
+Cell[11314, 377, 722, 15, 35, "Output",
+ CellID->13128217]
+}, Open  ]]
+}, Open  ]],
+Cell[12063, 396, 31, 0, 29, "SectionFooterSpacer"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12131, 401, 270, 12, 30, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[12404, 415, 239, 6, 58, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12680, 426, 276, 12, 70, "MoreAboutSection",
+ CellID->38303248],
+Cell[12959, 440, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[12993, 442, 219, 6, 70, "MoreAbout",
+ CellID->5147326],
+Cell[13215, 450, 223, 6, 70, "MoreAbout",
+ CellID->199234991]
+}, Open  ]],
+Cell[13453, 459, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
