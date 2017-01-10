@@ -1,0 +1,730 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     24268,        720]
+NotebookOptionsPosition[     20275,        599]
+NotebookOutlinePosition[     22465,        656]
+CellTagsIndexPosition[     22380,        651]
+WindowTitle->Colors
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["WAVELET WARE PACKAGE SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"WaveletRegionPlot\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/WaveletRegionPlot"], \
+"\<\"WaveletVectorPlot\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/WaveletVectorPlot"], \
+"\<\"FullWaveletVectorPlot\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/FullWaveletVectorPlot"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"List of Options and Values\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/guide/List of Options and Values"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"WaveletWare/ref/Colors\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["WaveletWare/ref/Colors"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/WaveletWare/ref/Colors.\
+html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$31321], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "WaveletWare/ref/Colors", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[TextData[{
+ Cell["Colors", "ObjectName"],
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{8, 0}],
+    CacheGraphics->False],
+   Spacer[8]]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData["Colors"], "InlineFormula"],
+     "\[LineSeparator]is an option for ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["WaveletRegionPlot"]],
+        "paclet:WaveletWare/ref/WaveletRegionPlot"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     ", ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["WaveletVectorPlot"]],
+        "paclet:WaveletWare/ref/WaveletVectorPlot"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     " and ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["FullWaveletVectorPlot"]],
+        "paclet:WaveletWare/ref/FullWaveletVectorPlot"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     ".  ",
+     "It is a list of colors to be used when plotting iterations of the \
+wavelet (packet) transform."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->92723892],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->128353554],
+
+Cell["This loads the package:", "MathCaption",
+ CellID->16454449],
+
+Cell[BoxData[
+ RowBox[{"<<", "WaveletWare`"}]], "Input",
+ InitializationCell->True,
+ CellLabel->"In[1]:=",
+ CellID->861618089],
+
+Cell["\<\
+Plots of iterations of a wavelet transform using default colors and a \
+user-supplied list of colors.\
+\>", "ExampleText",
+ CellID->609930250],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"<<", "WaveletWare`"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"v", "=", 
+   RowBox[{"Range", "[", "32", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"wt", "=", 
+   RowBox[{"HWT", "[", 
+    RowBox[{"v", ",", 
+     RowBox[{"NumIterations", "\[Rule]", "4"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"WaveletVectorPlot", "[", 
+  RowBox[{"wt", ",", 
+   RowBox[{"NumIterations", "\[Rule]", "4"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "400"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"WaveletVectorPlot", "[", 
+  RowBox[{"wt", ",", 
+   RowBox[{"NumIterations", "\[Rule]", "4"}], ",", 
+   RowBox[{"Colors", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Red", ",", "Green", ",", "Blue", ",", "Orange", ",", "Brown"}], 
+     "}"}]}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "400"}]}], "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->148308024],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, 
+    {Hue[0.06, 1, 0.72], PointSize[0.01], AbsoluteThickness[1.6], 
+     PointBox[{{16., 0.5}, {17., 0.5}, {18., 0.5}, {19., 0.5}, {20., 0.5}, {
+      21., 0.5}, {22., 0.5}, {23., 0.5}, {24., 0.5}, {25., 0.5}, {26., 0.5}, {
+      27., 0.5}, {28., 0.5}, {29., 0.5}, {30., 0.5}, {31., 0.5}}]}, 
+    {Hue[0.11, 1, 0.72], PointSize[0.01], AbsoluteThickness[1.6], 
+     PointBox[{{8., 1.}, {9., 1.}, {10., 1.}, {11., 1.}, {12., 1.}, {13., 
+      1.}, {14., 1.}, {15., 1.}}]}, 
+    {Hue[0.17, 1, 0.4], PointSize[0.01], AbsoluteThickness[1.6], 
+     PointBox[{{4., 2.}, {5., 2.}, {6., 2.}, {7., 2.}}]}, 
+    {Hue[0, 1, 0.72], PointSize[0.01], AbsoluteThickness[1.6], 
+     PointBox[{{0., 8.5}, {1., 24.5}}]}, 
+    {Hue[0.06, 1, 0.9], PointSize[0.01], AbsoluteThickness[1.6], 
+     PointBox[{{2., 4.}, {3., 4.}}]}, {}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  Background->GrayLevel[1],
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{{2, 4, 8, 16, 31}, {-4.5, 29.5}},
+  GridLinesStyle->GrayLevel[0.5],
+  ImagePadding->All,
+  ImageSize->400,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0, 31.}, {0, 24.5}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ ImageSize->{404, 255},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->412442032],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, 
+    {RGBColor[0.6, 0.4, 0.2], PointSize[0.01], AbsoluteThickness[1.6], 
+     PointBox[{{16., 0.5}, {17., 0.5}, {18., 0.5}, {19., 0.5}, {20., 0.5}, {
+      21., 0.5}, {22., 0.5}, {23., 0.5}, {24., 0.5}, {25., 0.5}, {26., 0.5}, {
+      27., 0.5}, {28., 0.5}, {29., 0.5}, {30., 0.5}, {31., 0.5}}]}, 
+    {RGBColor[1, 0.5, 0], PointSize[0.01], AbsoluteThickness[1.6], 
+     PointBox[{{8., 1.}, {9., 1.}, {10., 1.}, {11., 1.}, {12., 1.}, {13., 
+      1.}, {14., 1.}, {15., 1.}}]}, 
+    {RGBColor[0, 0, 1], PointSize[0.01], AbsoluteThickness[1.6], 
+     PointBox[{{4., 2.}, {5., 2.}, {6., 2.}, {7., 2.}}]}, 
+    {RGBColor[1, 0, 0], PointSize[0.01], AbsoluteThickness[1.6], 
+     PointBox[{{0., 8.5}, {1., 24.5}}]}, 
+    {RGBColor[0, 1, 0], PointSize[0.01], AbsoluteThickness[1.6], 
+     PointBox[{{2., 4.}, {3., 4.}}]}, {}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  Background->GrayLevel[1],
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{{2, 4, 8, 16, 31}, {-4.5, 29.5}},
+  GridLinesStyle->GrayLevel[0.5],
+  ImagePadding->All,
+  ImageSize->400,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0, 31.}, {0, 24.5}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ ImageSize->{404, 255},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->272099474]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->251303602],
+
+Cell[TextData[{
+ "If only one value for ",
+ StyleBox["Colors",
+  FontFamily->"Courier New",
+  FontSize->12],
+ " is given, then every iteration is plotted using that color."
+}], "ExampleText",
+ CellID->86846161],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"v", "=", 
+   RowBox[{"Range", "[", "32", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"wt", "=", 
+   RowBox[{"HWT", "[", 
+    RowBox[{"v", ",", 
+     RowBox[{"NumIterations", "\[Rule]", "4"}]}], "]"}]}], ";", 
+  RowBox[{"WaveletVectorPlot", "[", 
+   RowBox[{"wt", ",", 
+    RowBox[{"NumIterations", "\[Rule]", "4"}], ",", 
+    RowBox[{"Colors", "\[Rule]", "Purple"}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", "400"}]}], "]"}]}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->806584810],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, 
+    {RGBColor[0.5, 0, 0.5], PointSize[0.01], AbsoluteThickness[1.6], 
+     PointBox[{{16., 0.5}, {17., 0.5}, {18., 0.5}, {19., 0.5}, {20., 0.5}, {
+      21., 0.5}, {22., 0.5}, {23., 0.5}, {24., 0.5}, {25., 0.5}, {26., 0.5}, {
+      27., 0.5}, {28., 0.5}, {29., 0.5}, {30., 0.5}, {31., 0.5}}]}, 
+    {RGBColor[0.5, 0, 0.5], PointSize[0.01], AbsoluteThickness[1.6], 
+     PointBox[{{8., 1.}, {9., 1.}, {10., 1.}, {11., 1.}, {12., 1.}, {13., 
+      1.}, {14., 1.}, {15., 1.}}]}, 
+    {RGBColor[0.5, 0, 0.5], PointSize[0.01], AbsoluteThickness[1.6], 
+     PointBox[{{4., 2.}, {5., 2.}, {6., 2.}, {7., 2.}}]}, 
+    {RGBColor[0.5, 0, 0.5], PointSize[0.01], AbsoluteThickness[1.6], 
+     PointBox[{{0., 8.5}, {1., 24.5}}]}, 
+    {RGBColor[0.5, 0, 0.5], PointSize[0.01], AbsoluteThickness[1.6], 
+     PointBox[{{2., 4.}, {3., 4.}}]}, {}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  Background->GrayLevel[1],
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{{2, 4, 8, 16, 31}, {-4.5, 29.5}},
+  GridLinesStyle->GrayLevel[0.5],
+  ImagePadding->All,
+  ImageSize->400,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0, 31.}, {0, 24.5}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ ImageSize->{404, 255},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->240743635]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->240102081],
+
+Cell[TextData[{
+ "The length of the list of ",
+ StyleBox["Colors",
+  FontFamily->"Courier New",
+  FontSize->12],
+ " can be shorter than the number of iterations.  In such a case, the list is \
+repeated until it is at least as long as the number of regions to be plotted."
+}], "ExampleText",
+ CellID->488606272],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"v", "=", 
+   RowBox[{"Range", "[", "32", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"wt", "=", 
+   RowBox[{"HWT", "[", 
+    RowBox[{"v", ",", 
+     RowBox[{"NumIterations", "\[Rule]", "4"}]}], "]"}]}], ";", 
+  RowBox[{"WaveletVectorPlot", "[", 
+   RowBox[{"wt", ",", 
+    RowBox[{"NumIterations", "\[Rule]", "4"}], ",", 
+    RowBox[{"Colors", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"Green", ",", "Purple"}], "}"}]}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", "400"}]}], "]"}]}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->501106699],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, 
+    {RGBColor[0, 1, 0], PointSize[0.01], AbsoluteThickness[1.6], 
+     PointBox[{{16., 0.5}, {17., 0.5}, {18., 0.5}, {19., 0.5}, {20., 0.5}, {
+      21., 0.5}, {22., 0.5}, {23., 0.5}, {24., 0.5}, {25., 0.5}, {26., 0.5}, {
+      27., 0.5}, {28., 0.5}, {29., 0.5}, {30., 0.5}, {31., 0.5}}]}, 
+    {RGBColor[0.5, 0, 0.5], PointSize[0.01], AbsoluteThickness[1.6], 
+     PointBox[{{8., 1.}, {9., 1.}, {10., 1.}, {11., 1.}, {12., 1.}, {13., 
+      1.}, {14., 1.}, {15., 1.}}]}, 
+    {RGBColor[0, 1, 0], PointSize[0.01], AbsoluteThickness[1.6], 
+     PointBox[{{4., 2.}, {5., 2.}, {6., 2.}, {7., 2.}}]}, 
+    {RGBColor[0, 1, 0], PointSize[0.01], AbsoluteThickness[1.6], 
+     PointBox[{{0., 8.5}, {1., 24.5}}]}, 
+    {RGBColor[0.5, 0, 0.5], PointSize[0.01], AbsoluteThickness[1.6], 
+     PointBox[{{2., 4.}, {3., 4.}}]}, {}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  Background->GrayLevel[1],
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{{2, 4, 8, 16, 31}, {-4.5, 29.5}},
+  GridLinesStyle->GrayLevel[0.5],
+  ImagePadding->All,
+  ImageSize->400,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0, 31.}, {0, 24.5}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ ImageSize->{404, 255},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->104219929]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WaveletRegionPlot"]],
+    "paclet:WaveletWare/ref/WaveletRegionPlot"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WaveletVectorPlot"]],
+    "paclet:WaveletWare/ref/WaveletVectorPlot"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["FullWaveletVectorPlot"]],
+    "paclet:WaveletWare/ref/FullWaveletVectorPlot"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["List of Options and Values"]],
+   "paclet:WaveletWare/guide/List of Options and Values"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->540277956]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"Colors",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:WaveletWare/guide/WaveletWare", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2016, 8, 25, 9, 46, 56.6337146}", 
+    "history" -> {"XX", "", "", ""}, "context" -> 
+    "WaveletWare`PlottingFunctions`", "keywords" -> {}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "Wavelet Ware Package Symbol", "language" -> "en", "paclet" -> 
+    "WaveletWare Package", "status" -> "None", "summary" -> 
+    "Colors is an option for WaveletRegionPlot, WaveletVectorPlot and \
+FullWaveletVectorPlot. It is a list of colors to be used when plotting \
+iterations of the wavelet (packet) transform.", "synonyms" -> {}, 
+    "tabletags" -> {}, "title" -> "Colors", "titlemodifier" -> "", 
+    "windowtitle" -> "Colors", "type" -> "Symbol", "uri" -> 
+    "WaveletWare/ref/Colors"}, "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "11.0 for Microsoft Windows (64-bit) (July 28, 2016)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[5812, 167, 386, 15, 30, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->92723892]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 22238, 644}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[578, 21, 3842, 95, 48, "AnchorBarGrid",
+ CellID->1],
+Cell[4423, 118, 283, 11, 44, "ObjectNameGrid"],
+Cell[4709, 131, 1078, 32, 97, "Usage"],
+Cell[CellGroupData[{
+Cell[5812, 167, 386, 15, 30, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->92723892],
+Cell[CellGroupData[{
+Cell[6223, 186, 195, 6, 25, "ExampleSection",
+ CellID->128353554],
+Cell[6421, 194, 65, 1, 31, "MathCaption",
+ CellID->16454449],
+Cell[6489, 197, 126, 4, 42, "Input",
+ InitializationCell->True,
+ CellID->861618089],
+Cell[6618, 203, 152, 4, 33, "ExampleText",
+ CellID->609930250],
+Cell[CellGroupData[{
+Cell[6795, 211, 899, 24, 107, "Input",
+ CellID->148308024],
+Cell[7697, 237, 2144, 49, 276, "Output",
+ CellID->412442032],
+Cell[9844, 288, 2152, 49, 276, "Output",
+ CellID->272099474]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12033, 342, 125, 3, 70, "ExampleDelimiter",
+ CellID->251303602],
+Cell[12161, 347, 210, 7, 70, "ExampleText",
+ CellID->86846161],
+Cell[CellGroupData[{
+Cell[12396, 358, 534, 15, 70, "Input",
+ CellID->806584810],
+Cell[12933, 375, 2164, 49, 276, "Output",
+ CellID->240743635]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15146, 430, 125, 3, 70, "ExampleDelimiter",
+ CellID->240102081],
+Cell[15274, 435, 310, 8, 70, "ExampleText",
+ CellID->488606272],
+Cell[CellGroupData[{
+Cell[15609, 447, 591, 17, 70, "Input",
+ CellID->501106699],
+Cell[16203, 466, 2152, 49, 276, "Output",
+ CellID->104219929]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[18394, 520, 31, 0, 70, "SectionFooterSpacer"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18462, 525, 270, 12, 70, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[18735, 539, 937, 28, 70, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19709, 572, 276, 12, 70, "MoreAboutSection",
+ CellID->38303248],
+Cell[19988, 586, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[20022, 588, 211, 6, 70, "MoreAbout",
+ CellID->540277956]
+}, Open  ]],
+Cell[20248, 597, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

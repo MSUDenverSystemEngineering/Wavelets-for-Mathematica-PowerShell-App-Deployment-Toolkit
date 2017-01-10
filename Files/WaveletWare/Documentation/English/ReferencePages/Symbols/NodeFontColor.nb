@@ -1,0 +1,796 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     30825,        786]
+NotebookOptionsPosition[     27350,        684]
+NotebookOutlinePosition[     29640,        745]
+CellTagsIndexPosition[     29520,        739]
+WindowTitle->NodeFontColor
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["WAVELET WARE PACKAGE SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"HuffmanTree\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/HuffmanTree"], "\<\"NodeColor\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/NodeColor"], "\<\"NodeEdgeColor\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/NodeEdgeColor"], "\<\"NodeEdgeThickness\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/NodeEdgeThickness"], "\<\"NodeFontSize\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/NodeFontSize"], "\<\"NodeSize\"\>":>
+       Documentation`HelpLookup["paclet:WaveletWare/ref/NodeSize"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"List of Options and Values\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/guide/List of Options and Values"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"WaveletWare/ref/NodeFontColor\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["WaveletWare/ref/NodeFontColor"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/WaveletWare/ref/\
+NodeFontColor.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$78723], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "WaveletWare/ref/NodeFontColor", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[TextData[{
+ Cell["NodeFontColor", "ObjectName"],
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{8, 0}],
+    CacheGraphics->False],
+   Spacer[8]]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData["NodeFontColor"], "InlineFormula"],
+     "\[LineSeparator]is an option for ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["HuffmanTree"]],"paclet:WaveletWare/ref/HuffmanTree"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     " that sets the font color when labeling nodes in the tree."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->25212658],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->90300621],
+
+Cell["This loads the package:", "MathCaption",
+ CellID->16454449],
+
+Cell[BoxData[
+ RowBox[{"<<", "WaveletWare`"}]], "Input",
+ InitializationCell->True,
+ CellLabel->"In[1]:=",
+ CellID->861618089],
+
+Cell[TextData[{
+ "The option ",
+ StyleBox["NodeFontColor",
+  FontFamily->"Courier New",
+  FontSize->12],
+ " controls the label font color for each node of the tree."
+}], "ExampleText",
+ CellID->70731506],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"codes", ",", "old", ",", "new"}], "}"}], "=", 
+   RowBox[{"MakeHuffmanCodes", "[", "\"\<mississippi\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"HuffmanTree", "[", 
+  RowBox[{"codes", ",", 
+   RowBox[{"ImageSize", "\[Rule]", "200"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"HuffmanTree", "[", 
+  RowBox[{"codes", ",", 
+   RowBox[{"NodeFontColor", "\[Rule]", 
+    RowBox[{"Darker", "[", "Green", "]"}]}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "200"}]}], "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->11592473],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1: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
+
+    "], {{0, 318}, {200, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  DefaultBaseStyle->"ImageGraphics",
+  ImageSize->Automatic,
+  ImageSizeRaw->{200, 318},
+  PlotRange->{{0, 200}, {0, 318}}]], "Output",
+ ImageSize->{204, 318},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellTags->"RasterizedOutput",
+ CellLabel->"Out[2]=",
+ CellID->615311221],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[{{
+     {Thickness[Medium], InsetBox[
+       StyleBox["\<\"0\"\>",
+        StripOnInput->False,
+        FontSize->12,
+        FontColor->GrayLevel[0],
+        $CellContext`LineColor -> GrayLevel[0],
+        $CellContext`FrontFaceColor -> GrayLevel[0],
+        $CellContext`BackFaceColor -> GrayLevel[0],
+        $CellContext`GraphicsColor -> GrayLevel[0]], {0.21270038138513625, 2.286866558889224},
+       Background->GrayLevel[1]], 
+      {GrayLevel[0], 
+       LineBox[{{0.4254007627702725, 2.7122673216594966`}, {0., 
+        1.8614657961189516`}}]}}, 
+     {Thickness[Medium], InsetBox[
+       StyleBox["\<\"1\"\>",
+        StripOnInput->False,
+        FontSize->12,
+        FontColor->GrayLevel[0],
+        $CellContext`LineColor -> GrayLevel[0],
+        $CellContext`FrontFaceColor -> GrayLevel[0],
+        $CellContext`BackFaceColor -> GrayLevel[0],
+        $CellContext`GraphicsColor -> GrayLevel[0]], {0.6381011441554088, 2.286866558889224},
+       Background->GrayLevel[1]], 
+      {GrayLevel[0], 
+       LineBox[{{0.4254007627702725, 2.7122673216594966`}, {0.850801525540545,
+         1.8614657961189516`}}]}}, 
+     {Thickness[Medium], InsetBox[
+       StyleBox["\<\"0\"\>",
+        StripOnInput->False,
+        FontSize->12,
+        FontColor->GrayLevel[0],
+        $CellContext`LineColor -> GrayLevel[0],
+        $CellContext`FrontFaceColor -> GrayLevel[0],
+        $CellContext`BackFaceColor -> GrayLevel[0],
+        $CellContext`GraphicsColor -> GrayLevel[0]], {0.6381011441554088, 1.4055325476390763},
+       Background->GrayLevel[1]], 
+      {GrayLevel[0], 
+       LineBox[{{0.850801525540545, 1.8614657961189516`}, {0.4254007627702725,
+         0.9495992991592013}}]}}, 
+     {Thickness[Medium], InsetBox[
+       StyleBox["\<\"1\"\>",
+        StripOnInput->False,
+        FontSize->12,
+        FontColor->GrayLevel[0],
+        $CellContext`LineColor -> GrayLevel[0],
+        $CellContext`FrontFaceColor -> GrayLevel[0],
+        $CellContext`BackFaceColor -> GrayLevel[0],
+        $CellContext`GraphicsColor -> GrayLevel[0]], {1.0635019069256813, 1.4055325476390763},
+       Background->GrayLevel[1]], 
+      {GrayLevel[0], 
+       LineBox[{{0.850801525540545, 1.8614657961189516`}, {
+        1.2762022883108175`, 0.9495992991592013}}]}}, 
+     {Thickness[Medium], InsetBox[
+       StyleBox["\<\"0\"\>",
+        StripOnInput->False,
+        FontSize->12,
+        FontColor->GrayLevel[0],
+        $CellContext`LineColor -> GrayLevel[0],
+        $CellContext`FrontFaceColor -> GrayLevel[0],
+        $CellContext`BackFaceColor -> GrayLevel[0],
+        $CellContext`GraphicsColor -> GrayLevel[0]], {0.21270038138513625, 0.47479964957960064},
+       Background->GrayLevel[1]], 
+      {GrayLevel[0], 
+       LineBox[{{0.4254007627702725, 0.9495992991592013}, {0., 0.}}]}}, 
+     {Thickness[Medium], InsetBox[
+       StyleBox["\<\"1\"\>",
+        StripOnInput->False,
+        FontSize->12,
+        FontColor->GrayLevel[0],
+        $CellContext`LineColor -> GrayLevel[0],
+        $CellContext`FrontFaceColor -> GrayLevel[0],
+        $CellContext`BackFaceColor -> GrayLevel[0],
+        $CellContext`GraphicsColor -> GrayLevel[0]], {0.6381011441554088, 0.47479964957960064},
+       Background->GrayLevel[1]], 
+      {GrayLevel[0], 
+       LineBox[{{0.4254007627702725, 0.9495992991592013}, {0.850801525540545, 
+        0.}}]}}}, {
+     {RGBColor[0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+      EdgeForm[{GrayLevel[0], Thickness[Medium]}], 
+      DiskBox[{0.4254007627702725, 2.7122673216594966}, 0.2], InsetBox[
+       StyleBox["\<\" \\n1.0\"\>",
+        StripOnInput->False,
+        FontSize->12,
+        FontColor->RGBColor[0, 
+          Rational[2, 3], 0],
+        $CellContext`LineColor -> RGBColor[0, 
+          Rational[2, 3], 0],
+        $CellContext`FrontFaceColor -> RGBColor[0, 
+          Rational[2, 3], 0],
+        $CellContext`BackFaceColor -> RGBColor[0, 
+          Rational[2, 3], 0],
+        $CellContext`GraphicsColor -> RGBColor[0, 
+          Rational[2, 3], 0]], {0.4254007627702725, 2.7122673216594966}]}, 
+     {RGBColor[0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+      EdgeForm[{GrayLevel[0], Thickness[Medium]}], 
+      DiskBox[{0., 1.8614657961189516}, 0.2], InsetBox[
+       StyleBox["\<\"s\\n0.36\"\>",
+        StripOnInput->False,
+        FontSize->12,
+        FontColor->RGBColor[0, 
+          Rational[2, 3], 0],
+        $CellContext`LineColor -> RGBColor[0, 
+          Rational[2, 3], 0],
+        $CellContext`FrontFaceColor -> RGBColor[0, 
+          Rational[2, 3], 0],
+        $CellContext`BackFaceColor -> RGBColor[0, 
+          Rational[2, 3], 0],
+        $CellContext`GraphicsColor -> RGBColor[0, 
+          Rational[2, 3], 0]], {0., 1.8614657961189516}]}, 
+     {RGBColor[0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+      EdgeForm[{GrayLevel[0], Thickness[Medium]}], 
+      DiskBox[{0.850801525540545, 1.8614657961189516}, 0.2], InsetBox[
+       StyleBox["\<\" \\n0.64\"\>",
+        StripOnInput->False,
+        FontSize->12,
+        FontColor->RGBColor[0, 
+          Rational[2, 3], 0],
+        $CellContext`LineColor -> RGBColor[0, 
+          Rational[2, 3], 0],
+        $CellContext`FrontFaceColor -> RGBColor[0, 
+          Rational[2, 3], 0],
+        $CellContext`BackFaceColor -> RGBColor[0, 
+          Rational[2, 3], 0],
+        $CellContext`GraphicsColor -> RGBColor[0, 
+          Rational[2, 3], 0]], {0.850801525540545, 1.8614657961189516}]}, 
+     {RGBColor[0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+      EdgeForm[{GrayLevel[0], Thickness[Medium]}], 
+      DiskBox[{0.4254007627702725, 0.9495992991592013}, 0.2], InsetBox[
+       StyleBox["\<\" \\n0.27\"\>",
+        StripOnInput->False,
+        FontSize->12,
+        FontColor->RGBColor[0, 
+          Rational[2, 3], 0],
+        $CellContext`LineColor -> RGBColor[0, 
+          Rational[2, 3], 0],
+        $CellContext`FrontFaceColor -> RGBColor[0, 
+          Rational[2, 3], 0],
+        $CellContext`BackFaceColor -> RGBColor[0, 
+          Rational[2, 3], 0],
+        $CellContext`GraphicsColor -> RGBColor[0, 
+          Rational[2, 3], 0]], {0.4254007627702725, 0.9495992991592013}]}, 
+     {RGBColor[0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+      EdgeForm[{GrayLevel[0], Thickness[Medium]}], 
+      DiskBox[{1.2762022883108175, 0.9495992991592013}, 0.2], InsetBox[
+       StyleBox["\<\"i\\n0.36\"\>",
+        StripOnInput->False,
+        FontSize->12,
+        FontColor->RGBColor[0, 
+          Rational[2, 3], 0],
+        $CellContext`LineColor -> RGBColor[0, 
+          Rational[2, 3], 0],
+        $CellContext`FrontFaceColor -> RGBColor[0, 
+          Rational[2, 3], 0],
+        $CellContext`BackFaceColor -> RGBColor[0, 
+          Rational[2, 3], 0],
+        $CellContext`GraphicsColor -> RGBColor[0, 
+          Rational[2, 3], 0]], {1.2762022883108175, 0.9495992991592013}]}, 
+     {RGBColor[0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+      EdgeForm[{GrayLevel[0], Thickness[Medium]}], DiskBox[{0., 0.}, 0.2], 
+      InsetBox[
+       StyleBox["\<\"m\\n0.091\"\>",
+        StripOnInput->False,
+        FontSize->12,
+        FontColor->RGBColor[0, 
+          Rational[2, 3], 0],
+        $CellContext`LineColor -> RGBColor[0, 
+          Rational[2, 3], 0],
+        $CellContext`FrontFaceColor -> RGBColor[0, 
+          Rational[2, 3], 0],
+        $CellContext`BackFaceColor -> RGBColor[0, 
+          Rational[2, 3], 0],
+        $CellContext`GraphicsColor -> RGBColor[0, 
+          Rational[2, 3], 0]], {0., 0.}]}, 
+     {RGBColor[0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+      EdgeForm[{GrayLevel[0], Thickness[Medium]}], 
+      DiskBox[{0.850801525540545, 0.}, 0.2], InsetBox[
+       StyleBox["\<\"p\\n0.18\"\>",
+        StripOnInput->False,
+        FontSize->12,
+        FontColor->RGBColor[0, 
+          Rational[2, 3], 0],
+        $CellContext`LineColor -> RGBColor[0, 
+          Rational[2, 3], 0],
+        $CellContext`FrontFaceColor -> RGBColor[0, 
+          Rational[2, 3], 0],
+        $CellContext`BackFaceColor -> RGBColor[0, 
+          Rational[2, 3], 0],
+        $CellContext`GraphicsColor -> RGBColor[0, 
+          Rational[2, 3], 0]], {0.850801525540545, 0.}]}}},
+   Annotation[#, 
+    VertexCoordinateRules -> {{0.4254007627702725, 2.7122673216594966`}, {0., 
+     1.8614657961189516`}, {0.850801525540545, 1.8614657961189516`}, {
+     0.4254007627702725, 0.9495992991592013}, {1.2762022883108175`, 
+     0.9495992991592013}, {0., 0.}, {0.850801525540545, 0.}}]& ],
+  AspectRatio->1.4578286677041756`,
+  FrameTicks->None,
+  ImageSize->200,
+  PlotLabel->FormBox[
+    StyleBox["\"\"", 
+     GrayLevel[0.5], Plain, 24, StripOnInput -> False], TraditionalForm],
+  PlotRange->All,
+  PlotRangePadding->Scaled[0.1]]], "Output",
+ ImageSize->{204, 318},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->678344896]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["HuffmanTree"]],"paclet:WaveletWare/ref/HuffmanTree"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["NodeColor"]],"paclet:WaveletWare/ref/NodeColor"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["NodeEdgeColor"]],"paclet:WaveletWare/ref/NodeEdgeColor"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["NodeEdgeThickness"]],
+    "paclet:WaveletWare/ref/NodeEdgeThickness"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["NodeFontSize"]],"paclet:WaveletWare/ref/NodeFontSize"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["NodeSize"]],"paclet:WaveletWare/ref/NodeSize"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["List of Options and Values"]],
+   "paclet:WaveletWare/guide/List of Options and Values"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->1797292]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"NodeFontColor",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:WaveletWare/guide/WaveletWare", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2016, 8, 25, 9, 50, 48.1118333}", 
+    "history" -> {"XX", "", "", ""}, "context" -> 
+    "WaveletWare`ImageProcessing`", "keywords" -> {}, "specialkeywords" -> {},
+     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Wavelet Ware Package Symbol", "language" -> "en", "paclet" -> 
+    "WaveletWare Package", "status" -> "None", "summary" -> 
+    "NodeFontColor is an option for HuffmanTree that sets the font color when \
+labeling nodes in the tree.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "NodeFontColor", "titlemodifier" -> "", "windowtitle" -> "NodeFontColor", 
+    "type" -> "Symbol", "uri" -> "WaveletWare/ref/NodeFontColor"}, 
+  "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "11.0 for Microsoft Windows (64-bit) (July 28, 2016)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[5614, 155, 386, 15, 30, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->25212658]},
+ "RasterizedOutput"->{
+  Cell[7248, 220, 8338, 145, 339, "Output",
+   CellTags->"RasterizedOutput",
+   CellID->615311221]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 29254, 728},
+ {"RasterizedOutput", 29396, 732}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[585, 21, 4148, 100, 48, "AnchorBarGrid",
+ CellID->1],
+Cell[4736, 123, 290, 11, 44, "ObjectNameGrid"],
+Cell[5029, 136, 560, 15, 83, "Usage"],
+Cell[CellGroupData[{
+Cell[5614, 155, 386, 15, 30, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->25212658],
+Cell[CellGroupData[{
+Cell[6025, 174, 194, 6, 25, "ExampleSection",
+ CellID->90300621],
+Cell[6222, 182, 65, 1, 31, "MathCaption",
+ CellID->16454449],
+Cell[6290, 185, 126, 4, 42, "Input",
+ InitializationCell->True,
+ CellID->861618089],
+Cell[6419, 191, 203, 7, 35, "ExampleText",
+ CellID->70731506],
+Cell[CellGroupData[{
+Cell[6647, 202, 598, 16, 59, "Input",
+ CellID->11592473],
+Cell[7248, 220, 8338, 145, 339, "Output",
+ CellTags->"RasterizedOutput",
+ CellID->615311221],
+Cell[15589, 367, 8953, 209, 339, "Output",
+ CellID->678344896]
+}, Open  ]]
+}, Open  ]],
+Cell[24569, 580, 31, 0, 70, "SectionFooterSpacer"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24637, 585, 270, 12, 70, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[24910, 599, 1839, 53, 70, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26786, 657, 276, 12, 70, "MoreAboutSection",
+ CellID->38303248],
+Cell[27065, 671, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[27099, 673, 209, 6, 70, "MoreAbout",
+ CellID->1797292]
+}, Open  ]],
+Cell[27323, 682, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

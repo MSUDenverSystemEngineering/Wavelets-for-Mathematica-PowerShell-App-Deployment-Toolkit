@@ -1,0 +1,2835 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     80959,       2826]
+NotebookOptionsPosition[     64107,       2271]
+NotebookOutlinePosition[     69073,       2431]
+CellTagsIndexPosition[     68565,       2405]
+WindowTitle->List of Functions - Alphabetical
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["WAVELET WARE GUIDE", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Functions",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Functions", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"AudioFormats\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/AudioFormats"], "\<\"AudioInfo\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/AudioInfo"], "\<\"AudioRead\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/AudioRead"], "\<\"AutomatedThreshold\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/AutomatedThreshold"], "\<\"BestBasisTree\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/BestBasisTree"], "\<\"BWT\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/BWT"], "\<\"CDF97\"\>":>
+       Documentation`HelpLookup["paclet:WaveletWare/ref/CDF97"], "\<\"CE\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/CE"], "\<\"CheckColor\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/CheckColor"], "\<\"CheckData\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/CheckData"], "\<\"CheckDataFilterSize\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/CheckDataFilterSize"], "\<\"CheckFilter\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/CheckFilter"], "\<\"CheckIterations\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/CheckIterations"], \
+"\<\"CheckIterationValue\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/CheckIterationValue"], "\<\"CheckParity\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/CheckParity"], "\<\"CheckTree\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/CheckTree"], "\<\"ChopVector\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/ChopVector"], "\<\"Coif\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/Coif"], "\<\"Comp\"\>":>
+       Documentation`HelpLookup["paclet:WaveletWare/ref/Comp"], "\<\"Cs\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/Cs"], "\<\"DataFormats\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/DataFormats"], "\<\"DataInfo\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/DataInfo"], "\<\"Daub\"\>":>
+       Documentation`HelpLookup["paclet:WaveletWare/ref/Daub"], "\<\"DCT\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/DCT"], "\<\"DonohoSURE\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/DonohoSURE"], "\<\"Entropy2\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/Entropy2"], "\<\"False\"\>":>
+       Documentation`HelpLookup[
+       "paclet:ref/False"], "\<\"FBIPacketTransform\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/FBIPacketTransform"], "\<\"FBITree\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/FBITree"], "\<\"FiniteFourier\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/FiniteFourier"], "\<\"FullWaveletPlot\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/FullWaveletPlot"], \
+"\<\"FullWaveletVectorPlot\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/FullWaveletVectorPlot"], \
+"\<\"GammaCorrection\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/GammaCorrection"], "\<\"GetCorner\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/GetCorner"], "\<\"Haar\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/Haar"], "\<\"HistogramEQ\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/HistogramEQ"], "\<\"HistogramMatch\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/HistogramMatch"], "\<\"HSIToRGB\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/HSIToRGB"], "\<\"HuffmanTree\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/HuffmanTree"], "\<\"HWT\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/HWT"], "\<\"ImageFormats\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/ImageFormats"], "\<\"ImageInfo\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/ImageInfo"], "\<\"ImagePlot\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/ImagePlot"], "\<\"ImageRead\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/ImageRead"], "\<\"InverseBWT\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/InverseBWT"], "\<\"InverseBWTAux\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/InverseBWTAux"], "\<\"InverseDCT\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/InverseDCT"], "\<\"InverseFBIPacketTransform\"\
+\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/InverseFBIPacketTransform"], "\<\"InverseHWT\"\
+\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/InverseHWT"], "\<\"InverseLWT\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/InverseLWT"], "\<\"InverseWPT\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/InverseWPT"], "\<\"InverseWT\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/InverseWT"], "\<\"LeftBWT\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/LeftBWT"], "\<\"LeftHWT\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/LeftHWT"], "\<\"LeftInverseBWT\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/LeftInverseBWT"], "\<\"LeftInverseHWT\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/LeftInverseHWT"], "\<\"LeftInverseLWT\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/LeftInverseLWT"], "\<\"LeftInverseWT\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/LeftInverseWT"], "\<\"LeftLWT\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/LeftLWT"], "\<\"LeftWT\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/LeftWT"], "\<\"LeGall\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/LeGall"], "\<\"LWT\"\>":>
+       Documentation`HelpLookup["paclet:WaveletWare/ref/LWT"], "\<\"MAD\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/MAD"], "\<\"MakeHuffmanCodes\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/MakeHuffmanCodes"], "\<\"MatrixStretch\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/MatrixStretch"], "\<\"MaxIts\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/MaxIts"], "\<\"MSE\"\>":>
+       Documentation`HelpLookup["paclet:WaveletWare/ref/MSE"], "\<\"nCE\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/nCE"], "\<\"NoiseEstimate\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/NoiseEstimate"], \
+"\<\"NumberAboveThreshold\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/NumberAboveThreshold"], \
+"\<\"NumberNonzero\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/NumberNonzero"], "\<\"PackageDirectory\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/PackageDirectory"], \
+"\<\"PacketFunctionData\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/PacketFunctionData"], "\<\"PercentCE\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/PercentCE"], "\<\"PSNR\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/PSNR"], "\<\"PutCorner\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/PutCorner"], "\<\"QuantizeCE\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/QuantizeCE"], "\<\"RGBToHSI\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/RGBToHSI"], "\<\"RGBToYCbCr\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/RGBToYCbCr"], "\<\"RightBWT\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/RightBWT"], "\<\"RightHWT\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/RightHWT"], "\<\"RightInverseBWT\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/RightInverseBWT"], "\<\"RightInverseHWT\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/RightInverseHWT"], "\<\"RightInverseLWT\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/RightInverseLWT"], "\<\"RightInverseWT\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/RightInverseWT"], "\<\"RightLWT\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/RightLWT"], "\<\"RightWT\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/RightWT"], "\<\"ScalingFunctionData\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/ScalingFunctionData"], \
+"\<\"ShannonEntropy\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/ShannonEntropy"], "\<\"ShowBestBasis\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/ShowBestBasis"], "\<\"ShrinkageFunction\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/ShrinkageFunction"], "\<\"Sn\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/Sn"], "\<\"SplineFilters\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/SplineFilters"], "\<\"SumOfPowers\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/SumOfPowers"], "\<\"SUREShrink\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/SUREShrink"], "\<\"TestSparseness\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/TestSparseness"], "\<\"True\"\>":>
+       Documentation`HelpLookup["paclet:ref/True"], "\<\"TrueFalse\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/TrueFalse"], "\<\"UniversalThreshold\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/UniversalThreshold"], "\<\"VisuShrink\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/VisuShrink"], "\<\"WaveletFunctionData\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/WaveletFunctionData"], \
+"\<\"WaveletListToMatrix\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/WaveletListToMatrix"], \
+"\<\"WaveletListToVector\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/WaveletListToVector"], "\<\"WaveletMatrix\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/WaveletMatrix"], "\<\"WaveletMatrixToList\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/WaveletMatrixToList"], "\<\"WaveletPlot\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/WaveletPlot"], "\<\"WaveletRegionList\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/WaveletRegionList"], \
+"\<\"WaveletRegionPlot\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/WaveletRegionPlot"], \
+"\<\"WaveletRegionTake\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/WaveletRegionTake"], \
+"\<\"WaveletShrinkage\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/WaveletShrinkage"], "\<\"WaveletTree\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/WaveletTree"], "\<\"WaveletVectorPlay\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/WaveletVectorPlay"], \
+"\<\"WaveletVectorPlot\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/WaveletVectorPlot"], \
+"\<\"WaveletVectorToList\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/WaveletVectorToList"], "\<\"WaveletWare\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/tutorial/WaveletWare Package"], \
+"\<\"WhiteNoise\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/WhiteNoise"], "\<\"WPT\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/WPT"], "\<\"WPTFull\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/WPTFull"], "\<\"WT\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/WT"], "\<\"WTFull\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/WTFull"], "\<\"YCbCrToRGB\"\>":>
+       Documentation`HelpLookup["paclet:WaveletWare/ref/YCbCrToRGB"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"GuideFunction"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"WaveletWare/guide/List of Functions - \
+Alphabetical\"\>":>None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["WaveletWare/guide/List of Functions - Alphabetical"]}, 
+            Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/WaveletWare/guide/List \
+of Functions - Alphabetical.html"], StandardForm]], "Input", 
+              TextClipboardType -> "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$8474], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "WaveletWare/guide/List of Functions - Alphabetical", ".html"]], 
+           None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell["List of Functions - Alphabetical", "GuideTitle",
+ CellTags->"top",
+ CellID->942062912],
+
+Cell[TextData[{
+ ButtonBox["A",
+  BaseStyle->"Hyperlink",
+  ButtonData->"A"],
+ " \[FilledVerySmallSquare] ",
+ ButtonBox["B",
+  BaseStyle->"Hyperlink",
+  ButtonData->"B"],
+ " \[FilledVerySmallSquare] ",
+ ButtonBox["C",
+  BaseStyle->"Hyperlink",
+  ButtonData->"C"],
+ " \[FilledVerySmallSquare] ",
+ ButtonBox["D",
+  BaseStyle->"Hyperlink",
+  ButtonData->"D"],
+ " \[FilledVerySmallSquare] ",
+ ButtonBox["E",
+  BaseStyle->"Hyperlink",
+  ButtonData->"E"],
+ " \[FilledVerySmallSquare] ",
+ ButtonBox["F",
+  BaseStyle->"Hyperlink",
+  ButtonData->"F"],
+ " \[FilledVerySmallSquare] ",
+ ButtonBox["G",
+  BaseStyle->"Hyperlink",
+  ButtonData->"G"],
+ " \[FilledVerySmallSquare] ",
+ ButtonBox["H",
+  BaseStyle->"Hyperlink",
+  ButtonData->"H"],
+ " \[FilledVerySmallSquare] ",
+ ButtonBox["I",
+  BaseStyle->"Hyperlink",
+  ButtonData->"I"],
+ " \[FilledVerySmallSquare] ",
+ ButtonBox["L",
+  BaseStyle->"Hyperlink",
+  ButtonData->"L"],
+ " \[FilledVerySmallSquare] ",
+ ButtonBox["M",
+  BaseStyle->"Hyperlink",
+  ButtonData->"M"],
+ " \[FilledVerySmallSquare] ",
+ ButtonBox["N",
+  BaseStyle->"Hyperlink",
+  ButtonData->"N"],
+ " \[FilledVerySmallSquare] ",
+ ButtonBox["P",
+  BaseStyle->"Hyperlink",
+  ButtonData->"P"],
+ " \[FilledVerySmallSquare] ",
+ ButtonBox["Q",
+  BaseStyle->"Hyperlink",
+  ButtonData->"Q"],
+ " \[FilledVerySmallSquare] ",
+ ButtonBox["R",
+  BaseStyle->"Hyperlink",
+  ButtonData->"R"],
+ " \[FilledVerySmallSquare] ",
+ ButtonBox["S",
+  BaseStyle->"Hyperlink",
+  ButtonData->"S"],
+ " \[FilledVerySmallSquare] ",
+ ButtonBox["T",
+  BaseStyle->"Hyperlink",
+  ButtonData->"T"],
+ " \[FilledVerySmallSquare] ",
+ ButtonBox["U",
+  BaseStyle->"Hyperlink",
+  ButtonData->"U"],
+ " \[FilledVerySmallSquare] ",
+ ButtonBox["V",
+  BaseStyle->"Hyperlink",
+  ButtonData->"V"],
+ " \[FilledVerySmallSquare] ",
+ ButtonBox["W",
+  BaseStyle->"Hyperlink",
+  ButtonData->"W"],
+ " \[FilledVerySmallSquare] ",
+ ButtonBox["Y",
+  BaseStyle->"Hyperlink",
+  ButtonData->"Y"]
+}], "GuideAbstract",
+ CellID->2001916300]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["",
+ BaseStyle->"Link",
+ ButtonData->"paclet:A"]], "GuideFunctionsSection",
+ CellID->1866139230],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["A "]],
+   "paclet:WaveletWare/guide/List of Functions - Alphabetical#327527382"},
+  "OrangeLink",
+  BaseStyle->"GuideFunctionsSubsection"]], "GuideFunctionsSubsection",
+ CellTags->"A",
+ CellID->327527382],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["AudioFormats"]],"paclet:WaveletWare/ref/AudioFormats"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " List of Mathematica audio formats"
+}], "GuideText",
+ CellID->203374175],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["AudioInfo"]],"paclet:WaveletWare/ref/AudioInfo"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Information about audio files in ",
+ ButtonBox["WaveletWare",
+  BaseStyle->"Link",
+  ButtonData->"paclet:WaveletWare/tutorial/WaveletWare Package"],
+ " package"
+}], "GuideText",
+ CellID->1463276848],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["AudioRead"]],"paclet:WaveletWare/ref/AudioRead"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Import contents of an audio file"
+}], "GuideText",
+ CellID->195384227],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["AutomatedThreshold"]],
+    "paclet:WaveletWare/ref/AutomatedThreshold"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",
+  FontWeight->"Bold"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Computed a threshold value to divide a set of numbers."
+}], "GuideText",
+ CellID->740169567],
+
+Cell[TextData[{
+ "(",
+ ButtonBox["top",
+  BaseStyle->"Hyperlink",
+  ButtonData->"top"],
+ ")"
+}], "GuideText",
+ CellID->303643798]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["B", "GuideFunctionsSubsection",
+ CellTags->"B",
+ CellID->851810087],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["BestBasisTree"]],"paclet:WaveletWare/ref/BestBasisTree"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Generate the best basis for a wavelet packet transformation"
+}], "GuideText",
+ CellID->86725279],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["BWT"]],"paclet:WaveletWare/ref/BWT"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Biorthogonal wavelet transformation"
+}], "GuideText",
+ CellID->481356677],
+
+Cell[TextData[{
+ "(",
+ ButtonBox["top",
+  BaseStyle->"Hyperlink",
+  ButtonData->"top"],
+ ")"
+}], "GuideText",
+ CellID->527619983]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["C", "GuideFunctionsSubsection",
+ CellTags->"C",
+ CellID->227344406],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["CDF97"]],"paclet:WaveletWare/ref/CDF97"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Cohen, Daubechies, Feaveau 9/7 biorthogonal filter"
+}], "GuideText",
+ CellID->638956043],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["CE"]],"paclet:WaveletWare/ref/CE"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Cumulative energy function"
+}], "GuideText",
+ CellID->186157256],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["CheckColor"]],"paclet:WaveletWare/ref/CheckColor"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Utility function to check color validity"
+}], "GuideText",
+ CellID->428668612],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["CheckData"]],"paclet:WaveletWare/ref/CheckData"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Utility function to check data validity"
+}], "GuideText",
+ CellID->254848181],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["CheckDataFilterSize"]],
+    "paclet:WaveletWare/ref/CheckDataFilterSize"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Utility function to check the validity of the data dimensions"
+}], "GuideText",
+ CellID->147357316],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["CheckFilter"]],"paclet:WaveletWare/ref/CheckFilter"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Utility function to check the validity of a filter"
+}], "GuideText",
+ CellID->606756073],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["CheckIterations"]],"paclet:WaveletWare/ref/CheckIterations"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Utility function to check the validity of the number of iterations"
+}], "GuideText",
+ CellID->114728006],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["CheckIterationValue"]],
+    "paclet:WaveletWare/ref/CheckIterationValue"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Utility function to check the validity of a particular iteration value"
+}], "GuideText",
+ CellID->936582886],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["CheckParity"]],"paclet:WaveletWare/ref/CheckParity"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Utility function that checks the parity of a pair of integers"
+}], "GuideText",
+ CellID->190867273],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["CheckTree"]],"paclet:WaveletWare/ref/CheckTree"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Utility function to check the validity of a wavelet (packet) tree"
+}], "GuideText",
+ CellID->322330316],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ChopVector"]],"paclet:WaveletWare/ref/ChopVector"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Trim a vector so its length is divisible by a power of two"
+}], "GuideText",
+ CellID->979105475],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Coif"]],"paclet:WaveletWare/ref/Coif"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " The orthogonal Coiflet filter"
+}], "GuideText",
+ CellID->401971463],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Comp"]],"paclet:WaveletWare/ref/Comp"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " From DiscreteWavelets; replaced by ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["QuantizeCE"]],"paclet:WaveletWare/ref/QuantizeCE"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"]
+}], "GuideText",
+ CellID->351586035],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Cs"]],"paclet:WaveletWare/ref/Cs"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Cosine function in terms of complex exponentials"
+}], "GuideText",
+ CellID->279233630],
+
+Cell[TextData[{
+ "(",
+ ButtonBox["top",
+  BaseStyle->"Hyperlink",
+  ButtonData->"top"],
+ ")"
+}], "GuideText",
+ CellID->441543446]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["D", "GuideFunctionsSubsection",
+ CellTags->"D",
+ CellID->317140975],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["DataFormats"]],"paclet:WaveletWare/ref/DataFormats"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " List of Mathematica data formats"
+}], "GuideText",
+ CellID->68146365],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["DataInfo"]],"paclet:WaveletWare/ref/DataInfo"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Information about data files in the ",
+ ButtonBox["WaveletWare",
+  BaseStyle->"Link",
+  ButtonData->"paclet:WaveletWare/tutorial/WaveletWare Package"],
+ " package"
+}], "GuideText",
+ CellID->55061595],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Daub"]],"paclet:WaveletWare/ref/Daub"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Orthogonal Daubechies filter"
+}], "GuideText",
+ CellID->220694447],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["DCT"]],"paclet:WaveletWare/ref/DCT"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Discrete Cosine Transform"
+}], "GuideText",
+ CellID->1904478],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["DonohoSURE"]],"paclet:WaveletWare/ref/DonohoSURE"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Donoho's soft threshold for SUREShrink wavelet shrinkage"
+}], "GuideText",
+ CellID->1797833],
+
+Cell[TextData[{
+ "(",
+ ButtonBox["top",
+  BaseStyle->"Hyperlink",
+  ButtonData->"top"],
+ ")"
+}], "GuideText",
+ CellID->176994430]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["E", "GuideFunctionsSubsection",
+ CellTags->"E",
+ CellID->104696409],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Entropy2"]],"paclet:WaveletWare/ref/Entropy2"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Entropy function"
+}], "GuideText",
+ CellID->14867943],
+
+Cell[TextData[{
+ "(",
+ ButtonBox["top",
+  BaseStyle->"Hyperlink",
+  ButtonData->"top"],
+ ")"
+}], "GuideText",
+ CellID->9688400]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["F", "GuideFunctionsSubsection",
+ CellTags->"F",
+ CellID->736496929],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["FBIPacketTransform"]],
+    "paclet:WaveletWare/ref/FBIPacketTransform"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Wavelet packet transform used to compress fingerprints"
+}], "GuideText",
+ CellID->61513702],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["FBITree"]],"paclet:WaveletWare/ref/FBITree"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Best basis tree for FBIPacketTransform"
+}], "GuideText",
+ CellID->87320922],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["FiniteFourier"]],"paclet:WaveletWare/ref/FiniteFourier"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Generates a finite-length Fourier series"
+}], "GuideText",
+ CellID->645281716],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["FullWaveletPlot"]],"paclet:WaveletWare/ref/FullWaveletPlot"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Plots all iterations of a two-dimensional wavelet transform"
+}], "GuideText",
+ CellID->647423220],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["FullWaveletVectorPlot"]],
+    "paclet:WaveletWare/ref/FullWaveletVectorPlot"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Plots all iterations of a one-dimensional wavelet transform"
+}], "GuideText",
+ CellID->31720720],
+
+Cell[TextData[{
+ "(",
+ ButtonBox["top",
+  BaseStyle->"Hyperlink",
+  ButtonData->"top"],
+ ")"
+}], "GuideText",
+ CellID->877186724]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["G", "GuideFunctionsSubsection",
+ CellTags->"G",
+ CellID->323479553],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["GammaCorrection"]],"paclet:WaveletWare/ref/GammaCorrection"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Image processing function"
+}], "GuideText",
+ CellID->463231842],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["GetCorner"]],"paclet:WaveletWare/ref/GetCorner"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Retrieves the upper left corner of a matrix"
+}], "GuideText",
+ CellID->479316035],
+
+Cell[TextData[{
+ "(",
+ ButtonBox["top",
+  BaseStyle->"Hyperlink",
+  ButtonData->"top"],
+ ")"
+}], "GuideText",
+ CellID->518956070]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["H", "GuideFunctionsSubsection",
+ CellTags->"H",
+ CellID->602634604],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Haar"]],"paclet:WaveletWare/ref/Haar"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Orthogonal Haar filter"
+}], "GuideText",
+ CellID->291354414],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["HistogramEQ"]],"paclet:WaveletWare/ref/HistogramEQ"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Histogram equalization of an image"
+}], "GuideText",
+ CellID->397620004],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["HistogramMatch"]],"paclet:WaveletWare/ref/HistogramMatch"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",
+  FontWeight->"Bold"],
+ " - Match two images via histogram matching"
+}], "GuideText",
+ CellID->118571160],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["HSIToRGB"]],"paclet:WaveletWare/ref/HSIToRGB"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Convert from HSI color space to RGB color space"
+}], "GuideText",
+ CellID->427782801],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["HuffmanTree"]],"paclet:WaveletWare/ref/HuffmanTree"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Plots a Huffman tree"
+}], "GuideText",
+ CellID->196826532],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["HWT"]],"paclet:WaveletWare/ref/HWT"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Orthogonal Haar wavelet transform"
+}], "GuideText",
+ CellID->576362301],
+
+Cell[TextData[{
+ "(",
+ ButtonBox["top",
+  BaseStyle->"Hyperlink",
+  ButtonData->"top"],
+ ")"
+}], "GuideText",
+ CellID->208388360]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["I", "GuideFunctionsSubsection",
+ CellTags->"I",
+ CellID->109238342],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ImageFormats"]],"paclet:WaveletWare/ref/ImageFormats"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " List of Mathematica image formats"
+}], "GuideText",
+ CellID->29316573],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ImageInfo"]],"paclet:WaveletWare/ref/ImageInfo"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Information about image files in the ",
+ ButtonBox["WaveletWare",
+  BaseStyle->"Link",
+  ButtonData->"paclet:WaveletWare/tutorial/WaveletWare Package"],
+ " package"
+}], "GuideText",
+ CellID->635722486],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ImagePlot"]],"paclet:WaveletWare/ref/ImagePlot"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Plots an image"
+}], "GuideText",
+ CellID->492865358],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ImageRead"]],"paclet:WaveletWare/ref/ImageRead"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Read an image from disk or URL"
+}], "GuideText",
+ CellID->284695696],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["InverseBWT"]],"paclet:WaveletWare/ref/InverseBWT"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Inverse biorthogonal wavelet transform"
+}], "GuideText",
+ CellID->151562015],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["InverseBWTAux"]],"paclet:WaveletWare/ref/InverseBWTAux"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Auxiliary function for computing ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["InverseBWT"]],"paclet:WaveletWare/ref/InverseBWT"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"]
+}], "GuideText",
+ CellID->15743327],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["InverseDCT"]],"paclet:WaveletWare/ref/InverseDCT"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Inverse discrete cosine transform"
+}], "GuideText",
+ CellID->98270957],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["InverseFBIPacketTransform"]],
+    "paclet:WaveletWare/ref/InverseFBIPacketTransform"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Inverse FBI packet transform"
+}], "GuideText",
+ CellID->70961162],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["InverseHWT"]],"paclet:WaveletWare/ref/InverseHWT"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Inverse Haar wavelet transform"
+}], "GuideText",
+ CellID->484246785],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["InverseLWT"]],"paclet:WaveletWare/ref/InverseLWT"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Inverse LeGall wavelet transform"
+}], "GuideText",
+ CellID->758003172],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["InverseWPT"]],"paclet:WaveletWare/ref/InverseWPT"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Inverse wavelet packet transform"
+}], "GuideText",
+ CellID->21813285],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["InverseWT"]],"paclet:WaveletWare/ref/InverseWT"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Inverse orthogonal wavelet transform"
+}], "GuideText",
+ CellID->673532743],
+
+Cell[TextData[{
+ "(",
+ ButtonBox["top",
+  BaseStyle->"Hyperlink",
+  ButtonData->"top"],
+ ")"
+}], "GuideText",
+ CellID->75202476]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["L", "GuideFunctionsSubsection",
+ CellID->537496246],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["LeftBWT"]],"paclet:WaveletWare/ref/LeftBWT"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Left biorthogonal wavelet transform"
+}], "GuideText",
+ CellTags->"L",
+ CellID->170380746],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["LeftHWT"]],"paclet:WaveletWare/ref/LeftHWT"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Left Haar wavelet transform"
+}], "GuideText",
+ CellID->213182076],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["LeftInverseBWT"]],"paclet:WaveletWare/ref/LeftInverseBWT"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Left inverse biorthogonal wavelet transform"
+}], "GuideText",
+ CellID->470782164],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["LeftInverseHWT"]],"paclet:WaveletWare/ref/LeftInverseHWT"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Left inverse Haar wavelet transform"
+}], "GuideText",
+ CellID->41247899],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["LeftInverseLWT"]],"paclet:WaveletWare/ref/LeftInverseLWT"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Left inverse LeGall wavelet transform"
+}], "GuideText",
+ CellID->172126315],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["LeftInverseWT"]],"paclet:WaveletWare/ref/LeftInverseWT"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Left inverse wavelet transform"
+}], "GuideText",
+ CellID->2931541],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["LeftLWT"]],"paclet:WaveletWare/ref/LeftLWT"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Left LeGall biorthogonal wavelet transform"
+}], "GuideText",
+ CellID->174297140],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["LeftWT"]],"paclet:WaveletWare/ref/LeftWT"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Left wavelet transform"
+}], "GuideText",
+ CellID->77151343],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["LeGall"]],"paclet:WaveletWare/ref/LeGall"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " LeGall 5/3 biorthogonal filter"
+}], "GuideText",
+ CellID->49797219],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["LWT"]],"paclet:WaveletWare/ref/LWT"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " LeGall biorthogonal wavelet transform"
+}], "GuideText",
+ CellID->355653517],
+
+Cell[TextData[{
+ "(",
+ ButtonBox["top",
+  BaseStyle->"Hyperlink",
+  ButtonData->"top"],
+ ")"
+}], "GuideText",
+ CellID->65589986]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["M", "GuideFunctionsSubsection",
+ CellTags->"M",
+ CellID->53526355],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["MAD"]],"paclet:WaveletWare/ref/MAD"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Median absolute deviation"
+}], "GuideText",
+ CellID->73593989],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["MakeHuffmanCodes"]],"paclet:WaveletWare/ref/MakeHuffmanCodes"},
+   
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Generate a Huffman tree from data"
+}], "GuideText",
+ CellID->670572128],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["MatrixStretch"]],"paclet:WaveletWare/ref/MatrixStretch"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Linearly scales matrix values by a defined min/max "
+}], "GuideText",
+ CellID->206701228],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["MaxIts"]],"paclet:WaveletWare/ref/MaxIts"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Highest power of two that is a factor of the length of data"
+}], "GuideText",
+ CellID->32992126],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["MSE"]],"paclet:WaveletWare/ref/MSE"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Mean squared error"
+}], "GuideText",
+ CellID->110362404],
+
+Cell[TextData[{
+ "(",
+ ButtonBox["top",
+  BaseStyle->"Hyperlink",
+  ButtonData->"top"],
+ ")"
+}], "GuideText",
+ CellID->418197091]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["N", "GuideFunctionsSubsection",
+ CellTags->"N",
+ CellID->335026998],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["nCE"]],"paclet:WaveletWare/ref/nCE"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " From DiscreteWavelets; replaced by ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["PercentCE"]],"paclet:WaveletWare/ref/PercentCE"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"]
+}], "GuideText",
+ CellID->129354261],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["NoiseEstimate"]],"paclet:WaveletWare/ref/NoiseEstimate"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Estimates the noise level of data"
+}], "GuideText",
+ CellID->51294447],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["NumberAboveThreshold"]],
+    "paclet:WaveletWare/ref/NumberAboveThreshold"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Cost function for the wavelet packet transform"
+}], "GuideText",
+ CellID->343142518],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["NumberNonzero"]],"paclet:WaveletWare/ref/NumberNonzero"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Cost function for the wavelet packet transform"
+}], "GuideText",
+ CellID->805593754],
+
+Cell[TextData[{
+ "(",
+ ButtonBox["top",
+  BaseStyle->"Hyperlink",
+  ButtonData->"top"],
+ ")"
+}], "GuideText",
+ CellID->10240544]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["P", "GuideFunctionsSubsection",
+ CellTags->"P",
+ CellID->188928491],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["PackageDirectory"]],"paclet:WaveletWare/ref/PackageDirectory"},
+   
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " The directory housing the ",
+ ButtonBox["WaveletWare",
+  BaseStyle->"Link",
+  ButtonData->"paclet:WaveletWare/tutorial/WaveletWare Package"],
+ " package"
+}], "GuideText",
+ CellID->315097772],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["PacketFunctionData"]],
+    "paclet:WaveletWare/ref/PacketFunctionData"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Cascade algorithm data to approximate a packet function"
+}], "GuideText",
+ CellID->837554494],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["PercentCE"]],"paclet:WaveletWare/ref/PercentCE"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Number of terms in an energy vector larger than a given percent"
+}], "GuideText",
+ CellID->546802664],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["PSNR"]],"paclet:WaveletWare/ref/PSNR"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Peak signal to noise ratio function"
+}], "GuideText",
+ CellID->453096009],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["PutCorner"]],"paclet:WaveletWare/ref/PutCorner"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Replace the upper left hand corner of a matrix with another matrix"
+}], "GuideText",
+ CellID->298875866],
+
+Cell[TextData[{
+ "(",
+ ButtonBox["top",
+  BaseStyle->"Hyperlink",
+  ButtonData->"top"],
+ ")"
+}], "GuideText",
+ CellID->152347111]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q", "GuideFunctionsSubsection",
+ CellTags->"Q",
+ CellID->373946836],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["QuantizeCE"]],"paclet:WaveletWare/ref/QuantizeCE"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Quantizing function for cumulative energy vectors"
+}], "GuideText",
+ CellID->5484254],
+
+Cell[TextData[{
+ "(",
+ ButtonBox["top",
+  BaseStyle->"Hyperlink",
+  ButtonData->"top"],
+ ")"
+}], "GuideText",
+ CellID->218485202]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["R", "GuideFunctionsSubsection",
+ CellTags->"R",
+ CellID->547498990],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["RGBToHSI"]],"paclet:WaveletWare/ref/RGBToHSI"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Convert from RGB color space to HSI color space"
+}], "GuideText",
+ CellID->397621121],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["RGBToYCbCr"]],"paclet:WaveletWare/ref/RGBToYCbCr"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Convert from RGB color space to YCbCr color space"
+}], "GuideText",
+ CellID->135488666],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["RightBWT"]],"paclet:WaveletWare/ref/RightBWT"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Right biorthogonal wavelet transform"
+}], "GuideText",
+ CellID->60476148],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["RightHWT"]],"paclet:WaveletWare/ref/RightHWT"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Right Haar wavelet transform"
+}], "GuideText",
+ CellID->229820949],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["RightInverseBWT"]],"paclet:WaveletWare/ref/RightInverseBWT"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Right inverse biorthogonal wavelet transform"
+}], "GuideText",
+ CellID->268488218],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["RightInverseHWT"]],"paclet:WaveletWare/ref/RightInverseHWT"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Right inverse Haar wavelet transform"
+}], "GuideText",
+ CellID->64265118],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["RightInverseLWT"]],"paclet:WaveletWare/ref/RightInverseLWT"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Right inverse LeGall wavelet transform"
+}], "GuideText",
+ CellID->104179768],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["RightInverseWT"]],"paclet:WaveletWare/ref/RightInverseWT"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Right inverse wavelet transform"
+}], "GuideText",
+ CellID->370823547],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["RightLWT"]],"paclet:WaveletWare/ref/RightLWT"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Right LeGall biorthogonal wavelet transform"
+}], "GuideText",
+ CellID->52580450],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["RightWT"]],"paclet:WaveletWare/ref/RightWT"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Right orthogonal wavelet transform"
+}], "GuideText",
+ CellID->252315568],
+
+Cell[TextData[{
+ "(",
+ ButtonBox["top",
+  BaseStyle->"Hyperlink",
+  ButtonData->"top"],
+ ")"
+}], "GuideText",
+ CellID->183887624]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["S", "GuideFunctionsSubsection",
+ CellTags->"S",
+ CellID->133151560],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ScalingFunctionData"]],
+    "paclet:WaveletWare/ref/ScalingFunctionData"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Cascade algorithm data to approximate a scaling function"
+}], "GuideText",
+ CellID->550657286],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ShannonEntropy"]],"paclet:WaveletWare/ref/ShannonEntropy"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Cost function for the wavelet packet transform"
+}], "GuideText",
+ CellID->89926730],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ShowBestBasis"]],"paclet:WaveletWare/ref/ShowBestBasis"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Plots the best basis structure for a wavelet packet transform"
+}], "GuideText",
+ CellID->575564974],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ShrinkageFunction"]],
+    "paclet:WaveletWare/ref/ShrinkageFunction"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Performs soft thresholding in the wavelet shrinkage algorithm"
+}], "GuideText",
+ CellID->71636833],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Sn"]],"paclet:WaveletWare/ref/Sn"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Sine function in terms of complex exponentials"
+}], "GuideText",
+ CellID->52809441],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["SplineFilters"]],"paclet:WaveletWare/ref/SplineFilters"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Biorthogonal spline filters"
+}], "GuideText",
+ CellID->6953455],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["SumOfPowers"]],"paclet:WaveletWare/ref/SumOfPowers"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Cost function for the wavelet packet transform"
+}], "GuideText",
+ CellID->465294616],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["SUREShrink"]],"paclet:WaveletWare/ref/SUREShrink"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Donoho's SUREShrink method for denoising data"
+}], "GuideText",
+ CellID->474093008],
+
+Cell[TextData[{
+ "(",
+ ButtonBox["top",
+  BaseStyle->"Hyperlink",
+  ButtonData->"top"],
+ ")"
+}], "GuideText",
+ CellID->688684109]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["T", "GuideFunctionsSubsection",
+ CellTags->"T",
+ CellID->56174537],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["TestSparseness"]],"paclet:WaveletWare/ref/TestSparseness"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Test the sparseness of data in determining ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["SUREShrink"]],"paclet:WaveletWare/ref/SUREShrink"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " threshold"
+}], "GuideText",
+ CellID->40734752],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["TrueFalse"]],"paclet:WaveletWare/ref/TrueFalse"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Utility function that returns exactly ",
+ ButtonBox["True",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/True"],
+ " or ",
+ ButtonBox["False",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/False"]
+}], "GuideText",
+ CellID->58309683],
+
+Cell[TextData[{
+ "(",
+ ButtonBox["top",
+  BaseStyle->"Hyperlink",
+  ButtonData->"top"],
+ ")"
+}], "GuideText",
+ CellID->333416899]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["U", "GuideFunctionsSubsection",
+ CellTags->"U",
+ CellID->616447218],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["UniversalThreshold"]],
+    "paclet:WaveletWare/ref/UniversalThreshold"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Donoho's soft threshold for VisuShrink wavelet shrinkage"
+}], "GuideText",
+ CellID->250534478],
+
+Cell[TextData[{
+ "(",
+ ButtonBox["top",
+  BaseStyle->"Hyperlink",
+  ButtonData->"top"],
+ ")"
+}], "GuideText",
+ CellID->44473542]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["V", "GuideFunctionsSubsection",
+ CellTags->"V",
+ CellID->125930158],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["VisuShrink"]],"paclet:WaveletWare/ref/VisuShrink"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Donoho's VisuShrink method for denoising data"
+}], "GuideText",
+ CellID->480741742],
+
+Cell[TextData[{
+ "(",
+ ButtonBox["top",
+  BaseStyle->"Hyperlink",
+  ButtonData->"top"],
+ ")"
+}], "GuideText",
+ CellID->229423223]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["W", "GuideFunctionsSubsection",
+ CellTags->"W",
+ CellID->876611189],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WaveletFunctionData"]],
+    "paclet:WaveletWare/ref/WaveletFunctionData"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Cascade algorithm data to approximate a wavelet function"
+}], "GuideText",
+ CellID->109155870],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WaveletListToMatrix"]],
+    "paclet:WaveletWare/ref/WaveletListToMatrix"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Converts two-dimsional wavelet data in list form to a matrix"
+}], "GuideText",
+ CellID->364662357],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WaveletListToVector"]],
+    "paclet:WaveletWare/ref/WaveletListToVector"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Converts one-dimsional wavelet data in list form to a vector"
+}], "GuideText",
+ CellID->108704341],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WaveletMatrix"]],"paclet:WaveletWare/ref/WaveletMatrix"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Generates a generic wavelet matrix"
+}], "GuideText",
+ CellID->518589486],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WaveletMatrixToList"]],
+    "paclet:WaveletWare/ref/WaveletMatrixToList"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Converse a matrix to list form of the wavelet transform"
+}], "GuideText",
+ CellID->86492033],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WaveletPlot"]],"paclet:WaveletWare/ref/WaveletPlot"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Plots a two-dimensional (bi)orthgonal wavelet (packet) transform"
+}], "GuideText",
+ CellID->27967273],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WaveletRegionList"]],
+    "paclet:WaveletWare/ref/WaveletRegionList"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " List of regions of a (bi)orthogonal wavelet (packet) transform"
+}], "GuideText",
+ CellID->311988080],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WaveletRegionPlot"]],
+    "paclet:WaveletWare/ref/WaveletRegionPlot"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Plot region(s) of a (bi)orthogonal wavelet (packet) transform"
+}], "GuideText",
+ CellID->844040643],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WaveletRegionTake"]],
+    "paclet:WaveletWare/ref/WaveletRegionTake"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Data from regions of a (bi)orthogonal wavelet (packet) transform"
+}], "GuideText",
+ CellID->114179],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WaveletShrinkage"]],"paclet:WaveletWare/ref/WaveletShrinkage"},
+   
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Wavelet-based method for denoising data"
+}], "GuideText",
+ CellID->961983780],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WaveletTree"]],"paclet:WaveletWare/ref/WaveletTree"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " A tree that represents the structure of a (bi)orthogonal wavelet \
+transform"
+}], "GuideText",
+ CellID->575820134],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WaveletVectorPlay"]],
+    "paclet:WaveletWare/ref/WaveletVectorPlay"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Play the (bi)orthogonal wavelet (packet) transform of an audio file"
+}], "GuideText",
+ CellID->414060870],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WaveletVectorPlot"]],
+    "paclet:WaveletWare/ref/WaveletVectorPlot"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Plots a one-dimensional (bi)orthgonal wavelet (packet) transform"
+}], "GuideText",
+ CellID->680133907],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WaveletVectorToList"]],
+    "paclet:WaveletWare/ref/WaveletVectorToList"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Converts a vector to list form of a wavelet transform"
+}], "GuideText",
+ CellID->457953238],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WhiteNoise"]],"paclet:WaveletWare/ref/WhiteNoise"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Generates one- or two-dimensional Gaussian white noise"
+}], "GuideText",
+ CellID->162909871],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WPT"]],"paclet:WaveletWare/ref/WPT"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Computes a one- or two-dimensional wavelet packet transform"
+}], "GuideText",
+ CellID->660040852],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WPTFull"]],"paclet:WaveletWare/ref/WPTFull"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " All iterations of a one- or two-dimensional wavelet packet transform"
+}], "GuideText",
+ CellID->92273106],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WT"]],"paclet:WaveletWare/ref/WT"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Computes a one- or two-dimensional othogonal wavelet transform"
+}], "GuideText",
+ CellID->2543113],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WTFull"]],"paclet:WaveletWare/ref/WTFull"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " All iterations of a one- or two-dimensional (bi)orthogonal wavelet \
+transform"
+}], "GuideText",
+ CellID->53460612],
+
+Cell[TextData[{
+ "(",
+ ButtonBox["top",
+  BaseStyle->"Hyperlink",
+  ButtonData->"top"],
+ ")"
+}], "GuideText",
+ CellID->129066218]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Y"]],"paclet:Y"},
+  "OrangeLink",
+  BaseStyle->"GuideFunctionsSubsection"]], "GuideFunctionsSubsection",
+ CellTags->"Y",
+ CellID->30679309],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["YCbCrToRGB"]],"paclet:WaveletWare/ref/YCbCrToRGB"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Convert from YCbCr color space to RGB color space"
+}], "GuideText",
+ CellID->198520158],
+
+Cell[TextData[{
+ "(",
+ ButtonBox["top",
+  BaseStyle->"Hyperlink",
+  ButtonData->"top"],
+ ")"
+}], "GuideText",
+ CellID->215069976]
+}, Open  ]]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"List of Functions - Alphabetical",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "GuideColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:WaveletWare/guide/WaveletWare", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2016, 8, 25, 9, 45, 37.7457321}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "WaveletWare`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Wavelet Ware Guide", "language" -> "en", "paclet" -> "WaveletWare", 
+    "status" -> "None", "summary" -> 
+    "A \[FilledVerySmallSquare] B \[FilledVerySmallSquare] C \
+\[FilledVerySmallSquare] D \[FilledVerySmallSquare] E \
+\[FilledVerySmallSquare] F \[FilledVerySmallSquare] G \
+\[FilledVerySmallSquare] H \[FilledVerySmallSquare] I \
+\[FilledVerySmallSquare] L \[FilledVerySmallSquare] M \
+\[FilledVerySmallSquare] N \[FilledVerySmallSquare] P \
+\[FilledVerySmallSquare] Q \[FilledVerySmallSquare] R \
+\[FilledVerySmallSquare] S \[FilledVerySmallSquare] T \
+\[FilledVerySmallSquare] U \[FilledVerySmallSquare] V \
+\[FilledVerySmallSquare] W \[FilledVerySmallSquare] Y", "synonyms" -> {}, 
+    "tabletags" -> DocumentationBuild`Make`Private`tabletaggingrules$8099, 
+    "title" -> "List of Functions - Alphabetical", "titlemodifier" -> "", 
+    "windowtitle" -> "List of Functions - Alphabetical", "type" -> "Guide", 
+    "uri" -> "WaveletWare/guide/List of Functions - Alphabetical"}},
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "top"->{
+  Cell[15965, 336, 92, 2, 70, "GuideTitle",
+   CellTags->"top",
+   CellID->942062912]},
+ "A"->{
+  Cell[18254, 439, 252, 7, 70, "GuideFunctionsSubsection",
+   CellTags->"A",
+   CellID->327527382]},
+ "B"->{
+  Cell[20137, 514, 73, 2, 70, "GuideFunctionsSubsection",
+   CellTags->"B",
+   CellID->851810087]},
+ "C"->{
+  Cell[21034, 554, 73, 2, 70, "GuideFunctionsSubsection",
+   CellTags->"C",
+   CellID->227344406]},
+ "D"->{
+  Cell[26132, 745, 73, 2, 70, "GuideFunctionsSubsection",
+   CellTags->"D",
+   CellID->317140975]},
+ "E"->{
+  Cell[28068, 825, 73, 2, 70, "GuideFunctionsSubsection",
+   CellTags->"E",
+   CellID->104696409]},
+ "F"->{
+  Cell[28604, 853, 73, 2, 70, "GuideFunctionsSubsection",
+   CellTags->"F",
+   CellID->736496929]},
+ "G"->{
+  Cell[30576, 931, 73, 2, 70, "GuideFunctionsSubsection",
+   CellTags->"G",
+   CellID->323479553]},
+ "H"->{
+  Cell[31464, 971, 73, 2, 70, "GuideFunctionsSubsection",
+   CellTags->"H",
+   CellID->602634604]},
+ "I"->{
+  Cell[33570, 1058, 73, 2, 70, "GuideFunctionsSubsection",
+   CellTags->"I",
+   CellID->109238342]},
+ "L"->{
+  Cell[38003, 1231, 327, 11, 70, "GuideText",
+   CellTags->"L",
+   CellID->170380746]},
+ "M"->{
+  Cell[41349, 1364, 72, 2, 70, "GuideFunctionsSubsection",
+   CellTags->"M",
+   CellID->53526355]},
+ "N"->{
+  Cell[43185, 1441, 73, 2, 70, "GuideFunctionsSubsection",
+   CellTags->"N",
+   CellID->335026998]},
+ "P"->{
+  Cell[44924, 1511, 73, 2, 70, "GuideFunctionsSubsection",
+   CellTags->"P",
+   CellID->188928491]},
+ "Q"->{
+  Cell[46983, 1593, 73, 2, 70, "GuideFunctionsSubsection",
+   CellTags->"Q",
+   CellID->373946836]},
+ "R"->{
+  Cell[47557, 1621, 73, 2, 70, "GuideFunctionsSubsection",
+   CellTags->"R",
+   CellID->547498990]},
+ "S"->{
+  Cell[51048, 1757, 73, 2, 70, "GuideFunctionsSubsection",
+   CellTags->"S",
+   CellID->133151560]},
+ "T"->{
+  Cell[54001, 1871, 72, 2, 70, "GuideFunctionsSubsection",
+   CellTags->"T",
+   CellID->56174537]},
+ "U"->{
+  Cell[55249, 1924, 73, 2, 70, "GuideFunctionsSubsection",
+   CellTags->"U",
+   CellID->616447218]},
+ "V"->{
+  Cell[55852, 1953, 73, 2, 70, "GuideFunctionsSubsection",
+   CellTags->"V",
+   CellID->125930158]},
+ "W"->{
+  Cell[56424, 1981, 73, 2, 70, "GuideFunctionsSubsection",
+   CellTags->"W",
+   CellID->876611189]},
+ "Y"->{
+  Cell[63400, 2238, 187, 6, 70, "GuideFunctionsSubsection",
+   CellTags->"Y",
+   CellID->30679309]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"top", 66187, 2314},
+ {"A", 66283, 2318},
+ {"B", 66392, 2322},
+ {"C", 66500, 2326},
+ {"D", 66608, 2330},
+ {"E", 66716, 2334},
+ {"F", 66824, 2338},
+ {"G", 66932, 2342},
+ {"H", 67040, 2346},
+ {"I", 67148, 2350},
+ {"L", 67257, 2354},
+ {"M", 67353, 2358},
+ {"N", 67461, 2362},
+ {"P", 67570, 2366},
+ {"Q", 67679, 2370},
+ {"R", 67788, 2374},
+ {"S", 67897, 2378},
+ {"T", 68006, 2382},
+ {"U", 68114, 2386},
+ {"V", 68223, 2390},
+ {"W", 68332, 2394},
+ {"Y", 68441, 2398}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[604, 21, 15336, 311, 70, "AnchorBarGrid",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[15965, 336, 92, 2, 70, "GuideTitle",
+ CellTags->"top",
+ CellID->942062912],
+Cell[16060, 340, 1978, 85, 70, "GuideAbstract",
+ CellID->2001916300]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18075, 430, 120, 3, 70, "GuideFunctionsSection",
+ CellID->1866139230],
+Cell[18198, 435, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[CellGroupData[{
+Cell[18254, 439, 252, 7, 70, "GuideFunctionsSubsection",
+ CellTags->"A",
+ CellID->327527382],
+Cell[18509, 448, 319, 10, 70, "GuideText",
+ CellID->203374175],
+Cell[18831, 460, 440, 14, 70, "GuideText",
+ CellID->1463276848],
+Cell[19274, 476, 312, 10, 70, "GuideText",
+ CellID->195384227],
+Cell[19589, 488, 379, 12, 70, "GuideText",
+ CellID->740169567],
+Cell[19971, 502, 129, 7, 70, "GuideText",
+ CellID->303643798]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20137, 514, 73, 2, 70, "GuideFunctionsSubsection",
+ CellTags->"B",
+ CellID->851810087],
+Cell[20213, 518, 346, 10, 70, "GuideText",
+ CellID->86725279],
+Cell[20562, 530, 303, 10, 70, "GuideText",
+ CellID->481356677],
+Cell[20868, 542, 129, 7, 70, "GuideText",
+ CellID->527619983]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21034, 554, 73, 2, 70, "GuideFunctionsSubsection",
+ CellTags->"C",
+ CellID->227344406],
+Cell[21110, 558, 322, 10, 70, "GuideText",
+ CellID->638956043],
+Cell[21435, 570, 292, 10, 70, "GuideText",
+ CellID->186157256],
+Cell[21730, 582, 322, 10, 70, "GuideText",
+ CellID->428668612],
+Cell[22055, 594, 319, 10, 70, "GuideText",
+ CellID->254848181],
+Cell[22377, 606, 366, 11, 70, "GuideText",
+ CellID->147357316],
+Cell[22746, 619, 334, 10, 70, "GuideText",
+ CellID->606756073],
+Cell[23083, 631, 358, 10, 70, "GuideText",
+ CellID->114728006],
+Cell[23444, 643, 375, 11, 70, "GuideText",
+ CellID->936582886],
+Cell[23822, 656, 345, 10, 70, "GuideText",
+ CellID->190867273],
+Cell[24170, 668, 345, 10, 70, "GuideText",
+ CellID->322330316],
+Cell[24518, 680, 340, 10, 70, "GuideText",
+ CellID->979105475],
+Cell[24861, 692, 299, 10, 70, "GuideText",
+ CellID->401971463],
+Cell[25163, 704, 483, 15, 70, "GuideText",
+ CellID->351586035],
+Cell[25649, 721, 314, 10, 70, "GuideText",
+ CellID->279233630],
+Cell[25966, 733, 129, 7, 70, "GuideText",
+ CellID->441543446]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26132, 745, 73, 2, 70, "GuideFunctionsSubsection",
+ CellTags->"D",
+ CellID->317140975],
+Cell[26208, 749, 315, 10, 70, "GuideText",
+ CellID->68146365],
+Cell[26526, 761, 439, 14, 70, "GuideText",
+ CellID->55061595],
+Cell[26968, 777, 298, 10, 70, "GuideText",
+ CellID->220694447],
+Cell[27269, 789, 291, 10, 70, "GuideText",
+ CellID->1904478],
+Cell[27563, 801, 336, 10, 70, "GuideText",
+ CellID->1797833],
+Cell[27902, 813, 129, 7, 70, "GuideText",
+ CellID->176994430]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28068, 825, 73, 2, 70, "GuideFunctionsSubsection",
+ CellTags->"E",
+ CellID->104696409],
+Cell[28144, 829, 293, 10, 70, "GuideText",
+ CellID->14867943],
+Cell[28440, 841, 127, 7, 70, "GuideText",
+ CellID->9688400]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28604, 853, 73, 2, 70, "GuideFunctionsSubsection",
+ CellTags->"F",
+ CellID->736496929],
+Cell[28680, 857, 356, 11, 70, "GuideText",
+ CellID->61513702],
+Cell[29039, 870, 313, 10, 70, "GuideText",
+ CellID->87320922],
+Cell[29355, 882, 328, 10, 70, "GuideText",
+ CellID->645281716],
+Cell[29686, 894, 351, 10, 70, "GuideText",
+ CellID->647423220],
+Cell[30040, 906, 367, 11, 70, "GuideText",
+ CellID->31720720],
+Cell[30410, 919, 129, 7, 70, "GuideText",
+ CellID->877186724]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30576, 931, 73, 2, 70, "GuideFunctionsSubsection",
+ CellTags->"G",
+ CellID->323479553],
+Cell[30652, 935, 317, 10, 70, "GuideText",
+ CellID->463231842],
+Cell[30972, 947, 323, 10, 70, "GuideText",
+ CellID->479316035],
+Cell[31298, 959, 129, 7, 70, "GuideText",
+ CellID->518956070]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31464, 971, 73, 2, 70, "GuideFunctionsSubsection",
+ CellTags->"H",
+ CellID->602634604],
+Cell[31540, 975, 292, 10, 70, "GuideText",
+ CellID->291354414],
+Cell[31835, 987, 318, 10, 70, "GuideText",
+ CellID->397620004],
+Cell[32156, 999, 306, 9, 70, "GuideText",
+ CellID->118571160],
+Cell[32465, 1010, 325, 10, 70, "GuideText",
+ CellID->427782801],
+Cell[32793, 1022, 304, 10, 70, "GuideText",
+ CellID->196826532],
+Cell[33100, 1034, 301, 10, 70, "GuideText",
+ CellID->576362301],
+Cell[33404, 1046, 129, 7, 70, "GuideText",
+ CellID->208388360]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33570, 1058, 73, 2, 70, "GuideFunctionsSubsection",
+ CellTags->"I",
+ CellID->109238342],
+Cell[33646, 1062, 318, 10, 70, "GuideText",
+ CellID->29316573],
+Cell[33967, 1074, 443, 14, 70, "GuideText",
+ CellID->635722486],
+Cell[34413, 1090, 294, 10, 70, "GuideText",
+ CellID->492865358],
+Cell[34710, 1102, 310, 10, 70, "GuideText",
+ CellID->284695696],
+Cell[35023, 1114, 320, 10, 70, "GuideText",
+ CellID->151562015],
+Cell[35346, 1126, 498, 15, 70, "GuideText",
+ CellID->15743327],
+Cell[35847, 1143, 314, 10, 70, "GuideText",
+ CellID->98270957],
+Cell[36164, 1155, 344, 11, 70, "GuideText",
+ CellID->70961162],
+Cell[36511, 1168, 312, 10, 70, "GuideText",
+ CellID->484246785],
+Cell[36826, 1180, 314, 10, 70, "GuideText",
+ CellID->758003172],
+Cell[37143, 1192, 313, 10, 70, "GuideText",
+ CellID->21813285],
+Cell[37459, 1204, 316, 10, 70, "GuideText",
+ CellID->673532743],
+Cell[37778, 1216, 128, 7, 70, "GuideText",
+ CellID->75202476]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37943, 1228, 57, 1, 70, "GuideFunctionsSubsection",
+ CellID->537496246],
+Cell[38003, 1231, 327, 11, 70, "GuideText",
+ CellTags->"L",
+ CellID->170380746],
+Cell[38333, 1244, 303, 10, 70, "GuideText",
+ CellID->213182076],
+Cell[38639, 1256, 333, 10, 70, "GuideText",
+ CellID->470782164],
+Cell[38975, 1268, 324, 10, 70, "GuideText",
+ CellID->41247899],
+Cell[39302, 1280, 327, 10, 70, "GuideText",
+ CellID->172126315],
+Cell[39632, 1292, 316, 10, 70, "GuideText",
+ CellID->2931541],
+Cell[39951, 1304, 318, 10, 70, "GuideText",
+ CellID->174297140],
+Cell[40272, 1316, 295, 10, 70, "GuideText",
+ CellID->77151343],
+Cell[40570, 1328, 303, 10, 70, "GuideText",
+ CellID->49797219],
+Cell[40876, 1340, 305, 10, 70, "GuideText",
+ CellID->355653517],
+Cell[41184, 1352, 128, 7, 70, "GuideText",
+ CellID->65589986]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41349, 1364, 72, 2, 70, "GuideFunctionsSubsection",
+ CellTags->"M",
+ CellID->53526355],
+Cell[41424, 1368, 292, 10, 70, "GuideText",
+ CellID->73593989],
+Cell[41719, 1380, 331, 11, 70, "GuideText",
+ CellID->670572128],
+Cell[42053, 1393, 339, 10, 70, "GuideText",
+ CellID->206701228],
+Cell[42395, 1405, 332, 10, 70, "GuideText",
+ CellID->32992126],
+Cell[42730, 1417, 286, 10, 70, "GuideText",
+ CellID->110362404],
+Cell[43019, 1429, 129, 7, 70, "GuideText",
+ CellID->418197091]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43185, 1441, 73, 2, 70, "GuideFunctionsSubsection",
+ CellTags->"N",
+ CellID->335026998],
+Cell[43261, 1445, 479, 15, 70, "GuideText",
+ CellID->129354261],
+Cell[43743, 1462, 320, 10, 70, "GuideText",
+ CellID->51294447],
+Cell[44066, 1474, 353, 11, 70, "GuideText",
+ CellID->343142518],
+Cell[44422, 1487, 334, 10, 70, "GuideText",
+ CellID->805593754],
+Cell[44759, 1499, 128, 7, 70, "GuideText",
+ CellID->10240544]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[44924, 1511, 73, 2, 70, "GuideFunctionsSubsection",
+ CellTags->"P",
+ CellID->188928491],
+Cell[45000, 1515, 450, 15, 70, "GuideText",
+ CellID->315097772],
+Cell[45453, 1532, 358, 11, 70, "GuideText",
+ CellID->837554494],
+Cell[45814, 1545, 343, 10, 70, "GuideText",
+ CellID->546802664],
+Cell[46160, 1557, 305, 10, 70, "GuideText",
+ CellID->453096009],
+Cell[46468, 1569, 346, 10, 70, "GuideText",
+ CellID->298875866],
+Cell[46817, 1581, 129, 7, 70, "GuideText",
+ CellID->152347111]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[46983, 1593, 73, 2, 70, "GuideFunctionsSubsection",
+ CellTags->"Q",
+ CellID->373946836],
+Cell[47059, 1597, 329, 10, 70, "GuideText",
+ CellID->5484254],
+Cell[47391, 1609, 129, 7, 70, "GuideText",
+ CellID->218485202]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47557, 1621, 73, 2, 70, "GuideFunctionsSubsection",
+ CellTags->"R",
+ CellID->547498990],
+Cell[47633, 1625, 325, 10, 70, "GuideText",
+ CellID->397621121],
+Cell[47961, 1637, 331, 10, 70, "GuideText",
+ CellID->135488666],
+Cell[48295, 1649, 313, 10, 70, "GuideText",
+ CellID->60476148],
+Cell[48611, 1661, 306, 10, 70, "GuideText",
+ CellID->229820949],
+Cell[48920, 1673, 336, 10, 70, "GuideText",
+ CellID->268488218],
+Cell[49259, 1685, 327, 10, 70, "GuideText",
+ CellID->64265118],
+Cell[49589, 1697, 330, 10, 70, "GuideText",
+ CellID->104179768],
+Cell[49922, 1709, 321, 10, 70, "GuideText",
+ CellID->370823547],
+Cell[50246, 1721, 320, 10, 70, "GuideText",
+ CellID->52580450],
+Cell[50569, 1733, 310, 10, 70, "GuideText",
+ CellID->252315568],
+Cell[50882, 1745, 129, 7, 70, "GuideText",
+ CellID->183887624]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[51048, 1757, 73, 2, 70, "GuideFunctionsSubsection",
+ CellTags->"S",
+ CellID->133151560],
+Cell[51124, 1761, 361, 11, 70, "GuideText",
+ CellID->550657286],
+Cell[51488, 1774, 335, 10, 70, "GuideText",
+ CellID->89926730],
+Cell[51826, 1786, 349, 10, 70, "GuideText",
+ CellID->575564974],
+Cell[52178, 1798, 361, 11, 70, "GuideText",
+ CellID->71636833],
+Cell[52542, 1811, 311, 10, 70, "GuideText",
+ CellID->52809441],
+Cell[52856, 1823, 313, 10, 70, "GuideText",
+ CellID->6953455],
+Cell[53172, 1835, 330, 10, 70, "GuideText",
+ CellID->465294616],
+Cell[53505, 1847, 327, 10, 70, "GuideText",
+ CellID->474093008],
+Cell[53835, 1859, 129, 7, 70, "GuideText",
+ CellID->688684109]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[54001, 1871, 72, 2, 70, "GuideFunctionsSubsection",
+ CellTags->"T",
+ CellID->56174537],
+Cell[54076, 1875, 525, 16, 70, "GuideText",
+ CellID->40734752],
+Cell[54604, 1893, 476, 17, 70, "GuideText",
+ CellID->58309683],
+Cell[55083, 1912, 129, 7, 70, "GuideText",
+ CellID->333416899]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[55249, 1924, 73, 2, 70, "GuideFunctionsSubsection",
+ CellTags->"U",
+ CellID->616447218],
+Cell[55325, 1928, 359, 11, 70, "GuideText",
+ CellID->250534478],
+Cell[55687, 1941, 128, 7, 70, "GuideText",
+ CellID->44473542]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[55852, 1953, 73, 2, 70, "GuideFunctionsSubsection",
+ CellTags->"V",
+ CellID->125930158],
+Cell[55928, 1957, 327, 10, 70, "GuideText",
+ CellID->480741742],
+Cell[56258, 1969, 129, 7, 70, "GuideText",
+ CellID->229423223]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[56424, 1981, 73, 2, 70, "GuideFunctionsSubsection",
+ CellTags->"W",
+ CellID->876611189],
+Cell[56500, 1985, 361, 11, 70, "GuideText",
+ CellID->109155870],
+Cell[56864, 1998, 365, 11, 70, "GuideText",
+ CellID->364662357],
+Cell[57232, 2011, 365, 11, 70, "GuideText",
+ CellID->108704341],
+Cell[57600, 2024, 322, 10, 70, "GuideText",
+ CellID->518589486],
+Cell[57925, 2036, 359, 11, 70, "GuideText",
+ CellID->86492033],
+Cell[58287, 2049, 347, 10, 70, "GuideText",
+ CellID->27967273],
+Cell[58637, 2061, 363, 11, 70, "GuideText",
+ CellID->311988080],
+Cell[59003, 2074, 362, 11, 70, "GuideText",
+ CellID->844040643],
+Cell[59368, 2087, 362, 11, 70, "GuideText",
+ CellID->114179],
+Cell[59733, 2100, 337, 11, 70, "GuideText",
+ CellID->961983780],
+Cell[60073, 2113, 360, 11, 70, "GuideText",
+ CellID->575820134],
+Cell[60436, 2126, 368, 11, 70, "GuideText",
+ CellID->414060870],
+Cell[60807, 2139, 365, 11, 70, "GuideText",
+ CellID->680133907],
+Cell[61175, 2152, 358, 11, 70, "GuideText",
+ CellID->457953238],
+Cell[61536, 2165, 336, 10, 70, "GuideText",
+ CellID->162909871],
+Cell[61875, 2177, 327, 10, 70, "GuideText",
+ CellID->660040852],
+Cell[62205, 2189, 343, 10, 70, "GuideText",
+ CellID->92273106],
+Cell[62551, 2201, 326, 10, 70, "GuideText",
+ CellID->2543113],
+Cell[62880, 2213, 351, 11, 70, "GuideText",
+ CellID->53460612],
+Cell[63234, 2226, 129, 7, 70, "GuideText",
+ CellID->129066218]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[63400, 2238, 187, 6, 70, "GuideFunctionsSubsection",
+ CellTags->"Y",
+ CellID->30679309],
+Cell[63590, 2246, 331, 10, 70, "GuideText",
+ CellID->198520158],
+Cell[63924, 2258, 129, 7, 70, "GuideText",
+ CellID->215069976]
+}, Open  ]]
+}, Open  ]],
+Cell[64080, 2269, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,471 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     14928,        461]
+NotebookOptionsPosition[     11551,        364]
+NotebookOutlinePosition[     13774,        421]
+CellTagsIndexPosition[     13689,        416]
+WindowTitle->ReturnIterationList
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["WAVELET WARE PACKAGE SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"WaveletRegionTake\"\>":>
+       Documentation`HelpLookup["paclet:WaveletWare/ref/WaveletRegionTake"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"List of Options and Values\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/guide/List of Options and Values"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"WaveletWare/ref/ReturnIterationList\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["WaveletWare/ref/ReturnIterationList"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/WaveletWare/ref/\
+ReturnIterationList.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$92303], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "WaveletWare/ref/ReturnIterationList", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[TextData[{
+ Cell["ReturnIterationList", "ObjectName"],
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{8, 0}],
+    CacheGraphics->False],
+   Spacer[8]]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData["ReturnIterationList"], "InlineFormula"],
+     "\[LineSeparator]is an option for ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["WaveletRegionTake"]],
+        "paclet:WaveletWare/ref/WaveletRegionTake"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     " that when set to ",
+     ButtonBox["True",
+      BaseStyle->"Link",
+      ButtonData->"paclet:ref/True"],
+     " (default is ",
+     ButtonBox["False",
+      BaseStyle->"Link",
+      ButtonData->"paclet:ref/False"],
+     "), returns the list of regions that were extracted from the input data."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->197878509],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->456838658],
+
+Cell["This loads the package:", "MathCaption",
+ CellID->16454449],
+
+Cell[BoxData[
+ RowBox[{"<<", "WaveletWare`"}]], "Input",
+ InitializationCell->True,
+ CellLabel->"In[1]:=",
+ CellID->861618089],
+
+Cell[TextData[{
+ "The value for ",
+ StyleBox["ReturnIterationList",
+  FontFamily->"Courier New",
+  FontSize->12],
+ " can be set to ",
+ ButtonBox["True",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/True"],
+ " so that in addition to the list of vectors or matrices returned by ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WaveletRegionTake"]],
+    "paclet:WaveletWare/ref/WaveletRegionTake"},
+   "RefLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula"],
+ ", the list of regions extracted is returned as well."
+}], "ExampleText",
+ CellID->722474614],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"v", "=", 
+    RowBox[{"Range", "[", "256", "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"iterations", "=", "3"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"wt", "=", 
+   RowBox[{"WT", "[", 
+    RowBox[{"v", ",", 
+     RowBox[{"Daub", "[", "4", "]"}], ",", 
+     RowBox[{"NumIterations", "\[Rule]", "iterations"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ShowBestBasis", "[", 
+  RowBox[{"WaveletTree", "[", "iterations", "]"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"data", ",", "list"}], "}"}], "=", 
+   RowBox[{"WaveletRegionTake", "[", 
+    RowBox[{"wt", ",", "All", ",", 
+     RowBox[{"NumIterations", "\[Rule]", "iterations"}], ",", 
+     RowBox[{"ReturnIterationList", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{"list", "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->361390226],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[
+    0.33333333333333337`, 0.33333333333333337`, 0.33333333333333337`], 
+    EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], RectangleBox[{0, 0}]}, 
+   {RGBColor[
+    0.33333333333333337`, 0.33333333333333337`, 0.33333333333333337`], 
+    EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], RectangleBox[{1, 0}]}, 
+   {RGBColor[1., 1., 1.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], 
+    RectangleBox[{2, 0}]}, 
+   {RGBColor[1., 1., 1.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], 
+    RectangleBox[{3, 0}]}, 
+   {RGBColor[1., 1., 1.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], 
+    RectangleBox[{4, 0}]}, 
+   {RGBColor[1., 1., 1.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], 
+    RectangleBox[{5, 0}]}, 
+   {RGBColor[1., 1., 1.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], 
+    RectangleBox[{6, 0}]}, 
+   {RGBColor[1., 1., 1.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], 
+    RectangleBox[{7, 0}]}, 
+   {RGBColor[1., 1., 1.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], 
+    RectangleBox[{0, 1}, {2, 2}]}, 
+   {RGBColor[
+    0.33333333333333337`, 0.33333333333333337`, 0.33333333333333337`], 
+    EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], 
+    RectangleBox[{2, 1}, {4, 2}]}, 
+   {RGBColor[1., 1., 1.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], 
+    RectangleBox[{4, 1}, {6, 2}]}, 
+   {RGBColor[1., 1., 1.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], 
+    RectangleBox[{6, 1}, {8, 2}]}, 
+   {RGBColor[1., 1., 1.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], 
+    RectangleBox[{0, 2}, {4, 3}]}, 
+   {RGBColor[
+    0.33333333333333337`, 0.33333333333333337`, 0.33333333333333337`], 
+    EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], 
+    RectangleBox[{4, 2}, {8, 3}]}, 
+   {RGBColor[1., 1., 1.], EdgeForm[{RGBColor[0., 0., 0.], Thickness[Large]}], 
+    RectangleBox[{0, 3}, {8, 4}]}},
+  ImageSize->Automatic]], "Output",
+ ImageSize->{244, 125},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->60609497],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "2"}], "}"}]}], "}"}]], "Output",
+ ImageSize->{207, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->181354539]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["WaveletRegionTake"]],"paclet:WaveletWare/ref/WaveletRegionTake"},
+  "RefLink",
+  BaseStyle->{
+   "InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["List of Options and Values"]],
+   "paclet:WaveletWare/guide/List of Options and Values"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->539910814]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"ReturnIterationList",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:WaveletWare/guide/WaveletWare", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2016, 8, 25, 9, 51, 37.4791482}", 
+    "history" -> {"XX", "", "", ""}, "context" -> 
+    "WaveletWare`MiscFunctions`", "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Wavelet Ware Package Symbol", "language" -> "en", "paclet" -> 
+    "WaveletWare Package", "status" -> "None", "summary" -> 
+    "ReturnIterationList is an option for WaveletRegionTake that when set to \
+True (default is False), returns the list of regions that were extracted from \
+the input data.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "ReturnIterationList", "titlemodifier" -> "", "windowtitle" -> 
+    "ReturnIterationList", "type" -> "Symbol", "uri" -> 
+    "WaveletWare/ref/ReturnIterationList"}, "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "11.0 for Microsoft Windows (64-bit) (July 28, 2016)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[5402, 154, 387, 15, 30, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->197878509]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 13546, 409}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[591, 21, 3661, 90, 48, "AnchorBarGrid",
+ CellID->1],
+Cell[4255, 113, 296, 11, 44, "ObjectNameGrid"],
+Cell[4554, 126, 823, 24, 97, "Usage"],
+Cell[CellGroupData[{
+Cell[5402, 154, 387, 15, 30, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->197878509],
+Cell[CellGroupData[{
+Cell[5814, 173, 195, 6, 25, "ExampleSection",
+ CellID->456838658],
+Cell[6012, 181, 65, 1, 31, "MathCaption",
+ CellID->16454449],
+Cell[6080, 184, 126, 4, 42, "Input",
+ InitializationCell->True,
+ CellID->861618089],
+Cell[6209, 190, 562, 18, 52, "ExampleText",
+ CellID->722474614],
+Cell[CellGroupData[{
+Cell[6796, 212, 1003, 29, 171, "Input",
+ CellID->361390226],
+Cell[7802, 243, 2102, 43, 146, "Output",
+ CellID->60609497],
+Cell[9907, 288, 420, 15, 35, "Output",
+ CellID->181354539]
+}, Open  ]]
+}, Open  ]],
+Cell[10354, 307, 31, 0, 70, "SectionFooterSpacer"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10422, 312, 270, 12, 70, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[10695, 326, 253, 6, 70, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10985, 337, 276, 12, 70, "MoreAboutSection",
+ CellID->38303248],
+Cell[11264, 351, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[11298, 353, 211, 6, 70, "MoreAbout",
+ CellID->539910814]
+}, Open  ]],
+Cell[11524, 362, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

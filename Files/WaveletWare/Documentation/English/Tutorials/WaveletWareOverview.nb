@@ -1,0 +1,901 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     27526,        892]
+NotebookOptionsPosition[     21119,        711]
+NotebookOutlinePosition[     23449,        771]
+CellTagsIndexPosition[     23406,        768]
+WindowTitle->WaveletWare Overview
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["WAVELET WARE PACKAGE OVERVIEW", "PacletNameCell"], Cell[TextData[
+    Cell[BoxData[
+     ActionMenuBox[
+      FrameBox[
+       InterpretationBox[Cell[TextData[{
+         "URL",
+         StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+          StripOnInput->False]
+        }]],
+        TextCell[
+         Row[{"URL", 
+           Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+       StripOnInput->
+        False], {"\<\"WaveletWare/tutorial/WaveletWareOverview\"\>":>
+      None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell["WaveletWare/tutorial/WaveletWareOverview"]}, Visible -> 
+           False]]; SelectionMove[
+        DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+      Delimiter, "\<\"Copy web URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell[
+             BoxData[
+              MakeBoxes[
+               Hyperlink[
+               "http://reference.wolfram.com/language/WaveletWare/tutorial/\
+WaveletWareOverview.html"], StandardForm]], "Input", TextClipboardType -> 
+             "PlainText"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; 
+       Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+        NotebookLocate[{
+          URL[
+           StringJoin[
+            If[
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$132351], 
+             "http://reference.wolfram.com/system-modeler/", 
+             "http://reference.wolfram.com/language/"], 
+            "WaveletWare/tutorial/WaveletWareOverview", ".html"]], None}]}]},
+      Appearance->None,
+      MenuAppearance->Automatic,
+      MenuStyle->"URLMenu"]],
+     LineSpacing->{1.4, 0}]], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell["WaveletWare Overview", "TOCDocumentTitle"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["WaveletWare Package"]],
+   "paclet:WaveletWare/tutorial/WaveletWare Package#509267359"},
+  "RefLink",
+  BaseStyle->"TOCChapter"]], "TOCChapter",
+ CellID->84818432],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Overview"]],
+   "paclet:WaveletWare/tutorial/WaveletWare Package#311706299"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection",
+ CellID->7014501],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Reference Guides"]],
+   "paclet:WaveletWare/tutorial/WaveletWare Package#628600378"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection",
+ CellID->519836396]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Quick Start"]],
+   "paclet:WaveletWare/tutorial/WaveletWare Package#16562595"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection",
+ CellID->548955263],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Filters"]],
+   "paclet:WaveletWare/tutorial/WaveletWare Package#684693401"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection",
+ CellID->340324729],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Computing and Plotting Wavelet Transformations"]],
+   "paclet:WaveletWare/tutorial/WaveletWare Package#278627324"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection",
+ CellID->479250381],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Wavelet Packet Transformations"]],
+   "paclet:WaveletWare/tutorial/WaveletWare Package#4968788"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection",
+ CellID->814248906],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Image Processing"]],
+   "paclet:WaveletWare/tutorial/WaveletWare Package#2227113"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection",
+ CellID->210212199],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Approximating Scaling and Wavelet Functions"]],
+   "paclet:WaveletWare/tutorial/WaveletWare Package#219741217"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection",
+ CellID->568662166],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Denoising"]],
+   "paclet:WaveletWare/tutorial/WaveletWare Package#428492740"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection",
+ CellID->89491350]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Guides"]],
+   "paclet:WaveletWare/guide/List of Functions - Alphabetical"},
+  "RefLink",
+  BaseStyle->"TOCChapter"]], "TOCChapter",
+ CellID->824299273],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["List of Functions - Alphabetical"]],
+   "paclet:WaveletWare/guide/List of Functions - Alphabetical"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection",
+ CellID->690847688],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["List of Functions - Categorical"]],
+   "paclet:WaveletWare/guide/List of Functions - Categorical"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection",
+ CellID->300282053],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["List of Options and Values"]],
+   "paclet:WaveletWare/guide/List of Options and Values"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection",
+ CellID->684805535]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Computing and Plotting Wavelet Packet Transforms"]],
+   "paclet:WaveletWare/tutorial/Computing and Plotting Wavelet Packet \
+Transforms#509267359"},
+  "RefLink",
+  BaseStyle->"TOCChapter"]], "TOCChapter"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["One-Dimensional Wavelet Packet Transformations"]],
+   "paclet:WaveletWare/tutorial/Computing and Plotting Wavelet Packet \
+Transforms#4659334"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Cost Functions"]],
+   "paclet:WaveletWare/tutorial/Computing and Plotting Wavelet Packet \
+Transforms#314759074"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Wavelet Packet Transforms of Matrices"]],
+   "paclet:WaveletWare/tutorial/Computing and Plotting Wavelet Packet \
+Transforms#902595934"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Wavelet Packet Transforms and Color"]],
+   "paclet:WaveletWare/tutorial/Computing and Plotting Wavelet Packet \
+Transforms#35148191"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Computing and Plotting Wavelet Transformations"]],
+   "paclet:WaveletWare/tutorial/Computing and Plotting Wavelet \
+Transformations#509267359"},
+  "RefLink",
+  BaseStyle->"TOCChapter"]], "TOCChapter"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Orthogonal Wavelet Transformations"]],
+   "paclet:WaveletWare/tutorial/Computing and Plotting Wavelet \
+Transformations#154834215"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["One-Dimensional Haar Wavelet Transformations"]],
+   "paclet:WaveletWare/tutorial/Computing and Plotting Wavelet \
+Transformations#696086338"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["One-Dimensional Wavelet Transformations"]],
+   "paclet:WaveletWare/tutorial/Computing and Plotting Wavelet \
+Transformations#409375123"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Inverse One-Dimensional Wavelet Transformations"]],
+   "paclet:WaveletWare/tutorial/Computing and Plotting Wavelet \
+Transformations#109415124"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Two-Dimensional Wavelet Transformations"]],
+   "paclet:WaveletWare/tutorial/Computing and Plotting Wavelet \
+Transformations#6166732"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Inverse Wavelet Transforms of Matrices"]],
+   "paclet:WaveletWare/tutorial/Computing and Plotting Wavelet \
+Transformations#244283437"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Wavelet Transformations and Color Images"]],
+   "paclet:WaveletWare/tutorial/Computing and Plotting Wavelet \
+Transformations#124770202"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Inverse Wavelet Transformations of Color Images"]],
+   "paclet:WaveletWare/tutorial/Computing and Plotting Wavelet \
+Transformations#36305538"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Biorthogonal Wavelet Transformations"]],
+   "paclet:WaveletWare/tutorial/Computing and Plotting Wavelet \
+Transformations#82101870"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["One-Dimensional Biorthogonal Wavelet Transformations"]],
+   "paclet:WaveletWare/tutorial/Computing and Plotting Wavelet \
+Transformations#37247784"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData[
+    "The Inverse One-Dimensional Biorthogonal Wavelet Transformation"]],
+   "paclet:WaveletWare/tutorial/Computing and Plotting Wavelet \
+Transformations#230939176"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Exploiting the Symmetry of Biorthogonal Filters"]],
+   "paclet:WaveletWare/tutorial/Computing and Plotting Wavelet \
+Transformations#73800766"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Two-Dimensional Biorthogonal Wavelet Transformations"]],
+   "paclet:WaveletWare/tutorial/Computing and Plotting Wavelet \
+Transformations#68214518"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Biorthogonal Wavelet Transformations and Color Images"]],
+   "paclet:WaveletWare/tutorial/Computing and Plotting Wavelet \
+Transformations#511079900"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["LeGall Biorthogonal Wavelet Transformation"]],
+   "paclet:WaveletWare/tutorial/Computing and Plotting Wavelet \
+Transformations#97330748"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["One-Sided Wavelet Transforms"]],
+   "paclet:WaveletWare/tutorial/Computing and Plotting Wavelet \
+Transformations#214830535"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["One-Sided Wavelet Transforms of Matrices"]],
+   "paclet:WaveletWare/tutorial/Computing and Plotting Wavelet \
+Transformations#50416364"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["One-Sided Wavelet Transforms and Color"]],
+   "paclet:WaveletWare/tutorial/Computing and Plotting Wavelet \
+Transformations#412825644"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Data Structures in the WaveletWare Package"]],
+   "paclet:WaveletWare/tutorial/Data Structures in the WaveletWare \
+Package#509267359"},
+  "RefLink",
+  BaseStyle->"TOCChapter"]], "TOCChapter"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Input for Computing and Plotting"]],
+   "paclet:WaveletWare/tutorial/Data Structures in the WaveletWare \
+Package#452404853"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Trees in WaveletWare"]],
+   "paclet:WaveletWare/tutorial/Data Structures in the WaveletWare \
+Package#375198715"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["One-Dimensional Data"]],
+   "paclet:WaveletWare/tutorial/Data Structures in the WaveletWare \
+Package#49593908"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Two-Dimensional Data"]],
+   "paclet:WaveletWare/tutorial/Data Structures in the WaveletWare \
+Package#505123677"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["The Iteration Option"]],
+   "paclet:WaveletWare/tutorial/Data Structures in the WaveletWare \
+Package#472374342"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["WaveletVectorPlot and FullWaveletVectorPlot"]],
+   "paclet:WaveletWare/tutorial/Data Structures in the WaveletWare \
+Package#210020778"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["WaveletPlot and FullWaveletPlot"]],
+   "paclet:WaveletWare/tutorial/Data Structures in the WaveletWare \
+Package#574631370"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["WaveletPlot and FullWaveletPlot with Color Images"]],
+   "paclet:WaveletWare/tutorial/Data Structures in the WaveletWare \
+Package#389715011"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Differences in the DiscreteWavelets and WaveletWare Packages"]],
+   "paclet:WaveletWare/tutorial/Differences in the DiscreteWavelets and \
+WaveletWare Packages#509267359"},
+  "RefLink",
+  BaseStyle->"TOCChapter"]], "TOCChapter"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Accessing Multimedia Files"]],
+   "paclet:WaveletWare/tutorial/Differences in the DiscreteWavelets and \
+WaveletWare Packages#236024063"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Continuous Scaling and Wavelet Functions"]],
+   "paclet:WaveletWare/tutorial/Differences in the DiscreteWavelets and \
+WaveletWare Packages#32046898"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Wavelet Packet Transforms"]],
+   "paclet:WaveletWare/tutorial/Differences in the DiscreteWavelets and \
+WaveletWare Packages#19785884"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Consolidation of Wavelet Transform Routines"]],
+   "paclet:WaveletWare/tutorial/Differences in the DiscreteWavelets and \
+WaveletWare Packages#389666502"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Naming Convention for Inverse Wavelet Transformations"]],
+   "paclet:WaveletWare/tutorial/Differences in the DiscreteWavelets and \
+WaveletWare Packages#453666235"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["More Left- and Right-Wavelet Transformation Routines"]],
+   "paclet:WaveletWare/tutorial/Differences in the DiscreteWavelets and \
+WaveletWare Packages#321236168"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Modifications for the Haar Wavelet Transformation"]],
+   "paclet:WaveletWare/tutorial/Differences in the DiscreteWavelets and \
+WaveletWare Packages#563135203"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Replacement of and Improvements to Quantization Functions"]],
+   "paclet:WaveletWare/tutorial/Differences in the DiscreteWavelets and \
+WaveletWare Packages#671537810"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["New Visualization Functions and Improved Graphics"]],
+   "paclet:WaveletWare/tutorial/Differences in the DiscreteWavelets and \
+WaveletWare Packages#257561459"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["ImagePlot"]],
+   "paclet:WaveletWare/tutorial/Differences in the DiscreteWavelets and \
+WaveletWare Packages#543778470"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["WaveletVectorPlot"]],
+   "paclet:WaveletWare/tutorial/Differences in the DiscreteWavelets and \
+WaveletWare Packages#158457175"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["WaveletPlot"]],
+   "paclet:WaveletWare/tutorial/Differences in the DiscreteWavelets and \
+WaveletWare Packages#157894121"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["WaveletRegionPlot"]],
+   "paclet:WaveletWare/tutorial/Differences in the DiscreteWavelets and \
+WaveletWare Packages#56630685"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["FullWaveletVectorPlot and FullWaveletPlot"]],
+   "paclet:WaveletWare/tutorial/Differences in the DiscreteWavelets and \
+WaveletWare Packages#34819625"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection"]
+}, Open  ]],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Improved Error Handling"]],
+   "paclet:WaveletWare/tutorial/Differences in the DiscreteWavelets and \
+WaveletWare Packages#9182496"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Other New Functions "]],
+   "paclet:WaveletWare/tutorial/Differences in the DiscreteWavelets and \
+WaveletWare Packages#9186083"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Managing Multimedia Files in the WaveletWare Package"]],
+   "paclet:WaveletWare/tutorial/Managing Multimedia Files in the WaveletWare \
+Package#509267359"},
+  "RefLink",
+  BaseStyle->"TOCChapter"]], "TOCChapter"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Directory Structure for Multimedia Files"]],
+   "paclet:WaveletWare/tutorial/Managing Multimedia Files in the WaveletWare \
+Package#294630793"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Importing Multimedia Files"]],
+   "paclet:WaveletWare/tutorial/Managing Multimedia Files in the WaveletWare \
+Package#137352923"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Adding Multimedia Files to the WaveletWare Package"]],
+   "paclet:WaveletWare/tutorial/Managing Multimedia Files in the WaveletWare \
+Package#167151544"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Naive Image Compression and Edge Detection"]],
+   "paclet:WaveletWare/tutorial/Naive Image Compression and Edge \
+Detection#509267359"},
+  "RefLink",
+  BaseStyle->"TOCChapter"]], "TOCChapter"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Compression of a GrayScale Image"]],
+   "paclet:WaveletWare/tutorial/Naive Image Compression and Edge \
+Detection#824751051"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Compression of a Color Image"]],
+   "paclet:WaveletWare/tutorial/Naive Image Compression and Edge \
+Detection#117918254"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Naive Edge Detection"]],
+   "paclet:WaveletWare/tutorial/Naive Image Compression and Edge \
+Detection#346351407"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"WaveletWare Overview",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "TutorialColor", 
+  "LinkTrails" -> GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:WaveletWare/guide/WaveletWare", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2016, 8, 25, 9, 55, 38.1212448}", 
+    "history" -> {"XX", "", "", ""}, "context" -> "WaveletWare`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Wavelet Ware Package Overview", "language" -> "en", "paclet" -> 
+    "WaveletWare Package", "status" -> "None", "summary" -> 
+    "WaveletWare Package Guides Computing and Plotting Wavelet Packet \
+Transforms", "synonyms" -> {}, "tabletags" -> 
+    DocumentationBuild`Make`Private`tabletaggingrules$132246, "title" -> 
+    "WaveletWare Overview", "titlemodifier" -> "", "windowtitle" -> 
+    "WaveletWare Overview", "type" -> "Overview", "uri" -> 
+    "WaveletWare/tutorial/WaveletWareOverview"}},
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> Notebook], 
+   Cell[
+    StyleData["Output"], CellContext -> Notebook], 
+   Cell[
+    StyleData["TOCSubsubsection"], 
+    CellGroupingRules -> {"SectionGrouping", 69}], 
+   Cell[
+    StyleData["TutorialMoreAboutSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["RelatedTutorialsSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["TutorialRelatedLinksSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}]}, Visible -> False, 
+  FrontEndVersion -> "11.0 for Microsoft Windows (64-bit) (July 28, 2016)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[592, 21, 2390, 56, 70, "AnchorBarGrid",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[3007, 81, 48, 0, 70, "TOCDocumentTitle"],
+Cell[CellGroupData[{
+Cell[3080, 85, 211, 6, 70, "TOCChapter",
+ CellID->84818432],
+Cell[CellGroupData[{
+Cell[3316, 95, 199, 6, 70, "TOCSection",
+ CellID->7014501],
+Cell[3518, 103, 215, 6, 70, "TOCSubsection",
+ CellID->519836396]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3770, 114, 203, 6, 70, "TOCSection",
+ CellID->548955263],
+Cell[3976, 122, 206, 6, 70, "TOCSubsection",
+ CellID->340324729],
+Cell[4185, 130, 245, 6, 70, "TOCSubsection",
+ CellID->479250381],
+Cell[4433, 138, 227, 6, 70, "TOCSubsection",
+ CellID->814248906],
+Cell[4663, 146, 213, 6, 70, "TOCSubsection",
+ CellID->210212199],
+Cell[4879, 154, 242, 6, 70, "TOCSubsection",
+ CellID->568662166],
+Cell[5124, 162, 207, 6, 70, "TOCSubsection",
+ CellID->89491350]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5380, 174, 199, 6, 70, "TOCChapter",
+ CellID->824299273],
+Cell[5582, 182, 225, 6, 70, "TOCSection",
+ CellID->690847688],
+Cell[5810, 190, 223, 6, 70, "TOCSection",
+ CellID->300282053],
+Cell[6036, 198, 213, 6, 70, "TOCSection",
+ CellID->684805535]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6286, 209, 252, 6, 70, "TOCChapter"],
+Cell[6541, 217, 248, 6, 70, "TOCSection"],
+Cell[6792, 225, 218, 6, 70, "TOCSection"],
+Cell[7013, 233, 241, 6, 70, "TOCSection"],
+Cell[7257, 241, 238, 6, 70, "TOCSection"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7532, 252, 248, 6, 70, "TOCChapter"],
+Cell[CellGroupData[{
+Cell[7805, 262, 236, 6, 70, "TOCSection"],
+Cell[8044, 270, 252, 6, 70, "TOCSubsection"],
+Cell[8299, 278, 247, 6, 70, "TOCSubsection"],
+Cell[8549, 286, 255, 6, 70, "TOCSubsection"],
+Cell[8807, 294, 245, 6, 70, "TOCSubsection"],
+Cell[9055, 302, 246, 6, 70, "TOCSubsection"],
+Cell[9304, 310, 248, 6, 70, "TOCSubsection"],
+Cell[9555, 318, 254, 6, 70, "TOCSubsection"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9846, 329, 237, 6, 70, "TOCSection"],
+Cell[10086, 337, 259, 6, 70, "TOCSubsection"],
+Cell[10348, 345, 276, 7, 70, "TOCSubsection"],
+Cell[10627, 354, 254, 6, 70, "TOCSubsection"],
+Cell[10884, 362, 259, 6, 70, "TOCSubsection"],
+Cell[11146, 370, 261, 6, 70, "TOCSubsection"],
+Cell[11410, 378, 249, 6, 70, "TOCSubsection"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11696, 389, 230, 6, 70, "TOCSection"],
+Cell[11929, 397, 247, 6, 70, "TOCSubsection"],
+Cell[12179, 405, 246, 6, 70, "TOCSubsection"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12474, 417, 240, 6, 70, "TOCChapter"],
+Cell[12717, 425, 230, 6, 70, "TOCSection"],
+Cell[CellGroupData[{
+Cell[12972, 435, 218, 6, 70, "TOCSection"],
+Cell[13193, 443, 223, 6, 70, "TOCSubsection"],
+Cell[13419, 451, 224, 6, 70, "TOCSubsection"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13680, 462, 218, 6, 70, "TOCSection"],
+Cell[13901, 470, 247, 6, 70, "TOCSubsection"],
+Cell[14151, 478, 235, 6, 70, "TOCSubsection"],
+Cell[14389, 486, 253, 6, 70, "TOCSubsection"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14691, 498, 276, 6, 70, "TOCChapter"],
+Cell[14970, 506, 242, 6, 70, "TOCSection"],
+Cell[15215, 514, 255, 6, 70, "TOCSection"],
+Cell[15473, 522, 240, 6, 70, "TOCSection"],
+Cell[15716, 530, 259, 6, 70, "TOCSection"],
+Cell[15978, 538, 269, 6, 70, "TOCSection"],
+Cell[16250, 546, 268, 6, 70, "TOCSection"],
+Cell[16521, 554, 265, 6, 70, "TOCSection"],
+Cell[16789, 562, 273, 6, 70, "TOCSection"],
+Cell[CellGroupData[{
+Cell[17087, 572, 265, 6, 70, "TOCSection"],
+Cell[17355, 580, 231, 6, 70, "TOCSubsection"],
+Cell[17589, 588, 239, 6, 70, "TOCSubsection"],
+Cell[17831, 596, 233, 6, 70, "TOCSubsection"],
+Cell[18067, 604, 238, 6, 70, "TOCSubsection"],
+Cell[18308, 612, 262, 6, 70, "TOCSubsection"]
+}, Open  ]],
+Cell[18585, 621, 237, 6, 70, "TOCSection"],
+Cell[18825, 629, 234, 6, 70, "TOCSection"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19096, 640, 260, 6, 70, "TOCChapter"],
+Cell[19359, 648, 248, 6, 70, "TOCSection"],
+Cell[19610, 656, 234, 6, 70, "TOCSection"],
+Cell[19847, 664, 258, 6, 70, "TOCSection"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20142, 675, 240, 6, 70, "TOCChapter"],
+Cell[20385, 683, 230, 6, 70, "TOCSection"],
+Cell[20618, 691, 226, 6, 70, "TOCSection"],
+Cell[20847, 699, 218, 6, 70, "TOCSection"]
+}, Open  ]]
+}, Open  ]],
+Cell[21092, 709, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)

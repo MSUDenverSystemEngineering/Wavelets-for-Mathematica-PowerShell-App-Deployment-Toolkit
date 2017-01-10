@@ -1,0 +1,699 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     22682,        689]
+NotebookOptionsPosition[     18537,        564]
+NotebookOutlinePosition[     20838,        625]
+CellTagsIndexPosition[     20718,        619]
+WindowTitle->ShrinkageFunction
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["WAVELET WARE PACKAGE SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"UniversalThreshold\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/UniversalThreshold"], \
+"\<\"WaveletShrinkage\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/WaveletShrinkage"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"List of Functions - Categorical\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/guide/List of Functions - Categorical"], "\<\"List \
+of Functions - Alphabetical\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/guide/List of Functions - Alphabetical"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"WaveletWare/ref/ShrinkageFunction\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["WaveletWare/ref/ShrinkageFunction"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/WaveletWare/ref/\
+ShrinkageFunction.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$104820], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "WaveletWare/ref/ShrinkageFunction", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[TextData[{
+ Cell["ShrinkageFunction", "ObjectName"],
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{8, 0}],
+    CacheGraphics->False],
+   Spacer[8]]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"ShrinkageFunction", "[", 
+       RowBox[{
+        StyleBox["t", "TI"], ",", 
+        StyleBox["lambda", "TI"]}], "]"}]], "InlineFormula"],
+     "\[LineSeparator]returns the soft threshold value given an input ",
+     Cell[BoxData[
+      StyleBox["t", "TI"]], "InlineFormula"],
+     " and tolerance ",
+     Cell[BoxData[
+      StyleBox["lambda", "TI"]], "InlineFormula"],
+     "."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    InterpretationBox[
+     StyleBox[
+      GraphicsBox[{},
+       BaselinePosition->Baseline,
+       ImageSize->{6, 0}],
+      CacheGraphics->False],
+     Spacer[6]]]],
+   "Details"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->21815051],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ "The shrinkage function is defined to be\[LineSeparator]\[LineSeparator]",
+ Cell[BoxData[
+  RowBox[{"\t\t\t\t", 
+   SubscriptBox["s", "\[Lambda]"]}]], "InlineFormula"],
+ "(t) = ",
+ Cell[BoxData[
+  TagBox[GridBox[{
+     {"\[Piecewise]", GridBox[{
+        {
+         RowBox[{
+          RowBox[{"t", "-", 
+           RowBox[{
+           "\[LeftBracketingBar]", "\[Lambda]", "\[RightBracketingBar]"}]}], 
+          ","}], 
+         RowBox[{"t", ">", 
+          RowBox[{
+          "\[LeftBracketingBar]", "\[Lambda]", "\[RightBracketingBar]"}]}]},
+        {
+         RowBox[{"0", ","}], 
+         RowBox[{"t", " ", "\[LessSlantEqual]", 
+          RowBox[{
+          "\[LeftBracketingBar]", "\[Lambda]", "\[RightBracketingBar]"}]}]}
+       },
+       AllowedDimensions->{2, Automatic},
+       Editable->True,
+       GridBoxAlignment->{
+        "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}},
+          "RowsIndexed" -> {}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+         "RowsIndexed" -> {}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.84]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}},
+       Selectable->True]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxItemSize->{
+     "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.35]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   "Piecewise",
+   DeleteWithContents->True,
+   Editable->False,
+   SelectWithContents->True,
+   Selectable->False]], "InlineFormula"]
+}], "Notes",
+ CellID->1067943069],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->306485099],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->117731710],
+
+Cell["This loads the package:", "MathCaption",
+ CellID->16454449],
+
+Cell[BoxData[
+ RowBox[{"<<", "WaveletWare`"}]], "Input",
+ InitializationCell->True,
+ CellLabel->"In[1]:=",
+ CellID->861618089],
+
+Cell["Plot the shrinkage function for various tolerance values.", \
+"ExampleText",
+ CellID->335138205],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{"ShrinkageFunction", "[", 
+        RowBox[{"t", ",", "#"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", 
+         RowBox[{
+          RowBox[{"-", "#"}], "-", "2"}], ",", 
+         RowBox[{"#", "+", "2"}]}], "}"}]}], "]"}], "&"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2", ",", "4"}], "}"}]}], "]"}], " ", "//", " ", 
+  "GraphicsColumn"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->68713862],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1: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
+MIGurRAtIoogCIIg/A+ML/12
+    "], {{0, 240}, {134, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  DefaultBaseStyle->"ImageGraphics",
+  ImageSize->Automatic,
+  ImageSizeRaw->{134, 240},
+  PlotRange->{{0, 134}, {0, 240}}]], "Output",
+ ImageSize->{138, 240},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellTags->"RasterizedOutput",
+ CellLabel->"Out[2]=",
+ CellID->61664649]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->192649661],
+
+Cell["Compute values of the shrinkage function.", "ExampleText",
+ CellID->106969071],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"v", "=", 
+   RowBox[{"RandomInteger", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", "8"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"w", "=", 
+   RowBox[{"ShrinkageFunction", "[", 
+    RowBox[{"v", ",", "3"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"TableForm", "[", 
+  RowBox[{
+   RowBox[{"Transpose", "[", 
+    RowBox[{"{", 
+     RowBox[{"v", ",", "w"}], "}"}], "]"}], ",", 
+   RowBox[{"TableAlignments", "\[Rule]", "Right"}], ",", 
+   RowBox[{"TableHeadings", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"None", ",", 
+      RowBox[{"{", 
+       RowBox[{"\"\<t\>\"", ",", "\"\<s(t,3)\>\""}], "}"}]}], "}"}]}]}], 
+  "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->786592695],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {
+      TagBox["\<\"t\"\>",
+       HoldForm], 
+      TagBox["\<\"s(t,3)\"\>",
+       HoldForm]},
+     {
+      RowBox[{"-", "9"}], 
+      RowBox[{"-", "6"}]},
+     {
+      RowBox[{"-", "9"}], 
+      RowBox[{"-", "6"}]},
+     {
+      RowBox[{"-", "10"}], 
+      RowBox[{"-", "7"}]},
+     {
+      RowBox[{"-", "2"}], "0"},
+     {"6", "3"},
+     {"8", "5"},
+     {"4", "1"},
+     {"2", "0"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Right}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxDividers->{
+     "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+      "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[2.0999999999999996`]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   {None, OutputFormsDump`HeadedColumns}],
+  Function[BoxForm`e$, 
+   TableForm[
+   BoxForm`e$, TableAlignments -> Right, 
+    TableHeadings -> {None, {"t", "s(t,3)"}}]]]], "Output",
+ ImageSize->{93, 133},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]//TableForm=",
+ CellID->2969473]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["UniversalThreshold"]],
+    "paclet:WaveletWare/ref/UniversalThreshold"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WaveletShrinkage"]],"paclet:WaveletWare/ref/WaveletShrinkage"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["List of Functions - Categorical"]],
+   "paclet:WaveletWare/guide/List of Functions - Categorical"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->297943432],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["List of Functions - Alphabetical"]],
+   "paclet:WaveletWare/guide/List of Functions - Alphabetical"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->735848740]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"ShrinkageFunction",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:WaveletWare/guide/WaveletWare", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2016, 8, 25, 9, 52, 37.9397380}", 
+    "history" -> {"XX", "", "", ""}, "context" -> "WaveletWare`Denoising`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Wavelet Ware Package Symbol", "language" -> "en", "paclet" -> 
+    "WaveletWare Package", "status" -> "None", "summary" -> 
+    "ShrinkageFunction[t, lambda] returns the soft threshold value given an \
+input t and tolerance lambda.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "ShrinkageFunction", "titlemodifier" -> "", "windowtitle" -> 
+    "ShrinkageFunction", "type" -> "Symbol", "uri" -> 
+    "WaveletWare/ref/ShrinkageFunction"}, "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "11.0 for Microsoft Windows (64-bit) (July 28, 2016)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[8445, 252, 387, 15, 30, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->306485099]},
+ "RasterizedOutput"->{
+  Cell[9927, 314, 4396, 80, 261, "Output",
+   CellTags->"RasterizedOutput",
+   CellID->61664649]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 20453, 608},
+ {"RasterizedOutput", 20596, 612}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[589, 21, 3922, 95, 48, "AnchorBarGrid",
+ CellID->1],
+Cell[4514, 118, 294, 11, 44, "ObjectNameGrid"],
+Cell[CellGroupData[{
+Cell[4833, 133, 622, 19, 82, "Usage"],
+Cell[CellGroupData[{
+Cell[5480, 156, 737, 24, 31, "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->21815051],
+Cell[6220, 182, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[6254, 184, 2108, 60, 70, "Notes",
+ CellID->1067943069],
+Cell[8365, 246, 31, 0, 70, "SectionFooterSpacer"]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8445, 252, 387, 15, 30, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->306485099],
+Cell[CellGroupData[{
+Cell[8857, 271, 195, 6, 25, "ExampleSection",
+ CellID->117731710],
+Cell[9055, 279, 65, 1, 31, "MathCaption",
+ CellID->16454449],
+Cell[9123, 282, 126, 4, 42, "Input",
+ InitializationCell->True,
+ CellID->861618089],
+Cell[9252, 288, 102, 2, 33, "ExampleText",
+ CellID->335138205],
+Cell[CellGroupData[{
+Cell[9379, 294, 545, 18, 26, "Input",
+ CellID->68713862],
+Cell[9927, 314, 4396, 80, 261, "Output",
+ CellTags->"RasterizedOutput",
+ CellID->61664649]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14360, 399, 125, 3, 8, "ExampleDelimiter",
+ CellID->192649661],
+Cell[14488, 404, 84, 1, 33, "ExampleText",
+ CellID->106969071],
+Cell[CellGroupData[{
+Cell[14597, 409, 804, 26, 75, "Input",
+ CellID->786592695],
+Cell[15404, 437, 1323, 46, 168, "Output",
+ CellID->2969473]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[16766, 488, 31, 0, 70, "SectionFooterSpacer"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16834, 493, 270, 12, 70, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[17107, 507, 591, 17, 70, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17735, 529, 276, 12, 70, "MoreAboutSection",
+ CellID->38303248],
+Cell[18014, 543, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[18048, 545, 221, 6, 70, "MoreAbout",
+ CellID->297943432],
+Cell[18272, 553, 223, 6, 70, "MoreAbout",
+ CellID->735848740]
+}, Open  ]],
+Cell[18510, 562, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

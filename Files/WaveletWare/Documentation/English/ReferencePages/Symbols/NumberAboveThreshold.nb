@@ -1,0 +1,961 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     33830,        951]
+NotebookOptionsPosition[     28861,        802]
+NotebookOutlinePosition[     31393,        869]
+CellTagsIndexPosition[     31273,        863]
+WindowTitle->NumberAboveThreshold
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["WAVELET WARE PACKAGE SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Tutorials",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Tutorials", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"Computing and Plotting Wavelet Packet \
+Transformations\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/tutorial/Computing and Plotting Wavelet Packet \
+Transforms"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"Tutorials"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"ShannonEntropy\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/ShannonEntropy"], "\<\"NumberNonzero\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/NumberNonzero"], "\<\"SumOfPowers\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/SumOfPowers"], "\<\"WPT\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/WPT"], "\<\"BestBasisTree\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/BestBasisTree"], "\<\"ShowBestBasis\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/ShowBestBasis"], "\<\"CostFunction\"\>":>
+       Documentation`HelpLookup["paclet:WaveletWare/ref/CostFunction"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"WaveletWare/ref/NumberAboveThreshold\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["WaveletWare/ref/NumberAboveThreshold"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/WaveletWare/ref/\
+NumberAboveThreshold.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$80939], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "WaveletWare/ref/NumberAboveThreshold", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[TextData[{
+ Cell["NumberAboveThreshold", "ObjectName"],
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{8, 0}],
+    CacheGraphics->False],
+   Spacer[8]]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"NumberAboveThreshold", "[", 
+       RowBox[{
+        StyleBox["data", "TI"], ",", 
+        StyleBox["p", "TI"]}], "]"}]], "InlineFormula"],
+     "\[LineSeparator]is a cost function that can be used in conjunction with \
+wavelet packet transforms."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    InterpretationBox[
+     StyleBox[
+      GraphicsBox[{},
+       BaselinePosition->Baseline,
+       ImageSize->{6, 0}],
+      CacheGraphics->False],
+     Spacer[6]]]],
+   "Details"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->210095484],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ StyleBox["NumberAboveThreshold",
+  FontFamily->"Courier New",
+  FontSize->12],
+ " converts ",
+ Cell[BoxData[
+  StyleBox["data", "TI"]], "InlineFormula"],
+ " to a vector ",
+ Cell[BoxData[
+  StyleBox["v", "TI"]], "InlineFormula"],
+ " (of length ",
+ Cell[BoxData[
+  StyleBox["n", "TI"]], "InlineFormula"],
+ ") and for ",
+ Cell[BoxData[
+  StyleBox["p", "TI"]], "InlineFormula"],
+ ">0 computes\[LineSeparator]\[LineSeparator]\t\t#{ ",
+ Cell[BoxData[
+  SubscriptBox["v", "k"]], "InlineFormula"],
+ " : \[LeftBracketingBar]",
+ Cell[BoxData[
+  SubscriptBox["v", "k"]], "InlineFormula"],
+ "\[RightBracketingBar] \[GreaterSlantEqual] ",
+ Cell[BoxData[
+  StyleBox["p", "TI"]], "InlineFormula"],
+ "}"
+}], "Notes",
+ CellID->1067943069],
+
+Cell[TextData[{
+ StyleBox["NumberAboveThreshold",
+  FontFamily->"Courier New",
+  FontSize->12],
+ " is a value for the option ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["CostFunction"]],"paclet:WaveletWare/ref/CostFunction"},
+   "RefLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula"],
+ "."
+}], "Notes",
+ CellID->597509017],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->374272742],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->771776914],
+
+Cell["This loads the package:", "MathCaption",
+ CellID->16454449],
+
+Cell[BoxData[
+ RowBox[{"<<", "WaveletWare`"}]], "Input",
+ InitializationCell->True,
+ CellLabel->"In[1]:=",
+ CellID->861618089],
+
+Cell[TextData[{
+ "Compute the ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["NumberAboveThreshold"]],
+    "paclet:WaveletWare/ref/NumberAboveThreshold"},
+   "RefLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula"],
+ " value of a vector."
+}], "ExampleText",
+ CellID->531176199],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"v", "=", 
+  RowBox[{"RandomInteger", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", "8"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"NumberAboveThreshold", "[", 
+  RowBox[{"v", ",", "2"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"NumberAboveThreshold", "[", 
+  RowBox[{"v", ",", "6"}], "]"}], "\[IndentingNewLine]"}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->596698103],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"-", "9"}], ",", "1", ",", "1", ",", "6", ",", 
+   RowBox[{"-", "1"}], ",", "1", ",", "4", ",", 
+   RowBox[{"-", "10"}]}], "}"}]], "Output",
+ ImageSize->{182, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->226125015],
+
+Cell[BoxData["4"], "Output",
+ ImageSize->{11, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->1743415],
+
+Cell[BoxData["3"], "Output",
+ ImageSize->{11, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->219620069]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->162975584],
+
+Cell[TextData[{
+ "Use ",
+ StyleBox["NumberAboveThreshold",
+  FontFamily->"Courier New",
+  FontSize->12],
+ " to compute the wavelet packet transform of a vector.  Note in this case, ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WPT"]],"paclet:WaveletWare/ref/WPT"},
+   "RefLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula"],
+ " needs a value for the option ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["SecondParameter"]],"paclet:WaveletWare/ref/SecondParameter"},
+   "RefLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula"],
+ ":"
+}], "ExampleText",
+ CellID->365103087],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"Donoho", "/", "Johnstone"}], " ", "Doppler", " ", "function"}], 
+   " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"g", "[", "t_", "]"}], ":=", 
+     RowBox[{
+      RowBox[{"Sqrt", "[", 
+       RowBox[{"t", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", "t"}], ")"}]}], "]"}], "*", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"2", "Pi", 
+        RowBox[{
+         RowBox[{"(", "1.05", ")"}], "/", 
+         RowBox[{"(", 
+          RowBox[{"t", "+", ".05"}], ")"}]}]}], "]"}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"n", "=", "1024"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"v", "=", 
+     RowBox[{"g", "[", 
+      RowBox[{"Range", "[", 
+       RowBox[{"0", ",", 
+        RowBox[{"1", "-", 
+         RowBox[{"1", "/", "n"}]}], ",", 
+        RowBox[{"1", "/", "n"}]}], "]"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"ListPlot", "[", 
+    RowBox[{"v", ",", 
+     RowBox[{"Ticks", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Range", "[", 
+         RowBox[{"0", ",", "n", ",", 
+          RowBox[{"n", "/", "4"}]}], "]"}], ",", 
+        RowBox[{"Range", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], "/", "2"}], ",", 
+          RowBox[{"1", "/", "2"}]}], "]"}]}], "}"}]}], ",", 
+     RowBox[{"PlotLabel", "\[Rule]", "\"\<Data Samples\>\""}]}], "]"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"wpt", ",", "tree"}], "}"}], "=", 
+     RowBox[{"WPT", "[", 
+      RowBox[{"v", ",", 
+       RowBox[{"Daub", "[", "4", "]"}], ",", 
+       RowBox[{"CostFunction", "\[Rule]", "NumberAboveThreshold"}], ",", 
+       RowBox[{"SecondParameter", "\[Rule]", ".1"}], ",", 
+       RowBox[{"NumIterations", "\[Rule]", "4"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"WaveletVectorPlot", "[", 
+    RowBox[{"wpt", ",", "tree", ",", 
+     RowBox[{"NumIterations", "\[Rule]", "4"}]}], "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"ShowBestBasis", "[", "tree", "]"}]}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->244548528],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJztnU2u48YVRhvxJMNsIbvwNMNMO8i0g277qREEaAPtBwQ9yEAL8A6sWQbe
+gLUN7uFNNM0OFEoUS8X6Y1XdW//fgdvWK5JVl8XDq8t6svrPn356f/jDu3fv
+fv7j/K/3H//9l69fP37725/mH/7+5ed/fv7y8uNfv7y+fH75+v2n7+bG/85/
+/jf/ub2+AgAAAACAFFzOx8OG07S7/84uK9PJu9cYAiIBw6BacZPQZYmvRZt+
+bgcdzxdSoNGRgJHQrZhbhHtS9r7vJFLu/Sd1q6Pb+cC1U8NR9yHPj75v+03S
+68fhp/PjOLkfMcQ2MKUN2o+DIcsJ9xQJhcPL/qat235NOdl41H1n6aX0Wox1
+eAalRvLsdNv2eIVEPhBmFXURVz3McjzlUZsP20RrPkp5SxCv5Ttrm8wvljvr
+2afcCIbBlZ8fP2zetbf7q1tdo9j79PJ5c/jtMCV7P9ELG4g9DLrPT3ekrGiu
+N+zv6FrCXhuMRwX5bMzPzrsJqXocHOsb8iaRYA1iG9cvlHWSVSnzUV71hlpH
+mOpn8x0An8fBuf4svWOfTpLHB/GGr26VkcuAp0+WPvfz823v/fUNR1UDQCUg
+w4KegM8AAAD6Z37ywBMF6IPlMRk+gy6Ypgn5GXQFfAY9AZ9BT8Bn0BM2n+fn
+xOyxAJAK+Ax6Aj6D5vhF4u3tTd4En0FPwGfQE+LztaUDKcaH4+/LP6UDAQyM
+bPKC8BlKd8DgPssyQ+kOgM+Lw/C5HUxfvLMyss+Kw/C5CcRvBo3fsQKfFZ+h
+dDNMJz1Bt+JzCtmUDuFzU0wn0/+OOazPxg7hcyNYv34HPuuNXEOAJDi/m7I5
+n7l8M3aFkqN+zF/xs9KEzymWiG1d9eSzvrrezanZaMjnK6tsfftsNHkEq0v5
+HDSx8DkIm7ojWD2mz47RW7/QPrp2rPTIPtMDqw1/UXtVGj6Hbq2WUEW7VLot
+n69MsvXnc5yc/Smd1Geut3X4vEu0lp0pXcrn6H6y+dzQ9SUG3JPS6Xx2T1Ho
+k4vtR/bAuEbJBpeKfSg9rM/0fSqB3edWTtwIl8/6PHClQfjsgNfADpRO7bN7
+Z/hMhF0/+LxgnATbzNAfXuKO9e+hiWuayL2mlS7is/8O+j45fa78mqb2ufLT
+NxLt865mTdcbLAMlJaly8DnO54iB6PTkc+r+a54BI+l8drdHD0Ts0//Ymq9m
+HtlaVDrIZ/nsWLJc3HTB58w+VzsPOtE+U3am1M+hYfhHFb1nfrLF1rfPV0uK
+Np5yuvo5p88VXsrMgVU7D0Y8fTaqqzSGWl2Eso+iLGSOqq2qI8jniGKYWD+z
+3yOt+1xErf58Xoh4HnT3A59DKaVWK0q7fXaIl00q3sP78LnUuBVOiIKPz3En
+ku7ch/W5rFGd+Sy3GHfzabQNEbc1lNDeart8xY0qHsAuNp9tadnotiOHx1XI
+u1vjZjXO53ouX/Fg6q863D67j1X2YU/d/kOnO6qea1eJSJWEYYPiczT+nZet
+N9gDoFCPSPVEoqP47H5DSXEWNdcb0QOloLZI6olHxu2zraIgVsVxexY5qpKr
+Vps/tcUjMNYbu94y+uwG9YYcRg2RCCoM6br1OU85ETQK6o2qwlCoUGlPn32q
+XM+lDFsNE0Rmn4tfshpi0KlkcmRCP1/n2JrTzDjqj9ARQFXaCGqLbfHZHZW8
+KXPwjPVGdOTFr1fxANxUpTTF5wxnAZ+rssVIVRGG/r5b34dxkz/wuSrqCXL2
+WUSi5166A/U8Dzbtc6nR/alEad1n3pB2O0ydyem9wWcfiAmQC1FvyPHYUqsg
+T9jR1Q7L/vQD6dRgiD81KC3ys66xo1Qwxpz5RLL5TDyWQkMyLxRXWq43lKj0
+nd3t7AmwknqDPZL6x6VQ3Ge9MWnqo98+GYJkPJZCiz5fiyq95OekQyinxnWm
+3ftcvBalUCr4XZ/jopKPquGiEGMo6HPmQbkoVUjrPhvTaegDIMuJMNYb8Dk/
+RZTW62e3uikSb4b6uTmfmy42BPmVNq5vOKDH5v88yEiKsDP8VaSt+3w1/V7j
+mnLqlPXnDBPoP4rndzfloYjP0YeX+mvZbSiOJQpv6XnXZ8+5ZRfM/axa/G0F
+PgeRzucDADXBJXb0nWJcA7HtsJtq4nJR8fycjj4q5/zs+uxZgRAf8eBzwbE6
+47D9fJ2yddfbCPw7Ybys8HkQDtrn6xZ89I6D0eect0bm9R/4HMfBsv7sM6VM
+03759K/1weB4vtybptNBabqcj4+G0xQaADFOKZjXT//5XWoWoTyjE6cQjX+0
+0qjPkfWJWuMnRxaGPD96DNYZmzdQAj0QPo/Eo9N8qj/9uuywToF2TtLcbKaJ
+NU4Lz2Ce/TwujyGmiPA4or2cT/cY9Ujm/xzXTdmM1udHicE2Y/cDiT7LPwat
+S+gQq5RZnfupTafj8UVKMrf200lJO/4903y+BfPIJY/77nI+T89gzacQT0S0
+c4jiXUydKHE70u80X9T5kdKTIQh1P3EyUSj1RgqffRHnertJTx/vXS0ne294
+TIMsTA6fpbH/8fr6wzfRj8lcsjMxxfM21xkmasmWmcuNraemq7fG9oxyTWbc
+PjtyLFEhW7t8IZQN89ltZoF2vhQ+fDu+vP62/qReGuspBA1BSM5qTOvUPRN1
+rgStxGLLz8rdpz8LRHDQvr9OUVpp0Sc8qMYwtd+eB6W897gQH6T8LE9D/vws
+P8PMca5dyYGwuRIe6vb21ibK/V6fEml+DDW8fcbI+Vm8NkrLuGhmRFo9eN6Y
+olF/HpZPNvP6hrjL1og27+f03BITqvYGrk2UcWUoA8p7xSYo14zx+exPWwuk
+jNEmPXGsPNM5SN9fZ9vHs8bwP5yLPPk5UVeZOx8E3WeivTpxayY+e3Lt4w98
+rpyD/fuRfFB2ji622W8i9n5S9Kb3DJ+J6D7b9vRZx4i4IxydsxyVwucU1kFm
+FvyfB3lLBRby+5yiw6TdjobD57IzzPWsB5+Hwvb5Df831iCj2OvnPnxG8cyF
+0Wf39FKeAf195qIhn3n7HBO93lBS9G57Chhrdfg8FMb6WcnSusap5x8+gzgc
+PuuvjTvo7dnW60r13Moa4ID4rNeF1tKOhzv2+tl9YBNrEZCZEZ/1OkfWDV2F
+4Fq18NwTPo+G//pzzmmHzyCOuM+LyrBcjmHrDRTPvOz67CiGPXfwIdF7QSs+
+s3QFriE++9TAu+sbPdXPNd9xwxLxeaQIXUOfB/0p4jNjz/CZF+Ln67jyLaXe
+oL8dRMD41ACfGSE+D3JdkZF9ZokHLET4HP08mP/pDD6PBt1nfZPNcP9alyU/
+J7WF5Y0JPrPDUm/Yftxtt+3TRPYj9o/iOQWV1M/0GPzbU4+b53BgJIXPcYJF
+r+nBZyDgrTeuTsPhs3IsfGaH/vkNBeNlyvBo5t/OO27cEPA5EXl83t10bTA/
+U4aAzInImZ/hM/1A4KYen909RA8a1E8ocUOg2EgHu8820uVn4yF5hKH4nCIe
+AJ8pRGRaJOekwGci8LkqMvvss8MIPqeLZ3Cy+exD0GOjfqC7JRHwuSrq9Dnu
+QHdLIoJiRrGRmi59zqxNqM+p4xkB29/D24fP160qmbUJWleHz3SWv+4NPifC
+M2z4zMQ0TcjPafH3OU883dOEzxQq9xnJmZdxfC5ijv9viwALg/hcMA06xkVy
+Zqd7n6+EX8fwjh60CfACn9lH92wHKejJ52vpMlVXt+wt1jpzUXEQHM+Xtf0X
+ibe3N/mQznwujmwvZM4PfOZFeSyFzJkR6bx0IP0AmQsCk0FPwGfQE/AZtMby
+8TrzJ+zgM2gL8ZvB+YW0hvcAPoNWmU56gobPoE2mk56d4TNokrmENn4cCYDW
+uP0WHDKDThCrG9vPdAAAAAAAADA6/wd9yiFh
+    "], {{0, 164}, {240, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  DefaultBaseStyle->"ImageGraphics",
+  ImageSize->Automatic,
+  ImageSizeRaw->{240, 164},
+  PlotRange->{{0, 240}, {0, 164}}]], "Output",
+ ImageSize->{244, 164},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellTags->"RasterizedOutput",
+ CellLabel->"Out[1]=",
+ CellID->8527943],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1: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
+cHim9RsinbIUHJ69ByGRsqf/A3CSsZs=
+    "], {{0, 143}, {240, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  DefaultBaseStyle->"ImageGraphics",
+  ImageSize->Automatic,
+  ImageSizeRaw->{240, 143},
+  PlotRange->{{0, 240}, {0, 143}}]], "Output",
+ ImageSize->{244, 143},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellTags->"RasterizedOutput",
+ CellLabel->"Out[1]=",
+ CellID->57493061],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJzt1sFKAnEUxeGhNi17hd6ibcu2hg+gNEkbAw2it+4NbMSdwTDO38PtHH4f
+GAWXq/dwGHtYfyzebrqu298NPxarr6fdbvX9cj/8sdzu3zfb/vV5+9lv+t3j
++vY4Mbx+htfx9wMAAACAWTrAEH1GkvE+a579wPXRZyShz0hCn5GEPiMJfUYS
++owk9BlJ6DOS0Gckoc9IQp+RZEqfAS/0GUnmPb0xG8GK0OcSBCtCn0sQrAh9
+LkGwIvS5BMGK0OcSBCtCn0sQrAh9LkGwIvS5BMGK0OcSBCtCn0sQrAh9LkGw
+IvS5BMGKTOkz4IU+I8m8p/d/Y/RpTx916cAo1UPW/89Gn5Y+i9DnEvRZhD6X
+oM8i9LkEfRahzyXoswh9LkGfRehzCfosQp9L0GcR+lyCPovQ5xL0WYQ+l6DP
+IlP6DHihz0gy7+k922mt6JtRsVOUgMVaxw4k3aLYKUrAYq1jB5JuUewUJWCx
+1rEDSbcodooSsFjr2IGkWxQ7RQlYrHXsQNItip2iBCzWOnYg6RbFTlECFmsd
+O5B0i2KnKAGLtY4dSLpFsVOUgMVaxw4k3aLYKUrAYq1jB5JuUewUJWCx1rED
+SbcodooSsFjr2IHxNwW80GckucqXwvTh8Tf9+wGmTF40fOkkCWQkkHRLyyQJ
+ZCSQdEvLJAlkJJB0S8skCWQkkHRLyyQJZCSQdEvLJAlkJJB0S8skCWQkkHRL
+yyQJZCSQdEvLJAlkJJB0S8skCWQkkHRLyyQJZCSQdEvLJAlkJJB0S8skCWQk
+0AGG6DOSTHyYAwAAADjzC2nPkjk=
+    "], {{0, 82}, {240, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  DefaultBaseStyle->"ImageGraphics",
+  ImageSize->Automatic,
+  ImageSizeRaw->{240, 82},
+  PlotRange->{{0, 240}, {0, 82}}]], "Output",
+ ImageSize->{244, 82},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellTags->"RasterizedOutput",
+ CellLabel->"Out[1]=",
+ CellID->845985664]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ShannonEntropy"]],"paclet:WaveletWare/ref/ShannonEntropy"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["NumberNonzero"]],"paclet:WaveletWare/ref/NumberNonzero"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["SumOfPowers"]],"paclet:WaveletWare/ref/SumOfPowers"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WPT"]],"paclet:WaveletWare/ref/WPT"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["BestBasisTree"]],"paclet:WaveletWare/ref/BestBasisTree"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ShowBestBasis"]],"paclet:WaveletWare/ref/ShowBestBasis"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["CostFunction"]],"paclet:WaveletWare/ref/CostFunction"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Tutorials"
+}], "TutorialsSection",
+ WholeCellGroupOpener->True,
+ CellID->250839057],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Computing and Plotting Wavelet Packet Transformations"]],
+   "paclet:WaveletWare/tutorial/Computing and Plotting Wavelet Packet \
+Transforms"},
+  "RefLink",
+  BaseStyle->"Tutorials"]], "Tutorials",
+ CellID->96333098],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Related Links"
+}], "RelatedLinksSection",
+ WholeCellGroupOpener->True,
+ CellID->1584193535],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ "Cost functions and the wavelet packet transform are described in Chapter 9 \
+of the book  ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Wavelet Theory: An Elementary Approach with Applications"]],
+    "http://www.wiley.com/WileyCDA/WileyTitle/productCd-0470388404.html"},
+   "WebLink",
+   BaseStyle->{"RelatedDemonstrations"}]]],
+ ", David Ruch and Patrick Van Fleet, Wiley, 2009."
+}], "RelatedDemonstrations",
+ CellID->56984426]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"NumberAboveThreshold",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:WaveletWare/guide/WaveletWare", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2016, 8, 25, 9, 50, 55.5968636}", 
+    "history" -> {"XX", "", "", ""}, "context" -> 
+    "WaveletWare`PacketTransforms`", "keywords" -> {}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "Wavelet Ware Package Symbol", "language" -> "en", "paclet" -> 
+    "WaveletWare Package", "status" -> "None", "summary" -> 
+    "NumberAboveThreshold[data, p] is a cost function that can be used in \
+conjunction with wavelet packet transforms.", "synonyms" -> {}, 
+    "tabletags" -> {}, "title" -> "NumberAboveThreshold", "titlemodifier" -> 
+    "", "windowtitle" -> "NumberAboveThreshold", "type" -> "Symbol", "uri" -> 
+    "WaveletWare/ref/NumberAboveThreshold"}, "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "11.0 for Microsoft Windows (64-bit) (July 28, 2016)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[7705, 238, 387, 15, 30, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->374272742]},
+ "RasterizedOutput"->{
+  Cell[12907, 427, 4468, 81, 185, "Output",
+   CellTags->"RasterizedOutput",
+   CellID->8527943],
+  Cell[17378, 510, 6112, 108, 164, "Output",
+   CellTags->"RasterizedOutput",
+   CellID->57493061],
+  Cell[23493, 620, 1347, 30, 103, "Output",
+   CellTags->"RasterizedOutput",
+   CellID->845985664]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 30808, 846},
+ {"RasterizedOutput", 30951, 850}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[592, 21, 4337, 105, 48, "AnchorBarGrid",
+ CellID->1],
+Cell[4932, 128, 297, 11, 44, "ObjectNameGrid"],
+Cell[CellGroupData[{
+Cell[5254, 143, 490, 14, 80, "Usage"],
+Cell[CellGroupData[{
+Cell[5769, 161, 738, 24, 31, "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->210095484],
+Cell[6510, 187, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[6544, 189, 738, 27, 70, "Notes",
+ CellID->1067943069],
+Cell[7285, 218, 337, 12, 70, "Notes",
+ CellID->597509017],
+Cell[7625, 232, 31, 0, 70, "SectionFooterSpacer"]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7705, 238, 387, 15, 30, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->374272742],
+Cell[CellGroupData[{
+Cell[8117, 257, 195, 6, 25, "ExampleSection",
+ CellID->771776914],
+Cell[8315, 265, 65, 1, 31, "MathCaption",
+ CellID->16454449],
+Cell[8383, 268, 126, 4, 42, "Input",
+ InitializationCell->True,
+ CellID->861618089],
+Cell[8512, 274, 287, 10, 36, "ExampleText",
+ CellID->531176199],
+Cell[CellGroupData[{
+Cell[8824, 288, 454, 13, 75, "Input",
+ CellID->596698103],
+Cell[9281, 303, 322, 10, 35, "Output",
+ CellID->226125015],
+Cell[9606, 315, 156, 5, 35, "Output",
+ CellID->1743415],
+Cell[9765, 322, 158, 5, 35, "Output",
+ CellID->219620069]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9960, 332, 125, 3, 8, "ExampleDelimiter",
+ CellID->162975584],
+Cell[10088, 337, 594, 19, 52, "ExampleText",
+ CellID->365103087],
+Cell[CellGroupData[{
+Cell[10707, 360, 2197, 65, 187, "Input",
+ CellID->244548528],
+Cell[12907, 427, 4468, 81, 185, "Output",
+ CellTags->"RasterizedOutput",
+ CellID->8527943],
+Cell[17378, 510, 6112, 108, 164, "Output",
+ CellTags->"RasterizedOutput",
+ CellID->57493061],
+Cell[23493, 620, 1347, 30, 103, "Output",
+ CellTags->"RasterizedOutput",
+ CellID->845985664]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[24879, 655, 31, 0, 70, "SectionFooterSpacer"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24947, 660, 270, 12, 70, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[25220, 674, 2146, 61, 70, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27403, 740, 272, 12, 70, "TutorialsSection",
+ CellID->250839057],
+Cell[27678, 754, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[27712, 756, 264, 7, 70, "Tutorials",
+ CellID->96333098],
+Cell[27979, 765, 31, 0, 70, "SectionFooterSpacer"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28047, 770, 280, 12, 70, "RelatedLinksSection",
+ CellID->1584193535],
+Cell[28330, 784, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[28364, 786, 455, 11, 70, "RelatedDemonstrations",
+ CellID->56984426]
+}, Open  ]],
+Cell[28834, 800, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

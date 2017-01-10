@@ -1,0 +1,4348 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[    126813,       4339]
+NotebookOptionsPosition[     94343,       3261]
+NotebookOutlinePosition[    110442,       3758]
+CellTagsIndexPosition[    109958,       3738]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Visualization/Audio", "Title",
+ CellChangeTimes->{{3.402406432859375*^9, 3.40240643409375*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Media Files", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["ImageList", "Subsection",
+ CellTags->"b:3.0.0"],
+
+Cell["\<\
+This function gives information for all images in the DiscreteWavelets \
+package.\
+\>", "Text",
+ CellTags->"b:3.0.0"],
+
+Cell[CellGroupData[{
+
+Cell["Arguments:", "Subsubsection",
+ CellTags->"b:3.0.0"],
+
+Cell["There are no arguments for this function.", "Text",
+ CellTags->"b:3.0.0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Directives:", "Subsubsection",
+ CellTags->"b:3.0.0"],
+
+Cell[TextData[{
+ "There is one directive for this function. \n\n",
+ StyleBox["ImageType",
+  FontWeight->"Bold"],
+ " can be set to either ",
+ StyleBox["GrayScale",
+  FontWeight->"Bold"],
+ ", ",
+ StyleBox["Color",
+  FontWeight->"Bold"],
+ ", or ",
+ StyleBox["All",
+  FontWeight->"Bold"],
+ " (the default value).  If it is set to ",
+ StyleBox["GrayScale",
+  FontWeight->"Bold"],
+ ", then the function only returns information for ",
+ StyleBox["GrayScale",
+  FontWeight->"Bold"],
+ " images in the package.  If it is set to",
+ StyleBox[" Color",
+  FontWeight->"Bold"],
+ ", then the function only returns information for ",
+ StyleBox["GrayScale",
+  FontWeight->"Bold"],
+ " images in the package.  The value ",
+ StyleBox["All",
+  FontWeight->"Bold"],
+ " gives information on both ",
+ StyleBox["GrayScale",
+  FontWeight->"Bold"],
+ " and ",
+ StyleBox["Color",
+  FontWeight->"Bold"],
+ " images.\n"
+}], "Text",
+ CellTags->"b:3.0.0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example Call:", "Subsubsection",
+ CellTags->"b:3.0.0"],
+
+Cell["Here we list all GrayScale images available in the package. ", "Text",
+ CellChangeTimes->{{3.402399321984375*^9, 3.4023993390625*^9}},
+ CellTags->"b:3.0.0"],
+
+Cell[BoxData[{
+ RowBox[{"<<", 
+  "DiscreteWavelets`DiscreteWavelets`"}], "\[IndentingNewLine]", 
+ RowBox[{"ImageList", "[", 
+  RowBox[{"ImageType", "\[Rule]", "GrayScale"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.40240015096875*^9, 3.402400151421875*^9}},
+ CellTags->"b:3.0.0"],
+
+Cell[BoxData[{
+ RowBox[{"<<", 
+  "DiscreteWavelets`DiscreteWavelets`"}], "\[IndentingNewLine]", 
+ RowBox[{"ImageList", "[", 
+  RowBox[{"ImageType", "\[Rule]", "Color"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.402400152625*^9, 3.402400152875*^9}},
+ CellTags->"b:3.0.0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Special Note: Adding your own images to the package", "Subsubsection",
+ CellTags->"b:3.0.0"],
+
+Cell["\<\
+If you want to add your own images to the package, then put grayscale (color) \
+images in the DiscreteWavelets/Images/Grayscale  (Color) directory and edit \
+the file images.txt in that directory accordingly.  You will also want to \
+follow the convention of adding thumbnails - for example, if you add \
+image.png as a grayscale image in the DiscreteWavelets/Images/Grayscale \
+folder, you should also add a thumbnail to the same folder named \
+image_small.png.\
+\>", "Text",
+ CellChangeTimes->{{3.40239925015625*^9, 3.40239926140625*^9}, {
+  3.4023993553125*^9, 3.4023993979375*^9}},
+ CellTags->"b:3.0.0"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["ImageNames", "Subsection",
+ CellTags->"b:3.0.1"],
+
+Cell["\<\
+This function gives the absolute path and image name for each image in the \
+DiscreteWavelets package.\
+\>", "Text",
+ CellTags->"b:3.0.1"],
+
+Cell[CellGroupData[{
+
+Cell["Arguments: ", "Subsubsection",
+ CellTags->"b:3.0.1"],
+
+Cell["There are no arguments for this function.", "Text",
+ CellTags->"b:3.0.1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Directives:", "Subsubsection",
+ CellTags->"b:3.0.1"],
+
+Cell[TextData[{
+ "There are two directives for this function. \n\n",
+ StyleBox["ImageType",
+  FontWeight->"Bold"],
+ " can be set to either ",
+ StyleBox["GrayScale",
+  FontWeight->"Bold"],
+ ", ",
+ StyleBox["Color",
+  FontWeight->"Bold"],
+ ", or ",
+ StyleBox["All",
+  FontWeight->"Bold"],
+ " (the default value).  If it is set to ",
+ StyleBox["GrayScale",
+  FontWeight->"Bold"],
+ ", then the function only returns path names for ",
+ StyleBox["GrayScale",
+  FontWeight->"Bold"],
+ " images in the package.  If it is set to",
+ StyleBox[" Color",
+  FontWeight->"Bold"],
+ ", then the function only returns path names for ",
+ StyleBox["GrayScale",
+  FontWeight->"Bold"],
+ " images in the package.  The value ",
+ StyleBox["All",
+  FontWeight->"Bold"],
+ " gives information on both ",
+ StyleBox["GrayScale",
+  FontWeight->"Bold"],
+ " and ",
+ StyleBox["Color",
+  FontWeight->"Bold"],
+ " images.\n\nThe second directive is ",
+ StyleBox["ListThumbnails",
+  FontWeight->"Bold"],
+ ".  The default value for this directive is ",
+ StyleBox["False",
+  FontWeight->"Bold"],
+ ".  When set to ",
+ StyleBox["False",
+  FontWeight->"Bold"],
+ ", the function gives paths and names for the actual images.  When set to ",
+ StyleBox["True",
+  FontWeight->"Bold"],
+ ", the function gives paths and names for the thumbnail images."
+}], "Text",
+ CellChangeTimes->{{3.40239940875*^9, 3.4023994295*^9}},
+ CellTags->"b:3.0.1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example Call:", "Subsubsection",
+ CellTags->"b:3.0.1"],
+
+Cell["\<\
+Here we provide a list whose elements are complete paths to all grayscale \
+images that come with the package.\
+\>", "Text",
+ CellChangeTimes->{{3.40239946359375*^9, 3.40239950109375*^9}},
+ CellTags->"b:3.0.1"],
+
+Cell[BoxData[{
+ RowBox[{"<<", 
+  "DiscreteWavelets`DiscreteWavelets`"}], "\[IndentingNewLine]", 
+ RowBox[{"gray", "=", 
+  RowBox[{"ImageNames", "[", 
+   RowBox[{"ImageType", "\[Rule]", "GrayScale"}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.402399442109375*^9, 3.40239945715625*^9}, 
+   3.40239950884375*^9, {3.40240015521875*^9, 3.40240015546875*^9}},
+ CellTags->"b:3.0.1"],
+
+Cell["\<\
+If we want to use the thumbnails, we issue the following command:\
+\>", "Text",
+ CellChangeTimes->{{3.402399515953125*^9, 3.40239952915625*^9}},
+ CellTags->"b:3.0.1"],
+
+Cell[BoxData[{
+ RowBox[{"<<", 
+  "DiscreteWavelets`DiscreteWavelets`"}], "\[IndentingNewLine]", 
+ RowBox[{"gray", "=", 
+  RowBox[{"ImageNames", "[", 
+   RowBox[{
+    RowBox[{"ImageType", "\[Rule]", "GrayScale"}], ",", 
+    RowBox[{"ListThumbnails", "\[Rule]", "True"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.402399532875*^9, 3.4023995551875*^9}, {
+  3.4024001606875*^9, 3.40240016109375*^9}},
+ CellTags->"b:3.0.1"],
+
+Cell["We can use ImageNames to easily read and plot images.", "Text",
+ CellChangeTimes->{{3.40239959725*^9, 3.40239962678125*^9}},
+ CellTags->"b:3.0.1"],
+
+Cell[BoxData[{
+ RowBox[{"<<", 
+  "DiscreteWavelets`DiscreteWavelets`"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"color", "=", 
+   RowBox[{"ImageNames", "[", 
+    RowBox[{
+     RowBox[{"ImageType", "\[Rule]", "Color"}], ",", 
+     RowBox[{"ListThumbnails", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"color", "[", 
+  RowBox[{"[", "4", "]"}], "]"}], "\n", 
+ RowBox[{
+  RowBox[{"img", "=", 
+   RowBox[{"ImageRead", "[", 
+    RowBox[{
+     RowBox[{"color", "[", 
+      RowBox[{"[", "4", "]"}], "]"}], ",", 
+     RowBox[{"PrintInfo", "\[Rule]", "True"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{"ImagePlot", "[", "img", "]"}]}], "Input",
+ CellChangeTimes->{{3.402399581328125*^9, 3.402399586390625*^9}, {
+  3.402399631140625*^9, 3.402399681171875*^9}, {3.402400162765625*^9, 
+  3.40240016303125*^9}},
+ CellTags->"b:3.0.1"],
+
+Cell[TextData[{
+ "In many cases, we do not want to work with the full size images.  We can \
+set the ",
+ StyleBox["ListThumbnails",
+  FontWeight->"Bold"],
+ " directive to just give the paths and names of the thumbnail images."
+}], "Text",
+ CellTags->"b:3.0.1"],
+
+Cell[BoxData[{
+ RowBox[{"<<", 
+  "DiscreteWavelets`DiscreteWavelets`"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"color", "=", 
+   RowBox[{"ImageNames", "[", 
+    RowBox[{
+     RowBox[{"ImageType", "\[Rule]", "Color"}], ",", 
+     RowBox[{"ListThumbnails", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.402400165171875*^9, 3.402400165359375*^9}, 
+   3.402422368375*^9},
+ CellTags->"b:3.0.1"],
+
+Cell["\<\
+Once we have seen the images,we can pick one and plot it! Each element of \
+color (the list is 9 in length) contains the absolute path and name of each \
+image.  Note that you must execute the cell above before running the one \
+below.\
+\>", "Text",
+ CellTags->"b:3.0.1"],
+
+Cell[BoxData[{
+ RowBox[{"color", "[", 
+  RowBox[{"[", "7", "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"img", "=", 
+   RowBox[{"ImageRead", "[", 
+    RowBox[{
+     RowBox[{"color", "[", 
+      RowBox[{"[", "7", "]"}], "]"}], ",", 
+     RowBox[{"PrintInfo", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ImagePlot", "[", "img", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"color", ",", "img"}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.402400167234375*^9, 3.4024001675625*^9}},
+ CellTags->"b:3.0.1"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["ShowThumbnails", "Subsection",
+ CellChangeTimes->{{3.402399723390625*^9, 3.40239972646875*^9}},
+ CellTags->"b:3.0.2"],
+
+Cell[TextData[{
+ "This function displays thumbnails of all images available in the \
+DiscreteWavelets package.  The images are named image1, ...., imageN, where N \
+is the number of grayscale (color) images.  These numbers correspond directly \
+with the ordering of elements returned by ",
+ StyleBox["ImageNames",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.4023997375625*^9, 3.40239976040625*^9}, {
+  3.4024000096875*^9, 3.402400064578125*^9}},
+ CellTags->"b:3.0.2"],
+
+Cell[CellGroupData[{
+
+Cell["Arguments: ", "Subsubsection",
+ CellTags->"b:3.0.2"],
+
+Cell["There are no arguments for this function.", "Text",
+ CellTags->"b:3.0.2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Directives:", "Subsubsection",
+ CellTags->"b:3.0.2"],
+
+Cell[TextData[{
+ "There are two directives for this function. \n\n",
+ StyleBox["ImageType",
+  FontWeight->"Bold"],
+ " can be set to either ",
+ StyleBox["GrayScale",
+  FontWeight->"Bold"],
+ ", ",
+ StyleBox["Color",
+  FontWeight->"Bold"],
+ ", or ",
+ StyleBox["All",
+  FontWeight->"Bold"],
+ " (the default value).  If it is set to ",
+ StyleBox["GrayScale",
+  FontWeight->"Bold"],
+ ", then the function only displays thumbnails for ",
+ StyleBox["GrayScale",
+  FontWeight->"Bold"],
+ " images in the package.  If it is set to",
+ StyleBox[" Color",
+  FontWeight->"Bold"],
+ ", then the function only displays thumbnails for ",
+ StyleBox["Color",
+  FontWeight->"Bold"],
+ " images in the package.  The value ",
+ StyleBox["All",
+  FontWeight->"Bold"],
+ " gives information on both ",
+ StyleBox["GrayScale",
+  FontWeight->"Bold"],
+ " and ",
+ StyleBox["Color",
+  FontWeight->"Bold"],
+ " images.\n\nThe second directive is ",
+ StyleBox["SlideShow",
+  FontWeight->"Bold"],
+ ".  The default value for this directive is ",
+ StyleBox["False",
+  FontWeight->"Bold"],
+ ".  When set to ",
+ StyleBox["False",
+  FontWeight->"Bold"],
+ ", the function simply produces a table of thumbnail plots.  When set to ",
+ StyleBox["True",
+  FontWeight->"Bold"],
+ ", the function organizes the requested images in a slide show."
+}], "Text",
+ CellChangeTimes->{{3.40239940875*^9, 3.4023994295*^9}, {3.402399818234375*^9,
+   3.402399904171875*^9}},
+ CellTags->"b:3.0.2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example Call:", "Subsubsection",
+ CellTags->"b:3.0.2"],
+
+Cell["\<\
+Here we thumbnails for all grayscale images that come with the package.\
+\>", "Text",
+ CellChangeTimes->{{3.40239946359375*^9, 3.40239950109375*^9}, {
+  3.402399919296875*^9, 3.402399922*^9}},
+ CellTags->"b:3.0.2"],
+
+Cell[BoxData[{
+ RowBox[{"<<", 
+  "DiscreteWavelets`DiscreteWavelets`"}], "\[IndentingNewLine]", 
+ RowBox[{"ShowThumbnails", "[", 
+  RowBox[{"ImageType", "\[Rule]", "GrayScale"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.402399442109375*^9, 3.40239945715625*^9}, 
+   3.40239950884375*^9, {3.402399928015625*^9, 3.40239993134375*^9}, {
+   3.402400170109375*^9, 3.4024001703125*^9}},
+ CellTags->"b:3.0.2"],
+
+Cell["Here we display the color thumbnails in slideshow form:", "Text",
+ CellChangeTimes->{{3.402399515953125*^9, 3.40239952915625*^9}, {
+  3.402399954890625*^9, 3.402399963953125*^9}},
+ CellTags->"b:3.0.2"],
+
+Cell[BoxData[{
+ RowBox[{"<<", 
+  "DiscreteWavelets`DiscreteWavelets`"}], "\[IndentingNewLine]", 
+ RowBox[{"ShowThumbnails", "[", 
+  RowBox[{
+   RowBox[{"ImageType", "\[Rule]", "Color"}], ",", 
+   RowBox[{"SlideShow", "\[Rule]", "True"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.402399532875*^9, 3.4023995551875*^9}, {
+  3.402399969171875*^9, 3.402399983859375*^9}, {3.40240017153125*^9, 
+  3.402400171765625*^9}},
+ CellTags->"b:3.0.2"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["AudioList", "Subsection",
+ CellTags->"b:3.0.3"],
+
+Cell["\<\
+This function gives information for all audio files in the DiscreteWavelets \
+package.\
+\>", "Text",
+ CellTags->"b:3.0.3"],
+
+Cell[CellGroupData[{
+
+Cell["Arguments:", "Subsubsection",
+ CellTags->"b:3.0.3"],
+
+Cell["There are no arguments for this function.", "Text",
+ CellTags->"b:3.0.3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example Call:", "Subsubsection",
+ CellTags->"b:3.0.3"],
+
+Cell[BoxData[{
+ RowBox[{"<<", 
+  "DiscreteWavelets`DiscreteWavelets`"}], "\[IndentingNewLine]", 
+ RowBox[{"AudioList", "[", "]"}]}], "Input",
+ CellChangeTimes->{{3.402400373609375*^9, 3.40240037378125*^9}},
+ CellTags->"b:3.0.3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Special Note: Adding your own audio files to the package", \
+"Subsubsection",
+ CellTags->"b:3.0.3"],
+
+Cell["\<\
+If you want to add your own images to the package, then put audio files in \
+the DiscreteWavelets/Sounds directory and edit the file sounds.txt in that \
+directory accordingly.\
+\>", "Text",
+ CellTags->"b:3.0.3"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["AudioNames", "Subsection",
+ CellTags->"b:3.0.4"],
+
+Cell["\<\
+This function gives the absolute path and name for each audio file in the \
+DiscreteWavelets package.\
+\>", "Text",
+ CellTags->"b:3.0.4"],
+
+Cell[CellGroupData[{
+
+Cell["Arguments: ", "Subsubsection",
+ CellTags->"b:3.0.4"],
+
+Cell["There are no arguments for this function.", "Text",
+ CellTags->"b:3.0.4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example Call:", "Subsubsection",
+ CellTags->"b:3.0.4"],
+
+Cell[BoxData[{
+ RowBox[{"<<", 
+  "DiscreteWavelets`DiscreteWavelets`"}], "\[IndentingNewLine]", 
+ RowBox[{"audio", "=", 
+  RowBox[{"AudioNames", "[", "]"}]}]}], "Input",
+ CellChangeTimes->{{3.402400187578125*^9, 3.40240021234375*^9}, {
+  3.402400375515625*^9, 3.40240037565625*^9}},
+ CellTags->"b:3.0.4"],
+
+Cell["\<\
+Now that we have loaded the audio files in a list, we can simply pick one and \
+play it.\
+\>", "Text",
+ CellTags->"b:3.0.4"],
+
+Cell[BoxData[{
+ RowBox[{"<<", "DiscreteWavelets`DiscreteWavelets`"}], "\[IndentingNewLine]", 
+
+ RowBox[{
+  RowBox[{"<<", "Audio`"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"audio", "=", 
+   RowBox[{"AudioNames", "[", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sfile", "=", 
+   RowBox[{"ReadSoundFile", "[", 
+    RowBox[{
+     RowBox[{"audio", "[", 
+      RowBox[{"[", "3", "]"}], "]"}], ",", 
+     RowBox[{"PrintHeader", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlay", "[", 
+  RowBox[{"sfile", ",", 
+   RowBox[{"SampleRate", "\[Rule]", "11025"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"audio", ",", "sfile"}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.40240020278125*^9, 3.402400225703125*^9}, {
+  3.402400264265625*^9, 3.402400303578125*^9}, {3.402400370546875*^9, 
+  3.40240037078125*^9}},
+ CellTags->"b:3.0.4"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["DataList", "Subsection",
+ CellTags->"b:3.0.5"],
+
+Cell["\<\
+This function gives information for all data files in the DiscreteWavelets \
+package.\
+\>", "Text",
+ CellTags->"b:3.0.5"],
+
+Cell[CellGroupData[{
+
+Cell["Arguments:", "Subsubsection",
+ CellTags->"b:3.0.5"],
+
+Cell["There are no arguments for this function.", "Text",
+ CellTags->"b:3.0.5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example Call:", "Subsubsection",
+ CellTags->"b:3.0.5"],
+
+Cell[BoxData[{
+ RowBox[{"<<", 
+  "DiscreteWavelets`DiscreteWavelets`"}], "\[IndentingNewLine]", 
+ RowBox[{"DataList", "[", "]"}]}], "Input",
+ CellChangeTimes->{{3.402400368109375*^9, 3.402400368375*^9}},
+ CellTags->"b:3.0.5"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["DataNames", "Subsection",
+ CellTags->"b:3.0.6"],
+
+Cell[CellGroupData[{
+
+Cell["Example Call:", "Subsubsection",
+ CellTags->"b:3.0.6"],
+
+Cell[BoxData[{
+ RowBox[{"<<", 
+  "DiscreteWavelets`DiscreteWavelets`"}], "\[IndentingNewLine]", 
+ RowBox[{"d", "=", 
+  RowBox[{"DataNames", "[", "]"}]}]}], "Input",
+ CellChangeTimes->{
+  3.4024003290625*^9, {3.402400365875*^9, 3.40240036615625*^9}},
+ CellTags->"b:3.0.6"],
+
+Cell["\<\
+Now that we have the file names, we can pick one and import the data.\
+\>", "Text",
+ CellTags->"b:3.0.6"],
+
+Cell[BoxData[{
+ RowBox[{"<<", "DiscreteWavelets`DiscreteWavelets`"}], "\[IndentingNewLine]", 
+
+ RowBox[{
+  RowBox[{"d", "=", 
+   RowBox[{"DataNames", "[", "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"f", "=", 
+   RowBox[{"OpenRead", "[", 
+    RowBox[{"d", "[", 
+     RowBox[{"[", "1", "]"}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"s", "=", 
+   RowBox[{"ReadList", "[", "f", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"s", ",", 
+   RowBox[{"Joined", "\[Rule]", "True"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"d", ",", "f", ",", "s"}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.40240033503125*^9, 3.402400364671875*^9}},
+ CellTags->"b:3.0.6"]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Digital Images", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["ImageRead", "Subsection",
+ CellTags->"b:3.1.0"],
+
+Cell[TextData[{
+ StyleBox["ReadImage", "Program",
+  FontFamily->"Times New Roman"],
+ StyleBox[" ",
+  FontFamily->"Times New Roman"],
+ "reads a digital image (either color or grayscale) from disk or a valid URL. \
+ The routine detects if the file contains a grayscale or color image and \
+returns a single matrix for a grayscale image or three matrices (red, green, \
+and blue) for a color image."
+}], "Text",
+ CellTags->"b:3.1.0"],
+
+Cell[CellGroupData[{
+
+Cell["Arguments: ", "Subsubsection",
+ CellTags->"b:3.1.0"],
+
+Cell["f is either a file name or a URL.", "Text",
+ CellTags->"b:3.1.0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Directives:", "Subsubsection",
+ CellTags->"b:3.1.0"],
+
+Cell[TextData[{
+ "The first directive is ",
+ StyleBox["PrintInfo",
+  FontWeight->"Bold"],
+ " (default value is ",
+ StyleBox["False",
+  FontWeight->"Bold"],
+ "). If ",
+ StyleBox["PrintInfo ",
+  FontWeight->"Bold"],
+ "is set to",
+ StyleBox["True",
+  FontWeight->"Bold"],
+ ",then ",
+ StyleBox["ReadImage ",
+  FontWeight->"Bold"],
+ "prints a message that indicates the dimensions of the image as well as if \
+it is interpreted as either a grayscale image or a color image.\n\nThe second \
+directive is ",
+ StyleBox["PowersOfTwo", "Program",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ ".  The default value is ",
+ StyleBox["None",
+  FontWeight->"Bold"],
+ ", but if the option is set to ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ ", then ",
+ StyleBox["ReadImage", "Program",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[" ",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ "removes enough rows and columns (bottom and right, respectively) so that \
+the dimensions of the returned data are each divisible by ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["2", "n"], TraditionalForm]]],
+ "."
+}], "Text",
+ CellTags->"b:3.1.0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example Call:", "Subsubsection",
+ CellTags->"b:3.1.0"],
+
+Cell[BoxData[{
+ RowBox[{"<<", 
+  "DiscreteWavelets`DiscreteWavelets`"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"gray", "=", 
+   RowBox[{"ImageNames", "[", 
+    RowBox[{
+     RowBox[{"ImageType", "\[Rule]", "GrayScale"}], ",", 
+     RowBox[{"ListThumbnails", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"img", "=", 
+   RowBox[{"ImageRead", "[", 
+    RowBox[{
+     RowBox[{"gray", "[", 
+      RowBox[{"[", "6", "]"}], "]"}], ",", 
+     RowBox[{"PrintInfo", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"gray", ",", "img"}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.402400429421875*^9, 3.40240044678125*^9}, {
+  3.402401166859375*^9, 3.402401167109375*^9}},
+ CellTags->"b:3.1.0"],
+
+Cell["\<\
+We can alter the image so that we can perform the iterated wavelet transform \
+on it.\
+\>", "Text",
+ CellTags->"b:3.1.0"],
+
+Cell[BoxData[{
+ RowBox[{"<<", 
+  "DiscreteWavelets`DiscreteWavelets`"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"gray", "=", 
+   RowBox[{"ImageNames", "[", 
+    RowBox[{
+     RowBox[{"ImageType", "\[Rule]", "GrayScale"}], ",", 
+     RowBox[{"ListThumbnails", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"img", "=", 
+   RowBox[{"ImageRead", "[", 
+    RowBox[{
+     RowBox[{"gray", "[", 
+      RowBox[{"[", "6", "]"}], "]"}], ",", 
+     RowBox[{"PowersOfTwo", "\[Rule]", "6"}], ",", " ", 
+     RowBox[{"PrintInfo", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"gray", ",", "img"}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.402400424515625*^9, 3.4024004655*^9}, {
+  3.40240116434375*^9, 3.402401164546875*^9}},
+ CellTags->"b:3.1.0"],
+
+Cell["We can read a color image as well.", "Text",
+ CellTags->"b:3.1.0"],
+
+Cell[BoxData[{
+ RowBox[{"<<", 
+  "DiscreteWavelets`DiscreteWavelets`"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"color", "=", 
+   RowBox[{"ImageNames", "[", 
+    RowBox[{"ImageType", "\[Rule]", "Color"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"img", "=", 
+   RowBox[{"ImageRead", "[", 
+    RowBox[{
+     RowBox[{"color", "[", 
+      RowBox[{"[", "2", "]"}], "]"}], ",", 
+     RowBox[{"PrintInfo", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"color", ",", "img"}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.402400485140625*^9, 3.402400489796875*^9}, {
+  3.402401162703125*^9, 3.40240116284375*^9}},
+ CellTags->"b:3.1.0"],
+
+Cell["The input variable can be a valid URL.", "Text",
+ CellTags->"b:3.1.0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"<<", "DiscreteWavelets`DiscreteWavelets`"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"img", "=", 
+   RowBox[{"ImageRead", "[", 
+    RowBox[{
+    "\"\<http://cam.mathlab.stthomas.edu/wavelets/Cover.jpg\>\"", ",", " ", 
+     RowBox[{"PrintInfo", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ImagePlot", "[", "img", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"color", ",", "img"}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.402400497140625*^9, 3.40240050446875*^9}, {
+  3.402400658203125*^9, 3.4024006698125*^9}, {3.402400757296875*^9, 
+  3.402400783578125*^9}, {3.40240116040625*^9, 3.40240116059375*^9}},
+ CellTags->"b:3.1.0"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["CreateImageObject", "Subsection",
+ CellTags->"b:3.1.1"],
+
+Cell[TextData[{
+ StyleBox["C", "Program",
+  FontWeight->"Bold"],
+ StyleBox["reateImageObject", "Program",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[" is an auxiliary routine used by ",
+  FontFamily->"Times New Roman"],
+ StyleBox["ImagePlot", "Program",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[" and ",
+  FontFamily->"Times New Roman"],
+ StyleBox["WaveletDensityPlot", "Program",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[", but it can be used as a standalone module.    In fact ",
+  FontFamily->"Times New Roman"],
+ StyleBox["ImagePlot", "Program",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[" simply uses ",
+  FontFamily->"Times New Roman"],
+ StyleBox["Show", "Program",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[" with ",
+  FontFamily->"Times New Roman"],
+ StyleBox["CreateImageObject", "Program",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[" while ",
+  FontFamily->"Times New Roman"],
+ StyleBox["WaveletDensityPlot", "Program",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[" calls ",
+  FontFamily->"Times New Roman"],
+ StyleBox["ExtractRegion", "Program",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[" followed by ",
+  FontFamily->"Times New Roman"],
+ StyleBox["CreateImageObject", "Program",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[" and then uses ",
+  FontFamily->"Times New Roman"],
+ StyleBox["Show", "Program",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[" to display the result.  ",
+  FontFamily->"Times New Roman"],
+ StyleBox["CreateImageObject",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[" uses options from ",
+  FontFamily->"Times New Roman"],
+ StyleBox["Mathematica",
+  FontFamily->"Times New Roman",
+  FontSlant->"Italic"],
+ StyleBox[" functions ",
+  FontFamily->"Times New Roman"],
+ StyleBox["Graphics",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[" and ",
+  FontFamily->"Times New Roman"],
+ StyleBox["Raster",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[".  Both of these options sets are  subsets of the options for ",
+  FontFamily->"Times New Roman"],
+ StyleBox["ImagePlot",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[".  The options set for ",
+  FontFamily->"Times New Roman"],
+ StyleBox["ImagePlot",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[" includes some changes in  some of the typical default values for \
+",
+  FontFamily->"Times New Roman"],
+ StyleBox["Graphics",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[" options.   These changes are discussed in the next section.",
+  FontFamily->"Times New Roman"]
+}], "Text",
+ CellTags->"b:3.1.1"],
+
+Cell[CellGroupData[{
+
+Cell["Arguments: ", "Subsubsection",
+ CellTags->"b:3.1.1"],
+
+Cell["\<\
+A is a matrix or a list of three matrices (for color images).\
+\>", "Text",
+ CellTags->"b:3.1.1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example Call:", "Subsubsection",
+ CellTags->"b:3.1.1"],
+
+Cell[TextData[{
+ StyleBox["CreateImageObject",
+  FontWeight->"Bold"],
+ " might be useful for creating and displaying your own images.Here's an easy \
+way to generate all the shades of red,green,and blue."
+}], "Text",
+ CellTags->"b:3.1.1"],
+
+Cell[BoxData[{
+ RowBox[{"<<", "DiscreteWavelets`DiscreteWavelets`"}], "\n", 
+ RowBox[{
+  RowBox[{"a", "=", 
+   RowBox[{"Partition", "[", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{"k", ",", 
+       RowBox[{"{", 
+        RowBox[{"k", ",", "255", ",", "0", ",", 
+         RowBox[{"-", "1"}]}], "}"}]}], "]"}], ",", "16"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b", "=", 
+   RowBox[{"ConstantArray", "[", 
+    RowBox[{"0", ",", 
+     RowBox[{"{", 
+      RowBox[{"16", ",", "16"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Show", "[", 
+  RowBox[{
+   RowBox[{"CreateImageObject", "[", 
+    RowBox[{"{", 
+     RowBox[{"a", ",", "b", ",", "b"}], "}"}], "]"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"200", ",", "200"}], "}"}]}]}], "]"}], "\n", 
+ RowBox[{"Show", "[", 
+  RowBox[{
+   RowBox[{"CreateImageObject", "[", 
+    RowBox[{"{", 
+     RowBox[{"b", ",", "a", ",", "b"}], "}"}], "]"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"200", ",", "200"}], "}"}]}]}], "]"}], "\n", 
+ RowBox[{"Show", "[", 
+  RowBox[{
+   RowBox[{"CreateImageObject", "[", 
+    RowBox[{"{", 
+     RowBox[{"b", ",", "b", ",", "a"}], "}"}], "]"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"200", ",", "200"}], "}"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.4024007975625*^9, 3.40240080665625*^9}, {
+  3.4024008659375*^9, 3.402400882875*^9}, {3.402401158140625*^9, 
+  3.402401158484375*^9}},
+ CellTags->"b:3.1.1"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["ImagePlot", "Subsection",
+ CellTags->"b:3.1.2"],
+
+Cell[TextData[{
+ StyleBox["ImagePlot",
+  FontWeight->"Bold"],
+ " is a routine that can be used to plot either grayscale or color images.    \
+",
+ StyleBox["ImagePlot",
+  FontWeight->"Bold"],
+ " takes the input and creates either a ",
+ StyleBox["Raster",
+  FontWeight->"Bold"],
+ " (grayscale) or a ",
+ StyleBox["RasterArray",
+  FontWeight->"Bold"],
+ " (color) graphics primitive.  This primitive is passed to ",
+ StyleBox["Show",
+  FontWeight->"Bold"],
+ " and then displayed."
+}], "Text",
+ CellTags->"b:3.1.2"],
+
+Cell[CellGroupData[{
+
+Cell["Arguments: ", "Subsubsection",
+ CellTags->"b:3.1.2"],
+
+Cell["\<\
+A is either a matrix (for grayscale images) or a list of three matrices \
+(presumably red, green, and blue color channels for a color image).\
+\>", "Text",
+ CellTags->"b:3.1.2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Directives:", "Subsubsection",
+ CellTags->"b:3.1.2"],
+
+Cell[TextData[{
+ StyleBox["The directives set for ",
+  FontFamily->"Times New Roman"],
+ StyleBox["ImagePlot", "Program",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[" is a superset of the options for ",
+  FontFamily->"Times New Roman"],
+ StyleBox["Raster", "Program",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[" and the options for ",
+  FontFamily->"Times New Roman"],
+ StyleBox["Graphics", "Program",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[".  There are some discrepancies in the default values that will be \
+discussed as well as some additional options.\n\nThe directive ",
+  FontFamily->"Times New Roman"],
+ StyleBox["AspectRatio",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[" used with ",
+  FontFamily->"Times New Roman"],
+ StyleBox["Graphics",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[" is set to ",
+  FontFamily->"Times New Roman"],
+ StyleBox["1/GoldenRatio",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[" by default. ",
+  FontFamily->"Times New Roman"],
+ StyleBox[" ImagePlot",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[" resets this default to ",
+  FontFamily->"Times New Roman"],
+ StyleBox["Automatic",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[".\n\nThe directive ",
+  FontFamily->"Times New Roman"],
+ StyleBox["ImageSize",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[" used with ",
+  FontFamily->"Times New Roman"],
+ StyleBox["Graphics",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[" is set to ",
+  FontFamily->"Times New Roman"],
+ StyleBox["Automatic",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[" by default.  ",
+  FontFamily->"Times New Roman"],
+ StyleBox["ImagePlot",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[" resets  this directive to ",
+  FontFamily->"Times New Roman"],
+ StyleBox["FixEdges",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[" by default.    ",
+  FontFamily->"Times New Roman"],
+ StyleBox["FixEdges",
+  FontWeight->"Bold"],
+ " is a directive that employs a fix due to Radka Turcajov\[AAcute] that \
+makes better borders around the image.  If you wish not to employ ",
+ StyleBox["FixEdges",
+  FontWeight->"Bold"],
+ ", simply set the ",
+ StyleBox["ImageSize",
+  FontWeight->"Bold"],
+ " option to ",
+ StyleBox["Automatic",
+  FontWeight->"Bold"],
+ " or a valu(s) for inches or printer points.  See the help on ",
+ StyleBox["ImageSize",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellTags->"b:3.1.2"],
+
+Cell[TextData[{
+ StyleBox["LinearScaling",
+  FontWeight->"Bold"],
+ " (default value is ",
+ StyleBox["False",
+  FontWeight->"Bold"],
+ ") is an option that allows you to scale the input data.  If the option is \
+set to ",
+ StyleBox["True",
+  FontWeight->"Bold"],
+ ", the minimum value of the input (or each channel for color) is mapped to 0 \
+and the maximum value is mapped to 255 and all other values are mapped \
+linearly and then rounded to the nearest integer.  Certainly, other more \
+sophisticated scaling functions can be used as values of the ",
+ StyleBox["ColorFunction",
+  FontWeight->"Bold"],
+ " option.  The directive can also be set to",
+ StyleBox[" LeftWT",
+  FontWeight->"Bold"],
+ " or ",
+ StyleBox["RightWT",
+  FontWeight->"Bold"],
+ " to appropriately scale output from the functions",
+ StyleBox[" LeftHWT",
+  FontWeight->"Bold"],
+ ", ",
+ StyleBox["LeftWT",
+  FontWeight->"Bold"],
+ ", ",
+ StyleBox["RightHWT",
+  FontWeight->"Bold"],
+ ", and ",
+ StyleBox["RightWT",
+  FontWeight->"Bold"],
+ ", respectively.\n\n",
+ StyleBox["ChannelColor",
+  FontWeight->"Bold"],
+ " is another useful option for ",
+ StyleBox["ImagePlot",
+  FontWeight->"Bold"],
+ ".  It is only used with grayscale images.  ",
+ StyleBox["ChannelColor",
+  FontWeight->"Bold"],
+ " has default value ",
+ StyleBox["None",
+  FontWeight->"Bold"],
+ " which means the image will be plotted in grayscale.  You can set ",
+ StyleBox["ChannelColor",
+  FontWeight->"Bold"],
+ " to any ",
+ StyleBox["RGBColor",
+  FontWeight->"Bold"],
+ " value you wish or use a value from the ",
+ StyleBox["AllColors",
+  FontWeight->"Bold"],
+ " list in ",
+ StyleBox["Graphics`Colors`",
+  FontWeight->"Bold"],
+ ".  The option is provided to facilitate the ease of plotting individual \
+channels of color images.\n"
+}], "Text",
+ CellTags->"b:3.1.2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example Calls:", "Subsubsection",
+ CellTags->"b:3.1.2"],
+
+Cell[BoxData[{
+ RowBox[{"<<", 
+  "DiscreteWavelets`DiscreteWavelets`"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"gray", "=", 
+   RowBox[{"ImageNames", "[", 
+    RowBox[{"ImageType", "\[Rule]", "GrayScale"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"img", "=", 
+   RowBox[{"ImageRead", "[", 
+    RowBox[{
+     RowBox[{"gray", "[", 
+      RowBox[{"[", "6", "]"}], "]"}], ",", 
+     RowBox[{"PrintInfo", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ImagePlot", "[", 
+  RowBox[{"N", "[", "img", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.4024008964375*^9, 3.402400899375*^9}, {
+  3.402401154859375*^9, 3.402401155015625*^9}, {3.402422409921875*^9, 
+  3.402422416109375*^9}},
+ CellTags->"b:3.1.2"],
+
+Cell["\<\
+We can plot color images as well.  Wrapping the image name in N[ ] often \
+speeds up the plotting process.\
+\>", "Text",
+ CellChangeTimes->{{3.402400949171875*^9, 3.40240096340625*^9}},
+ CellTags->"b:3.1.2"],
+
+Cell[BoxData[{
+ RowBox[{"<<", 
+  "DiscreteWavelets`DiscreteWavelets`"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"color", "=", 
+   RowBox[{"ImageNames", "[", 
+    RowBox[{"ImageType", "\[Rule]", "Color"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"img", "=", 
+   RowBox[{"ImageRead", "[", 
+    RowBox[{
+     RowBox[{"color", "[", 
+      RowBox[{"[", "6", "]"}], "]"}], ",", " ", 
+     RowBox[{"PrintInfo", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ImagePlot", "[", 
+  RowBox[{"N", "[", "img", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.402400911125*^9, {3.402400966625*^9, 3.402400968734375*^9}, {
+   3.40240115253125*^9, 3.40240115275*^9}, 3.4024224305625*^9},
+ CellTags->"b:3.1.2"],
+
+Cell["We can also plot the various channels of a color image!", "Text",
+ CellChangeTimes->{{3.402400975640625*^9, 3.402400976203125*^9}},
+ CellTags->"b:3.1.2"],
+
+Cell[BoxData[{
+ RowBox[{"<<", 
+  "DiscreteWavelets`DiscreteWavelets`"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"color", "=", 
+   RowBox[{"ImageNames", "[", 
+    RowBox[{
+     RowBox[{"ImageType", "\[Rule]", "Color"}], ",", 
+     RowBox[{"ListThumbnails", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"r", ",", "g", ",", "b"}], "}"}], "=", 
+   RowBox[{"ImageRead", "[", 
+    RowBox[{
+     RowBox[{"color", "[", 
+      RowBox[{"[", "6", "]"}], "]"}], ",", " ", 
+     RowBox[{"PrintInfo", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p1", "=", 
+   RowBox[{"ImagePlot", "[", 
+    RowBox[{"r", ",", 
+     RowBox[{"ChannelColor", "\[Rule]", "Red"}], ",", 
+     RowBox[{"PlotLabel", "->", "\"\<Red Channel\>\""}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p2", "=", 
+   RowBox[{"ImagePlot", "[", 
+    RowBox[{"g", ",", 
+     RowBox[{"ChannelColor", "\[Rule]", "Green"}], ",", 
+     RowBox[{"PlotLabel", "->", "\"\<Green Channel\>\""}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p3", "=", 
+   RowBox[{"ImagePlot", "[", 
+    RowBox[{"b", ",", 
+     RowBox[{"ChannelColor", "\[Rule]", "Blue"}], ",", 
+     RowBox[{"PlotLabel", "->", "\"\<Blue Channel\>\""}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"GraphicsGrid", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"p1", ",", "p2", ",", "p3"}], "}"}], "}"}], ",", 
+   RowBox[{"Frame", "\[Rule]", "All"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.4024009805*^9, 3.40240098803125*^9}, {
+   3.402401055859375*^9, 3.402401077359375*^9}, {3.4024011508125*^9, 
+   3.4024011510625*^9}, 3.402422441*^9},
+ CellTags->"b:3.1.2"],
+
+Cell["Here is an example of how to use LinearScaling.", "Text",
+ CellTags->"b:3.1.2"],
+
+Cell[BoxData[{
+ RowBox[{"<<", 
+  "DiscreteWavelets`DiscreteWavelets`"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"gray", "=", 
+   RowBox[{"ImageNames", "[", 
+    RowBox[{
+     RowBox[{"ImageType", "\[Rule]", "GrayScale"}], ",", 
+     RowBox[{"ListThumbnails", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A", "=", 
+   RowBox[{"ImageRead", "[", 
+    RowBox[{
+     RowBox[{"gray", "[", 
+      RowBox[{"[", "8", "]"}], "]"}], ",", 
+     RowBox[{"PrintInfo", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"wt", "=", 
+   RowBox[{"LeftHWT", "[", 
+    RowBox[{"N", "[", "A", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p1", "=", 
+   RowBox[{"ImagePlot", "[", 
+    RowBox[{"wt", ",", 
+     RowBox[{"PlotLabel", "->", "\"\<No Linear Scaling\>\""}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p2", "=", 
+   RowBox[{"ImagePlot", "[", 
+    RowBox[{"wt", ",", 
+     RowBox[{"LinearScaling", "\[Rule]", "LeftWT"}], ",", 
+     RowBox[{"PlotLabel", "->", "\"\<Linear Scaling\>\""}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"GraphicsGrid", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"p1", ",", "p2"}], "}"}], "}"}], ",", 
+   RowBox[{"Frame", "\[Rule]", "All"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.4024009973125*^9, 3.402401046875*^9}, {
+   3.40240114884375*^9, 3.402401149109375*^9}, 3.402422448953125*^9},
+ CellTags->"b:3.1.2"],
+
+Cell["Here is another example of how to use LinearScaling.", "Text",
+ CellTags->"b:3.1.2"],
+
+Cell[BoxData[{
+ RowBox[{"<<", 
+  "DiscreteWavelets`DiscreteWavelets`"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"gray", "=", 
+   RowBox[{"ImageNames", "[", 
+    RowBox[{
+     RowBox[{"ImageType", "\[Rule]", "GrayScale"}], ",", 
+     RowBox[{"ListThumbnails", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A", "=", 
+   RowBox[{"ImageRead", "[", 
+    RowBox[{
+     RowBox[{"gray", "[", 
+      RowBox[{"[", "16", "]"}], "]"}], ",", 
+     RowBox[{"PrintInfo", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A", "=", 
+   RowBox[{"Round", "[", 
+    RowBox[{"A", "/", "2"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p1", "=", 
+   RowBox[{"ImagePlot", "[", 
+    RowBox[{"A", ",", 
+     RowBox[{"PlotLabel", "\[Rule]", "\"\<A/2\>\""}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p2", "=", 
+   RowBox[{"ImagePlot", "[", 
+    RowBox[{"A", ",", 
+     RowBox[{"LinearScaling", "\[Rule]", "True"}], ",", 
+     RowBox[{"PlotLabel", "\[Rule]", "\"\<A/2 scaled\>\""}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"GraphicsGrid", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"p1", ",", "p2"}], "}"}], "}"}], ",", 
+   RowBox[{"Frame", "\[Rule]", "All"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.4024010111875*^9, 3.402401014609375*^9}, {
+   3.40240108703125*^9, 3.402401147390625*^9}, 3.402422456640625*^9},
+ CellTags->"b:3.1.2"]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Viewing Wavelet Transforms", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["ExtractVectorPart", "Subsection",
+ CellTags->"b:3.2.0"],
+
+Cell[TextData[{
+ "While ",
+ StyleBox["ExtractVectorPartis",
+  FontWeight->"Bold"],
+ " intended to be used by ",
+ StyleBox["WaveletVectorPlot",
+  FontWeight->"Bold"],
+ ", it may be that users want the ability to extract a portion of a wavelet \
+transform to display it or process it in some other fashion. "
+}], "Text",
+ CellTags->"b:3.2.0"],
+
+Cell[CellGroupData[{
+
+Cell["Arguments:", "Subsubsection",
+ CellTags->"b:3.2.0"],
+
+Cell["v is a vector", "Text",
+ CellTags->"b:3.2.0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Directives:", "Subsubsection",
+ CellTags->"b:3.2.0"],
+
+Cell[TextData[{
+ "There are three directives for this function. \n\nThe ",
+ StyleBox["Region",
+  FontWeight->"Bold"],
+ " directive can be set to either ",
+ StyleBox["All",
+  FontWeight->"Bold"],
+ " (default), ",
+ StyleBox["LowPass",
+  FontWeight->"Bold"],
+ ", or ",
+ StyleBox["HighPass",
+  FontWeight->"Bold"],
+ ".  This directive can be used to choose the particular region from an \
+iteration(s) to select.\n\nThe ",
+ StyleBox["Iteration",
+  FontWeight->"Bold"],
+ " directive can be set to either a particular iteration or ",
+ StyleBox["All",
+  FontWeight->"Bold"],
+ " (default value).  In the latter case, the entire vector is selected.\n\n\
+The ",
+ StyleBox["NumIterations",
+  FontWeight->"Bold"],
+ " indicates the number of iterations performed by the wavelet transform.  \
+The default value is ",
+ StyleBox["1",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellTags->"b:3.2.0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example Call:", "Subsubsection",
+ CellTags->"b:3.2.0"],
+
+Cell["We will import a digital audio file for this example.", "Text",
+ CellTags->"b:3.2.0"],
+
+Cell[BoxData[{
+ RowBox[{"<<", "DiscreteWavelets`DiscreteWavelets`"}], "\n", 
+ RowBox[{
+  RowBox[{"<<", "Audio`"}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{"afiles", " ", "=", " ", 
+  RowBox[{"AudioNames", "[", "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"v", "=", 
+   RowBox[{"ReadSoundFile", "[", 
+    RowBox[{
+     RowBox[{"afiles", "[", 
+      RowBox[{"[", "3", "]"}], "]"}], ",", 
+     RowBox[{"PrintHeader", "\[Rule]", "True"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"w", "=", 
+   RowBox[{"ChopVector", "[", 
+    RowBox[{"v", ",", 
+     RowBox[{"PowersOfTwo", "\[Rule]", "3"}]}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.4024011861875*^9, 3.402401188421875*^9}, {
+  3.402403632625*^9, 3.402403632734375*^9}},
+ CellTags->"b:3.2.0"],
+
+Cell["\<\
+Now compute three iterations of the wavelet transform ofvand plot the \
+resulting vector.\
+\>", "Text",
+ CellTags->"b:3.2.0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"h", "=", 
+   RowBox[{"N", "[", 
+    RowBox[{"Daub", "[", "4", "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"wt", "=", 
+   RowBox[{"WT1D", "[", 
+    RowBox[{"w", ",", "h", ",", 
+     RowBox[{"NumIterations", "\[Rule]", "3"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{"ListPlot", "[", "wt", "]"}]}], "Input",
+ CellChangeTimes->{
+  3.40240119934375*^9, {3.4024036308125*^9, 3.40240363090625*^9}},
+ CellTags->"b:3.2.0"],
+
+Cell[TextData[{
+ "You can see the lowpass portion (the first eighth of the output) and the \
+three lowpass portions in the plot above. We can use ",
+ StyleBox["ExtractVectorPart",
+  FontWeight->"Bold"],
+ " to extract the lowpass portion of wt.The value of ",
+ StyleBox["Iteration",
+  FontWeight->"Bold"],
+ " is irrelevant in this case."
+}], "Text",
+ CellTags->"b:3.2.0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"lp", "=", 
+   RowBox[{"ExtractVectorPart", "[", 
+    RowBox[{"wt", ",", 
+     RowBox[{"NumIterations", "\[Rule]", "3"}], ",", 
+     RowBox[{"Region", "\[Rule]", "LowPass"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{"ListPlot", "[", "lp", "]"}]}], "Input",
+ CellChangeTimes->{
+  3.402401205953125*^9, {3.4024036290625*^9, 3.40240362915625*^9}},
+ CellTags->"b:3.2.0"],
+
+Cell["\<\
+We can also extract the highpass portion of the last iteration:\
+\>", "Text",
+ CellTags->"b:3.2.0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"hp", "=", 
+   RowBox[{"ExtractVectorPart", "[", 
+    RowBox[{"wt", ",", 
+     RowBox[{"NumIterations", "\[Rule]", "3"}], ",", 
+     RowBox[{"Iteration", "\[Rule]", "3"}], ",", 
+     RowBox[{"Region", "\[Rule]", "HighPass"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Length", "[", "hp", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", "hp", "]"}]}], "Input",
+ CellChangeTimes->{
+  3.402401211484375*^9, {3.40240362790625*^9, 3.402403628015625*^9}},
+ CellTags->"b:3.2.0"],
+
+Cell["We can also extract the last two iterations.", "Text",
+ CellTags->"b:3.2.0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"t", "=", 
+   RowBox[{"ExtractVectorPart", "[", 
+    RowBox[{"wt", ",", 
+     RowBox[{"NumIterations", "\[Rule]", "3"}], ",", 
+     RowBox[{"Iteration", "\[Rule]", "2"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Length", "[", "t", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", "t", "]"}]}], "Input",
+ CellChangeTimes->{
+  3.4024012153125*^9, {3.402403625859375*^9, 3.402403626015625*^9}},
+ CellTags->"b:3.2.0"],
+
+Cell[TextData[{
+ "Note that the setting ",
+ StyleBox["Iteration",
+  FontWeight->"Bold"],
+ " to ",
+ StyleBox["1",
+  FontWeight->"Bold"],
+ " with ",
+ StyleBox["Region",
+  FontWeight->"Bold"],
+ " set to ",
+ StyleBox["All",
+  FontWeight->"Bold"],
+ " is identical to omitting the options."
+}], "Text",
+ CellTags->"b:3.2.0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"t", "=", 
+   RowBox[{"ExtractVectorPart", "[", 
+    RowBox[{"wt", ",", 
+     RowBox[{"NumIterations", "\[Rule]", "3"}], ",", 
+     RowBox[{"Iteration", "\[Rule]", "1"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ListPlot", "[", "t", "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"u", "=", 
+   RowBox[{"ExtractVectorPart", "[", 
+    RowBox[{"wt", ",", 
+     RowBox[{"NumIterations", "\[Rule]", "3"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", "u", "]"}]}], "Input",
+ CellChangeTimes->{{3.40240122046875*^9, 3.402401239484375*^9}, {
+  3.402403623890625*^9, 3.402403624046875*^9}},
+ CellTags->"b:3.2.0"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["WaveletVectorPlot", "Subsection",
+ CellTags->"b:3.2.1"],
+
+Cell[TextData[{
+ StyleBox["WaveletVectorPlot ",
+  FontWeight->"Bold"],
+ "is designed specifically to plot the output of wavelet transforms."
+}], "Text",
+ CellTags->"b:3.2.1"],
+
+Cell[CellGroupData[{
+
+Cell["Arguments:", "Subsubsection",
+ CellTags->"b:3.2.1"],
+
+Cell["v is a vector", "Text",
+ CellTags->"b:3.2.1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Directives:", "Subsubsection",
+ CellTags->"b:3.2.1"],
+
+Cell[TextData[{
+ "The set of directives for ",
+ StyleBox["WaveletVectorPlot",
+  FontWeight->"Bold"],
+ " is built from the set of directives for the general ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " ",
+ StyleBox["Graphics",
+  FontWeight->"Bold"],
+ " command along with 9 other directives that complete the set.\n\n",
+ StyleBox["DivideLines",
+  FontWeight->"Bold"],
+ " is a directive that when set to ",
+ StyleBox["True",
+  FontWeight->"Bold"],
+ " (default value) draws vertical lines between different portions of the \
+wavelet transform vector.  Setting the directive to ",
+ StyleBox["False",
+  FontWeight->"Bold"],
+ " forces the routine to not draw the lines.\n\n",
+ StyleBox["DivideLinesColor",
+  FontWeight->"Bold"],
+ " is a directive that allows you to set the color of the ",
+ StyleBox["DivideLines",
+  FontWeight->"Bold"],
+ ".  The default color is ",
+ StyleBox["Red",
+  FontWeight->"Bold"],
+ ".  You can choose any color in ",
+ StyleBox["ColorList",
+  FontWeight->"Bold"],
+ " or use the ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " functions ",
+ StyleBox["Hue",
+  FontWeight->"Bold"],
+ ", ",
+ StyleBox["GrayLevel",
+  FontWeight->"Bold"],
+ ", or ",
+ StyleBox["RGBColor",
+  FontWeight->"Bold"],
+ " to set the ",
+ StyleBox["DivideLinesColor",
+  FontWeight->"Bold"],
+ " directive.\n\nThe directive ",
+ StyleBox["DivideLinesThickness",
+  FontWeight->"Bold"],
+ " allows you to set the thickness of the dividelines.  The default thickness \
+is ",
+ StyleBox["0.004",
+  FontWeight->"Bold"],
+ ".\n\n",
+ StyleBox["PointSize",
+  FontWeight->"Bold"],
+ " allows you to set the size of the points plotted by ",
+ StyleBox["WaveletVectorPlot",
+  FontWeight->"Bold"],
+ ".  The default value is ",
+ StyleBox["0.004",
+  FontWeight->"Bold"],
+ ".\n\nThe function also allows for coloring different portions of the \
+transform.  The directive ",
+ StyleBox["UseColors",
+  FontWeight->"Bold"],
+ " can be set to ",
+ StyleBox["True",
+  FontWeight->"Bold"],
+ " (default value is ",
+ StyleBox["False",
+  FontWeight->"Bold"],
+ ") to do this.  \n\nThe ",
+ StyleBox["ColorList",
+  FontWeight->"Bold"],
+ " directive can be used in conjunction with ",
+ StyleBox["UseColors",
+  FontWeight->"Bold"],
+ " to provide a list of colors to use when coloring different portions of the \
+transform.  A default ",
+ StyleBox["ColorList",
+  FontWeight->"Bold"],
+ " is provided.  This list can be custom created using the ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " functions ",
+ StyleBox["Hue",
+  FontWeight->"Bold"],
+ ", ",
+ StyleBox["GrayLevel",
+  FontWeight->"Bold"],
+ ", or ",
+ StyleBox["RGBColor",
+  FontWeight->"Bold"],
+ ".  For example, if ",
+ StyleBox["UseColors",
+  FontWeight->"Bold"],
+ " is set to ",
+ StyleBox["True",
+  FontWeight->"Bold"],
+ ", then you could use ",
+ StyleBox["ColorList->{Red, Green, Blue}",
+  FontWeight->"Bold"],
+ " to color two iterations of the wavelet transform.",
+ "\n\nThe ",
+ StyleBox["Region",
+  FontWeight->"Bold"],
+ " directive can be set to either ",
+ StyleBox["All",
+  FontWeight->"Bold"],
+ " (default), ",
+ StyleBox["LowPass",
+  FontWeight->"Bold"],
+ ", or ",
+ StyleBox["HighPass",
+  FontWeight->"Bold"],
+ ".  This directive can be used to choose the particular region from an \
+iteration(s) to select.\n\nThe ",
+ StyleBox["Iteration",
+  FontWeight->"Bold"],
+ " directive can be set to either a particular iteration or ",
+ StyleBox["All",
+  FontWeight->"Bold"],
+ " (default value).  In the latter case, the entire vector is selected.\n\n\
+The ",
+ StyleBox["NumIterations",
+  FontWeight->"Bold"],
+ " indicates the number of iterations performed by the wavelet transform.  \
+The default value is ",
+ StyleBox["1",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellTags->"b:3.2.1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example Call:", "Subsubsection",
+ CellTags->"b:3.2.1"],
+
+Cell[TextData[{
+ "Here is the default ",
+ StyleBox["ColorList",
+  FontWeight->"Bold"],
+ ":"
+}], "Text",
+ CellTags->"b:3.2.1"],
+
+Cell[BoxData[{
+ RowBox[{"<<", 
+  "DiscreteWavelets`DiscreteWavelets`"}], "\[IndentingNewLine]", 
+ RowBox[{"Options", "[", 
+  RowBox[{"WaveletVectorPlot", ",", "ColorList"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.40240361990625*^9, 3.402403620078125*^9}},
+ CellTags->"b:3.2.1"],
+
+Cell["\<\
+To see how WaveletVectorPlot works, we will import an audio file.\
+\>", "Text",
+ CellTags->"b:3.2.1"],
+
+Cell[BoxData[{
+ RowBox[{"<<", "DiscreteWavelets`DiscreteWavelets`"}], "\n", 
+ RowBox[{
+  RowBox[{"<<", "Audio`"}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{"afiles", " ", "=", " ", 
+  RowBox[{"AudioNames", "[", "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"v", "=", 
+   RowBox[{"ReadSoundFile", "[", 
+    RowBox[{
+     RowBox[{"afiles", "[", 
+      RowBox[{"[", "2", "]"}], "]"}], ",", 
+     RowBox[{"PrintHeader", "\[Rule]", "True"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"v", "=", 
+   RowBox[{"ChopVector", "[", 
+    RowBox[{"v", ",", 
+     RowBox[{"PowersOfTwo", "\[Rule]", "3"}]}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.402401268953125*^9, 3.402401271140625*^9}, {
+  3.402403617578125*^9, 3.40240361771875*^9}},
+ CellTags->"b:3.2.1"],
+
+Cell["Now compute three iterations of the wavelet transform of v.", "Text",
+ CellTags->"b:3.2.1"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"<<", "DiscreteWavelets`DiscreteWavelets`"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"h", "=", 
+   RowBox[{"N", "[", 
+    RowBox[{"Daub", "[", "4", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"wt", "=", 
+   RowBox[{"WT1D", "[", 
+    RowBox[{"v", ",", "h", ",", 
+     RowBox[{"NumIterations", "\[Rule]", "3"}]}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.402402901703125*^9, 3.402402910578125*^9}, {
+  3.40240361540625*^9, 3.402403615546875*^9}},
+ CellTags->"b:3.2.1"],
+
+Cell[TextData[{
+ "We can use ",
+ StyleBox["WaveletVectorPlot",
+  FontWeight->"Bold"],
+ " to plot the lowpass portion of the transformed vector."
+}], "Text",
+ CellTags->"b:3.2.1"],
+
+Cell[BoxData[
+ RowBox[{"WaveletVectorPlot", "[", 
+  RowBox[{"wt", ",", 
+   RowBox[{"NumIterations", "\[Rule]", "3"}], ",", 
+   RowBox[{"Region", "\[Rule]", "LowPass"}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.4024012790625*^9, {3.402403614296875*^9, 3.402403614453125*^9}},
+ CellTags->"b:3.2.1"],
+
+Cell["\<\
+We can also useGraphicsoptions to add axes,a frame,and a label.\
+\>", "Text",
+ CellTags->"b:3.2.1"],
+
+Cell[BoxData[
+ RowBox[{"WaveletVectorPlot", "[", 
+  RowBox[{"wt", ",", 
+   RowBox[{"NumIterations", "\[Rule]", "3"}], ",", 
+   RowBox[{"Region", "\[Rule]", "LowPass"}], ",", 
+   RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+   RowBox[{"Axes", "\[Rule]", "True"}], ",", 
+   RowBox[{"PlotLabel", "->", "\"\<LowPass Portion\>\""}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.40240128715625*^9, {3.402403612890625*^9, 3.402403613109375*^9}},
+ CellTags->"b:3.2.1"],
+
+Cell[TextData[{
+ "We could pick a different color as well.  Other colors can be found using \
+",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " help on Colors."
+}], "Text",
+ CellChangeTimes->{{3.4024027630625*^9, 3.402402779859375*^9}},
+ CellTags->"b:3.2.1"],
+
+Cell[BoxData[
+ RowBox[{"WaveletVectorPlot", "[", 
+  RowBox[{"wt", ",", 
+   RowBox[{"NumIterations", "\[Rule]", "3"}], ",", 
+   RowBox[{"Region", "\[Rule]", "LowPass"}], ",", 
+   RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+   RowBox[{"Axes", "\[Rule]", "True"}], ",", 
+   RowBox[{"PlotLabel", "->", "\"\<LowPass Portion\>\""}], ",", 
+   RowBox[{"UseColors", "\[Rule]", "True"}], ",", 
+   RowBox[{"ColorList", "\[Rule]", 
+    RowBox[{"{", "Magenta", "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.402401293328125*^9, {3.402401678234375*^9, 3.40240168859375*^9}, {
+   3.40240173578125*^9, 3.402401756421875*^9}, {3.402402249578125*^9, 
+   3.40240227621875*^9}, {3.402402436265625*^9, 3.402402460328125*^9}, {
+   3.40240249315625*^9, 3.40240262496875*^9}, {3.402402755875*^9, 
+   3.4024027606875*^9}, {3.40240360934375*^9, 3.402403609578125*^9}},
+ CellTags->"b:3.2.1"],
+
+Cell["We can also plot several portions of the transformed data.", "Text",
+ CellTags->"b:3.2.1"],
+
+Cell[BoxData[
+ RowBox[{"WaveletVectorPlot", "[", 
+  RowBox[{"wt", ",", 
+   RowBox[{"NumIterations", "\[Rule]", "3"}], ",", 
+   RowBox[{"Iteration", "\[Rule]", "2"}], ",", 
+   RowBox[{"UseColors", "\[Rule]", "True"}], ",", 
+   RowBox[{"ColorList", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Red", ",", "Green", ",", "Blue"}], "}"}]}], ",", 
+   RowBox[{"Axes", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.402402828046875*^9, {3.40240360709375*^9, 3.402403607234375*^9}},
+ CellTags->"b:3.2.1"],
+
+Cell[TextData[{
+ "The options for dividing lines are ",
+ StyleBox["DivideLines",
+  FontWeight->"Bold"],
+ " (default is ",
+ StyleBox["False",
+  FontWeight->"Bold"],
+ "), ",
+ StyleBox["DivideLinesColor",
+  FontWeight->"Bold"],
+ " (default is ",
+ StyleBox["Red",
+  FontWeight->"Bold"],
+ "), and ",
+ StyleBox["DivideLinesThickness",
+  FontWeight->"Bold"],
+ " (default is ",
+ StyleBox["0.004",
+  FontWeight->"Bold"],
+ ").\n\nWe can use the default ",
+ StyleBox["ColorList",
+  FontWeight->"Bold"],
+ " and add ",
+ StyleBox["DivideLines",
+  FontWeight->"Bold"],
+ " if we desire.  It's best to set the ",
+ StyleBox["PlotRange",
+  FontWeight->"Bold"],
+ " option to ",
+ StyleBox["All",
+  FontWeight->"Bold"],
+ " in this case."
+}], "Text",
+ CellTags->"b:3.2.1"],
+
+Cell[BoxData[
+ RowBox[{"WaveletVectorPlot", "[", 
+  RowBox[{"wt", ",", 
+   RowBox[{"NumIterations", "\[Rule]", "3"}], ",", 
+   RowBox[{"Iteration", "\[Rule]", "2"}], ",", 
+   RowBox[{"UseColors", "\[Rule]", "True"}], ",", 
+   RowBox[{"Axes", "\[Rule]", "True"}], ",", 
+   RowBox[{"DivideLines", "\[Rule]", "True"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.40240284678125*^9, {3.402403015484375*^9, 3.402403022546875*^9}, {
+   3.4024031224375*^9, 3.4024031304375*^9}, {3.40240360453125*^9, 
+   3.402403604640625*^9}},
+ CellTags->"b:3.2.1"],
+
+Cell["\<\
+We can pick whatever color we want for the dividing lines, change the \
+thickness as well, and increase the point size:\
+\>", "Text",
+ FontWeight->"Plain",
+ CellTags->"b:3.2.1"],
+
+Cell[BoxData[
+ RowBox[{"WaveletVectorPlot", "[", 
+  RowBox[{"wt", ",", 
+   RowBox[{"NumIterations", "\[Rule]", "3"}], ",", 
+   RowBox[{"Iteration", "\[Rule]", "2"}], ",", 
+   RowBox[{"UseColors", "\[Rule]", "True"}], ",", 
+   RowBox[{"Axes", "\[Rule]", "True"}], ",", 
+   RowBox[{"DivideLines", "\[Rule]", "True"}], ",", 
+   RowBox[{"DivideLinesColor", "\[Rule]", "Green"}], ",", " ", 
+   RowBox[{"DivideLinesThickness", "\[Rule]", ".01"}], ",", 
+   RowBox[{"PointSize", "\[Rule]", ".015"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.40240285675*^9, 3.40240287128125*^9}, {
+  3.402402974703125*^9, 3.40240300384375*^9}, {3.4024036029375*^9, 
+  3.402403603171875*^9}},
+ CellTags->"b:3.2.1"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["ExtractRegion", "Subsection",
+ CellTags->"b:3.2.2"],
+
+Cell[TextData[{
+ StyleBox["ExtractRegion",
+  FontWeight->"Bold"],
+ " is primarily used by ",
+ StyleBox["WaveletDensityPlot",
+  FontWeight->"Bold"],
+ ", but it can be used on its own as well.  ",
+ StyleBox["ExtractRegion",
+  FontWeight->"Bold"],
+ " expects a wavelet transform as input.  Through various options the user \
+can select a particular portion of the wavelet transform.\n\n",
+ StyleBox["ExtractRegion", "Program",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold",
+  FontVariations->{"CompatibilityType"->0}],
+ " returns a list of three elements.  The first element is a matrix (for \
+grayscale images) or a list of three matrices (for color images), the second \
+element is a list of the form \n",
+ StyleBox["{",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["r", "1"], TraditionalForm]],
+  FontSlant->"Italic"],
+ StyleBox[", ",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["r", "2"], TraditionalForm]],
+  FontSlant->"Italic"],
+ StyleBox["}",
+  FontSlant->"Italic"],
+ ", while the third element is a list of the form ",
+ StyleBox["{",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["c", "1"], TraditionalForm]],
+  FontSlant->"Italic"],
+ StyleBox[", ",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["c", "2"], TraditionalForm]],
+  FontSlant->"Italic"],
+ StyleBox["}",
+  FontSlant->"Italic"],
+ ".  ",
+ StyleBox["ExtractRegion", "Program",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ " determines ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["r", "1"], TraditionalForm]],
+  FontSlant->"Italic"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["r", "2"], TraditionalForm]],
+  FontSlant->"Italic"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["c", "1"], TraditionalForm]],
+  FontSlant->"Italic"],
+ ", and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["c", "2"], TraditionalForm]],
+  FontSlant->"Italic"],
+ " from the given options values and then computes the first element of the \
+output using ",
+ StyleBox["Take", "Program",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox["[", "Program"],
+ StyleBox["a", "Program",
+  FontSlant->"Italic"],
+ StyleBox[",", "Program"],
+ StyleBox["{",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["r", "1"], TraditionalForm]],
+  FontSlant->"Italic"],
+ StyleBox[", ",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["r", "2"], TraditionalForm]],
+  FontSlant->"Italic"],
+ StyleBox["}",
+  FontSlant->"Italic"],
+ StyleBox[",", "Program"],
+ StyleBox["{",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["c", "1"], TraditionalForm]],
+  FontSlant->"Italic"],
+ StyleBox[", ",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["c", "2"], TraditionalForm]],
+  FontSlant->"Italic"],
+ StyleBox["}",
+  FontSlant->"Italic"],
+ StyleBox["]", "Program"],
+ ".  In the case of a color image, the ",
+ StyleBox["Take", "Program",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ " command is executed for each of the color matrices."
+}], "Text",
+ CellTags->"b:3.2.2"],
+
+Cell[CellGroupData[{
+
+Cell["Arguments:", "Subsubsection",
+ CellTags->"b:3.2.2"],
+
+Cell["A is a matrix.", "Text",
+ CellTags->"b:3.2.2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Directives:", "Subsubsection",
+ CellTags->"b:3.2.2"],
+
+Cell[TextData[{
+ "The ",
+ StyleBox["Region",
+  FontWeight->"Bold"],
+ " directive can be set to either ",
+ StyleBox["All",
+  FontWeight->"Bold"],
+ " (default), ",
+ StyleBox["Blur", "Program",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[", ",
+  FontFamily->"Times New Roman"],
+ StyleBox["Horizontal", "Program",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[", ",
+  FontFamily->"Times New Roman"],
+ StyleBox["Vertical", "Program",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[", and ",
+  FontFamily->"Times New Roman"],
+ StyleBox["Diagonal", "Program",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[".  ",
+  FontFamily->"Times New Roman"],
+ StyleBox["ExtractRegion", "Program",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ " will select the portion of the iteration as dictated by the option value \
+for ",
+ StyleBox["Region", "Program",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox[".",
+  FontFamily->"Times New Roman"],
+ "  This directive can be used to choose the particular region from an \
+iteration(s) to select.\n\nThe ",
+ StyleBox["Iteration",
+  FontWeight->"Bold"],
+ " directive can be set to either a particular iteration or ",
+ StyleBox["All",
+  FontWeight->"Bold"],
+ " (default value).  In the latter case, the entire vector is selected.\n\n\
+The ",
+ StyleBox["NumIterations",
+  FontWeight->"Bold"],
+ " indicates the number of iterations performed by the wavelet transform.  \
+The default value is ",
+ StyleBox["1",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellTags->"b:3.2.2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example Call:", "Subsubsection",
+ CellTags->"b:3.2.2"],
+
+Cell["We import a grayscale image:", "Text",
+ CellTags->"b:3.2.2"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"<<", "DiscreteWavelets`DiscreteWavelets`"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"gray", "=", 
+   RowBox[{"ImageNames", "[", 
+    RowBox[{
+     RowBox[{"ImageType", "\[Rule]", "GrayScale"}], ",", 
+     RowBox[{"ListThumbnails", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A", "=", 
+   RowBox[{"ImageRead", "[", 
+    RowBox[{"gray", "[", 
+     RowBox[{"[", "10", "]"}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ImagePlot", "[", "A", "]"}]}], "Input",
+ CellChangeTimes->{{3.402403165*^9, 3.40240316859375*^9}, {3.4024035991875*^9,
+    3.40240359928125*^9}, 3.40242246546875*^9},
+ CellTags->"b:3.2.2"],
+
+Cell["Now we compute a wavelet transform and display the result.", "Text",
+ CellTags->"b:3.2.2"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"h", "=", 
+   RowBox[{"N", "[", 
+    RowBox[{"Daub", "[", "4", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"wt", "=", 
+   RowBox[{"WT2D", "[", 
+    RowBox[{"A", ",", "h", ",", 
+     RowBox[{"NumIterations", "\[Rule]", "2"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"WaveletDensityPlot", "[", 
+  RowBox[{"wt", ",", 
+   RowBox[{"NumIterations", "\[Rule]", "2"}], ",", 
+   RowBox[{"DivideLines", "\[Rule]", "True"}]}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.40240317515625*^9, {3.40240359803125*^9, 3.402403598109375*^9}},
+ CellTags->"b:3.2.2"],
+
+Cell["\<\
+Next we extract the vertical portion of the first iteration of the transform.\
+\
+\>", "Text",
+ CellTags->"b:3.2.2"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"V", ",", 
+     RowBox[{"{", 
+      RowBox[{"r1", ",", "r2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"c1", ",", "c2"}], "}"}]}], "}"}], "=", 
+   RowBox[{"ExtractRegion", "[", 
+    RowBox[{"wt", ",", 
+     RowBox[{"NumIterations", "\[Rule]", "2"}], ",", 
+     RowBox[{"Iteration", "\[Rule]", "1"}], ",", 
+     RowBox[{"Region", "\[Rule]", "Vertical"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Print", "[", 
+    RowBox[{
+    "\"\<The submatrix extracted from wt started at upper left corner (\>\"", 
+     ",", "r1", ",", "\"\<, \>\"", ",", "c1", ",", 
+     "\"\<) and ended at lower left corner (\>\"", ",", "r2", ",", 
+     "\"\<, \>\"", ",", "c2", ",", "\"\<).\>\""}], "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"ImagePlot", "[", "V", "]"}]}], "Input",
+ CellChangeTimes->{
+  3.402403184359375*^9, {3.402403596046875*^9, 3.402403596140625*^9}},
+ CellTags->"b:3.2.2"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"B", "=", 
+   RowBox[{
+    RowBox[{"ExtractRegion", "[", 
+     RowBox[{"wt", ",", 
+      RowBox[{"NumIterations", "\[Rule]", "2"}], ",", 
+      RowBox[{"Iteration", "\[Rule]", "2"}]}], "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ImagePlot", "[", "B", "]"}]}], "Input",
+ CellChangeTimes->{
+  3.402403191609375*^9, {3.40240359503125*^9, 3.402403595125*^9}},
+ CellTags->"b:3.2.2"],
+
+Cell[TextData[{
+ StyleBox["ExtractRegion",
+  FontWeight->"Bold"],
+ " works on color images as well.  First, load and plot a color image:"
+}], "Text",
+ CellChangeTimes->{{3.402403224671875*^9, 3.402403234921875*^9}},
+ CellTags->"b:3.2.2"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"<<", "DiscreteWavelets`DiscreteWavelets`"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"color", "=", 
+   RowBox[{"ImageNames", "[", 
+    RowBox[{
+     RowBox[{"ImageType", "\[Rule]", "Color"}], ",", 
+     RowBox[{"ListThumbnails", "\[Rule]", "True"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"r", ",", "g", ",", "b"}], "}"}], "=", 
+   RowBox[{"ImageRead", "[", 
+    RowBox[{
+     RowBox[{"color", "[", 
+      RowBox[{"[", "3", "]"}], "]"}], ",", 
+     RowBox[{"PowersOfTwo", "\[Rule]", "2"}], ",", 
+     RowBox[{"PrintInfo", "\[Rule]", "True"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{"ImagePlot", "[", 
+  RowBox[{"{", 
+   RowBox[{"r", ",", "g", ",", "b"}], "}"}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.40240320221875*^9, {3.402403311921875*^9, 3.402403320078125*^9}, {
+   3.402403592953125*^9, 3.402403593140625*^9}, 3.402422472234375*^9},
+ CellTags->"b:3.2.2"],
+
+Cell["\<\
+Compute the wavelet transform of each channel and display the result.\
+\>", "Text",
+ CellTags->"b:3.2.2"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"h", "=", 
+   RowBox[{"CDF97", "[", "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"rwt", ",", "gwt", ",", "bwt"}], "}"}], "=", 
+   RowBox[{"Map", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"BWT2D", "[", 
+       RowBox[{"#", ",", "h", ",", 
+        RowBox[{"NumIterations", "\[Rule]", "2"}]}], "]"}], "&"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"r", ",", "g", ",", "b"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"WaveletDensityPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"rwt", ",", "gwt", ",", "bwt"}], "}"}], ",", 
+   RowBox[{"NumIterations", "\[Rule]", "2"}], ",", 
+   RowBox[{"DivideLines", "\[Rule]", "True"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.402403250921875*^9, 3.402403297234375*^9}, {
+  3.402403591125*^9, 3.40240359121875*^9}},
+ CellTags->"b:3.2.2"],
+
+Cell[TextData[{
+ "We extract the approximate image contained in the second iteration.  In \
+this case,we can omit the ",
+ StyleBox["Iteration",
+  FontWeight->"Bold"],
+ " option since setting the ",
+ StyleBox["Region",
+  FontWeight->"Bold"],
+ " option to ",
+ StyleBox["Blur",
+  FontWeight->"Bold"],
+ " overrides the ",
+ StyleBox["Iteration ",
+  FontWeight->"Bold"],
+ "option value.  We also use the ",
+ StyleBox["ImageSize",
+  FontWeight->"Bold"],
+ " directive in ",
+ StyleBox["ImagePlot ",
+  FontWeight->"Bold"],
+ "to increase the size of the output."
+}], "Text",
+ CellTags->"b:3.2.2"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"approx", "=", 
+   RowBox[{
+    RowBox[{"ExtractRegion", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"rwt", ",", "gwt", ",", "bwt"}], "}"}], ",", 
+      RowBox[{"NumIterations", "\[Rule]", "2"}], ",", 
+      RowBox[{"Region", "\[Rule]", "Blur"}]}], "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ImagePlot", "[", 
+  RowBox[{"approx", ",", 
+   RowBox[{"LinearScaling", "\[Rule]", "True"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"240", ",", "320"}], "}"}]}], ",", 
+   RowBox[{
+   "PlotLabel", "\[Rule]", 
+    "\"\<The lowpass portion of the transform.\>\""}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.40240330625*^9, 3.402403354015625*^9}, {
+  3.4024035896875*^9, 3.402403589828125*^9}},
+ CellTags->"b:3.2.2"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["WaveletDensityPlot", "Subsection",
+ CellTags->"b:3.2.3"],
+
+Cell[TextData[{
+ StyleBox["WaveletDensityPlot",
+  FontWeight->"Bold"],
+ " is a routine for displaying the wavelet transform of an image.  It first \
+calls ",
+ StyleBox["ExtractRegion",
+  FontWeight->"Bold"],
+ " to determine the portion of the transform to plot, next calls ",
+ StyleBox["CreateImageObject",
+  FontWeight->"Bold"],
+ " and then, if instructed, adds ",
+ StyleBox["DivideLines",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellTags->"b:3.2.3"],
+
+Cell[CellGroupData[{
+
+Cell["Arguments:", "Subsubsection",
+ CellTags->"b:3.2.3"],
+
+Cell["A is a matrix.", "Text",
+ CellTags->"b:3.2.3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Directives:", "Subsubsection",
+ CellTags->"b:3.2.3"],
+
+Cell[TextData[{
+ "The set of directives for ",
+ StyleBox["WaveletDensityPlot",
+  FontWeight->"Bold"],
+ " is built from the set of directives for the general ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " ",
+ StyleBox["Graphics",
+  FontWeight->"Bold"],
+ " command along with 6 other directives that complete the set.\n\n",
+ StyleBox["DivideLines",
+  FontWeight->"Bold"],
+ " is a directive that when set to ",
+ StyleBox["True",
+  FontWeight->"Bold"],
+ " (default value) draws vertical lines between different portions of the \
+wavelet transform matrix.  Setting the directive to ",
+ StyleBox["False",
+  FontWeight->"Bold"],
+ " forces the routine to not draw the lines.\n\n",
+ StyleBox["DivideLinesColor",
+  FontWeight->"Bold"],
+ " is a directive that allows you to set the color of the ",
+ StyleBox["DivideLines",
+  FontWeight->"Bold"],
+ ".  The default color is ",
+ StyleBox["Red",
+  FontWeight->"Bold"],
+ ".  You can choose any color in ",
+ StyleBox["ColorList",
+  FontWeight->"Bold"],
+ " or use the ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " functions ",
+ StyleBox["Hue",
+  FontWeight->"Bold"],
+ ", ",
+ StyleBox["GrayLevel",
+  FontWeight->"Bold"],
+ ", or ",
+ StyleBox["RGBColor",
+  FontWeight->"Bold"],
+ " to set the ",
+ StyleBox["DivideLinesColor",
+  FontWeight->"Bold"],
+ " directive.\n\nThe directive ",
+ StyleBox["DivideLinesThickness",
+  FontWeight->"Bold"],
+ " allows you to set the thickness of the dividelines.  The default thickness \
+is ",
+ StyleBox["0.002",
+  FontWeight->"Bold"],
+ ".\n\nThe ",
+ StyleBox["Region",
+  FontWeight->"Bold"],
+ " directive can be set to either ",
+ StyleBox["All",
+  FontWeight->"Bold"],
+ " (default), ",
+ StyleBox["LowPass",
+  FontWeight->"Bold"],
+ ", or ",
+ StyleBox["HighPass",
+  FontWeight->"Bold"],
+ ".  This directive can be used to choose the particular region from an \
+iteration(s) to select.\n\nThe ",
+ StyleBox["Iteration",
+  FontWeight->"Bold"],
+ " directive can be set to either a particular iteration or ",
+ StyleBox["All",
+  FontWeight->"Bold"],
+ " (default value).  In the latter case, the entire vector is selected.\n\n\
+The ",
+ StyleBox["NumIterations",
+  FontWeight->"Bold"],
+ " indicates the number of iterations performed by the wavelet transform.  \
+The default value is ",
+ StyleBox["1",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.402403469578125*^9, 3.402403469703125*^9}},
+ CellTags->"b:3.2.3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example Call:", "Subsubsection",
+ CellTags->"b:3.2.3"],
+
+Cell["\<\
+We begin by importing a grayscale image and plotting its wavelet transform:\
+\>", "Text",
+ CellTags->"b:3.2.3"],
+
+Cell[BoxData[{
+ RowBox[{"<<", 
+  "DiscreteWavelets`DiscreteWavelets`"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"gray", "=", 
+   RowBox[{"ImageNames", "[", 
+    RowBox[{
+     RowBox[{"ImageType", "\[Rule]", "GrayScale"}], ",", 
+     RowBox[{"ListThumbnails", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A", "=", 
+   RowBox[{"ImageRead", "[", 
+    RowBox[{
+     RowBox[{"gray", "[", 
+      RowBox[{"[", "15", "]"}], "]"}], ",", 
+     RowBox[{"PrintInfo", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ImagePlot", "[", "A", "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"h", "=", 
+   RowBox[{"N", "[", 
+    RowBox[{"Coif", "[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"wt", "=", 
+   RowBox[{"WT2D", "[", 
+    RowBox[{"A", ",", "h", ",", 
+     RowBox[{"NumIterations", "\[Rule]", "3"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"WaveletDensityPlot", "[", 
+  RowBox[{"wt", ",", 
+   RowBox[{"NumIterations", "\[Rule]", "3"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.402403362703125*^9, 3.40240336471875*^9}, {
+   3.4024035860625*^9, 3.402403586171875*^9}, 3.4024224834375*^9},
+ CellTags->"b:3.2.3"],
+
+Cell["\<\
+We can change the dividling lines color as well as the thickness.\
+\>", "Text",
+ CellTags->"b:3.2.3"],
+
+Cell[BoxData[
+ RowBox[{"WaveletDensityPlot", "[", 
+  RowBox[{"wt", ",", 
+   RowBox[{"NumIterations", "\[Rule]", "3"}], ",", 
+   RowBox[{"DivideLines", "\[Rule]", "True"}], ",", 
+   RowBox[{"DivideLinesColor", "\[Rule]", "Blue"}], ",", 
+   RowBox[{"DivideLinesThickness", "\[Rule]", ".015"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.40240337165625*^9, 3.4024033851875*^9}, {
+  3.402403583546875*^9, 3.402403583640625*^9}},
+ CellTags->"b:3.2.3"],
+
+Cell[TextData[{
+ "We can extract a portion of the transform and display it.  In this case, ",
+ StyleBox["DivideLines",
+  FontWeight->"Bold"],
+ " options are ignored.We can also create a larger display."
+}], "Text",
+ CellTags->"b:3.2.3"],
+
+Cell[BoxData[{
+ RowBox[{"WaveletDensityPlot", "[", 
+  RowBox[{"wt", ",", 
+   RowBox[{"NumIterations", "\[Rule]", "3"}], ",", 
+   RowBox[{"Region", "\[Rule]", "Vertical"}], ",", " ", 
+   RowBox[{"Iteration", "\[Rule]", "1"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"WaveletDensityPlot", "[", 
+  RowBox[{"wt", ",", 
+   RowBox[{"NumIterations", "\[Rule]", "3"}], ",", 
+   RowBox[{"Region", "\[Rule]", "Vertical"}], ",", 
+   RowBox[{"Iteration", "\[Rule]", "1"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", 
+    RowBox[{"Reverse", "[", 
+     RowBox[{"Dimensions", "[", "wt", "]"}], "]"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.402403375109375*^9, 3.402403375875*^9}, {
+  3.402403582375*^9, 3.402403582484375*^9}},
+ CellTags->"b:3.2.3"],
+
+Cell[TextData[{
+ "We can also use standard ",
+ StyleBox["Graphics",
+  FontWeight->"Bold"],
+ " options:"
+}], "Text",
+ CellTags->"b:3.2.3"],
+
+Cell[BoxData[
+ RowBox[{"WaveletDensityPlot", "[", 
+  RowBox[{"wt", ",", 
+   RowBox[{"NumIterations", "\[Rule]", "3"}], ",", 
+   RowBox[{"Region", "\[Rule]", "Horizontal"}], ",", 
+   RowBox[{"Iteration", "\[Rule]", "1"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", 
+    RowBox[{"Reverse", "[", 
+     RowBox[{"Dimensions", "[", "wt", "]"}], "]"}]}], ",", 
+   RowBox[{"PlotLabel", "->", "\"\<Horizontal Part of Iteration 1\>\""}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.402403478109375*^9, 3.402403498109375*^9}, {
+  3.4024035810625*^9, 3.402403581203125*^9}},
+ CellTags->"b:3.2.3"],
+
+Cell[TextData[{
+ StyleBox["WaveletDensityPlot",
+  FontWeight->"Bold"],
+ " can also display the wavelet transform of a color image."
+}], "Text",
+ CellTags->"b:3.2.3"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"color", "=", 
+   RowBox[{"ImageNames", "[", 
+    RowBox[{
+     RowBox[{"ImageType", "\[Rule]", "Color"}], ",", 
+     RowBox[{"ListThumbnails", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"r", ",", "g", ",", "b"}], "}"}], "=", 
+   RowBox[{"ImageRead", "[", 
+    RowBox[{
+     RowBox[{"color", "[", 
+      RowBox[{"[", "8", "]"}], "]"}], ",", 
+     RowBox[{"PowersOfTwo", "\[Rule]", "2"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ImagePlot", "[", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "g", ",", "b"}], "}"}], "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"h", "=", 
+   RowBox[{"N", "[", 
+    RowBox[{"Daub", "[", "4", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"rwt", ",", "gwt", ",", "bwt"}], "}"}], "=", 
+    RowBox[{"Map", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"WT2D", "[", 
+        RowBox[{"#", ",", "h", ",", 
+         RowBox[{"NumIterations", "\[Rule]", "2"}]}], "]"}], "&"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"r", ",", "g", ",", "b"}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"WaveletDensityPlot", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"rwt", ",", "gwt", ",", "bwt"}], "}"}], ",", 
+    RowBox[{"NumIterations", "\[Rule]", "2"}], ",", 
+    RowBox[{"DivideLines", "\[Rule]", "True"}]}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.402403503828125*^9, 3.40240354109375*^9}, {
+   3.402403578875*^9, 3.402403579078125*^9}, 3.402422489625*^9},
+ CellTags->"b:3.2.3"],
+
+Cell["We can extract the blur and display it.", "Text",
+ CellTags->"b:3.2.3"],
+
+Cell[BoxData[
+ RowBox[{"WaveletDensityPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"rwt", ",", "gwt", ",", "bwt"}], "}"}], ",", 
+   RowBox[{"NumIterations", "\[Rule]", "3"}], ",", 
+   RowBox[{"Region", "\[Rule]", "Blur"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", 
+    RowBox[{"Reverse", "[", 
+     RowBox[{"Dimensions", "[", "rwt", "]"}], "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.40240354578125*^9, {3.402403577453125*^9, 3.40240357765625*^9}},
+ CellTags->"b:3.2.3"],
+
+Cell["We can also display a particular channel if we wish.", "Text",
+ CellTags->"b:3.2.3"],
+
+Cell[BoxData[
+ RowBox[{"WaveletDensityPlot", "[", 
+  RowBox[{"rwt", ",", 
+   RowBox[{"NumIterations", "\[Rule]", "2"}], ",", 
+   RowBox[{"ChannelColor", "\[Rule]", "Red"}], ",", 
+   RowBox[{"DivideLines", "\[Rule]", "True"}], ",", 
+   RowBox[{"DivideLinesColor", "\[Rule]", "Yellow"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.402403550890625*^9, 3.402403576109375*^9}},
+ CellTags->"b:3.2.3"]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Hearing Wavelet Transforms", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["WaveletVectorPlay", "Subsection",
+ CellTags->"b:3.3.0"],
+
+Cell["\<\
+WaveletVectorPlay is designed specifically to play the output of wavelet \
+transforms.  \
+\>", "Text",
+ CellTags->"b:3.3.0"],
+
+Cell[CellGroupData[{
+
+Cell["Arguments:", "Subsubsection",
+ CellTags->"b:3.3.0"],
+
+Cell["v is a vector.", "Text",
+ CellTags->"b:3.3.0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Directives:", "Subsubsection",
+ CellTags->"b:3.3.0"],
+
+Cell[TextData[{
+ "\nThe directive set for ",
+ StyleBox["WaveletVectorPlay",
+  FontWeight->"Bold"],
+ " is a superset of the options for the ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " function ",
+ StyleBox["ListPlay",
+  FontWeight->"Bold"],
+ ".  Other directives are available: \n\nThe ",
+ StyleBox["Region",
+  FontWeight->"Bold"],
+ " directive can be set to either ",
+ StyleBox["All",
+  FontWeight->"Bold"],
+ " (default), ",
+ StyleBox["LowPass",
+  FontWeight->"Bold"],
+ ", or ",
+ StyleBox["HighPass",
+  FontWeight->"Bold"],
+ ".  If ",
+ StyleBox["All ",
+  FontWeight->"Bold"],
+ "is selected, then the entire vector is selected.  If the directive is set \
+to ",
+ StyleBox["LowPass",
+  FontWeight->"Bold"],
+ ", then the function returns an audio clip for the lowpass portion of the \
+transform.  If the directive is set to ",
+ StyleBox["HighPass",
+  FontWeight->"Bold"],
+ ", then the function looks for an Iteration value and returns an audio clip \
+for that highpass portion of the transform.\n\nThe ",
+ StyleBox["Iteration",
+  FontWeight->"Bold"],
+ " directive can be set to a particular iteration for playing  a highpass \
+portion of the input (default value is ",
+ StyleBox["1",
+  FontWeight->"Bold"],
+ ").  \n\nThe ",
+ StyleBox["NumIterations",
+  FontWeight->"Bold"],
+ " indicates the number of iterations performed by the wavelet transform.  \
+The default value is ",
+ StyleBox["1",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.402404781421875*^9, 3.402404930671875*^9}, {
+  3.402404963875*^9, 3.402404997*^9}},
+ CellTags->"b:3.3.0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example Call:", "Subsubsection",
+ CellTags->"b:3.3.0"],
+
+Cell[TextData[{
+ "To illustrate the uses of ",
+ StyleBox["WaveletVectorPlay",
+  FontWeight->"Bold"],
+ ", we import a digital audio file and play it."
+}], "Text",
+ CellTags->"b:3.3.0"],
+
+Cell[BoxData[{
+ RowBox[{"<<", "Audio`"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"audio", "=", 
+   RowBox[{"AudioNames", "[", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"AudioList", "[", "]"}]}], "Input",
+ CellChangeTimes->{{3.402403651515625*^9, 3.402403653796875*^9}, {
+  3.402405120515625*^9, 3.40240512075*^9}},
+ CellTags->"b:3.3.0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"v", "=", 
+   RowBox[{"ReadSoundFile", "[", 
+    RowBox[{"audio", "[", 
+     RowBox[{"[", "2", "]"}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"v", "=", 
+   RowBox[{"ChopVector", "[", 
+    RowBox[{"v", ",", 
+     RowBox[{"PowersOfTwo", "\[Rule]", "3"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"srate", "=", "22050"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlay", "[", 
+  RowBox[{"v", ",", 
+   RowBox[{"SampleRate", "\[Rule]", "srate"}]}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.40240366065625*^9, {3.402403717515625*^9, 3.40240377090625*^9}, {
+   3.402405117734375*^9, 3.40240511784375*^9}},
+ CellTags->"b:3.3.0"],
+
+Cell["\<\
+Now compute three iterations of the wavelet transform of v and plot it.\
+\>", "Text",
+ CellTags->"b:3.3.0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"h", "=", 
+   RowBox[{"N", "[", 
+    RowBox[{"Daub", "[", "4", "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"wt", "=", 
+   RowBox[{"WT1D", "[", 
+    RowBox[{"v", ",", "h", ",", 
+     RowBox[{"NumIterations", "\[Rule]", "3"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"WaveletVectorPlot", "[", 
+  RowBox[{"wt", ",", 
+   RowBox[{"NumIterations", "\[Rule]", "3"}], ",", 
+   RowBox[{"UseColors", "\[Rule]", "True"}], ",", 
+   RowBox[{"DivideLines", "\[Rule]", "True"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.4024036785625*^9, {3.402405116203125*^9, 3.402405116328125*^9}},
+ CellTags->"b:3.3.0"],
+
+Cell[TextData[{
+ "The transform is divided into four parts.  The first part is the lowpass \
+portion of the transform.We use ",
+ StyleBox["WaveletVectorPlay ",
+  FontWeight->"Bold"],
+ "to \"listen\" to it.We also set ",
+ StyleBox["PlayLabel",
+  FontWeight->"Bold"],
+ " so the audo plot is labeled.The options ",
+ StyleBox["NumIterations",
+  FontWeight->"Bold"],
+ ", ",
+ StyleBox["Region",
+  FontWeight->"Bold"],
+ ",and ",
+ StyleBox["Iteration",
+  FontWeight->"Bold"],
+ " are exactly as described in the documentation for ",
+ StyleBox["ExtractVectorPart",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellTags->"b:3.3.0"],
+
+Cell[TextData[{
+ "It is advised that the option ",
+ StyleBox["PrintHeader",
+  FontWeight->"Bold"],
+ " be set to",
+ StyleBox["True",
+  FontWeight->"Bold"],
+ " in ",
+ StyleBox["ReadSoundFile",
+  FontWeight->"Bold"],
+ " or ",
+ StyleBox["AudioList",
+  FontWeight->"Bold"],
+ " be called so that the sample rate for the file can be used as the option \
+value for ",
+ StyleBox["SampleRate",
+  FontWeight->"Bold"],
+ " in ",
+ StyleBox["WaveletVectorPlay",
+  FontWeight->"Bold"],
+ ". The default ",
+ StyleBox["SampleRate",
+  FontWeight->"Bold"],
+ " value is ",
+ StyleBox["8000",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellTags->"b:3.3.0"],
+
+Cell[BoxData[
+ RowBox[{"WaveletVectorPlay", "[", 
+  RowBox[{"wt", ",", 
+   RowBox[{"NumIterations", "\[Rule]", "3"}], ",", 
+   RowBox[{"Region", "\[Rule]", "LowPass"}], ",", 
+   RowBox[{"SampleRate", "\[Rule]", "srate"}], ",", 
+   RowBox[{"PlayLabel", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.402405020265625*^9, {3.40240505865625*^9, 3.40240505925*^9}, {
+   3.4024051145*^9, 3.40240511465625*^9}},
+ CellTags->"b:3.3.0"],
+
+Cell["\<\
+We could also listen to theHighPassportion of first iteration.\
+\>", "Text",
+ CellTags->"b:3.3.0"],
+
+Cell[BoxData[
+ RowBox[{"WaveletVectorPlay", "[", 
+  RowBox[{"wt", ",", 
+   RowBox[{"NumIterations", "\[Rule]", "3"}], ",", 
+   RowBox[{"Region", "\[Rule]", "HighPass"}], ",", 
+   RowBox[{"Iteration", "\[Rule]", "1"}], ",", 
+   RowBox[{"PlayLabel", "\[Rule]", "True"}], ",", 
+   RowBox[{"SampleRate", "\[Rule]", "srate"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.40240506628125*^9, 3.402405070765625*^9}, {
+  3.40240511284375*^9, 3.402405113*^9}},
+ CellTags->"b:3.3.0"],
+
+Cell["We can also listen to several iterations:", "Text",
+ CellTags->"b:3.3.0"],
+
+Cell[BoxData[
+ RowBox[{"WaveletVectorPlay", "[", 
+  RowBox[{"wt", ",", 
+   RowBox[{"NumIterations", "\[Rule]", "3"}], ",", 
+   RowBox[{"Iteration", "\[Rule]", "2"}], ",", 
+   RowBox[{"PlayLabel", "\[Rule]", "True"}], ",", 
+   RowBox[{"SampleRate", "\[Rule]", "srate"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.40240508003125*^9, 3.40240511175*^9}},
+ CellTags->"b:3.3.0"]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Huffman Encoding", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["HuffmanTree", "Subsection",
+ CellTags->"b:3.4.0"],
+
+Cell[TextData[{
+ "The HuffmanTree function takes the first argument produced by ",
+ StyleBox["MakeHuffmanCodes",
+  FontWeight->"Bold"],
+ " and generates the Huffman tree for the Huffman codes.\n\n",
+ StyleBox["NOTE:",
+  FontWeight->"Bold"],
+ "  This routine is not meant to be used for Huffman trees of large images.  \
+The best results come from lists of no more that 5-6 elements."
+}], "Text",
+ CellChangeTimes->{{3.402405972546875*^9, 3.4024060206875*^9}},
+ CellTags->"b:3.4.0"],
+
+Cell[CellGroupData[{
+
+Cell["Arguments: ", "Subsubsection",
+ CellTags->"b:3.4.0"],
+
+Cell["\<\
+codes is a list of ordered triples.  Each triple is a character (or integer), \
+its relative frequency in the original input, and its Huffman code.\
+\>", "Text",
+ CellTags->"b:3.4.0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Directives:", "Subsubsection",
+ CellTags->"b:3.4.0"],
+
+Cell[TextData[{
+ "\nThe directive set for ",
+ StyleBox["HuffmanTree",
+  FontWeight->"Bold"],
+ " is a superset of that of ",
+ StyleBox["TreePlot",
+  FontWeight->"Bold"],
+ ".  There are seven additional directives for ",
+ StyleBox["HuffmanTree",
+  FontWeight->"Bold"],
+ ":\n\n",
+ StyleBox["NodeColor",
+  FontWeight->"Bold"],
+ " can be used to set the color of the nodes of the tree (the default value \
+is ",
+ StyleBox["RGBColor[0.698039, 0.556863, 0.180392]",
+  FontWeight->"Bold"],
+ ").\n\n",
+ StyleBox["NodeEdgeColor",
+  FontWeight->"Bold"],
+ " can be used to set the color of the edge of each node (the default value \
+is ",
+ StyleBox["Black",
+  FontWeight->"Bold"],
+ ").\n\n",
+ StyleBox["NodeSize",
+  FontWeight->"Bold"],
+ " is used to set the size of each disk that serves as the node (the default \
+value is ",
+ StyleBox["0.02",
+  FontWeight->"Bold"],
+ ").\n\n",
+ StyleBox["NodeFontSize",
+  FontWeight->"Bold"],
+ " is used to set the size of the font used to label each node (the default \
+value is ",
+ StyleBox["12",
+  FontWeight->"Bold"],
+ ").\n\n",
+ StyleBox["NodeFontColor",
+  FontWeight->"Bold"],
+ " is used to set the size of the font used to label each node (the default \
+value is ",
+ StyleBox["RGBColor[0.541176, 0.117647, 0.00784314]",
+  FontWeight->"Bold"],
+ ").\n\n",
+ StyleBox["EdgeLength",
+  FontWeight->"Bold"],
+ " is a value that can be passed to the ",
+ StyleBox["TreePlot ",
+  FontWeight->"Bold"],
+ "directive ",
+ StyleBox["LayerSizeFunction",
+  FontWeight->"Bold"],
+ " to help control the proportion sizes of nodes and branches.  The function \
+used by ",
+ StyleBox["HuffmanTree",
+  FontWeight->"Bold"],
+ " is #^r, where r is the value of ",
+ StyleBox["EdgeLength",
+  FontWeight->"Bold"],
+ " (the default value is ",
+ StyleBox["0.1",
+  FontWeight->"Bold"],
+ ").\n\n",
+ StyleBox["ShowString",
+  FontWeight->"Bold"],
+ " can be set to any label you wish to use for the Huffman tree plot.  The \
+default is no label."
+}], "Text",
+ CellChangeTimes->{{3.402404781421875*^9, 3.402404930671875*^9}, {
+  3.402404963875*^9, 3.402404997*^9}, {3.402405349265625*^9, 
+  3.402405645765625*^9}, {3.4024056945*^9, 3.402405715796875*^9}, {
+  3.402405751328125*^9, 3.4024058189375*^9}, {3.402405861640625*^9, 
+  3.40240590465625*^9}},
+ CellTags->"b:3.4.0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example Call:", "Subsubsection",
+ CellTags->"b:3.4.0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"<<", "DiscreteWavelets`DiscreteWavelets`"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"codes", ",", "bitstream", ",", "newbitstream"}], "}"}], "=", 
+   RowBox[{"MakeHuffmanCodes", "[", "\"\<mississippi\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"HuffmanTree", "[", "codes", "]"}]}], "Input",
+ CellChangeTimes->{
+  3.40240516865625*^9, {3.40240639959375*^9, 3.40240639984375*^9}},
+ CellTags->"b:3.4.0"],
+
+Cell["We can attach a label to the plot:", "Text",
+ CellChangeTimes->{{3.402405918890625*^9, 3.402405931296875*^9}},
+ CellTags->"b:3.4.0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"<<", "DiscreteWavelets`DiscreteWavelets`"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"codes", ",", "bitstream", ",", "newbitstream"}], "}"}], "=", 
+   RowBox[{"MakeHuffmanCodes", "[", "\"\<mississippi\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"HuffmanTree", "[", 
+  RowBox[{"codes", ",", 
+   RowBox[{"ShowString", "\[Rule]", "\"\<mississippi\>\""}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.40240594015625*^9, 3.4024059630625*^9}, {
+  3.402406398125*^9, 3.4024063983125*^9}},
+ CellTags->"b:3.4.0"],
+
+Cell["The following output needs some work:", "Text",
+ CellChangeTimes->{{3.402405918890625*^9, 3.402405931296875*^9}, {
+  3.40240605015625*^9, 3.402406060890625*^9}, {3.40240615159375*^9, 
+  3.402406160765625*^9}},
+ CellTags->"b:3.4.0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"<<", "DiscreteWavelets`DiscreteWavelets`"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"str", "=", "\"\<peter piper picked\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"codes", ",", "bitstream", ",", "newbitstream"}], "}"}], "=", 
+   RowBox[{"MakeHuffmanCodes", "[", "str", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"HuffmanTree", "[", "codes", "]"}]}], "Input",
+ CellChangeTimes->{{3.40240594015625*^9, 3.4024059630625*^9}, {
+   3.402406065625*^9, 3.402406166390625*^9}, 3.402406353953125*^9, {
+   3.40240639640625*^9, 3.402406396609375*^9}},
+ CellTags->"b:3.4.0"],
+
+Cell["Here is a better display:", "Text",
+ CellChangeTimes->{{3.402405918890625*^9, 3.402405931296875*^9}, {
+  3.40240605015625*^9, 3.402406060890625*^9}, {3.40240615159375*^9, 
+  3.402406182171875*^9}},
+ CellTags->"b:3.4.0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"<<", "DiscreteWavelets`DiscreteWavelets`"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"str", "=", "\"\<peter piper picked\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"codes", ",", "bitstream", ",", "newbitstream"}], "}"}], "=", 
+   RowBox[{"MakeHuffmanCodes", "[", "str", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"HuffmanTree", "[", 
+  RowBox[{"codes", ",", 
+   RowBox[{"NodeSize", "\[Rule]", ".22"}], ",", 
+   RowBox[{"EdgeLength", "\[Rule]", ".5"}], ",", 
+   RowBox[{"NodeColor", "\[Rule]", "Yellow"}], ",", 
+   RowBox[{"NodeFontColor", "\[Rule]", "Black"}], ",", 
+   RowBox[{"NodeFontSize", "\[Rule]", "10"}], ",", 
+   RowBox[{"ShowString", "\[Rule]", "str"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.40240594015625*^9, 3.4024059630625*^9}, {
+  3.402406065625*^9, 3.40240639459375*^9}},
+ CellTags->"b:3.4.0"]
+}, Open  ]]
+}, Open  ]]
+}, Closed]]
+}, Open  ]]
+},
+WindowSize->{1016, 649},
+WindowMargins->{{Automatic, 27}, {Automatic, 0}},
+ShowSelection->True,
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (April 20, 2007)",
+StyleDefinitions->FrontEnd`FileName[{"Creative"}, "NaturalColor.nb", 
+  CharacterEncoding -> "WindowsANSI"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "b:3.0.0"->{
+  Cell[771, 32, 53, 1, 37, "Subsection",
+   CellTags->"b:3.0.0"],
+  Cell[827, 35, 127, 4, 29, "Text",
+   CellTags->"b:3.0.0"],
+  Cell[979, 43, 57, 1, 27, "Subsubsection",
+   CellTags->"b:3.0.0"],
+  Cell[1039, 46, 79, 1, 29, "Text",
+   CellTags->"b:3.0.0"],
+  Cell[1155, 52, 58, 1, 27, "Subsubsection",
+   CellTags->"b:3.0.0"],
+  Cell[1216, 55, 920, 36, 119, "Text",
+   CellTags->"b:3.0.0"],
+  Cell[2173, 96, 60, 1, 27, "Subsubsection",
+   CellTags->"b:3.0.0"],
+  Cell[2236, 99, 162, 2, 29, "Text",
+   CellTags->"b:3.0.0"],
+  Cell[2401, 103, 278, 6, 62, "Input",
+   CellTags->"b:3.0.0"],
+  Cell[2682, 111, 269, 6, 62, "Input",
+   CellTags->"b:3.0.0"],
+  Cell[2988, 122, 98, 1, 27, "Subsubsection",
+   CellTags->"b:3.0.0"],
+  Cell[3089, 125, 617, 11, 65, "Text",
+   CellTags->"b:3.0.0"]},
+ "b:3.0.1"->{
+  Cell[3755, 142, 54, 1, 37, "Subsection",
+   CellTags->"b:3.0.1"],
+  Cell[3812, 145, 148, 4, 29, "Text",
+   CellTags->"b:3.0.1"],
+  Cell[3985, 153, 58, 1, 27, "Subsubsection",
+   CellTags->"b:3.0.1"],
+  Cell[4046, 156, 79, 1, 29, "Text",
+   CellTags->"b:3.0.1"],
+  Cell[4162, 162, 58, 1, 27, "Subsubsection",
+   CellTags->"b:3.0.1"],
+  Cell[4223, 165, 1392, 49, 155, "Text",
+   CellTags->"b:3.0.1"],
+  Cell[5652, 219, 60, 1, 27, "Subsubsection",
+   CellTags->"b:3.0.1"],
+  Cell[5715, 222, 220, 5, 29, "Text",
+   CellTags->"b:3.0.1"],
+  Cell[5938, 229, 375, 8, 62, "Input",
+   CellTags->"b:3.0.1"],
+  Cell[6316, 239, 176, 4, 29, "Text",
+   CellTags->"b:3.0.1"],
+  Cell[6495, 245, 420, 10, 62, "Input",
+   CellTags->"b:3.0.1"],
+  Cell[6918, 257, 152, 2, 29, "Text",
+   CellTags->"b:3.0.1"],
+  Cell[7073, 261, 848, 23, 122, "Input",
+   CellTags->"b:3.0.1"],
+  Cell[7924, 286, 260, 7, 47, "Text",
+   CellTags->"b:3.0.1"],
+  Cell[8187, 295, 424, 12, 62, "Input",
+   CellTags->"b:3.0.1"],
+  Cell[8614, 309, 281, 6, 47, "Text",
+   CellTags->"b:3.0.1"],
+  Cell[8898, 317, 599, 17, 102, "Input",
+   CellTags->"b:3.0.1"]},
+ "b:3.0.2"->{
+  Cell[9546, 340, 123, 2, 37, "Subsection",
+   CellTags->"b:3.0.2"],
+  Cell[9672, 344, 485, 11, 47, "Text",
+   CellTags->"b:3.0.2"],
+  Cell[10182, 359, 58, 1, 27, "Subsubsection",
+   CellTags->"b:3.0.2"],
+  Cell[10243, 362, 79, 1, 29, "Text",
+   CellTags->"b:3.0.2"],
+  Cell[10359, 368, 58, 1, 27, "Subsubsection",
+   CellTags->"b:3.0.2"],
+  Cell[10420, 371, 1433, 50, 155, "Text",
+   CellTags->"b:3.0.2"],
+  Cell[11890, 426, 60, 1, 27, "Subsubsection",
+   CellTags->"b:3.0.2"],
+  Cell[11953, 429, 224, 5, 29, "Text",
+   CellTags->"b:3.0.2"],
+  Cell[12180, 436, 401, 8, 62, "Input",
+   CellTags->"b:3.0.2"],
+  Cell[12584, 446, 207, 3, 29, "Text",
+   CellTags->"b:3.0.2"],
+  Cell[12794, 451, 437, 10, 62, "Input",
+   CellTags->"b:3.0.2"]},
+ "b:3.0.3"->{
+  Cell[13280, 467, 53, 1, 37, "Subsection",
+   CellTags->"b:3.0.3"],
+  Cell[13336, 470, 132, 4, 29, "Text",
+   CellTags->"b:3.0.3"],
+  Cell[13493, 478, 57, 1, 27, "Subsubsection",
+   CellTags->"b:3.0.3"],
+  Cell[13553, 481, 79, 1, 29, "Text",
+   CellTags->"b:3.0.3"],
+  Cell[13669, 487, 60, 1, 27, "Subsubsection",
+   CellTags->"b:3.0.3"],
+  Cell[13732, 490, 228, 5, 62, "Input",
+   CellTags->"b:3.0.3"],
+  Cell[13997, 500, 105, 2, 27, "Subsubsection",
+   CellTags->"b:3.0.3"],
+  Cell[14105, 504, 222, 5, 47, "Text",
+   CellTags->"b:3.0.3"]},
+ "b:3.0.4"->{
+  Cell[14376, 515, 54, 1, 37, "Subsection",
+   CellTags->"b:3.0.4"],
+  Cell[14433, 518, 147, 4, 29, "Text",
+   CellTags->"b:3.0.4"],
+  Cell[14605, 526, 58, 1, 27, "Subsubsection",
+   CellTags->"b:3.0.4"],
+  Cell[14666, 529, 79, 1, 29, "Text",
+   CellTags->"b:3.0.4"],
+  Cell[14782, 535, 60, 1, 27, "Subsubsection",
+   CellTags->"b:3.0.4"],
+  Cell[14845, 538, 304, 7, 62, "Input",
+   CellTags->"b:3.0.4"],
+  Cell[15152, 547, 134, 4, 29, "Text",
+   CellTags->"b:3.0.4"],
+  Cell[15289, 553, 949, 26, 162, "Input",
+   CellTags->"b:3.0.4"]},
+ "b:3.0.5"->{
+  Cell[16287, 585, 52, 1, 37, "Subsection",
+   CellTags->"b:3.0.5"],
+  Cell[16342, 588, 131, 4, 29, "Text",
+   CellTags->"b:3.0.5"],
+  Cell[16498, 596, 57, 1, 27, "Subsubsection",
+   CellTags->"b:3.0.5"],
+  Cell[16558, 599, 79, 1, 29, "Text",
+   CellTags->"b:3.0.5"],
+  Cell[16674, 605, 60, 1, 27, "Subsubsection",
+   CellTags->"b:3.0.5"],
+  Cell[16737, 608, 225, 5, 62, "Input",
+   CellTags->"b:3.0.5"]},
+ "b:3.0.6"->{
+  Cell[17011, 619, 53, 1, 37, "Subsection",
+   CellTags->"b:3.0.6"],
+  Cell[17089, 624, 60, 1, 27, "Subsubsection",
+   CellTags->"b:3.0.6"],
+  Cell[17152, 627, 271, 7, 62, "Input",
+   CellTags->"b:3.0.6"],
+  Cell[17426, 636, 115, 3, 29, "Text",
+   CellTags->"b:3.0.6"],
+  Cell[17544, 641, 787, 22, 162, "Input",
+   CellTags->"b:3.0.6"]},
+ "b:3.1.0"->{
+  Cell[18450, 674, 53, 1, 37, "Subsection",
+   CellTags->"b:3.1.0"],
+  Cell[18506, 677, 430, 10, 47, "Text",
+   CellTags->"b:3.1.0"],
+  Cell[18961, 691, 58, 1, 27, "Subsubsection",
+   CellTags->"b:3.1.0"],
+  Cell[19022, 694, 71, 1, 29, "Text",
+   CellTags->"b:3.1.0"],
+  Cell[19130, 700, 58, 1, 27, "Subsubsection",
+   CellTags->"b:3.1.0"],
+  Cell[19191, 703, 1161, 42, 101, "Text",
+   CellTags->"b:3.1.0"],
+  Cell[20389, 750, 60, 1, 27, "Subsubsection",
+   CellTags->"b:3.1.0"],
+  Cell[20452, 753, 797, 23, 102, "Input",
+   CellTags->"b:3.1.0"],
+  Cell[21252, 778, 131, 4, 29, "Text",
+   CellTags->"b:3.1.0"],
+  Cell[21386, 784, 849, 24, 102, "Input",
+   CellTags->"b:3.1.0"],
+  Cell[22238, 810, 72, 1, 29, "Text",
+   CellTags->"b:3.1.0"],
+  Cell[22313, 813, 722, 21, 102, "Input",
+   CellTags->"b:3.1.0"],
+  Cell[23038, 836, 76, 1, 29, "Text",
+   CellTags->"b:3.1.0"],
+  Cell[23117, 839, 763, 18, 122, "Input",
+   CellTags->"b:3.1.0"]},
+ "b:3.1.1"->{
+  Cell[23929, 863, 61, 1, 37, "Subsection",
+   CellTags->"b:3.1.1"],
+  Cell[23993, 866, 2835, 90, 84, "Text",
+   CellTags->"b:3.1.1"],
+  Cell[26853, 960, 58, 1, 27, "Subsubsection",
+   CellTags->"b:3.1.1"],
+  Cell[26914, 963, 107, 3, 29, "Text",
+   CellTags->"b:3.1.1"],
+  Cell[27058, 971, 60, 1, 27, "Subsubsection",
+   CellTags->"b:3.1.1"],
+  Cell[27121, 974, 238, 6, 29, "Text",
+   CellTags->"b:3.1.1"],
+  Cell[27362, 982, 1539, 46, 142, "Input",
+   CellTags->"b:3.1.1"]},
+ "b:3.1.2"->{
+  Cell[28950, 1034, 53, 1, 37, "Subsection",
+   CellTags->"b:3.1.2"],
+  Cell[29006, 1037, 509, 18, 47, "Text",
+   CellTags->"b:3.1.2"],
+  Cell[29540, 1059, 58, 1, 27, "Subsubsection",
+   CellTags->"b:3.1.2"],
+  Cell[29601, 1062, 187, 4, 29, "Text",
+   CellTags->"b:3.1.2"],
+  Cell[29825, 1071, 58, 1, 27, "Subsubsection",
+   CellTags->"b:3.1.2"],
+  Cell[29886, 1074, 2629, 86, 155, "Text",
+   CellTags->"b:3.1.2"],
+  Cell[32518, 1162, 1793, 61, 173, "Text",
+   CellTags->"b:3.1.2"],
+  Cell[34348, 1228, 61, 1, 27, "Subsubsection",
+   CellTags->"b:3.1.2"],
+  Cell[34412, 1231, 755, 21, 102, "Input",
+   CellTags->"b:3.1.2"],
+  Cell[35170, 1254, 217, 5, 29, "Text",
+   CellTags->"b:3.1.2"],
+  Cell[35390, 1261, 749, 21, 102, "Input",
+   CellTags->"b:3.1.2"],
+  Cell[36142, 1284, 159, 2, 29, "Text",
+   CellTags->"b:3.1.2"],
+  Cell[36304, 1288, 1754, 50, 162, "Input",
+   CellTags->"b:3.1.2"],
+  Cell[38061, 1340, 85, 1, 29, "Text",
+   CellTags->"b:3.1.2"],
+  Cell[38149, 1343, 1487, 43, 162, "Input",
+   CellTags->"b:3.1.2"],
+  Cell[39639, 1388, 90, 1, 29, "Text",
+   CellTags->"b:3.1.2"],
+  Cell[39732, 1391, 1471, 43, 162, "Input",
+   CellTags->"b:3.1.2"]},
+ "b:3.2.0"->{
+  Cell[41334, 1445, 61, 1, 37, "Subsection",
+   CellTags->"b:3.2.0"],
+  Cell[41398, 1448, 340, 10, 47, "Text",
+   CellTags->"b:3.2.0"],
+  Cell[41763, 1462, 57, 1, 27, "Subsubsection",
+   CellTags->"b:3.2.0"],
+  Cell[41823, 1465, 51, 1, 29, "Text",
+   CellTags->"b:3.2.0"],
+  Cell[41911, 1471, 58, 1, 27, "Subsubsection",
+   CellTags->"b:3.2.0"],
+  Cell[41972, 1474, 879, 30, 155, "Text",
+   CellTags->"b:3.2.0"],
+  Cell[42888, 1509, 60, 1, 27, "Subsubsection",
+   CellTags->"b:3.2.0"],
+  Cell[42951, 1512, 91, 1, 29, "Text",
+   CellTags->"b:3.2.0"],
+  Cell[43045, 1515, 743, 20, 142, "Input",
+   CellTags->"b:3.2.0"],
+  Cell[43791, 1537, 135, 4, 29, "Text",
+   CellTags->"b:3.2.0"],
+  Cell[43929, 1543, 449, 13, 82, "Input",
+   CellTags->"b:3.2.0"],
+  Cell[44381, 1558, 370, 10, 47, "Text",
+   CellTags->"b:3.2.0"],
+  Cell[44754, 1570, 394, 10, 62, "Input",
+   CellTags->"b:3.2.0"],
+  Cell[45151, 1582, 109, 3, 29, "Text",
+   CellTags->"b:3.2.0"],
+  Cell[45263, 1587, 528, 13, 82, "Input",
+   CellTags->"b:3.2.0"],
+  Cell[45794, 1602, 82, 1, 29, "Text",
+   CellTags->"b:3.2.0"],
+  Cell[45879, 1605, 470, 12, 82, "Input",
+   CellTags->"b:3.2.0"],
+  Cell[46352, 1619, 318, 15, 29, "Text",
+   CellTags->"b:3.2.0"],
+  Cell[46673, 1636, 722, 20, 122, "Input",
+   CellTags->"b:3.2.0"]},
+ "b:3.2.1"->{
+  Cell[47444, 1662, 61, 1, 37, "Subsection",
+   CellTags->"b:3.2.1"],
+  Cell[47508, 1665, 174, 5, 29, "Text",
+   CellTags->"b:3.2.1"],
+  Cell[47707, 1674, 57, 1, 27, "Subsubsection",
+   CellTags->"b:3.2.1"],
+  Cell[47767, 1677, 51, 1, 29, "Text",
+   CellTags->"b:3.2.1"],
+  Cell[47855, 1683, 58, 1, 27, "Subsubsection",
+   CellTags->"b:3.2.1"],
+  Cell[47916, 1686, 3711, 134, 461, "Text",
+   CellTags->"b:3.2.1"],
+  Cell[51664, 1825, 60, 1, 27, "Subsubsection",
+   CellTags->"b:3.2.1"],
+  Cell[51727, 1828, 125, 6, 29, "Text",
+   CellTags->"b:3.2.1"],
+  Cell[51855, 1836, 278, 6, 62, "Input",
+   CellTags->"b:3.2.1"],
+  Cell[52136, 1844, 111, 3, 29, "Text",
+   CellTags->"b:3.2.1"],
+  Cell[52250, 1849, 747, 20, 142, "Input",
+   CellTags->"b:3.2.1"],
+  Cell[53000, 1871, 97, 1, 29, "Text",
+   CellTags->"b:3.2.1"],
+  Cell[53100, 1874, 565, 15, 102, "Input",
+   CellTags->"b:3.2.1"],
+  Cell[53668, 1891, 178, 6, 29, "Text",
+   CellTags->"b:3.2.1"],
+  Cell[53849, 1899, 298, 7, 41, "Input",
+   CellTags->"b:3.2.1"],
+  Cell[54150, 1908, 109, 3, 29, "Text",
+   CellTags->"b:3.2.1"],
+  Cell[54262, 1913, 457, 10, 41, "Input",
+   CellTags->"b:3.2.1"],
+  Cell[54722, 1925, 263, 8, 29, "Text",
+   CellTags->"b:3.2.1"],
+  Cell[54988, 1935, 869, 17, 62, "Input",
+   CellTags->"b:3.2.1"],
+  Cell[55860, 1954, 96, 1, 29, "Text",
+   CellTags->"b:3.2.1"],
+  Cell[55959, 1957, 511, 12, 62, "Input",
+   CellTags->"b:3.2.1"],
+  Cell[56473, 1971, 749, 33, 65, "Text",
+   CellTags->"b:3.2.1"],
+  Cell[57225, 2006, 591, 13, 62, "Input",
+   CellTags->"b:3.2.1"],
+  Cell[57819, 2021, 187, 5, 29, "Text",
+   CellTags->"b:3.2.1"],
+  Cell[58009, 2028, 738, 15, 62, "Input",
+   CellTags->"b:3.2.1"]},
+ "b:3.2.2"->{
+  Cell[58796, 2049, 57, 1, 37, "Subsection",
+   CellTags->"b:3.2.2"],
+  Cell[58856, 2052, 3087, 116, 138, "Text",
+   CellTags->"b:3.2.2"],
+  Cell[61968, 2172, 57, 1, 27, "Subsubsection",
+   CellTags->"b:3.2.2"],
+  Cell[62028, 2175, 52, 1, 29, "Text",
+   CellTags->"b:3.2.2"],
+  Cell[62117, 2181, 58, 1, 27, "Subsubsection",
+   CellTags->"b:3.2.2"],
+  Cell[62178, 2184, 1603, 55, 119, "Text",
+   CellTags->"b:3.2.2"],
+  Cell[63818, 2244, 60, 1, 27, "Subsubsection",
+   CellTags->"b:3.2.2"],
+  Cell[63881, 2247, 66, 1, 29, "Text",
+   CellTags->"b:3.2.2"],
+  Cell[63950, 2250, 729, 19, 122, "Input",
+   CellTags->"b:3.2.2"],
+  Cell[64682, 2271, 96, 1, 29, "Text",
+   CellTags->"b:3.2.2"],
+  Cell[64781, 2274, 616, 17, 82, "Input",
+   CellTags->"b:3.2.2"],
+  Cell[65400, 2293, 125, 4, 29, "Text",
+   CellTags->"b:3.2.2"],
+  Cell[65528, 2299, 1008, 27, 122, "Input",
+   CellTags->"b:3.2.2"],
+  Cell[66539, 2328, 460, 12, 62, "Input",
+   CellTags->"b:3.2.2"],
+  Cell[67002, 2342, 237, 6, 29, "Text",
+   CellTags->"b:3.2.2"],
+  Cell[67242, 2350, 962, 26, 122, "Input",
+   CellTags->"b:3.2.2"],
+  Cell[68207, 2378, 115, 3, 29, "Text",
+   CellTags->"b:3.2.2"],
+  Cell[68325, 2383, 865, 25, 82, "Input",
+   CellTags->"b:3.2.2"],
+  Cell[69193, 2410, 585, 22, 47, "Text",
+   CellTags->"b:3.2.2"],
+  Cell[69781, 2434, 834, 22, 62, "Input",
+   CellTags->"b:3.2.2"]},
+ "b:3.2.3"->{
+  Cell[70664, 2462, 62, 1, 37, "Subsection",
+   CellTags->"b:3.2.3"],
+  Cell[70729, 2465, 452, 15, 47, "Text",
+   CellTags->"b:3.2.3"],
+  Cell[71206, 2484, 57, 1, 27, "Subsubsection",
+   CellTags->"b:3.2.3"],
+  Cell[71266, 2487, 52, 1, 29, "Text",
+   CellTags->"b:3.2.3"],
+  Cell[71355, 2493, 58, 1, 27, "Subsubsection",
+   CellTags->"b:3.2.3"],
+  Cell[71416, 2496, 2397, 84, 317, "Text",
+   CellTags->"b:3.2.3"],
+  Cell[73850, 2585, 60, 1, 27, "Subsubsection",
+   CellTags->"b:3.2.3"],
+  Cell[73913, 2588, 121, 3, 29, "Text",
+   CellTags->"b:3.2.3"],
+  Cell[74037, 2593, 1262, 36, 182, "Input",
+   CellTags->"b:3.2.3"],
+  Cell[75302, 2631, 111, 3, 29, "Text",
+   CellTags->"b:3.2.3"],
+  Cell[75416, 2636, 444, 9, 41, "Input",
+   CellTags->"b:3.2.3"],
+  Cell[75863, 2647, 236, 6, 29, "Text",
+   CellTags->"b:3.2.3"],
+  Cell[76102, 2655, 738, 16, 62, "Input",
+   CellTags->"b:3.2.3"],
+  Cell[76843, 2673, 137, 6, 29, "Text",
+   CellTags->"b:3.2.3"],
+  Cell[76983, 2681, 582, 13, 62, "Input",
+   CellTags->"b:3.2.3"],
+  Cell[77568, 2696, 165, 5, 29, "Text",
+   CellTags->"b:3.2.3"],
+  Cell[77736, 2703, 1692, 50, 182, "Input",
+   CellTags->"b:3.2.3"],
+  Cell[79431, 2755, 77, 1, 29, "Text",
+   CellTags->"b:3.2.3"],
+  Cell[79511, 2758, 486, 12, 41, "Input",
+   CellTags->"b:3.2.3"],
+  Cell[80000, 2772, 90, 1, 29, "Text",
+   CellTags->"b:3.2.3"],
+  Cell[80093, 2775, 392, 8, 41, "Input",
+   CellTags->"b:3.2.3"]},
+ "b:3.3.0"->{
+  Cell[80616, 2794, 61, 1, 37, "Subsection",
+   CellTags->"b:3.3.0"],
+  Cell[80680, 2797, 134, 4, 29, "Text",
+   CellTags->"b:3.3.0"],
+  Cell[80839, 2805, 57, 1, 27, "Subsubsection",
+   CellTags->"b:3.3.0"],
+  Cell[80899, 2808, 52, 1, 29, "Text",
+   CellTags->"b:3.3.0"],
+  Cell[80988, 2814, 58, 1, 27, "Subsubsection",
+   CellTags->"b:3.3.0"],
+  Cell[81049, 2817, 1564, 52, 191, "Text",
+   CellTags->"b:3.3.0"],
+  Cell[82650, 2874, 60, 1, 27, "Subsubsection",
+   CellTags->"b:3.3.0"],
+  Cell[82713, 2877, 183, 6, 29, "Text",
+   CellTags->"b:3.3.0"],
+  Cell[82899, 2885, 348, 8, 82, "Input",
+   CellTags->"b:3.3.0"],
+  Cell[83250, 2895, 710, 20, 102, "Input",
+   CellTags->"b:3.3.0"],
+  Cell[83963, 2917, 117, 3, 29, "Text",
+   CellTags->"b:3.3.0"],
+  Cell[84083, 2922, 699, 19, 82, "Input",
+   CellTags->"b:3.3.0"],
+  Cell[84785, 2943, 616, 22, 47, "Text",
+   CellTags->"b:3.3.0"],
+  Cell[85404, 2967, 630, 28, 47, "Text",
+   CellTags->"b:3.3.0"],
+  Cell[86037, 2997, 443, 10, 41, "Input",
+   CellTags->"b:3.3.0"],
+  Cell[86483, 3009, 108, 3, 29, "Text",
+   CellTags->"b:3.3.0"],
+  Cell[86594, 3014, 469, 10, 41, "Input",
+   CellTags->"b:3.3.0"],
+  Cell[87066, 3026, 79, 1, 29, "Text",
+   CellTags->"b:3.3.0"],
+  Cell[87148, 3029, 371, 8, 41, "Input",
+   CellTags->"b:3.3.0"]},
+ "b:3.4.0"->{
+  Cell[87640, 3048, 55, 1, 37, "Subsection",
+   CellTags->"b:3.4.0"],
+  Cell[87698, 3051, 481, 11, 65, "Text",
+   CellTags->"b:3.4.0"],
+  Cell[88204, 3066, 58, 1, 27, "Subsubsection",
+   CellTags->"b:3.4.0"],
+  Cell[88265, 3069, 193, 4, 29, "Text",
+   CellTags->"b:3.4.0"],
+  Cell[88495, 3078, 58, 1, 27, "Subsubsection",
+   CellTags->"b:3.4.0"],
+  Cell[88556, 3081, 2262, 75, 317, "Text",
+   CellTags->"b:3.4.0"],
+  Cell[90855, 3161, 60, 1, 27, "Subsubsection",
+   CellTags->"b:3.4.0"],
+  Cell[90918, 3164, 513, 13, 102, "Input",
+   CellTags->"b:3.4.0"],
+  Cell[91434, 3179, 138, 2, 29, "Text",
+   CellTags->"b:3.4.0"],
+  Cell[91575, 3183, 615, 16, 102, "Input",
+   CellTags->"b:3.4.0"],
+  Cell[92193, 3201, 237, 4, 29, "Text",
+   CellTags->"b:3.4.0"],
+  Cell[92433, 3207, 688, 17, 122, "Input",
+   CellTags->"b:3.4.0"],
+  Cell[93124, 3226, 225, 4, 29, "Text",
+   CellTags->"b:3.4.0"],
+  Cell[93352, 3232, 939, 23, 142, "Input",
+   CellTags->"b:3.4.0"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"b:3.0.0", 94732, 3273},
+ {"b:3.0.1", 95533, 3298},
+ {"b:3.0.2", 96661, 3333},
+ {"b:3.0.3", 97414, 3356},
+ {"b:3.0.4", 97971, 3373},
+ {"b:3.0.5", 98522, 3390},
+ {"b:3.0.6", 98942, 3403},
+ {"b:3.1.0", 99294, 3414},
+ {"b:3.1.1", 100247, 3443},
+ {"b:3.1.2", 100737, 3458},
+ {"b:3.2.0", 101909, 3493},
+ {"b:3.2.1", 103204, 3532},
+ {"b:3.2.2", 104893, 3583},
+ {"b:3.2.3", 106260, 3624},
+ {"b:3.3.0", 107686, 3667},
+ {"b:3.4.0", 108979, 3706}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 101, 1, 73, "Title"],
+Cell[CellGroupData[{
+Cell[716, 28, 30, 0, 75, "Section"],
+Cell[CellGroupData[{
+Cell[771, 32, 53, 1, 37, "Subsection",
+ CellTags->"b:3.0.0"],
+Cell[827, 35, 127, 4, 29, "Text",
+ CellTags->"b:3.0.0"],
+Cell[CellGroupData[{
+Cell[979, 43, 57, 1, 27, "Subsubsection",
+ CellTags->"b:3.0.0"],
+Cell[1039, 46, 79, 1, 29, "Text",
+ CellTags->"b:3.0.0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1155, 52, 58, 1, 27, "Subsubsection",
+ CellTags->"b:3.0.0"],
+Cell[1216, 55, 920, 36, 119, "Text",
+ CellTags->"b:3.0.0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2173, 96, 60, 1, 27, "Subsubsection",
+ CellTags->"b:3.0.0"],
+Cell[2236, 99, 162, 2, 29, "Text",
+ CellTags->"b:3.0.0"],
+Cell[2401, 103, 278, 6, 62, "Input",
+ CellTags->"b:3.0.0"],
+Cell[2682, 111, 269, 6, 62, "Input",
+ CellTags->"b:3.0.0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2988, 122, 98, 1, 27, "Subsubsection",
+ CellTags->"b:3.0.0"],
+Cell[3089, 125, 617, 11, 65, "Text",
+ CellTags->"b:3.0.0"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3755, 142, 54, 1, 37, "Subsection",
+ CellTags->"b:3.0.1"],
+Cell[3812, 145, 148, 4, 29, "Text",
+ CellTags->"b:3.0.1"],
+Cell[CellGroupData[{
+Cell[3985, 153, 58, 1, 27, "Subsubsection",
+ CellTags->"b:3.0.1"],
+Cell[4046, 156, 79, 1, 29, "Text",
+ CellTags->"b:3.0.1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4162, 162, 58, 1, 27, "Subsubsection",
+ CellTags->"b:3.0.1"],
+Cell[4223, 165, 1392, 49, 155, "Text",
+ CellTags->"b:3.0.1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5652, 219, 60, 1, 27, "Subsubsection",
+ CellTags->"b:3.0.1"],
+Cell[5715, 222, 220, 5, 29, "Text",
+ CellTags->"b:3.0.1"],
+Cell[5938, 229, 375, 8, 62, "Input",
+ CellTags->"b:3.0.1"],
+Cell[6316, 239, 176, 4, 29, "Text",
+ CellTags->"b:3.0.1"],
+Cell[6495, 245, 420, 10, 62, "Input",
+ CellTags->"b:3.0.1"],
+Cell[6918, 257, 152, 2, 29, "Text",
+ CellTags->"b:3.0.1"],
+Cell[7073, 261, 848, 23, 122, "Input",
+ CellTags->"b:3.0.1"],
+Cell[7924, 286, 260, 7, 47, "Text",
+ CellTags->"b:3.0.1"],
+Cell[8187, 295, 424, 12, 62, "Input",
+ CellTags->"b:3.0.1"],
+Cell[8614, 309, 281, 6, 47, "Text",
+ CellTags->"b:3.0.1"],
+Cell[8898, 317, 599, 17, 102, "Input",
+ CellTags->"b:3.0.1"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9546, 340, 123, 2, 37, "Subsection",
+ CellTags->"b:3.0.2"],
+Cell[9672, 344, 485, 11, 47, "Text",
+ CellTags->"b:3.0.2"],
+Cell[CellGroupData[{
+Cell[10182, 359, 58, 1, 27, "Subsubsection",
+ CellTags->"b:3.0.2"],
+Cell[10243, 362, 79, 1, 29, "Text",
+ CellTags->"b:3.0.2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10359, 368, 58, 1, 27, "Subsubsection",
+ CellTags->"b:3.0.2"],
+Cell[10420, 371, 1433, 50, 155, "Text",
+ CellTags->"b:3.0.2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11890, 426, 60, 1, 27, "Subsubsection",
+ CellTags->"b:3.0.2"],
+Cell[11953, 429, 224, 5, 29, "Text",
+ CellTags->"b:3.0.2"],
+Cell[12180, 436, 401, 8, 62, "Input",
+ CellTags->"b:3.0.2"],
+Cell[12584, 446, 207, 3, 29, "Text",
+ CellTags->"b:3.0.2"],
+Cell[12794, 451, 437, 10, 62, "Input",
+ CellTags->"b:3.0.2"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13280, 467, 53, 1, 37, "Subsection",
+ CellTags->"b:3.0.3"],
+Cell[13336, 470, 132, 4, 29, "Text",
+ CellTags->"b:3.0.3"],
+Cell[CellGroupData[{
+Cell[13493, 478, 57, 1, 27, "Subsubsection",
+ CellTags->"b:3.0.3"],
+Cell[13553, 481, 79, 1, 29, "Text",
+ CellTags->"b:3.0.3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13669, 487, 60, 1, 27, "Subsubsection",
+ CellTags->"b:3.0.3"],
+Cell[13732, 490, 228, 5, 62, "Input",
+ CellTags->"b:3.0.3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13997, 500, 105, 2, 27, "Subsubsection",
+ CellTags->"b:3.0.3"],
+Cell[14105, 504, 222, 5, 47, "Text",
+ CellTags->"b:3.0.3"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14376, 515, 54, 1, 37, "Subsection",
+ CellTags->"b:3.0.4"],
+Cell[14433, 518, 147, 4, 29, "Text",
+ CellTags->"b:3.0.4"],
+Cell[CellGroupData[{
+Cell[14605, 526, 58, 1, 27, "Subsubsection",
+ CellTags->"b:3.0.4"],
+Cell[14666, 529, 79, 1, 29, "Text",
+ CellTags->"b:3.0.4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14782, 535, 60, 1, 27, "Subsubsection",
+ CellTags->"b:3.0.4"],
+Cell[14845, 538, 304, 7, 62, "Input",
+ CellTags->"b:3.0.4"],
+Cell[15152, 547, 134, 4, 29, "Text",
+ CellTags->"b:3.0.4"],
+Cell[15289, 553, 949, 26, 162, "Input",
+ CellTags->"b:3.0.4"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16287, 585, 52, 1, 37, "Subsection",
+ CellTags->"b:3.0.5"],
+Cell[16342, 588, 131, 4, 29, "Text",
+ CellTags->"b:3.0.5"],
+Cell[CellGroupData[{
+Cell[16498, 596, 57, 1, 27, "Subsubsection",
+ CellTags->"b:3.0.5"],
+Cell[16558, 599, 79, 1, 29, "Text",
+ CellTags->"b:3.0.5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16674, 605, 60, 1, 27, "Subsubsection",
+ CellTags->"b:3.0.5"],
+Cell[16737, 608, 225, 5, 62, "Input",
+ CellTags->"b:3.0.5"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17011, 619, 53, 1, 37, "Subsection",
+ CellTags->"b:3.0.6"],
+Cell[CellGroupData[{
+Cell[17089, 624, 60, 1, 27, "Subsubsection",
+ CellTags->"b:3.0.6"],
+Cell[17152, 627, 271, 7, 62, "Input",
+ CellTags->"b:3.0.6"],
+Cell[17426, 636, 115, 3, 29, "Text",
+ CellTags->"b:3.0.6"],
+Cell[17544, 641, 787, 22, 162, "Input",
+ CellTags->"b:3.0.6"]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[18392, 670, 33, 0, 45, "Section"],
+Cell[CellGroupData[{
+Cell[18450, 674, 53, 1, 37, "Subsection",
+ CellTags->"b:3.1.0"],
+Cell[18506, 677, 430, 10, 47, "Text",
+ CellTags->"b:3.1.0"],
+Cell[CellGroupData[{
+Cell[18961, 691, 58, 1, 27, "Subsubsection",
+ CellTags->"b:3.1.0"],
+Cell[19022, 694, 71, 1, 29, "Text",
+ CellTags->"b:3.1.0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19130, 700, 58, 1, 27, "Subsubsection",
+ CellTags->"b:3.1.0"],
+Cell[19191, 703, 1161, 42, 101, "Text",
+ CellTags->"b:3.1.0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20389, 750, 60, 1, 27, "Subsubsection",
+ CellTags->"b:3.1.0"],
+Cell[20452, 753, 797, 23, 102, "Input",
+ CellTags->"b:3.1.0"],
+Cell[21252, 778, 131, 4, 29, "Text",
+ CellTags->"b:3.1.0"],
+Cell[21386, 784, 849, 24, 102, "Input",
+ CellTags->"b:3.1.0"],
+Cell[22238, 810, 72, 1, 29, "Text",
+ CellTags->"b:3.1.0"],
+Cell[22313, 813, 722, 21, 102, "Input",
+ CellTags->"b:3.1.0"],
+Cell[23038, 836, 76, 1, 29, "Text",
+ CellTags->"b:3.1.0"],
+Cell[23117, 839, 763, 18, 122, "Input",
+ CellTags->"b:3.1.0"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23929, 863, 61, 1, 37, "Subsection",
+ CellTags->"b:3.1.1"],
+Cell[23993, 866, 2835, 90, 84, "Text",
+ CellTags->"b:3.1.1"],
+Cell[CellGroupData[{
+Cell[26853, 960, 58, 1, 27, "Subsubsection",
+ CellTags->"b:3.1.1"],
+Cell[26914, 963, 107, 3, 29, "Text",
+ CellTags->"b:3.1.1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27058, 971, 60, 1, 27, "Subsubsection",
+ CellTags->"b:3.1.1"],
+Cell[27121, 974, 238, 6, 29, "Text",
+ CellTags->"b:3.1.1"],
+Cell[27362, 982, 1539, 46, 142, "Input",
+ CellTags->"b:3.1.1"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28950, 1034, 53, 1, 37, "Subsection",
+ CellTags->"b:3.1.2"],
+Cell[29006, 1037, 509, 18, 47, "Text",
+ CellTags->"b:3.1.2"],
+Cell[CellGroupData[{
+Cell[29540, 1059, 58, 1, 27, "Subsubsection",
+ CellTags->"b:3.1.2"],
+Cell[29601, 1062, 187, 4, 29, "Text",
+ CellTags->"b:3.1.2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29825, 1071, 58, 1, 27, "Subsubsection",
+ CellTags->"b:3.1.2"],
+Cell[29886, 1074, 2629, 86, 155, "Text",
+ CellTags->"b:3.1.2"],
+Cell[32518, 1162, 1793, 61, 173, "Text",
+ CellTags->"b:3.1.2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34348, 1228, 61, 1, 27, "Subsubsection",
+ CellTags->"b:3.1.2"],
+Cell[34412, 1231, 755, 21, 102, "Input",
+ CellTags->"b:3.1.2"],
+Cell[35170, 1254, 217, 5, 29, "Text",
+ CellTags->"b:3.1.2"],
+Cell[35390, 1261, 749, 21, 102, "Input",
+ CellTags->"b:3.1.2"],
+Cell[36142, 1284, 159, 2, 29, "Text",
+ CellTags->"b:3.1.2"],
+Cell[36304, 1288, 1754, 50, 162, "Input",
+ CellTags->"b:3.1.2"],
+Cell[38061, 1340, 85, 1, 29, "Text",
+ CellTags->"b:3.1.2"],
+Cell[38149, 1343, 1487, 43, 162, "Input",
+ CellTags->"b:3.1.2"],
+Cell[39639, 1388, 90, 1, 29, "Text",
+ CellTags->"b:3.1.2"],
+Cell[39732, 1391, 1471, 43, 162, "Input",
+ CellTags->"b:3.1.2"]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[41264, 1441, 45, 0, 45, "Section"],
+Cell[CellGroupData[{
+Cell[41334, 1445, 61, 1, 37, "Subsection",
+ CellTags->"b:3.2.0"],
+Cell[41398, 1448, 340, 10, 47, "Text",
+ CellTags->"b:3.2.0"],
+Cell[CellGroupData[{
+Cell[41763, 1462, 57, 1, 27, "Subsubsection",
+ CellTags->"b:3.2.0"],
+Cell[41823, 1465, 51, 1, 29, "Text",
+ CellTags->"b:3.2.0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41911, 1471, 58, 1, 27, "Subsubsection",
+ CellTags->"b:3.2.0"],
+Cell[41972, 1474, 879, 30, 155, "Text",
+ CellTags->"b:3.2.0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[42888, 1509, 60, 1, 27, "Subsubsection",
+ CellTags->"b:3.2.0"],
+Cell[42951, 1512, 91, 1, 29, "Text",
+ CellTags->"b:3.2.0"],
+Cell[43045, 1515, 743, 20, 142, "Input",
+ CellTags->"b:3.2.0"],
+Cell[43791, 1537, 135, 4, 29, "Text",
+ CellTags->"b:3.2.0"],
+Cell[43929, 1543, 449, 13, 82, "Input",
+ CellTags->"b:3.2.0"],
+Cell[44381, 1558, 370, 10, 47, "Text",
+ CellTags->"b:3.2.0"],
+Cell[44754, 1570, 394, 10, 62, "Input",
+ CellTags->"b:3.2.0"],
+Cell[45151, 1582, 109, 3, 29, "Text",
+ CellTags->"b:3.2.0"],
+Cell[45263, 1587, 528, 13, 82, "Input",
+ CellTags->"b:3.2.0"],
+Cell[45794, 1602, 82, 1, 29, "Text",
+ CellTags->"b:3.2.0"],
+Cell[45879, 1605, 470, 12, 82, "Input",
+ CellTags->"b:3.2.0"],
+Cell[46352, 1619, 318, 15, 29, "Text",
+ CellTags->"b:3.2.0"],
+Cell[46673, 1636, 722, 20, 122, "Input",
+ CellTags->"b:3.2.0"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47444, 1662, 61, 1, 37, "Subsection",
+ CellTags->"b:3.2.1"],
+Cell[47508, 1665, 174, 5, 29, "Text",
+ CellTags->"b:3.2.1"],
+Cell[CellGroupData[{
+Cell[47707, 1674, 57, 1, 27, "Subsubsection",
+ CellTags->"b:3.2.1"],
+Cell[47767, 1677, 51, 1, 29, "Text",
+ CellTags->"b:3.2.1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47855, 1683, 58, 1, 27, "Subsubsection",
+ CellTags->"b:3.2.1"],
+Cell[47916, 1686, 3711, 134, 461, "Text",
+ CellTags->"b:3.2.1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[51664, 1825, 60, 1, 27, "Subsubsection",
+ CellTags->"b:3.2.1"],
+Cell[51727, 1828, 125, 6, 29, "Text",
+ CellTags->"b:3.2.1"],
+Cell[51855, 1836, 278, 6, 62, "Input",
+ CellTags->"b:3.2.1"],
+Cell[52136, 1844, 111, 3, 29, "Text",
+ CellTags->"b:3.2.1"],
+Cell[52250, 1849, 747, 20, 142, "Input",
+ CellTags->"b:3.2.1"],
+Cell[53000, 1871, 97, 1, 29, "Text",
+ CellTags->"b:3.2.1"],
+Cell[53100, 1874, 565, 15, 102, "Input",
+ CellTags->"b:3.2.1"],
+Cell[53668, 1891, 178, 6, 29, "Text",
+ CellTags->"b:3.2.1"],
+Cell[53849, 1899, 298, 7, 41, "Input",
+ CellTags->"b:3.2.1"],
+Cell[54150, 1908, 109, 3, 29, "Text",
+ CellTags->"b:3.2.1"],
+Cell[54262, 1913, 457, 10, 41, "Input",
+ CellTags->"b:3.2.1"],
+Cell[54722, 1925, 263, 8, 29, "Text",
+ CellTags->"b:3.2.1"],
+Cell[54988, 1935, 869, 17, 62, "Input",
+ CellTags->"b:3.2.1"],
+Cell[55860, 1954, 96, 1, 29, "Text",
+ CellTags->"b:3.2.1"],
+Cell[55959, 1957, 511, 12, 62, "Input",
+ CellTags->"b:3.2.1"],
+Cell[56473, 1971, 749, 33, 65, "Text",
+ CellTags->"b:3.2.1"],
+Cell[57225, 2006, 591, 13, 62, "Input",
+ CellTags->"b:3.2.1"],
+Cell[57819, 2021, 187, 5, 29, "Text",
+ CellTags->"b:3.2.1"],
+Cell[58009, 2028, 738, 15, 62, "Input",
+ CellTags->"b:3.2.1"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[58796, 2049, 57, 1, 37, "Subsection",
+ CellTags->"b:3.2.2"],
+Cell[58856, 2052, 3087, 116, 138, "Text",
+ CellTags->"b:3.2.2"],
+Cell[CellGroupData[{
+Cell[61968, 2172, 57, 1, 27, "Subsubsection",
+ CellTags->"b:3.2.2"],
+Cell[62028, 2175, 52, 1, 29, "Text",
+ CellTags->"b:3.2.2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[62117, 2181, 58, 1, 27, "Subsubsection",
+ CellTags->"b:3.2.2"],
+Cell[62178, 2184, 1603, 55, 119, "Text",
+ CellTags->"b:3.2.2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[63818, 2244, 60, 1, 27, "Subsubsection",
+ CellTags->"b:3.2.2"],
+Cell[63881, 2247, 66, 1, 29, "Text",
+ CellTags->"b:3.2.2"],
+Cell[63950, 2250, 729, 19, 122, "Input",
+ CellTags->"b:3.2.2"],
+Cell[64682, 2271, 96, 1, 29, "Text",
+ CellTags->"b:3.2.2"],
+Cell[64781, 2274, 616, 17, 82, "Input",
+ CellTags->"b:3.2.2"],
+Cell[65400, 2293, 125, 4, 29, "Text",
+ CellTags->"b:3.2.2"],
+Cell[65528, 2299, 1008, 27, 122, "Input",
+ CellTags->"b:3.2.2"],
+Cell[66539, 2328, 460, 12, 62, "Input",
+ CellTags->"b:3.2.2"],
+Cell[67002, 2342, 237, 6, 29, "Text",
+ CellTags->"b:3.2.2"],
+Cell[67242, 2350, 962, 26, 122, "Input",
+ CellTags->"b:3.2.2"],
+Cell[68207, 2378, 115, 3, 29, "Text",
+ CellTags->"b:3.2.2"],
+Cell[68325, 2383, 865, 25, 82, "Input",
+ CellTags->"b:3.2.2"],
+Cell[69193, 2410, 585, 22, 47, "Text",
+ CellTags->"b:3.2.2"],
+Cell[69781, 2434, 834, 22, 62, "Input",
+ CellTags->"b:3.2.2"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[70664, 2462, 62, 1, 37, "Subsection",
+ CellTags->"b:3.2.3"],
+Cell[70729, 2465, 452, 15, 47, "Text",
+ CellTags->"b:3.2.3"],
+Cell[CellGroupData[{
+Cell[71206, 2484, 57, 1, 27, "Subsubsection",
+ CellTags->"b:3.2.3"],
+Cell[71266, 2487, 52, 1, 29, "Text",
+ CellTags->"b:3.2.3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[71355, 2493, 58, 1, 27, "Subsubsection",
+ CellTags->"b:3.2.3"],
+Cell[71416, 2496, 2397, 84, 317, "Text",
+ CellTags->"b:3.2.3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[73850, 2585, 60, 1, 27, "Subsubsection",
+ CellTags->"b:3.2.3"],
+Cell[73913, 2588, 121, 3, 29, "Text",
+ CellTags->"b:3.2.3"],
+Cell[74037, 2593, 1262, 36, 182, "Input",
+ CellTags->"b:3.2.3"],
+Cell[75302, 2631, 111, 3, 29, "Text",
+ CellTags->"b:3.2.3"],
+Cell[75416, 2636, 444, 9, 41, "Input",
+ CellTags->"b:3.2.3"],
+Cell[75863, 2647, 236, 6, 29, "Text",
+ CellTags->"b:3.2.3"],
+Cell[76102, 2655, 738, 16, 62, "Input",
+ CellTags->"b:3.2.3"],
+Cell[76843, 2673, 137, 6, 29, "Text",
+ CellTags->"b:3.2.3"],
+Cell[76983, 2681, 582, 13, 62, "Input",
+ CellTags->"b:3.2.3"],
+Cell[77568, 2696, 165, 5, 29, "Text",
+ CellTags->"b:3.2.3"],
+Cell[77736, 2703, 1692, 50, 182, "Input",
+ CellTags->"b:3.2.3"],
+Cell[79431, 2755, 77, 1, 29, "Text",
+ CellTags->"b:3.2.3"],
+Cell[79511, 2758, 486, 12, 41, "Input",
+ CellTags->"b:3.2.3"],
+Cell[80000, 2772, 90, 1, 29, "Text",
+ CellTags->"b:3.2.3"],
+Cell[80093, 2775, 392, 8, 41, "Input",
+ CellTags->"b:3.2.3"]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[80546, 2790, 45, 0, 45, "Section"],
+Cell[CellGroupData[{
+Cell[80616, 2794, 61, 1, 37, "Subsection",
+ CellTags->"b:3.3.0"],
+Cell[80680, 2797, 134, 4, 29, "Text",
+ CellTags->"b:3.3.0"],
+Cell[CellGroupData[{
+Cell[80839, 2805, 57, 1, 27, "Subsubsection",
+ CellTags->"b:3.3.0"],
+Cell[80899, 2808, 52, 1, 29, "Text",
+ CellTags->"b:3.3.0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[80988, 2814, 58, 1, 27, "Subsubsection",
+ CellTags->"b:3.3.0"],
+Cell[81049, 2817, 1564, 52, 191, "Text",
+ CellTags->"b:3.3.0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[82650, 2874, 60, 1, 27, "Subsubsection",
+ CellTags->"b:3.3.0"],
+Cell[82713, 2877, 183, 6, 29, "Text",
+ CellTags->"b:3.3.0"],
+Cell[82899, 2885, 348, 8, 82, "Input",
+ CellTags->"b:3.3.0"],
+Cell[83250, 2895, 710, 20, 102, "Input",
+ CellTags->"b:3.3.0"],
+Cell[83963, 2917, 117, 3, 29, "Text",
+ CellTags->"b:3.3.0"],
+Cell[84083, 2922, 699, 19, 82, "Input",
+ CellTags->"b:3.3.0"],
+Cell[84785, 2943, 616, 22, 47, "Text",
+ CellTags->"b:3.3.0"],
+Cell[85404, 2967, 630, 28, 47, "Text",
+ CellTags->"b:3.3.0"],
+Cell[86037, 2997, 443, 10, 41, "Input",
+ CellTags->"b:3.3.0"],
+Cell[86483, 3009, 108, 3, 29, "Text",
+ CellTags->"b:3.3.0"],
+Cell[86594, 3014, 469, 10, 41, "Input",
+ CellTags->"b:3.3.0"],
+Cell[87066, 3026, 79, 1, 29, "Text",
+ CellTags->"b:3.3.0"],
+Cell[87148, 3029, 371, 8, 41, "Input",
+ CellTags->"b:3.3.0"]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[87580, 3044, 35, 0, 45, "Section"],
+Cell[CellGroupData[{
+Cell[87640, 3048, 55, 1, 37, "Subsection",
+ CellTags->"b:3.4.0"],
+Cell[87698, 3051, 481, 11, 65, "Text",
+ CellTags->"b:3.4.0"],
+Cell[CellGroupData[{
+Cell[88204, 3066, 58, 1, 27, "Subsubsection",
+ CellTags->"b:3.4.0"],
+Cell[88265, 3069, 193, 4, 29, "Text",
+ CellTags->"b:3.4.0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[88495, 3078, 58, 1, 27, "Subsubsection",
+ CellTags->"b:3.4.0"],
+Cell[88556, 3081, 2262, 75, 317, "Text",
+ CellTags->"b:3.4.0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[90855, 3161, 60, 1, 27, "Subsubsection",
+ CellTags->"b:3.4.0"],
+Cell[90918, 3164, 513, 13, 102, "Input",
+ CellTags->"b:3.4.0"],
+Cell[91434, 3179, 138, 2, 29, "Text",
+ CellTags->"b:3.4.0"],
+Cell[91575, 3183, 615, 16, 102, "Input",
+ CellTags->"b:3.4.0"],
+Cell[92193, 3201, 237, 4, 29, "Text",
+ CellTags->"b:3.4.0"],
+Cell[92433, 3207, 688, 17, 122, "Input",
+ CellTags->"b:3.4.0"],
+Cell[93124, 3226, 225, 4, 29, "Text",
+ CellTags->"b:3.4.0"],
+Cell[93352, 3232, 939, 23, 142, "Input",
+ CellTags->"b:3.4.0"]
+}, Open  ]]
+}, Open  ]]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

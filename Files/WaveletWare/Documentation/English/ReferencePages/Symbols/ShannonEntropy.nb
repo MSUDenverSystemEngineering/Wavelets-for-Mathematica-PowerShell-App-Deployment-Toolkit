@@ -1,0 +1,795 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     25121,        785]
+NotebookOptionsPosition[     20568,        648]
+NotebookOutlinePosition[     22868,        709]
+CellTagsIndexPosition[     22748,        703]
+WindowTitle->ShannonEntropy
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["WAVELET WARE PACKAGE SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Tutorials",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Tutorials", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"Computing and Plotting Wavelet Packet \
+Transformations\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/tutorial/Computing and Plotting Wavelet Packet \
+Transforms"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"Tutorials"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"NumberNonzero\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/NumberNonzero"], \
+"\<\"NumberAboveThreshold\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/NumberAboveThreshold"], "\<\"SumOfPowers\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/SumOfPowers"], "\<\"WPT\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/WPT"], "\<\"BestBasisTree\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/BestBasisTree"], "\<\"ShowBestBasis\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/ShowBestBasis"], "\<\"CostFunction\"\>":>
+       Documentation`HelpLookup["paclet:WaveletWare/ref/CostFunction"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"WaveletWare/ref/ShannonEntropy\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["WaveletWare/ref/ShannonEntropy"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/WaveletWare/ref/\
+ShannonEntropy.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$101197], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "WaveletWare/ref/ShannonEntropy", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[TextData[{
+ Cell["ShannonEntropy", "ObjectName"],
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{8, 0}],
+    CacheGraphics->False],
+   Spacer[8]]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"ShannonEntropy", "[", 
+       StyleBox["data", "TI"], "]"}]], "InlineFormula"],
+     "\[LineSeparator]is a cost function that can be used in conjunction with \
+wavelet packet transforms."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    InterpretationBox[
+     StyleBox[
+      GraphicsBox[{},
+       BaselinePosition->Baseline,
+       ImageSize->{6, 0}],
+      CacheGraphics->False],
+     Spacer[6]]]],
+   "Details"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->250278923],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ StyleBox["ShannonEntropy",
+  FontFamily->"Courier New",
+  FontSize->12],
+ " converts ",
+ Cell[BoxData[
+  StyleBox["data", "TI"]], "InlineFormula"],
+ " to a vector ",
+ Cell[BoxData[
+  StyleBox["v", "TI"]], "InlineFormula"],
+ " (of length ",
+ Cell[BoxData[
+  StyleBox["n", "TI"]], "InlineFormula"],
+ "), normalizes it and then computes\[LineSeparator]\[LineSeparator]\t\t-",
+ Cell[BoxData[
+  RowBox[{
+   UnderoverscriptBox["\[Sum]", 
+    RowBox[{"k", "=", "1"}], "n"], 
+   RowBox[{
+    SubsuperscriptBox["v", "k", "2"], " ", "Log", 
+    RowBox[{"(", 
+     SubsuperscriptBox["v", "k", "2"], ")"}]}]}]], "InlineFormula"]
+}], "Notes",
+ CellID->1067943069],
+
+Cell[TextData[{
+ StyleBox["ShannonEntropy",
+  FontFamily->"Courier New",
+  FontSize->12],
+ " is a value for the option ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["CostFunction"]],"paclet:WaveletWare/ref/CostFunction"},
+   "RefLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula"],
+ "."
+}], "Notes",
+ CellID->114786870],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->10905380],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->657284330],
+
+Cell["This loads the package:", "MathCaption",
+ CellID->16454449],
+
+Cell[BoxData[
+ RowBox[{"<<", "WaveletWare`"}]], "Input",
+ InitializationCell->True,
+ CellLabel->"In[1]:=",
+ CellID->861618089],
+
+Cell["Compute the Shannon entropy of a vector.", "ExampleText",
+ CellID->531176199],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"v", "=", 
+   RowBox[{"Range", "[", "40", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ShannonEntropy", "[", "v", "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->596698103],
+
+Cell[BoxData["3.2694552337857123`"], "Output",
+ ImageSize->{53, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->444022611]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->162975584],
+
+Cell["\<\
+Use Shannon entropy to compute the wavelet packet transform of a vector.\
+\>", "ExampleText",
+ CellID->365103087],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", "64"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"v", "=", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{"Map", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"ConstantArray", "[", 
+        RowBox[{"#", ",", "n"}], "]"}], "&"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", 
+        RowBox[{"-", "5"}], ",", 
+        RowBox[{"-", "10"}], ",", "20"}], "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ListPlot", "[", 
+   RowBox[{"v", ",", 
+    RowBox[{"Ticks", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Range", "[", 
+        RowBox[{"0", ",", "n", ",", 
+         RowBox[{"n", "/", "4"}]}], "]"}], ",", 
+       RowBox[{"Range", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", "1"}], "/", "2"}], ",", 
+         RowBox[{"1", "/", "2"}]}], "]"}]}], "}"}]}], ",", 
+    RowBox[{"PlotLabel", "\[Rule]", "\"\<Data Samples\>\""}]}], "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"wpt", ",", "tree"}], "}"}], "=", 
+   RowBox[{"WPT", "[", 
+    RowBox[{"v", ",", 
+     RowBox[{"{", 
+      RowBox[{".5", ",", ".5"}], "}"}], ",", 
+     RowBox[{"CostFunction", "\[Rule]", "ShannonEntropy"}], ",", 
+     RowBox[{"NumIterations", "\[Rule]", "4"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"WaveletVectorPlot", "[", 
+  RowBox[{"wpt", ",", "tree", ",", 
+   RowBox[{"NumIterations", "\[Rule]", "4"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ShowBestBasis", "[", "tree", "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->244548528],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.007333333333333334], 
+     AbsoluteThickness[1.6], PointBox[CompressedData["
+1:eJxt1jluFUEUBdAHESGBAwKCD7IQQggxz+Biniczz4XBzGCW8JbSS3lLqSWw
+BBDYSP+ISqqPbt++ae9YWVte3Ry/z6aIP/ef83Np/aH9/96Ct+IFvA1vxzO8
+Ey/iXXg33oP34n14Pz6AD+JD+DA+go/iY/g4PoFP4lP4ND6Dz+Il3OadOM6R
+4zhPjuMCOY6L5DgukeO4TI7jCjmOq+Q4rpHjuE6O4wY5jpvkOG6R47hNjuMO
+OY67824bXqi/7+PCcW/eDScuHMv0ceLCcZ8+Tlw4HtDHiQvHQ/o4ceF4RB8n
+LhyP6ePEheMJfZy4cDyljxMXjmf0ceLC8Zw+Tlw4XtDHiQvHS/o4ceF4RR8n
+Lhyv6ePEhaPPe7bhxfXv4Y4TT7jwwPFm3jPccMeJJ1x44FhhHzfcceIJFx44
+3rKPG+448YQLDxzv2McNd5x4woUHjlX2ccMdJ55w4YHjPfu44Y4TT7jwwPGB
+fdxwx4knXHjg+Mj+htf/axvuOPGECw8cn+Y9ww13nHjChQeOz+zjhjtOPOHC
+A8cX9nHDHSeecOGB4yv7uOGOE0+48MDxjX3ccMeJJ1x44PjOPm6448QTLjxw
+rLGPG+448YQLDxw//vkXSmaNvQ==
+      "]]}, {}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{},
+  PlotLabel->FormBox["\"Data Samples\"", TraditionalForm],
+  PlotRange->{{0., 256.}, {-10., 20.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{{{0, 
+      FormBox["0", TraditionalForm]}, {256, 
+      FormBox["256", TraditionalForm]}, {512, 
+      FormBox["512", TraditionalForm]}, {768, 
+      FormBox["768", TraditionalForm]}, {1024, 
+      FormBox["1024", TraditionalForm]}}, {{
+      NCache[
+       Rational[-1, 2], -0.5], 
+      FormBox[
+       RowBox[{"-", 
+         FractionBox["1", "2"]}], TraditionalForm]}, {
+      NCache[
+       Rational[1, 2], 0.5], 
+      FormBox[
+       FractionBox["1", "2"], TraditionalForm]}}}]], "Output",
+ ImageSize->{244, 154},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->113904605],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, 
+    {Hue[0, 1, 0.72], PointSize[0.01], AbsoluteThickness[1.6], 
+     PointBox[CompressedData["
+1:eJxdzVtNJlAMhdEGJYyTakBB+bnDzGChUirlSKkUIDxA1k6aZj19fy7vNw9X
+EdGf9/W/Vxm/d40TF248+ODFcUsfJy7cePDBi+NCHycu3HjwwYvjjj5OXLjx
+4IMXxz19nLhw48EHL44H+jhx4caDD14cj/Rx4sKNBx+8OJ7o48SFGw8+eHE8
+08eJCzcefPDieKGPExduPPjgxfFKHycu3HjwwYvjjT5OXLjx4IMXx1/6OHHh
+xoMPXhz/6OPEhRsPPnhx/KePExduPPjgxfFOHycu3HjwwfvjD01Zje4=
+      "]]}, 
+    {Hue[0.06, 1, 0.9], PointSize[0.01], AbsoluteThickness[1.6], 
+     PointBox[CompressedData["
+1:eJxdy8tpggEQhdFLOkknfwnxER9JNBDI2hZuaVOaigvlXBiGs/je/y7r/7ck
+y+3u/7GPJa9bcPHgrOhx8eCs6XHx4GzocfHgbOlx8eB80uPiwdnR4+LB2dPj
+4sE50OPiwTnS4+LB+aLHxYPzTY+LB+eHHhcPzokeFw/OmR4XD84vPS6ep6+J
+7z/O
+      "]]}, 
+    {Hue[0.17, 1, 0.4], PointSize[0.01], AbsoluteThickness[1.6], 
+     PointBox[CompressedData["
+1:eJxdyckJgEAQBdHCSDSTcV/GBQxB8GwKhq7iQakPTfOobDvWPQHS+57/LgT+
+O2VydZlCXaZUl6nUZWp1mUZdplWX6dRlenWZQV0mqsuM6jKTusysLrOof74A
+RCQavg==
+      "]]}, 
+    {Hue[0.11, 1, 0.72], PointSize[0.01], AbsoluteThickness[1.6], 
+     PointBox[{{0., 2.}, {1., 2.}, {2., 2.}, {3., 2.}, {4., -5.}, {5., -5.}, {
+      6., -5.}, {7., -5.}, {8., -10.}, {9., -10.}, {10., -10.}, {11., -10.}, {
+      12., 20.}, {13., 20.}, {14., 20.}, {15., 20.}}]}, 
+    {Hue[0.06, 1, 0.72], PointSize[0.01], AbsoluteThickness[1.6], 
+     PointBox[{{16., 0.}, {17., 0.}, {18., 0.}, {19., 0.}, {20., 0.}, {21., 
+      0.}, {22., 0.}, {23., 0.}, {24., 0.}, {25., 0.}, {26., 0.}, {27., 0.}, {
+      28., 0.}, {29., 0.}, {30., 0.}, {31., 0.}}]}, {}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  Background->GrayLevel[1],
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{{16, 32, 64, 128, 255}, {-15., 25.}},
+  GridLinesStyle->GrayLevel[0.5],
+  Method->{},
+  PlotRange->{{0, 255.}, {-10., 20.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ ImageSize->{244, 139},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->485695476],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJzt3EFqU1EUx+GHThy6BXfh1KHTShfQYixOIqSCuGt3cE3JrIOYPnM97/z9
+PkhpIRwO9/546aR9d//t5surZVke3xy/3Nz9+HA43P389Pb4w+3+8evDfvf5
+4/777mF3eH//+ukdx9ev4+vp+wEAAKyyQEN6Jsn5nuc8++H69EwSPZNEzyTR
+M0n0TBI9k0TPJNEzSfRMEj2TRM8kuaRn6EXPJFn39Ga108Hecm16LqHnSfRc
+Qs+T6LmEnifRcwk9T6LnEnqeRM8l9DyJnkvoeRI9l9DzJHouoedJ9FxCz5Po
+uYSeJ9FzCT1PcknP0IueSXK+57/9cP1XTttWf+JdpNHBNlp1ZP29lZ5naLTq
+0HORRgfbaNWh5yKNDrbRqkPPRRodbKNVh56LNDrYRqsOPRdpdLCNVh16LtLo
+YButOvRcpNHBNlp16LlIo4NttOrQc5FGB9to1aHnIo0OttGqw/9jJJGeSbLu
+6b3aaWyLD/GpJ9BibKNV/zhWz0m3uZ2ZVWP1nHSb25lZNVbPSbe5nZlVY/Wc
+dJvbmVk1Vs9Jt7mdmVVj9Zx0m9uZWTVWz0m3uZ2ZVWP1nHSb25lZNVbPSbe5
+nZlVY/WcdJvbmVk1Vs9Jt7mdmVVjF2hIzyQ53/OLPu6v+4vB5e980Zst8H8u
+oGcLJC2gZwskLaBnCyQtoGcLJC2gZwskLaBnCyQtoGcLJC2gZwskLaBnCyQt
+oGcLJC2gZwskLaBnCyQtsEBDeibJhQ9zAADgmd85uSWY
+    "], {{0, 82}, {240, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  DefaultBaseStyle->"ImageGraphics",
+  ImageSize->Automatic,
+  ImageSizeRaw->{240, 82},
+  PlotRange->{{0, 240}, {0, 82}}]], "Output",
+ ImageSize->{244, 82},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellTags->"RasterizedOutput",
+ CellLabel->"Out[1]=",
+ CellID->183572839]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["NumberNonzero"]],"paclet:WaveletWare/ref/NumberNonzero"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["NumberAboveThreshold"]],
+    "paclet:WaveletWare/ref/NumberAboveThreshold"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["SumOfPowers"]],"paclet:WaveletWare/ref/SumOfPowers"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["WPT"]],"paclet:WaveletWare/ref/WPT"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["BestBasisTree"]],"paclet:WaveletWare/ref/BestBasisTree"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ShowBestBasis"]],"paclet:WaveletWare/ref/ShowBestBasis"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["CostFunction"]],"paclet:WaveletWare/ref/CostFunction"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Tutorials"
+}], "TutorialsSection",
+ WholeCellGroupOpener->True,
+ CellID->250839057],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Computing and Plotting Wavelet Packet Transformations"]],
+   "paclet:WaveletWare/tutorial/Computing and Plotting Wavelet Packet \
+Transforms"},
+  "RefLink",
+  BaseStyle->"Tutorials"]], "Tutorials",
+ CellID->76024067],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Related Links"
+}], "RelatedLinksSection",
+ WholeCellGroupOpener->True,
+ CellID->1584193535],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ "Cost functions and the wavelet packet transform are described in Chapter 9 \
+of the book  ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Wavelet Theory: An Elementary Approach with Applications"]],
+    "http://www.wiley.com/WileyCDA/WileyTitle/productCd-0470388404.html"},
+   "WebLink",
+   BaseStyle->{"RelatedDemonstrations"}]]],
+ ", David Ruch and Patrick Van Fleet, Wiley, 2009."
+}], "RelatedDemonstrations",
+ CellID->92065128]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"ShannonEntropy",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:WaveletWare/guide/WaveletWare", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2016, 8, 25, 9, 52, 22.0404952}", 
+    "history" -> {"XX", "", "", ""}, "context" -> 
+    "WaveletWare`PacketTransforms`", "keywords" -> {}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "Wavelet Ware Package Symbol", "language" -> "en", "paclet" -> 
+    "WaveletWare Package", "status" -> "None", "summary" -> 
+    "ShannonEntropy[data] is a cost function that can be used in conjunction \
+with wavelet packet transforms.", "synonyms" -> {}, "tabletags" -> {}, 
+    "title" -> "ShannonEntropy", "titlemodifier" -> "", "windowtitle" -> 
+    "ShannonEntropy", "type" -> "Symbol", "uri" -> 
+    "WaveletWare/ref/ShannonEntropy"}, "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "11.0 for Microsoft Windows (64-bit) (July 28, 2016)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[7525, 231, 386, 15, 30, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->10905380]},
+ "RasterizedOutput"->{
+  Cell[15228, 466, 1302, 29, 103, "Output",
+   CellTags->"RasterizedOutput",
+   CellID->183572839]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 22482, 692},
+ {"RasterizedOutput", 22624, 696}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[586, 21, 4306, 104, 48, "AnchorBarGrid",
+ CellID->1],
+Cell[4895, 127, 291, 11, 44, "ObjectNameGrid"],
+Cell[CellGroupData[{
+Cell[5211, 142, 430, 12, 80, "Usage"],
+Cell[CellGroupData[{
+Cell[5666, 158, 738, 24, 31, "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->250278923],
+Cell[6407, 184, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[6441, 186, 667, 23, 70, "Notes",
+ CellID->1067943069],
+Cell[7111, 211, 331, 12, 70, "Notes",
+ CellID->114786870],
+Cell[7445, 225, 31, 0, 70, "SectionFooterSpacer"]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7525, 231, 386, 15, 30, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->10905380],
+Cell[CellGroupData[{
+Cell[7936, 250, 195, 6, 25, "ExampleSection",
+ CellID->657284330],
+Cell[8134, 258, 65, 1, 31, "MathCaption",
+ CellID->16454449],
+Cell[8202, 261, 126, 4, 42, "Input",
+ InitializationCell->True,
+ CellID->861618089],
+Cell[8331, 267, 83, 1, 33, "ExampleText",
+ CellID->531176199],
+Cell[CellGroupData[{
+Cell[8439, 272, 214, 6, 43, "Input",
+ CellID->596698103],
+Cell[8656, 280, 176, 5, 35, "Output",
+ CellID->444022611]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8869, 290, 125, 3, 8, "ExampleDelimiter",
+ CellID->162975584],
+Cell[8997, 295, 123, 3, 33, "ExampleText",
+ CellID->365103087],
+Cell[CellGroupData[{
+Cell[9145, 302, 1614, 48, 139, "Input",
+ CellID->244548528],
+Cell[10762, 352, 2113, 55, 175, "Output",
+ CellID->113904605],
+Cell[12878, 409, 2347, 55, 160, "Output",
+ CellID->485695476],
+Cell[15228, 466, 1302, 29, 103, "Output",
+ CellTags->"RasterizedOutput",
+ CellID->183572839]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[16569, 500, 31, 0, 70, "SectionFooterSpacer"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16637, 505, 270, 12, 70, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[16910, 519, 2163, 62, 70, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19110, 586, 272, 12, 70, "TutorialsSection",
+ CellID->250839057],
+Cell[19385, 600, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[19419, 602, 264, 7, 70, "Tutorials",
+ CellID->76024067],
+Cell[19686, 611, 31, 0, 70, "SectionFooterSpacer"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19754, 616, 280, 12, 70, "RelatedLinksSection",
+ CellID->1584193535],
+Cell[20037, 630, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[20071, 632, 455, 11, 70, "RelatedDemonstrations",
+ CellID->92065128]
+}, Open  ]],
+Cell[20541, 646, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

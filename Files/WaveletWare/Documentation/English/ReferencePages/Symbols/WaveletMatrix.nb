@@ -1,0 +1,1274 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     36399,       1264]
+NotebookOptionsPosition[     31348,       1107]
+NotebookOutlinePosition[     33515,       1164]
+CellTagsIndexPosition[     33429,       1159]
+WindowTitle->WaveletMatrix
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["WAVELET WARE PACKAGE SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"List of Functions - Alphabetical\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/guide/List of Functions - Alphabetical"], \
+"\<\"List of Options and Values\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/guide/List of Options and Values"], "\<\"List of \
+Functions - Categorical\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/guide/List of Functions - Categorical"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"WaveletWare/ref/WaveletMatrix\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["WaveletWare/ref/WaveletMatrix"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/WaveletWare/ref/\
+WaveletMatrix.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$114730], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "WaveletWare/ref/WaveletMatrix", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[TextData[{
+ Cell["WaveletMatrix", "ObjectName"],
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{8, 0}],
+    CacheGraphics->False],
+   Spacer[8]]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"WaveletMatrix", "[", 
+       RowBox[{
+        StyleBox["h", "TI"], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          StyleBox["r", "TI"], ",", 
+          StyleBox["c", "TI"]}], "}"}], ",", 
+        StyleBox["opts", "TI"]}], "]"}]], "InlineFormula"],
+     "\[LineSeparator]takes a filter (or biorthogonal filter pair) and \
+generates a wavelet matrix of prescribed dimensions."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    InterpretationBox[
+     StyleBox[
+      GraphicsBox[{},
+       BaselinePosition->Baseline,
+       ImageSize->{6, 0}],
+      CacheGraphics->False],
+     Spacer[6]]]],
+   "Details"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->764447697],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell["The following options can be given: ", "Notes"],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], 
+    ButtonBox["Shift",
+     BaseStyle->"Link",
+     ButtonData->"paclet:WaveletWare/ref/Shift"], "0", Cell[TextData[{
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["Shift"]],"paclet:WaveletWare/ref/Shift"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     " is an option for discrete wavelet transform functions to indicate if \
+the lowpass/highpass filters should be shifted for the computation."
+    }], "TableText"]},
+   {Cell["      ", "TableRowIcon"], 
+    ButtonBox["MatrixBlock",
+     BaseStyle->"Link",
+     ButtonData->"paclet:WaveletWare/ref/MatrixBlock"], 
+    ButtonBox["All",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/All"], Cell[TextData[{
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["MatrixBlock"]],"paclet:WaveletWare/ref/MatrixBlock"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     " is an option for ",
+     Cell[BoxData["WaveletMatrix"], "InlineFormula"],
+     " that allows the user to determine the part (",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["Lowpass"]],"paclet:WaveletWare/ref/Lowpass"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     ", ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["Highpass"]],"paclet:WaveletWare/ref/Highpass"},
+       "RefLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula"],
+     ", ",
+     ButtonBox["All",
+      BaseStyle->"Link",
+      ButtonData->"paclet:ref/All"],
+     ") of the matrix to construct."
+    }], "TableText"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {None, {None}}, 
+   "RowsIndexed" -> {}},
+ GridBoxDividers->{"Rows" -> {{True, True, True}}}}],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(5)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->19433669],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->28972869],
+
+Cell["This loads the package:", "MathCaption",
+ CellID->16454449],
+
+Cell[BoxData[
+ RowBox[{"<<", "WaveletWare`"}]], "Input",
+ InitializationCell->True,
+ CellLabel->"In[1]:=",
+ CellID->861618089],
+
+Cell["Create an 8x8 matrix using the Haar filter.", "ExampleText",
+ CellID->469496344],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"W", "=", 
+   RowBox[{"WaveletMatrix", "[", 
+    RowBox[{
+     RowBox[{"Haar", "[", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"8", ",", "8"}], "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"MatrixForm", "[", "W", "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->344078122],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      FractionBox["1", 
+       SqrtBox["2"]], 
+      FractionBox["1", 
+       SqrtBox["2"]], "0", "0", "0", "0", "0", "0"},
+     {"0", "0", 
+      FractionBox["1", 
+       SqrtBox["2"]], 
+      FractionBox["1", 
+       SqrtBox["2"]], "0", "0", "0", "0"},
+     {"0", "0", "0", "0", 
+      FractionBox["1", 
+       SqrtBox["2"]], 
+      FractionBox["1", 
+       SqrtBox["2"]], "0", "0"},
+     {"0", "0", "0", "0", "0", "0", 
+      FractionBox["1", 
+       SqrtBox["2"]], 
+      FractionBox["1", 
+       SqrtBox["2"]]},
+     {
+      RowBox[{"-", 
+       FractionBox["1", 
+        SqrtBox["2"]]}], 
+      FractionBox["1", 
+       SqrtBox["2"]], "0", "0", "0", "0", "0", "0"},
+     {"0", "0", 
+      RowBox[{"-", 
+       FractionBox["1", 
+        SqrtBox["2"]]}], 
+      FractionBox["1", 
+       SqrtBox["2"]], "0", "0", "0", "0"},
+     {"0", "0", "0", "0", 
+      RowBox[{"-", 
+       FractionBox["1", 
+        SqrtBox["2"]]}], 
+      FractionBox["1", 
+       SqrtBox["2"]], "0", "0"},
+     {"0", "0", "0", "0", "0", "0", 
+      RowBox[{"-", 
+       FractionBox["1", 
+        SqrtBox["2"]]}], 
+      FractionBox["1", 
+       SqrtBox["2"]]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ ImageSize->{296, 245},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]//MatrixForm=",
+ CellID->108149413]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Options",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Shift",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True],
+
+Cell[TextData[{
+ "The ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Shift"]],"paclet:WaveletWare/ref/Shift"},
+   "RefLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula"],
+ " parameter can be used to rotate the rows of the wavelet matrix."
+}], "ExampleText",
+ CellID->194410864],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"W", "=", 
+   RowBox[{"WaveletMatrix", "[", 
+    RowBox[{
+     RowBox[{"Haar", "[", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"8", ",", "8"}], "}"}], ",", 
+     RowBox[{"Shift", "\[Rule]", "1"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"MatrixForm", "[", "W", "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->735024095],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"0", 
+      FractionBox["1", 
+       SqrtBox["2"]], 
+      FractionBox["1", 
+       SqrtBox["2"]], "0", "0", "0", "0", "0"},
+     {"0", "0", "0", 
+      FractionBox["1", 
+       SqrtBox["2"]], 
+      FractionBox["1", 
+       SqrtBox["2"]], "0", "0", "0"},
+     {"0", "0", "0", "0", "0", 
+      FractionBox["1", 
+       SqrtBox["2"]], 
+      FractionBox["1", 
+       SqrtBox["2"]], "0"},
+     {
+      FractionBox["1", 
+       SqrtBox["2"]], "0", "0", "0", "0", "0", "0", 
+      FractionBox["1", 
+       SqrtBox["2"]]},
+     {"0", 
+      RowBox[{"-", 
+       FractionBox["1", 
+        SqrtBox["2"]]}], 
+      FractionBox["1", 
+       SqrtBox["2"]], "0", "0", "0", "0", "0"},
+     {"0", "0", "0", 
+      RowBox[{"-", 
+       FractionBox["1", 
+        SqrtBox["2"]]}], 
+      FractionBox["1", 
+       SqrtBox["2"]], "0", "0", "0"},
+     {"0", "0", "0", "0", "0", 
+      RowBox[{"-", 
+       FractionBox["1", 
+        SqrtBox["2"]]}], 
+      FractionBox["1", 
+       SqrtBox["2"]], "0"},
+     {
+      FractionBox["1", 
+       SqrtBox["2"]], "0", "0", "0", "0", "0", "0", 
+      RowBox[{"-", 
+       FractionBox["1", 
+        SqrtBox["2"]]}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ ImageSize->{296, 245},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]//MatrixForm=",
+ CellID->6147702]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "MatrixBlock",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["MatrixBlock"]],"paclet:WaveletWare/ref/MatrixBlock"},
+   "RefLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula"],
+ " is an option that can be set to ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Lowpass"]],"paclet:WaveletWare/ref/Lowpass"},
+   "RefLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula"],
+ " to show the lowpass portion of the transform matrix, ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Highpass"]],"paclet:WaveletWare/ref/Highpass"},
+   "RefLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula"],
+ " to show the highpass portion of the transform or ",
+ ButtonBox["All",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/All"],
+ " (default) to show the entire transform matrix."
+}], "ExampleText",
+ CellID->710362091],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"W", "=", 
+   RowBox[{"Map", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"WaveletMatrix", "[", 
+       RowBox[{
+        RowBox[{"Haar", "[", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"8", ",", "8"}], "}"}], ",", 
+        RowBox[{"MatrixBlock", "\[Rule]", "#"}]}], "]"}], "&"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"Lowpass", ",", "Highpass", ",", "All"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Map", "[", 
+  RowBox[{"MatrixForm", ",", "W"}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->932741310],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TagBox[
+    RowBox[{"(", "\[NoBreak]", GridBox[{
+       {
+        FractionBox["1", 
+         SqrtBox["2"]], 
+        FractionBox["1", 
+         SqrtBox["2"]], "0", "0", "0", "0", "0", "0"},
+       {"0", "0", 
+        FractionBox["1", 
+         SqrtBox["2"]], 
+        FractionBox["1", 
+         SqrtBox["2"]], "0", "0", "0", "0"},
+       {"0", "0", "0", "0", 
+        FractionBox["1", 
+         SqrtBox["2"]], 
+        FractionBox["1", 
+         SqrtBox["2"]], "0", "0"},
+       {"0", "0", "0", "0", "0", "0", 
+        FractionBox["1", 
+         SqrtBox["2"]], 
+        FractionBox["1", 
+         SqrtBox["2"]]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+    Function[BoxForm`e$, 
+     MatrixForm[BoxForm`e$]]], ",", 
+   TagBox[
+    RowBox[{"(", "\[NoBreak]", GridBox[{
+       {
+        RowBox[{"-", 
+         FractionBox["1", 
+          SqrtBox["2"]]}], 
+        FractionBox["1", 
+         SqrtBox["2"]], "0", "0", "0", "0", "0", "0"},
+       {"0", "0", 
+        RowBox[{"-", 
+         FractionBox["1", 
+          SqrtBox["2"]]}], 
+        FractionBox["1", 
+         SqrtBox["2"]], "0", "0", "0", "0"},
+       {"0", "0", "0", "0", 
+        RowBox[{"-", 
+         FractionBox["1", 
+          SqrtBox["2"]]}], 
+        FractionBox["1", 
+         SqrtBox["2"]], "0", "0"},
+       {"0", "0", "0", "0", "0", "0", 
+        RowBox[{"-", 
+         FractionBox["1", 
+          SqrtBox["2"]]}], 
+        FractionBox["1", 
+         SqrtBox["2"]]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+    Function[BoxForm`e$, 
+     MatrixForm[BoxForm`e$]]], ",", 
+   TagBox[
+    RowBox[{"(", "\[NoBreak]", GridBox[{
+       {
+        FractionBox["1", 
+         SqrtBox["2"]], 
+        FractionBox["1", 
+         SqrtBox["2"]], "0", "0", "0", "0", "0", "0"},
+       {"0", "0", 
+        FractionBox["1", 
+         SqrtBox["2"]], 
+        FractionBox["1", 
+         SqrtBox["2"]], "0", "0", "0", "0"},
+       {"0", "0", "0", "0", 
+        FractionBox["1", 
+         SqrtBox["2"]], 
+        FractionBox["1", 
+         SqrtBox["2"]], "0", "0"},
+       {"0", "0", "0", "0", "0", "0", 
+        FractionBox["1", 
+         SqrtBox["2"]], 
+        FractionBox["1", 
+         SqrtBox["2"]]},
+       {
+        RowBox[{"-", 
+         FractionBox["1", 
+          SqrtBox["2"]]}], 
+        FractionBox["1", 
+         SqrtBox["2"]], "0", "0", "0", "0", "0", "0"},
+       {"0", "0", 
+        RowBox[{"-", 
+         FractionBox["1", 
+          SqrtBox["2"]]}], 
+        FractionBox["1", 
+         SqrtBox["2"]], "0", "0", "0", "0"},
+       {"0", "0", "0", "0", 
+        RowBox[{"-", 
+         FractionBox["1", 
+          SqrtBox["2"]]}], 
+        FractionBox["1", 
+         SqrtBox["2"]], "0", "0"},
+       {"0", "0", "0", "0", "0", "0", 
+        RowBox[{"-", 
+         FractionBox["1", 
+          SqrtBox["2"]]}], 
+        FractionBox["1", 
+         SqrtBox["2"]]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+    Function[BoxForm`e$, 
+     MatrixForm[BoxForm`e$]]]}], "}"}]], "Output",
+ ImageSize->{311, 506},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->66549962]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->228352144],
+
+Cell[TextData[{
+ "Verify that the highpass portion of the 8x8 wavelet matrix using the ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Daub"]],"paclet:WaveletWare/ref/Daub"},
+   "RefLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula"],
+ "[4] filter annihilates constant vectors."
+}], "ExampleText",
+ CellID->104669101],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"G", "=", 
+   RowBox[{"WaveletMatrix", "[", 
+    RowBox[{
+     RowBox[{"Daub", "[", "4", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"8", ",", "8"}], "}"}], ",", 
+     RowBox[{"MatrixBlock", "\[Rule]", "Highpass"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"MatrixForm", "[", 
+  RowBox[{"Chop", "[", 
+   RowBox[{"G", ".", 
+    RowBox[{"ConstantArray", "[", 
+     RowBox[{"1", ",", "8"}], "]"}]}], "]"}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->233268276],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", 
+   TagBox[GridBox[{
+      {"0"},
+      {"0"},
+      {"0"},
+      {"0"}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}},
+        "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.5599999999999999]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    Column], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ ImageSize->{31, 57},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]//MatrixForm=",
+ CellID->425062602]
+}, Open  ]]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Neat Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->589267740],
+
+Cell[TextData[{
+ "Use ",
+ StyleBox["WaveletMatrix",
+  FontFamily->"Courier New",
+  FontSize->12],
+ " to show that matrices generated by ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["SplineFilters"]],"paclet:WaveletWare/ref/SplineFilters"},
+   "RefLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula"],
+ " are inverses."
+}], "ExampleText",
+ CellID->39754941],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"h", ",", "ht"}], "}"}], "=", 
+   RowBox[{"SplineFilters", "[", 
+    RowBox[{"2", ",", "2"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"H", "=", 
+   RowBox[{"WaveletMatrix", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"h", ",", "ht"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"8", ",", "8"}], "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"MatrixForm", "[", "H", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Ht", "=", 
+   RowBox[{"WaveletMatrix", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"ht", ",", "h"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"8", ",", "8"}], "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"MatrixForm", "[", "Ht", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"H", ".", 
+   RowBox[{"Transpose", "[", "Ht", "]"}]}], "\[Equal]", 
+  RowBox[{"IdentityMatrix", "[", "8", "]"}]}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->705837846],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      FractionBox["1", 
+       SqrtBox["2"]], 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], "0", "0", "0", "0", "0", 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]]},
+     {"0", 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], 
+      FractionBox["1", 
+       SqrtBox["2"]], 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], "0", "0", "0", "0"},
+     {"0", "0", "0", 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], 
+      FractionBox["1", 
+       SqrtBox["2"]], 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], "0", "0"},
+     {"0", "0", "0", "0", "0", 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], 
+      FractionBox["1", 
+       SqrtBox["2"]], 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]]},
+     {
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], 
+      RowBox[{"-", 
+       FractionBox["3", 
+        RowBox[{"2", " ", 
+         SqrtBox["2"]}]]}], 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], 
+      FractionBox["1", 
+       RowBox[{"4", " ", 
+        SqrtBox["2"]}]], "0", "0", "0", 
+      FractionBox["1", 
+       RowBox[{"4", " ", 
+        SqrtBox["2"]}]]},
+     {"0", 
+      FractionBox["1", 
+       RowBox[{"4", " ", 
+        SqrtBox["2"]}]], 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], 
+      RowBox[{"-", 
+       FractionBox["3", 
+        RowBox[{"2", " ", 
+         SqrtBox["2"]}]]}], 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], 
+      FractionBox["1", 
+       RowBox[{"4", " ", 
+        SqrtBox["2"]}]], "0", "0"},
+     {"0", "0", "0", 
+      FractionBox["1", 
+       RowBox[{"4", " ", 
+        SqrtBox["2"]}]], 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], 
+      RowBox[{"-", 
+       FractionBox["3", 
+        RowBox[{"2", " ", 
+         SqrtBox["2"]}]]}], 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], 
+      FractionBox["1", 
+       RowBox[{"4", " ", 
+        SqrtBox["2"]}]]},
+     {
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], 
+      FractionBox["1", 
+       RowBox[{"4", " ", 
+        SqrtBox["2"]}]], "0", "0", "0", 
+      FractionBox["1", 
+       RowBox[{"4", " ", 
+        SqrtBox["2"]}]], 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], 
+      RowBox[{"-", 
+       FractionBox["3", 
+        RowBox[{"2", " ", 
+         SqrtBox["2"]}]]}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ ImageSize->{352, 245},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]//MatrixForm=",
+ CellID->352547858],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      FractionBox["3", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], 
+      RowBox[{"-", 
+       FractionBox["1", 
+        RowBox[{"4", " ", 
+         SqrtBox["2"]}]]}], "0", "0", "0", 
+      RowBox[{"-", 
+       FractionBox["1", 
+        RowBox[{"4", " ", 
+         SqrtBox["2"]}]]}], 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]]},
+     {
+      RowBox[{"-", 
+       FractionBox["1", 
+        RowBox[{"4", " ", 
+         SqrtBox["2"]}]]}], 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], 
+      FractionBox["3", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], 
+      RowBox[{"-", 
+       FractionBox["1", 
+        RowBox[{"4", " ", 
+         SqrtBox["2"]}]]}], "0", "0", "0"},
+     {"0", "0", 
+      RowBox[{"-", 
+       FractionBox["1", 
+        RowBox[{"4", " ", 
+         SqrtBox["2"]}]]}], 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], 
+      FractionBox["3", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], 
+      RowBox[{"-", 
+       FractionBox["1", 
+        RowBox[{"4", " ", 
+         SqrtBox["2"]}]]}], "0"},
+     {
+      RowBox[{"-", 
+       FractionBox["1", 
+        RowBox[{"4", " ", 
+         SqrtBox["2"]}]]}], "0", "0", "0", 
+      RowBox[{"-", 
+       FractionBox["1", 
+        RowBox[{"4", " ", 
+         SqrtBox["2"]}]]}], 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], 
+      FractionBox["3", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]]},
+     {
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], 
+      RowBox[{"-", 
+       FractionBox["1", 
+        SqrtBox["2"]]}], 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], "0", "0", "0", "0", "0"},
+     {"0", "0", 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], 
+      RowBox[{"-", 
+       FractionBox["1", 
+        SqrtBox["2"]]}], 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], "0", "0", "0"},
+     {"0", "0", "0", "0", 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], 
+      RowBox[{"-", 
+       FractionBox["1", 
+        SqrtBox["2"]]}], 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], "0"},
+     {
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], "0", "0", "0", "0", "0", 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SqrtBox["2"]}]], 
+      RowBox[{"-", 
+       FractionBox["1", 
+        SqrtBox["2"]]}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ ImageSize->{356, 245},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]//MatrixForm=",
+ CellID->876784614],
+
+Cell[BoxData["True"], "Output",
+ ImageSize->{32, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->611620867]
+}, Open  ]]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["List of Functions - Alphabetical"]],
+   "paclet:WaveletWare/guide/List of Functions - Alphabetical"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->158733567],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["List of Options and Values"]],
+   "paclet:WaveletWare/guide/List of Options and Values"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->165257260],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["List of Functions - Categorical"]],
+   "paclet:WaveletWare/guide/List of Functions - Categorical"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->125675797]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"WaveletMatrix",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:WaveletWare/guide/WaveletWare", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2016, 8, 25, 9, 53, 18.1392370}", 
+    "history" -> {"XX", "", "", ""}, "context" -> 
+    "WaveletWare`MiscFunctions`", "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Wavelet Ware Package Symbol", "language" -> "en", "paclet" -> 
+    "WaveletWare Package", "status" -> "None", "summary" -> 
+    "WaveletMatrix[h, {r, c}, opts] takes a filter (or biorthogonal filter \
+pair) and generates a wavelet matrix of prescribed dimensions.", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "WaveletMatrix", 
+    "titlemodifier" -> "", "windowtitle" -> "WaveletMatrix", "type" -> 
+    "Symbol", "uri" -> "WaveletWare/ref/WaveletMatrix"}, 
+  "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "11.0 for Microsoft Windows (64-bit) (July 28, 2016)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[7702, 227, 386, 15, 30, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->19433669]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 33287, 1152}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[585, 21, 3389, 79, 48, "AnchorBarGrid",
+ CellID->1],
+Cell[3977, 102, 290, 11, 44, "ObjectNameGrid"],
+Cell[CellGroupData[{
+Cell[4292, 117, 625, 18, 80, "Usage"],
+Cell[CellGroupData[{
+Cell[4942, 139, 738, 24, 31, "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->764447697],
+Cell[5683, 165, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[5717, 167, 53, 0, 70, "Notes"],
+Cell[5773, 169, 1846, 50, 70, "3ColumnTableMod"],
+Cell[7622, 221, 31, 0, 70, "SectionFooterSpacer"]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7702, 227, 386, 15, 30, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->19433669],
+Cell[CellGroupData[{
+Cell[8113, 246, 194, 6, 25, "ExampleSection",
+ CellID->28972869],
+Cell[8310, 254, 65, 1, 31, "MathCaption",
+ CellID->16454449],
+Cell[8378, 257, 126, 4, 42, "Input",
+ InitializationCell->True,
+ CellID->861618089],
+Cell[8507, 263, 86, 1, 33, "ExampleText",
+ CellID->469496344],
+Cell[CellGroupData[{
+Cell[8618, 268, 324, 10, 43, "Input",
+ CellID->344078122],
+Cell[8945, 280, 1839, 64, 280, "Output",
+ CellID->108149413]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10833, 350, 168, 5, 25, "ExampleSection"],
+Cell[CellGroupData[{
+Cell[11026, 359, 172, 5, 70, "ExampleSubsection"],
+Cell[11201, 366, 289, 9, 70, "ExampleText",
+ CellID->194410864],
+Cell[CellGroupData[{
+Cell[11515, 379, 373, 12, 70, "Input",
+ CellID->735024095],
+Cell[11891, 393, 1837, 64, 280, "Output",
+ CellID->6147702]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[13777, 463, 178, 5, 70, "ExampleSubsection"],
+Cell[13958, 470, 825, 24, 70, "ExampleText",
+ CellID->710362091],
+Cell[CellGroupData[{
+Cell[14808, 498, 577, 18, 70, "Input",
+ CellID->932741310],
+Cell[15388, 518, 4337, 140, 527, "Output",
+ CellID->66549962]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19762, 663, 125, 3, 70, "ExampleDelimiter",
+ CellID->228352144],
+Cell[19890, 668, 328, 9, 70, "ExampleText",
+ CellID->104669101],
+Cell[CellGroupData[{
+Cell[20243, 681, 514, 16, 70, "Input",
+ CellID->233268276],
+Cell[20760, 699, 795, 26, 92, "Output",
+ CellID->425062602]
+}, Open  ]]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[21628, 733, 194, 6, 19, "ExampleSection",
+ CellID->589267740],
+Cell[21825, 741, 368, 13, 70, "ExampleText",
+ CellID->39754941],
+Cell[CellGroupData[{
+Cell[22218, 758, 999, 30, 70, "Input",
+ CellID->705837846],
+Cell[23220, 790, 3327, 124, 280, "Output",
+ CellID->352547858],
+Cell[26550, 916, 3523, 132, 280, "Output",
+ CellID->876784614],
+Cell[30076, 1050, 161, 5, 35, "Output",
+ CellID->611620867]
+}, Open  ]]
+}, Closed]],
+Cell[30264, 1059, 31, 0, 70, "SectionFooterSpacer"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30332, 1064, 276, 12, 70, "MoreAboutSection",
+ CellID->38303248],
+Cell[30611, 1078, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[30645, 1080, 223, 6, 70, "MoreAbout",
+ CellID->158733567],
+Cell[30871, 1088, 211, 6, 70, "MoreAbout",
+ CellID->165257260],
+Cell[31085, 1096, 221, 6, 70, "MoreAbout",
+ CellID->125675797]
+}, Open  ]],
+Cell[31321, 1105, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

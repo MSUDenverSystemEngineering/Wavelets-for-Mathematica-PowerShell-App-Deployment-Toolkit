@@ -1,0 +1,748 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     24935,        738]
+NotebookOptionsPosition[     20476,        600]
+NotebookOutlinePosition[     22797,        663]
+CellTagsIndexPosition[     22677,        657]
+WindowTitle->MAD
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["WAVELET WARE PACKAGE SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"NoiseEstimate\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/ref/NoiseEstimate"], "\<\"UniversalThreshold\"\>":>
+       Documentation`HelpLookup["paclet:WaveletWare/ref/UniversalThreshold"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"List of Functions - Alphabetical\"\>":>
+       Documentation`HelpLookup[
+       "paclet:WaveletWare/guide/List of Functions - Alphabetical"], \
+"\<\"List of Functions - Categorical\"\>":>Documentation`HelpLookup[
+       "paclet:WaveletWare/guide/List of Functions - Categorical"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"WaveletWare/ref/MAD\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["WaveletWare/ref/MAD"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/WaveletWare/ref/MAD.\
+html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$73166], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "WaveletWare/ref/MAD", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[TextData[{
+ Cell["MAD", "ObjectName"],
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{8, 0}],
+    CacheGraphics->False],
+   Spacer[8]]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"MAD", "[", 
+       StyleBox["data", "TI"], "]"}]], "InlineFormula"],
+     "\[LineSeparator]computes the median absolute deviation of input an \
+input vector or matrix."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    InterpretationBox[
+     StyleBox[
+      GraphicsBox[{},
+       BaselinePosition->Baseline,
+       ImageSize->{6, 0}],
+      CacheGraphics->False],
+     Spacer[6]]]],
+   "Details"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->8475651],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ "This function is equivalent to the ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " function ",
+ ButtonBox["MedianDeviation",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/MedianDeviation"],
+ "[",
+ ButtonBox["Flatten",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Flatten"],
+ "[",
+ Cell[BoxData[
+  StyleBox["data", "TI"]], "InlineFormula"],
+ "]]."
+}], "Notes",
+ CellID->1067943069],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->82485989],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->70233520],
+
+Cell["This loads the package:", "MathCaption",
+ CellID->16454449],
+
+Cell[BoxData[
+ RowBox[{"<<", "WaveletWare`"}]], "Input",
+ InitializationCell->True,
+ CellLabel->"In[1]:=",
+ CellID->861618089],
+
+Cell["\<\
+Compute the median absolute deviation of a vector and a matrix.\
+\>", "ExampleText",
+ CellID->783158358],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"v", "=", 
+   RowBox[{"RandomInteger", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "5"}], "}"}], ",", "20"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"MAD", "[", "v", "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->595531633],
+
+Cell[BoxData["2"], "Output",
+ ImageSize->{11, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->672611578]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"img", "=", 
+   RowBox[{"ImageInfo", "[", 
+    RowBox[{"ImageForm", "\[Rule]", "GrayScale"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A", "=", 
+   RowBox[{"ImageRead", "[", 
+    RowBox[{"First", "[", "img", "]"}], "]"}]}], ";", 
+  RowBox[{"MAD", "[", "A", "]"}]}]}], "Input",
+ CellLabel->"In[3]:=",
+ CellID->292412355],
+
+Cell[BoxData["62"], "Output",
+ ImageSize->{18, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[3]=",
+ CellID->225981030]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Neat Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->589267740],
+
+Cell[TextData[{
+ "Use ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["MAD"]],"paclet:WaveletWare/ref/MAD"},
+   "RefLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula"],
+ " to  estimate the noise level of a vector."
+}], "ExampleText",
+ CellID->346218518],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", "1000"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"v", "=", 
+   RowBox[{"Sin", "[", 
+    RowBox[{
+     RowBox[{"Range", "[", "n", "]"}], "*", "2", "*", 
+     RowBox[{"Pi", "/", "n"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sigma", "=", ".2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ListPlot", "[", 
+   RowBox[{"v", ",", 
+    RowBox[{"PlotLabel", "\[Rule]", "\"\<Original Data\>\""}]}], "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"noise", "=", 
+   RowBox[{"WhiteNoise", "[", 
+    RowBox[{"n", ",", "sigma"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"y", "=", 
+   RowBox[{"v", "+", "noise"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ListPlot", "[", 
+   RowBox[{"y", ",", 
+    RowBox[{"PlotLabel", "\[Rule]", "\"\<Noisy Data\>\""}]}], "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"wt", "=", 
+   RowBox[{"WT", "[", 
+    RowBox[{"y", ",", 
+     RowBox[{"Daub", "[", "4", "]"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"highpass", "=", 
+   RowBox[{"Drop", "[", 
+    RowBox[{"wt", ",", 
+     RowBox[{
+      RowBox[{"Length", "[", "wt", "]"}], "/", "2"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sigmahat", "=", 
+   RowBox[{
+    RowBox[{"MAD", "[", "highpass", "]"}], "/", ".6745"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{
+   "\"\<The true noise level is \>\"", ",", "sigma", ",", 
+    "\"\< and the estimated noise level is \>\"", ",", "sigmahat", ",", 
+    "\"\<.\>\""}], "]"}], ";"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->107874571],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJztnU2O4zYQRhvJJstcIbfINstsJ8g2wUzSPQgCdICeBoJe6gSzydb7XGB0
+DR/D29xAka0fl0SKliWyWFX8HmYGbqslFsXHMs2xye8+/PXu6auHh4dP37T/
+vHv/9w8vL+/ffvq2/eHn509/fHx+/P3H59fHj48v33/4un3yn/bvf+3f8+MG
+AAAAAADwcqqrp4HDcek3/EduH115Cg0iEMmeQkEBnL2o6lP/0/HwRH5KW6rr
+M33mHEnIV/gMPLTaLHjVPqgOh+qSKSfynE07cz56cX9ySl0fnARLcm//5G2f
++6ud/Fc4Tgpxrw/KpPVino4HsS6SuPpdzxhzOfX5iRx1Hk1/85bP1xPDV/Ad
+BWXipOfrc9SNiTzjCUMC9VrqV2s4fZXPNEGvuMJSfUA5eNqf5mdHzolid/g8
+jg+etuTn21eYHwWFEhw/x8nP5J3dXeON6chm+Qq+o6BU6DB5Mr+xkGxvjZ99
+KX3y5PSUSRwL8xvhK3iPgpLxvlovDh6G3z7UK8cb1+mHy4TJfDDTzH7JM27w
+XKF/bnznOjsKwJ3gxR2oh6ZRvLIDAITSZqjcIQAQje5FN3cUAMQBMgPZ+P+3
+dPz8zeztD3wGcumt9X2awflQTAd8BlI51XU3Me/5NMNg8Tx7w2cgG7/P5H+8
+4DNQxN35Wc4Uxy/Vl6U/uUMDufD4LHz8fFNaiF0w1OfjgeRlafMbGxSF1SBM
+Lp/3aAmrwRL8PseyEUoDF2afo0sIqwGFc3IjkXtQGozwyJxaOSgNOhh85pEN
+SoMmvc+cmkFpkNRnfsGgdOGk8zmXWlC6ZBLNb+SVCkoXS6L8nF0nKF0miZJz
+9GtuAEoXSHSfRSkEpUsjrs8C/REYEkhHRJ/FmiMzKpCCiPMbYrUR29FAdMzL
+3AGlCyGKzypskR8h2M9+n1XI3KElTrCZKD5HiYQBRV0PbGOnz+oMURcwuIs9
+8xtK3dAYc5ksLUrQTHYXmRwtTeZGc+RlsbxozMKujmf2+LztRAlAafkEFvW6
+LCxTVb6tGrf5bMAH7fGbJ7Do4mwfPHpss89bw5SCgS5pm2B+JlzXADuzYT1G
+MxqYqYhNAuNn4vDO/GwsrVmqiz2c+Q13Pca56Rt8jhOrDIx1T1DmSINislLF
+st5nw6nMar0K5C6fk0aSEcNdtTRWTm6Yb3HbtSuHlfm5hOYuoY7mQXIeKaGO
+5lnpM0MkEiinpla56XNRTVzIK5Fhwj4X2L6l1dcY4fmNAhu3wC5sibDMZbZs
+mbW2AZKzl5Lrrpoln4tNzh0l1101AZ+ZI5EG7oBGvD6jKZviX6GU4s5voB1H
+cB/U4eZnNOIIurY6kJzD4G7owvU5VyQyQQfXBfUZDecFt0UR8HkNuDNaGNff
+QJMFwM3RQpefMUq8Ce6PCkafcwciHdwiFXQjDTTWGnCXNpBoQ+1AcbmaaU9N
+w+fuORpgf8dPFNjOcpMiyuek2qS7eK6jYgMTG3YUngDIBIPbqYswBkbR6+F/
+awafNwClV8J/o+DzBuDzGrLcJfi8DSh9E4s+n+pqeCcwX1n9urB6YJu5KBGQ
+5d2jFR0YGV7rPGyEwFblNQUlKHqyv8lw/VfeGHrSvuskFe0fuptihLaZixHA
+eNdiF+33OWOV1xQUveheTVLnqv617exvFV8MBLbxRrdvi7tp0dptjLYV2V56
+2HMjetHeFH2u5mHY2+NySb4qj9cdrpq+6FNdH+mePN31L7dlscSELc7mM7nD
+s03lQtvMRSmS+By9aNdnsjPetQtzVXnIloMuXEVPfP7trevmiyUmrD6Lz7Mm
+5umtZODet3CKot0UPWmhS1dirXJ3seERV9ETnx9f/w2XqDk/X+9xD/P4uSF7
+fKUpep6iSRP1zcxVZY8nTEVffT4Pm//8zD2GJyT1edwkjr6bZZ7foHsvpija
+m6JnF+WqsjuzwlM08bn6kmmOpSft/EYZYC66Q8IHjyFzFLK3Y3YkyNzA50gI
+ac2MCKk+fI6FkAbNgpzuDJ9jIadN+ZFTcbwfjIicZuVEVEeGzBER1bJsiKoy
+fI6LqMZlQFp94XN0pDVxOgS+HsHn6Ahs5UQIrCZ8ToHAho6OzG6L+Y0UyGzr
+uMisIGROhMzmjgVPhw18bIl81G1yFD6nw7DSHFULfayUfit0AnxOh9VRB0+l
+gh/7Px6qqpp9NPYCfE6KPZ/ZOmnoa1nkK0+zY/A5KfZSdKLqTL4fd8nLa7+W
+Rb6v0ZC1GVMECRpbSrNWJDB+Jg4jP/Njw2f+junMb1w9Huc3ZqbDZwZspGgV
+VYDPPKiQIYCWLgmf2VDhwxJagofPbGhJcS6KwsbkBieKxBjRFTNkZkaXHupe
+U+AzM7oMURRqB3zmR4vSKoKcAZ+zIF8VLZ1uBnzOgnBbhIcXAPMbuZDsjNjA
+bgKZMyJTaYEhrQc+50WaPDK72Hrgc3bk+KNd5gY+y0CCRQZkbuCzDCS4lD2A
+KGB+Qwh5lbYhc4P8LIlcSpuRuYHPwuBX2pLMDXyWB6fSxmRu4LNIGJSW8A40
+BfBZJkl9sypzg/kNwSSyzrDMDfKzeOLqp1Bm/+JIS0uPwmf5RJFQocmjtY7P
+y0snwWctbBayO1GfzM2pro+exRiDS9vBZ13cJadakyl+n5eWHoXPGhlFdXUN
+HJKMu74oOXJffsYUh2qUCrwaj88YPwO1UJ/d9UUxvwEsA5+BJeAzsAR8BpbA
+5AYAAMTlfzZZ7HE=
+    "], {{0, 148}, {240, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  DefaultBaseStyle->"ImageGraphics",
+  ImageSize->Automatic,
+  ImageSizeRaw->{240, 148},
+  PlotRange->{{0, 240}, {0, 148}}]], "Output",
+ ImageSize->{244, 148},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellTags->"RasterizedOutput",
+ CellLabel->"Out[1]=",
+ CellID->36098346],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1: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
+    "], {{0, 151}, {240, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  DefaultBaseStyle->"ImageGraphics",
+  ImageSize->Automatic,
+  ImageSizeRaw->{240, 151},
+  PlotRange->{{0, 240}, {0, 151}}]], "Output",
+ ImageSize->{244, 151},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellTags->"RasterizedOutput",
+ CellLabel->"Out[1]=",
+ CellID->59583613],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The true noise level is \"\>", "\[InvisibleSpace]", "0.2`", 
+   "\[InvisibleSpace]", "\<\" and the estimated noise level is \"\>", 
+   "\[InvisibleSpace]", "0.22063816135845823`", 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "The true noise level is ", 0.2, " and the estimated noise level is ", 
+   0.22063816135845823`, "."],
+  Editable->False]], "Print",
+ CellLabel->"During evaluation of In[320]:=",
+ CellID->49685425]
+}, Open  ]]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["NoiseEstimate"]],"paclet:WaveletWare/ref/NoiseEstimate"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["UniversalThreshold"]],
+    "paclet:WaveletWare/ref/UniversalThreshold"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["List of Functions - Alphabetical"]],
+   "paclet:WaveletWare/guide/List of Functions - Alphabetical"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->31572229],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["List of Functions - Categorical"]],
+   "paclet:WaveletWare/guide/List of Functions - Categorical"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->205519104]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"MAD",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:WaveletWare/guide/WaveletWare", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2016, 8, 25, 9, 50, 28.4433669}", 
+    "history" -> {"XX", "", "", ""}, "context" -> "WaveletWare`Denoising`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Wavelet Ware Package Symbol", "language" -> "en", "paclet" -> 
+    "WaveletWare Package", "status" -> "None", "summary" -> 
+    "MAD[data] computes the median absolute deviation of input an input \
+vector or matrix.", "synonyms" -> {}, "tabletags" -> {}, "title" -> "MAD", 
+    "titlemodifier" -> "", "windowtitle" -> "MAD", "type" -> "Symbol", "uri" -> 
+    "WaveletWare/ref/MAD"}, "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "11.0 for Microsoft Windows (64-bit) (July 28, 2016)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[6439, 201, 386, 15, 30, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->82485989]},
+ "RasterizedOutput"->{
+  Cell[10672, 366, 3290, 62, 70, "Output",
+   CellTags->"RasterizedOutput",
+   CellID->36098346],
+  Cell[13965, 430, 4233, 77, 70, "Output",
+   CellTags->"RasterizedOutput",
+   CellID->59583613]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 22315, 643},
+ {"RasterizedOutput", 22457, 647}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[575, 21, 3856, 94, 48, "AnchorBarGrid",
+ CellID->1],
+Cell[4434, 117, 280, 11, 44, "ObjectNameGrid"],
+Cell[CellGroupData[{
+Cell[4739, 132, 411, 12, 80, "Usage"],
+Cell[CellGroupData[{
+Cell[5175, 148, 736, 24, 31, "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->8475651],
+Cell[5914, 174, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[5948, 176, 408, 17, 70, "Notes",
+ CellID->1067943069],
+Cell[6359, 195, 31, 0, 70, "SectionFooterSpacer"]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6439, 201, 386, 15, 30, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->82485989],
+Cell[CellGroupData[{
+Cell[6850, 220, 194, 6, 25, "ExampleSection",
+ CellID->70233520],
+Cell[7047, 228, 65, 1, 31, "MathCaption",
+ CellID->16454449],
+Cell[7115, 231, 126, 4, 42, "Input",
+ InitializationCell->True,
+ CellID->861618089],
+Cell[7244, 237, 114, 3, 33, "ExampleText",
+ CellID->783158358],
+Cell[CellGroupData[{
+Cell[7383, 244, 292, 10, 43, "Input",
+ CellID->595531633],
+Cell[7678, 256, 158, 5, 35, "Output",
+ CellID->672611578]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7873, 266, 377, 12, 43, "Input",
+ CellID->292412355],
+Cell[8253, 280, 159, 5, 35, "Output",
+ CellID->225981030]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8461, 291, 194, 6, 25, "ExampleSection",
+ CellID->589267740],
+Cell[8658, 299, 263, 9, 70, "ExampleText",
+ CellID->346218518],
+Cell[CellGroupData[{
+Cell[8946, 312, 1723, 52, 70, "Input",
+ CellID->107874571],
+Cell[10672, 366, 3290, 62, 70, "Output",
+ CellTags->"RasterizedOutput",
+ CellID->36098346],
+Cell[13965, 430, 4233, 77, 70, "Output",
+ CellTags->"RasterizedOutput",
+ CellID->59583613],
+Cell[18201, 509, 484, 11, 70, "Print",
+ CellID->49685425]
+}, Open  ]]
+}, Closed]],
+Cell[18712, 524, 31, 0, 29, "SectionFooterSpacer"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18780, 529, 270, 12, 30, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[19053, 543, 585, 17, 58, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19675, 565, 276, 12, 30, "MoreAboutSection",
+ CellID->38303248],
+Cell[19954, 579, 31, 0, 14, "SectionHeaderSpacer"],
+Cell[19988, 581, 222, 6, 20, "MoreAbout",
+ CellID->31572229],
+Cell[20213, 589, 221, 6, 70, "MoreAbout",
+ CellID->205519104]
+}, Open  ]],
+Cell[20449, 598, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
